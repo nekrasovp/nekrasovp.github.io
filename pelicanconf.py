@@ -3,12 +3,15 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Nekrasov Pavel'
-SITENAME = 'Data driven blog'
+SITENAME = 'Data driven'
+SITESUBTITLE = 'Nekrasov Pavel personal page'
 SITEURL = ''
+TIMEZONE = 'Europe/Moscow'
+
+FAVICON = 'images/logo2.png'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Moscow'
 
 DEFAULT_LANG = 'en'
 
@@ -19,6 +22,26 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Banner Image
+BANNER = 'images/wireframe2.png'
+BANNER_SUBTITLE = 'Nekrasov Pavel personal page'
+BANNER_ALL_PAGES = False
+
+HIDE_SITENAME = False
+
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
+
+SITELOGO = 'images/logo2.png'
+
+DISPLAY_ARTICLE_INFO_ON_INDEX = True
+
+DISPLAY_TAGS_ON_SIDEBAR = True
+
+DISQUS_SITENAME = "nekrasovp"
+
+# ABOUT_ME = 'Some info about me'
+# AVATAR = 'images/noava-160x160.png'
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
@@ -26,15 +49,20 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
-         ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),)
+          ('BitBucket', 'https://bitbucket.org/Nekrasovp/'))
 
-DEFAULT_PAGINATION = False
-
+DEFAULT_PAGINATION = 4
+DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
 # Use other output directory
 OUTPUT_PATH = '../output'
+
+# static paths will be copied without parsing their contents
+STATIC_PATHS = [
+    'images',
+    ]
 
 # Theme path
 THEME = 'theme'
@@ -47,7 +75,7 @@ PYGMENTS_STYLE = 'monokai'
 PLUGIN_PATHS = ['plugins/', ]
 
 # Plugin list
-PLUGINS = ['i18n_subsites', ]
+PLUGINS = ['i18n_subsites', 'related_posts', 'tag_cloud']
 
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],

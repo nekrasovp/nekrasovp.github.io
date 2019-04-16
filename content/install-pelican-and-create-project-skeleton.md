@@ -1,7 +1,7 @@
 Title: Install Pelican and create project skeleton
 Author: Nekrasov Pavel
 Date: 2019-02-01 16:00
-Category: blogging
+Category: Blog
 Tags: python, markdown, pelican
 Slug: install-pelican-and-create-project-skeleton
 

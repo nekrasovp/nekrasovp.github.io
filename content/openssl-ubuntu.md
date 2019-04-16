@@ -1,13 +1,13 @@
 Title: Upgrading OpenSSL on Ubuntu 18.04
 Author: Nekrasov Pavel
 Date: 2019-02-05 15:00
-Category: blogging
+Category: Linux
 Tags: linux, ubuntu, openssl
 Slug: upgrading-openssl-ubuntu
 
 To avoid openssl and TLS version issue we will update openSSL on server and desktop version of Ubuntu 18.04
 
-We will download it manually, insall and make necessary file permission changes.
+We will download it manually, install and make necessary file permission changes.
 
 Let's begin with fetching the tarball from official site.
 ```bash

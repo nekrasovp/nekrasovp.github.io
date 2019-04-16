@@ -1,7 +1,7 @@
 Title: Add theme and plugins to Pelican installation
 Author: Nekrasov Pavel
 Date: 2019-02-02 16:00
-Category: blogging
+Category: Blog
 Tags: python, markdown, pelican
 Slug: add-theme-and-plugins-to-pelican
 

@@ -1,7 +1,7 @@
 Title: Deploying a static website to bitbucket
 Author: Nekrasov Pavel
 Date: 2019-02-02 16:00
-Category: blogging
+Category: Blog
 Tags: python, markdown, pelican, bitbucket
 Slug: deploying-a-static-website-to-bitbucket
 
