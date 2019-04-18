@@ -12,7 +12,6 @@ FAVICON = 'images/logo2.png'
 
 PATH = 'content'
 
-
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
@@ -53,8 +52,9 @@ SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
 
 DEFAULT_PAGINATION = 4
 DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
+
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 # Use other output directory
 OUTPUT_PATH = '../output'
@@ -69,13 +69,28 @@ THEME = 'theme'
 
 BOOTSTRAP_THEME = 'flatly'
 
-PYGMENTS_STYLE = 'monokai'
+PYGMENTS_STYLE = 'friendly'
+
+MARKUP = ('md', 'ipynb')
+
+# if you create jupyter files in the content dir, snapshots are saved with the same
+# metadata. These need to be ignored.
+IGNORE_FILES = [".ipynb_checkpoints"]
+
+IPYNB_GENERATE_SUMMARY = True
 
 # Plugin paths
-PLUGIN_PATHS = ['plugins/', ]
+PLUGIN_PATHS = ['plugins/']
 
 # Plugin list
-PLUGINS = ['i18n_subsites', 'related_posts', 'tag_cloud']
+PLUGINS = ['i18n_subsites', 'related_posts', 'tag_cloud', 'ipynb.markup']
+
+# if you create jupyter files in the content dir, snapshots are saved with the same
+# metadata. These need to be ignored.
+IGNORE_FILES = [".ipynb_checkpoints"]
+
+# IPYNB_FIX_CSS = False
+IPYNB_SKIP_CSS = True
 
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],

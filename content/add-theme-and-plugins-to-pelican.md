@@ -4,8 +4,11 @@ Date: 2019-02-02 16:00
 Category: Blog
 Tags: python, markdown, pelican
 Slug: add-theme-and-plugins-to-pelican
+Summary: The standard theme that comes with Pelican has one huge disadvantage: it does not display properly on mobile devices.
+To accomplish this we will change our website to use the excellent pelican-bootstrap3 theme.
 
-The standard theme that comes with Pelican has one huge diusadvantage: it does not display properly on mobile devices.
+
+The standard theme that comes with Pelican has one huge disadvantage: it does not display properly on mobile devices.
 To accomplish this we will change our website to use the excellent [pelican-bootstrap3](https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3) theme.
 To view the full listing of Pelican themes click [here](https://github.com/getpelican/pelican-themes).
 

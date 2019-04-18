@@ -4,6 +4,7 @@ Date: 2019-02-01 16:00
 Category: Blog
 Tags: python, markdown, pelican
 Slug: install-pelican-and-create-project-skeleton
+Summary: Building your own static website has several advantages over a traditional website that uses a database to store content. Static websites are faster because pages are rendered in advance and deliver the same content to all visitors. They are cheaper to host and are more secure since the website has no database.
 
 Building your own static website has several advantages over a traditional website that uses a database to store content. 
 Static websites are faster because pages are rendered in advance and deliver the same content to all visitors. 

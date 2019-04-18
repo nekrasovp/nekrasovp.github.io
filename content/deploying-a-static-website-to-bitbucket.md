@@ -4,6 +4,7 @@ Date: 2019-02-02 16:00
 Category: Blog
 Tags: python, markdown, pelican, bitbucket
 Slug: deploying-a-static-website-to-bitbucket
+Summary: We will use BitBucket for the task of hosting a small static website. The service is free and I already use BitBucket repositories to store the source code for my software projects so the workflow comes naturally.
 
 We will use BitBucket for the task of hosting a small static website.
 The service is free and I already use BitBucket repositories to store the source code for my software projects
