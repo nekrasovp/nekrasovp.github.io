@@ -42,7 +42,8 @@ DISQUS_SITENAME = "nekrasovp"
 # AVATAR = 'images/noava-160x160.png'
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
+LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet'),
+         ('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Wikipedia', 'https://wikipedia.org'),)
 
