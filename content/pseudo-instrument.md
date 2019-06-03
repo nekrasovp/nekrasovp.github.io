@@ -1,7 +1,7 @@
 Title: Pseudo instrument
 Author: Nekrasov Pavel
 Date: 2018-06-05 14:00
-Category: Trading
+Category: Blog
 Tags: trading, pseudo instrument
 Slug: pseudo-instrument
 Summary: Because arbitrage usually traded on several different instruments, the first thing to do is to define a pseudo instrument, which is a combination of instruments.

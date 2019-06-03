@@ -1,7 +1,7 @@
 Title: Calendar spread
 Author: Nekrasov Pavel
 Date: 2018-06-05 15:00
-Category: Trading
+Category: Blog
 Tags: trading, calendar spread
 Slug: calendar-spread
 Summary: Calendar spread requires one to trade on different delivery time periods with the same product. It is based on the assumption that the expected futures prices for a different delivery time will share the same movement

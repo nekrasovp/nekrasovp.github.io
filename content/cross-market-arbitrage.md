@@ -1,7 +1,7 @@
 Title:Cross-market arbitrage
 Author: Nekrasov Pavel
 Date: 2018-06-05 15:00
-Category: Trading
+Category: Blog
 Tags: trading, arbitrage
 Slug: cross-market-arbitrage
 Summary: Cross-market arbitrage refers to the technique in which one finds the same or similar products in different markets, and trades between them.

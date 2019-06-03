@@ -1,7 +1,7 @@
 Title: Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data
 Author: Nekrasov Pavel
 Date: 2018-12-01 15:00
-Category: Trading
+Category: Blog
 Tags: python, notebook, trading, pandas, xgboost, arima, fft
 Slug: feature-engineering-on-ohlcv-candles-wit-xgboost
 Summary: The goal of this notebook is to apply XGBoost to set of features from ohlcv indicators, fft results and arima predictions to test feature importance.
