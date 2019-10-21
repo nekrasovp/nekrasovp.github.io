@@ -5,7 +5,7 @@ Title: Nekrasov Pavel
 
 ##About me
 
-I am a business process manager and programmer.
+I am a business insider and programmer.
 
 I am a casual author of this blog and a half decent fisherman and snowboarder. I started my way in programming
 in 2000, when I was at university, but a few years later, I decided that I should study business processes on 

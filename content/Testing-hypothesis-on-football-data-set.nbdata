@@ -1,0 +1,7 @@
+Title: Testing hypothesis on football data-set from kaggle
+Author: Nekrasov Pavel
+Date: 2019-05-10 15:00
+Category: Blog
+Tags: python, notebook, statistics, pandas, kaggle, seaborn, matplotlib, ANOVA
+Slug: testing-hypothesis-on-football-data-set
+Summary: In this notebook we will use the data-set, International football results from 1872 to 2019. We will try ANOVA hypothesis testing technique.
