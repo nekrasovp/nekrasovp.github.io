@@ -86,10 +86,6 @@ PLUGIN_PATHS = ['plugins/']
 # Plugin list
 PLUGINS = ['i18n_subsites', 'related_posts', 'tag_cloud', 'ipynb.markup']
 
-# if you create jupyter files in the content dir, snapshots are saved with the same
-# metadata. These need to be ignored.
-IGNORE_FILES = [".ipynb_checkpoints"]
-
 # IPYNB_FIX_CSS = False
 IPYNB_SKIP_CSS = True
 

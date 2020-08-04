@@ -1,8 +1,9 @@
 Title: Services
 
-My goal is to empower your company to extract value from your data. Please reach out at hello@nekrasoff.info - I would love to hear from you.
+My goal is to empower your company to extract value from your data. Please reach out at my social
+ accounts - I would love to hear from you.
 
-I specialize in both product-based and strategic consulting.
+I specialize in both product-based and strategic consulting and production.
 
 ##Development of Data-Driven Products
 If you have ever logged into Netflix, searched for an image on Google, or received an email with a coupon, then you have experienced a data-driven product. The core of these products is a computer algorithm that ingests historical data to learn how to drive future outcomes. I have built and deployed many of these systems and love helping companies ship these types of products. My services cover the gamut of product development: defining requirements, mathematical modeling and prototyping, writing production code, deployment, and experimentation.
