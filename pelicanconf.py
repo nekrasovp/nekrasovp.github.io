@@ -48,7 +48,7 @@ LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Her
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
-          ('GitHub','https://nekrasovp.github.io'),
+          ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),)
 
 DEFAULT_PAGINATION = 3
