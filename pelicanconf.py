@@ -45,7 +45,6 @@ DISQUS_SITENAME = "nekrasovp"
 LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet'),
          ('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Wikipedia', 'https://wikipedia.org'),)
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
@@ -58,7 +57,7 @@ DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
 # RELATIVE_URLS = True
 
 # Use other output directory
-OUTPUT_PATH = '../output'
+OUTPUT_PATH = '/output'
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [

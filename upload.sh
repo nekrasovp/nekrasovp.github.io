@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-OUTPUT_DIR=../output/
+OUTPUT_DIR=/output/
 cd ${OUTPUT_DIR}
 git init
 git remote add origin git@bitbucket.org:Nekrasovp/nekrasovp.bitbucket.io.git
