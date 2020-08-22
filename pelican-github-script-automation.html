@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Articles by Nekrasov Pavel - Data driven</title>
+    <title>Move blog to github and automate deploying with git hooks - Data driven</title>
     <!-- Using the latest rendering mode for IE -->
     <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +11,22 @@
 
     <link href="/images/logo2.png" rel="icon">
 
+<link rel="canonical" href="/pelican-github-script-automation.html">
 
         <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="pelican,github" />
+        <meta name="description" content="In this post I&#39;ll describe how to move your blog to github and automate git hooks tho update gh" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Data driven" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Data driven"/>
-        <meta property="og:url" content=""/>
-        <meta property="og:description" content="Data driven"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Move blog to github and automate deploying with git hooks"/>
+        <meta property="og:url" content="/pelican-github-script-automation.html"/>
+        <meta property="og:description" content="In this post I&#39;ll describe how to move your blog to github and automate git hooks tho update gh"/>
+        <meta property="article:published_time" content="2020-08-22" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="github" />
+            <meta property="article:author" content="Nekrasov Pavel" />
 
 
 
@@ -55,7 +62,7 @@
                          <li><a href="/pages/services.html">
                              Services
                           </a></li>
-                        <li >
+                        <li class="active">
                             <a href="/category/blog.html">Blog</a>
                         </li>
             </ul>
@@ -73,13 +80,24 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="/feature-engineering-on-ohlcv-candles-wit-xgboost.html">Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data</a></h2>
-                    <div class="well well-sm">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/pelican-github-script-automation.html"
+                       rel="bookmark"
+                       title="Permalink to Move blog to github and automate deploying with git hooks">
+                        Move blog to github and automate deploying with git hooks
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2018-12-01T15:00:00+03:00"> Sat 01 December 2018</time>
+        <i class="fa fa-calendar"></i><time datetime="2020-08-22T16:00:00+03:00"> Sat 22 August 2020</time>
     </span>
 
 
@@ -87,64 +105,90 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/python.html">python</a>
+	<a href="/tag/pelican.html">pelican</a>
         /
-	<a href="/tag/notebook.html">notebook</a>
-        /
-	<a href="/tag/trading.html">trading</a>
-        /
-	<a href="/tag/pandas.html">pandas</a>
-        /
-	<a href="/tag/xgboost.html">xgboost</a>
-        /
-	<a href="/tag/arima.html">arima</a>
-        /
-	<a href="/tag/fft.html">fft</a>
+	<a href="/tag/github.html">github</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The goal of this notebook is to apply XGBoost to set of features from ohlcv indicators, fft results and arima predictions to test feature importance.</p>
-                    <a class="btn btn-default btn-xs" href="/feature-engineering-on-ohlcv-candles-wit-xgboost.html">more ...</a>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/arbitrage.html">Arbitrage</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2018-06-06T15:00:00+03:00"> Wed 06 June 2018</time>
-    </span>
+                <p>-pages branch on commits</p>
+<p>This blog is powered by <a href="http://docs.getpelican.com/en/stable">Pelican</a> and hosted through 
+GitHub using <a href="https://pages.github.com/">GitHub Pages</a>. </p>
+<p>In this post I'll describe how to move your blog to github and automate git hooks to update gh
+-pages branch on commits.</p>
+<p>For those of you not familiar with these technologies, 
+Pelican is a static site generator - meaning you can write your content in a format such as 
+Markdown or Jupyter notebook(ipynb) and Pelican will automatically generate the HTML files for you; 
+and GitHub Pages is a service provided by GitHub for hosting a 
+website under the <your-username>.github.io URL.</p>
+<p>Previously when blog was hosted on bitbucket i solve it using two separate repositories: one for the
+ website "source" files, and one for the output which was be served using bitbucket.io.</p>
+<p>But i decide to move to one repository with different branches. This is how to achive this:</p>
+<p>The first step is to create two <em>branches</em>:</p>
+<ul>
+<li><strong>master</strong> will contain the blog's "source" files, namely - all the files such as the content
+ folder
+ which contains the actual posts, and pelicanconf.py file.</li>
+<li><strong>gh-pages</strong> will contain only the contents of output.</li>
+</ul>
+<p>Github will use <strong>gh-pages</strong> branch for serving <a href="https://nekrasovp.github.io/">Blog pages</a></p>
+<p>To automate lets create <em>pre-push</em> git hook in <code>.git/hooks/pre-push</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
+<span class="k">while</span> <span class="nb">read</span> local_ref local_sha remote_ref remote_sha
+<span class="k">do</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$remote_ref</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;refs/heads/master&quot;</span> <span class="o">]</span>
+        <span class="k">then</span>
+                pelican content -o output -s publishconf.py
+                ghp-import output
+                git push --no-verify git@github.com:&lt;your-username&gt;/&lt;your-username&gt;.github.io.git gh-pages
+        <span class="k">fi</span>
+<span class="k">done</span>
 
+<span class="nb">exit</span> <span class="m">0</span>
+</code></pre></div>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="/add-theme-and-plugins-to-pelican.html">Add theme and plugins to Pelican installation</a></li>
+        <li><a href="/deploying-a-static-website-to-bitbucket.html">Deploying a static website to bitbucket</a></li>
+        <li><a href="/install-pelican-and-create-project-skeleton.html">Install Pelican and create project skeleton</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
 
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
 
+            var disqus_config = function () {
+                this.language = "en";
 
-<span class="label label-default">Tags</span>
-	<a href="/tag/trading.html">trading</a>
-        /
-	<a href="/tag/arbitrage.html">arbitrage</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Here, we will give some detail on how to do real trading using arbitrage. There are always many ways to do so, and the method below is just one of them. But the key ideas are same.</p>
-                    <a class="btn btn-default btn-xs" href="/arbitrage.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+                        this.page.identifier = '2020-08-22-pelican-github-script-automation';
+            };
 
-        <ul class="pagination">
-                <li class="prev"><a href="/author/nekrasov-pavel3.html">&laquo;</a>
-                </li>
-                    <li class=""><a
-                            href="/author/nekrasov-pavel.html">1</a></li>
-                    <li class=""><a
-                            href="/author/nekrasov-pavel2.html">2</a></li>
-                    <li class=""><a
-                            href="/author/nekrasov-pavel3.html">3</a></li>
-                    <li class="active"><a
-                            href="/author/nekrasov-pavel4.html">4</a></li>
-                <li class="next disabled"><a href="#">&raquo;</a></li>
-        </ul>
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
