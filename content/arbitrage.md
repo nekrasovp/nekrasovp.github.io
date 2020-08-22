@@ -2,7 +2,7 @@ Title: Arbitrage
 Author: Nekrasov Pavel
 Date: 2018-06-06 15:00
 Category: Blog
-Tags: trading, arbitrage
+Tags: finance, arbitrage
 Slug: arbitrage
 Summary: Here, we will give some detail on how to do real trading using arbitrage. There are always many ways to do so, and the method below is just one of them. But the key ideas are same. 
 

@@ -2,7 +2,7 @@ Title: Getting stock data with pandas-datareader
 Author: Nekrasov Pavel
 Date: 2019-03-01 15:00
 Category: Blog
-Tags: python, notebook, trading, pandas
+Tags: python, notebook, finance, pandas
 Slug: stock-data-with-pandas-datareader
 Summary: The goal of this article is to provide an easy introduction to stock market analysis using Python. In this notebook we will use pandas_datareader module. We will walk through a simple Python script to retrieve, analyze, and visualize data from different markets.
 
