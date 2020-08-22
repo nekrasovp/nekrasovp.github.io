@@ -36,6 +36,8 @@ DISPLAY_ARTICLE_INFO_ON_INDEX = True
 
 DISPLAY_TAGS_ON_SIDEBAR = True
 
+DISPLAY_TAGS_INLINE = True
+
 DISQUS_SITENAME = "nekrasovp"
 
 # ABOUT_ME = 'Some info about me'
@@ -51,7 +53,7 @@ SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
           ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),)
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 5
 DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
 
 # Uncomment following line if you want document-relative URLs when developing
