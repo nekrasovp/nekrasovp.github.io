@@ -44,7 +44,7 @@ DISQUS_SITENAME = "nekrasovp"
 # Blogroll
 LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet'),
          ('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
+         ('Python.org', 'http://python.org/'),)
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
