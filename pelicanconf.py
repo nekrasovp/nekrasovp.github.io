@@ -48,9 +48,10 @@ LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Her
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
-          ('BitBucket', 'https://bitbucket.org/Nekrasovp/'))
+          ('GitHub','https://nekrasovp.github.io'),
+          ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),)
 
-DEFAULT_PAGINATION = 4
+DEFAULT_PAGINATION = 3
 DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
 
 # Uncomment following line if you want document-relative URLs when developing
