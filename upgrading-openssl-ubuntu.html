@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Upgrading OpenSSL on Ubuntu 18.04 - Data driven</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://nekrasovp.bitbucket.io/images/logo2.png" rel="icon">
+
+<link rel="canonical" href="https://nekrasovp.bitbucket.io/upgrading-openssl-ubuntu.html">
+
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="linux,ubuntu,openssl" />
+        <meta name="description" content="To avoid openssl and TLS version issue we will update openSSL on server and desktop version of Ubuntu 18.0. We will download it manually, install and make necessary file permission changes." />
+
+        <meta property="og:site_name" content="Data driven" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Upgrading OpenSSL on Ubuntu 18.04"/>
+        <meta property="og:url" content="https://nekrasovp.bitbucket.io/upgrading-openssl-ubuntu.html"/>
+        <meta property="og:description" content="To avoid openssl and TLS version issue we will update openSSL on server and desktop version of Ubuntu 18.0. We will download it manually, install and make necessary file permission changes."/>
+        <meta property="article:published_time" content="2019-02-05" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="linux" />
+            <meta property="article:tag" content="ubuntu" />
+            <meta property="article:tag" content="openssl" />
+            <meta property="article:author" content="Nekrasov Pavel" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://nekrasovp.bitbucket.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.bitbucket.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://nekrasovp.bitbucket.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.bitbucket.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://nekrasovp.bitbucket.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
+
+        <link href="https://nekrasovp.bitbucket.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://nekrasovp.bitbucket.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.bitbucket.io/images/logo2.png" width=""/> Data driven            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://nekrasovp.bitbucket.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="https://nekrasovp.bitbucket.io/pages/services.html">
+                             Services
+                          </a></li>
+                        <li class="active">
+                            <a href="https://nekrasovp.bitbucket.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.bitbucket.io/upgrading-openssl-ubuntu.html"
+                       rel="bookmark"
+                       title="Permalink to Upgrading OpenSSL on Ubuntu 18.04">
+                        Upgrading OpenSSL on Ubuntu 18.04
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-02-05T15:00:00+03:00"> Tue 05 February 2019</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://nekrasovp.bitbucket.io/tag/linux.html">linux</a>
+        /
+	<a href="https://nekrasovp.bitbucket.io/tag/ubuntu.html">ubuntu</a>
+        /
+	<a href="https://nekrasovp.bitbucket.io/tag/openssl.html">openssl</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>To avoid openssl and TLS version issue we will update openSSL on server and desktop version of Ubuntu 18.04</p>
+<p>We will download it manually, install and make necessary file permission changes.</p>
+<p>Let's begin with fetching the tarball from official site.</p>
+<div class="highlight"><pre><span></span><code>➜  wget https://www.openssl.org/source/openssl-1.1.1b.tar.gz
+</code></pre></div>
+
+
+<p>Next we unpack the tarball with tar and navigate to newly created folder</p>
+<div class="highlight"><pre><span></span><code>➜  tar -zxf openssl-1.1.1b.tar.gz
+➜  <span class="nb">cd</span> openssl-1.1.1b/
+</code></pre></div>
+
+
+<p>Issue the command</p>
+<div class="highlight"><pre><span></span><code>➜  ./config
+</code></pre></div>
+
+
+<p>Issue the command make while you have gcc installed properly </p>
+<div class="highlight"><pre><span></span><code>➜  make
+</code></pre></div>
+
+
+<p>Run make test to check for possible errors</p>
+<div class="highlight"><pre><span></span><code>➜  make <span class="nb">test</span>
+</code></pre></div>
+
+
+<p>Backup current openssl binary</p>
+<div class="highlight"><pre><span></span><code>➜  sudo mv /usr/bin/openssl ~/tmp
+</code></pre></div>
+
+
+<p>Issue the command</p>
+<div class="highlight"><pre><span></span><code>➜  sudo make install
+</code></pre></div>
+
+
+<p>Create symbolic link from newly install binary to the default location:</p>
+<div class="highlight"><pre><span></span><code>➜  sudo ln -s /usr/local/bin/openssl /usr/bin/openssl
+</code></pre></div>
+
+
+<p>Run the command sudo ldconfig to update symlinks and rebuild the library cache</p>
+<div class="highlight"><pre><span></span><code>➜  sudo ldconfig
+</code></pre></div>
+
+
+<p>Assuming that there were no errors in executing steps 4 through 10, you should have successfully installed the new version of OpenSSL.</p>
+<p>Again, from the terminal issue the command:</p>
+<div class="highlight"><pre><span></span><code>➜  OpenSSL openssl version
+OpenSSL <span class="m">1</span>.1.1b  <span class="m">26</span> Feb <span class="m">2019</span>
+</code></pre></div>
+
+
+<p>Finally we have to check files and folders permission in /etc/ssl/certs/ and /usr/share/ca-certificates
+and change newly created file permission:</p>
+<div class="highlight"><pre><span></span><code>➜  sudo chmod o+rx ca-certificates.crt 
+</code></pre></div>
+
+
+<p>We can check openssl functionality with </p>
+<div class="highlight"><pre><span></span><code>➜  openssl s_client -connect &lt;remote_server_addresss&gt;
+</code></pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2019-02-05-upgrading-openssl-ubuntu';
+                        this.page.url = 'https://nekrasovp.bitbucket.io/upgrading-openssl-ubuntu.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://nekrasovp.bitbucket.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.bitbucket.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.bitbucket.io/tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/trading.html">trading</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/pandas.html">pandas</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/markdown.html">markdown</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/matplotlib.html">matplotlib</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.bitbucket.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/openssl.html">openssl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/math.html">math</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/networkx.html">networkx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/cython.html">cython</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/xgboost.html">xgboost</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/fft.html">fft</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/pydot.html">pydot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/arbitrage.html">arbitrage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/linux.html">linux</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet" target="_blank">Markdown</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Nekrasov Pavel
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://nekrasovp.bitbucket.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://nekrasovp.bitbucket.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://nekrasovp.bitbucket.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://nekrasovp.bitbucket.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

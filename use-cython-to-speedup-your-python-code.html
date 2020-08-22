@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Use Cython to speed up your Python code - Data driven</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://nekrasovp.bitbucket.io/images/logo2.png" rel="icon">
+
+<link rel="canonical" href="https://nekrasovp.bitbucket.io/use-cython-to-speedup-your-python-code.html">
+
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="python,cython" />
+        <meta name="description" content="In this notebook will try to convert pure Python code to Cython and test speed up with magic functions." />
+
+        <meta property="og:site_name" content="Data driven" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Use Cython to speed up your Python code"/>
+        <meta property="og:url" content="https://nekrasovp.bitbucket.io/use-cython-to-speedup-your-python-code.html"/>
+        <meta property="og:description" content="In this notebook will try to convert pure Python code to Cython and test speed up with magic functions."/>
+        <meta property="article:published_time" content="2019-09-02" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="cython" />
+            <meta property="article:author" content="Nekrasov Pavel" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://nekrasovp.bitbucket.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.bitbucket.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://nekrasovp.bitbucket.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.bitbucket.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://nekrasovp.bitbucket.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
+
+        <link href="https://nekrasovp.bitbucket.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://nekrasovp.bitbucket.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.bitbucket.io/images/logo2.png" width=""/> Data driven            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://nekrasovp.bitbucket.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="https://nekrasovp.bitbucket.io/pages/services.html">
+                             Services
+                          </a></li>
+                        <li class="active">
+                            <a href="https://nekrasovp.bitbucket.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.bitbucket.io/use-cython-to-speedup-your-python-code.html"
+                       rel="bookmark"
+                       title="Permalink to Use Cython to speed up your Python code">
+                        Use Cython to speed up your Python code
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-09-02T15:00:00+03:00"> Mon 02 September 2019</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://nekrasovp.bitbucket.io/tag/python.html">python</a>
+        /
+	<a href="https://nekrasovp.bitbucket.io/tag/cython.html">cython</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we have a code on pure Python usually we can speed it up with some tiny changes using Cython.</p>
+<p>In its core Cython is an intermediate between Python and C/C++. It allows you to write your Python code with minor changes and then translate it into C code.</p>
+<p>As usual im referencing to <a href="https://cython.readthedocs.io/en/latest/">official Cython documentation</a> with all details.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first thing we will do we will write our functions.</p>
+<p>Lets use <a href="https://nekrasovp.bitbucket.io/number-sequences.html">number calculations</a> from other atricle in this blog.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will start with recursive calculation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># stern_python.py</span>
+
+<span class="k">def</span> <span class="nf">stern_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stern_n</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stern_n</span><span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">stern_n</span><span class="p">((</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">run_stern</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">stern_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">stern_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">stern_n</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">stern_array</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">stern_python</span> <span class="k">as</span> <span class="nn">python_s</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our Cython equivalent of the same functions look very similar.
+For that we will create new file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># stern_cython.pyx</span>
+
+<span class="n">cpdef</span> <span class="nb">int</span> <span class="n">stern_n</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stern_n</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stern_n</span><span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">stern_n</span><span class="p">((</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">cpdef</span> <span class="n">run_stern</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">stern_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">stern_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stern_n</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">stern_array</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next we will take list manupulation function with lazy calculation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># hofsconwc_python.py</span>
+
+<span class="k">def</span> <span class="nf">hofsconwc</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">hf</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">hf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hf</span><span class="p">[</span><span class="n">hf</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">hf</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">hf</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">hf</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">hofsconwc_python</span> <span class="k">as</span> <span class="nn">python_h</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and our Cython variant.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># hofsconwc_python.pyx</span>
+
+<span class="n">cpdef</span> <span class="n">hofsconwc</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">hf</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">hf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hf</span><span class="p">[</span><span class="n">hf</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">hf</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">hf</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">hf</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next we will create <em>setup.py</em> file which will compile the Cython into C code.</p>
+<p>We will use *.pyx as filename because we wanna try multiple files compilation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># setup.py</span>
+
+<span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="kn">from</span> <span class="nn">Cython.Build</span> <span class="kn">import</span> <span class="n">cythonize</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Testing calculation&#39;</span><span class="p">,</span>
+      <span class="n">ext_modules</span><span class="o">=</span><span class="n">cythonize</span><span class="p">(</span><span class="s1">&#39;*.pyx&#39;</span><span class="p">),</span>
+      <span class="n">requires</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cython&#39;</span><span class="p">],</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -ll
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total 224
+-rw-rw-r-- 1 pavel pavel    187 ноя  7 13:21  hofsconwc_cython.pyx
+-rw-rw-r-- 1 pavel pavel    180 ноя  7 13:20  hofsconwc_python.py
+drwxrwxr-x 2 pavel pavel   4096 ноя  7 13:31  __pycache__
+-rw-r--r-- 1 pavel pavel     39 окт 22 18:46  README.md
+-rw-rw-r-- 1 pavel pavel   1006 ноя  7 12:20  run_test.py
+-rw-rw-r-- 1 pavel pavel    170 ноя  7 12:14  setup.py
+-rw-rw-r-- 1 pavel pavel    305 окт 22 20:41  stern_cython.pyx
+-rw-rw-r-- 1 pavel pavel    295 окт 22 20:01  stern_python.py
+-rw-r--r-- 1 pavel pavel 189442 ноя  7 13:48 &#39;Use Cython to speedup your Python code.ipynb&#39;
+drwxrwxr-x 7 pavel pavel   4096 ноя  7 12:32  venv
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All we need to do is just perform</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python setup.py build_ext --inplace
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>running build_ext
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -ll
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total 680
+drwxrwxr-x 3 pavel pavel   4096 ноя  7 13:48  build
+-rw-rw-r-- 1 pavel pavel 132506 ноя  7 13:48  hofsconwc_cython.c
+-rwxrwxr-x 1 pavel pavel 119808 ноя  7 13:48  hofsconwc_cython.cpython-37m-x86_64-linux-gnu.so
+-rw-rw-r-- 1 pavel pavel    187 ноя  7 13:21  hofsconwc_cython.pyx
+-rw-rw-r-- 1 pavel pavel    180 ноя  7 13:20  hofsconwc_python.py
+drwxrwxr-x 2 pavel pavel   4096 ноя  7 13:31  __pycache__
+-rw-r--r-- 1 pavel pavel     39 окт 22 18:46  README.md
+-rw-rw-r-- 1 pavel pavel   1006 ноя  7 12:20  run_test.py
+-rw-rw-r-- 1 pavel pavel    170 ноя  7 12:14  setup.py
+-rw-rw-r-- 1 pavel pavel 109538 ноя  7 13:48  stern_cython.c
+-rwxrwxr-x 1 pavel pavel  93632 ноя  7 13:48  stern_cython.cpython-37m-x86_64-linux-gnu.so
+-rw-rw-r-- 1 pavel pavel    305 окт 22 20:41  stern_cython.pyx
+-rw-rw-r-- 1 pavel pavel    295 окт 22 20:01  stern_python.py
+-rw-r--r-- 1 pavel pavel 189442 ноя  7 13:48 &#39;Use Cython to speedup your Python code.ipynb&#39;
+drwxrwxr-x 7 pavel pavel   4096 ноя  7 12:32  venv
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It works! Now we can import Cython functions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">stern_cython</span> <span class="k">as</span> <span class="nn">cython_s</span>
+<span class="kn">import</span> <span class="nn">hofsconwc_cython</span> <span class="k">as</span> <span class="nn">cython_h</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we are ready to test our calculations with some magic functions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> _ = python_s.run_stern(10000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>757 ms ± 39.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> _ = cython_s.run_stern(10000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7.26 ms ± 80.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yes we have <strong>x100</strong> time speed up with just type definition and precompiling our functions.</p>
+<p>But what if we will try more real functions like hofsconwc without useless recursion.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> _ = python_h.hofsconwc(10000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2.75 ms ± 375 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> _ = cython_h.hofsconwc(10000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.4 ms ± 26.2 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yes so easy we get <strong>x2</strong> speed up for our calculations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://nekrasovp.bitbucket.io/pascals-triangle.html">Pascal's Triangle</a></li>
+        <li><a href="https://nekrasovp.bitbucket.io/markov-chain-bean-machine.html">Simulating a Galton board with Markov chains</a></li>
+        <li><a href="https://nekrasovp.bitbucket.io/number-sequences.html">Number sequences visualisation with python</a></li>
+        <li><a href="https://nekrasovp.bitbucket.io/stock-market-portfolio-optimisation.html">Stock market portfolio optimisation</a></li>
+        <li><a href="https://nekrasovp.bitbucket.io/testing-hypothesis-on-football-data-set.html">Testing hypothesis on football data-set from kaggle</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2019-09-02-use-cython-to-speedup-your-python-code';
+                        this.page.url = 'https://nekrasovp.bitbucket.io/use-cython-to-speedup-your-python-code.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://nekrasovp.bitbucket.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.bitbucket.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.bitbucket.io/tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/trading.html">trading</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/pandas.html">pandas</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/markdown.html">markdown</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.bitbucket.io/tag/matplotlib.html">matplotlib</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.bitbucket.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/openssl.html">openssl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/math.html">math</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/networkx.html">networkx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/cython.html">cython</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/xgboost.html">xgboost</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/fft.html">fft</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/pydot.html">pydot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/arbitrage.html">arbitrage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.bitbucket.io/tag/linux.html">linux</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet" target="_blank">Markdown</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Nekrasov Pavel
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://nekrasovp.bitbucket.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://nekrasovp.bitbucket.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://nekrasovp.bitbucket.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://nekrasovp.bitbucket.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
