@@ -101,7 +101,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2020-08-22T16:00:00+03:00"> Sat 22 August 2020</time>
+        <i class="fa fa-calendar"></i><time datetime="2020-08-22T20:00:00+03:00"> Sat 22 August 2020</time>
     </span>
 
 
@@ -149,7 +149,7 @@ website under the <your-username>.github.io URL.</p>
         <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$remote_ref</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;refs/heads/master&quot;</span> <span class="o">]</span>
         <span class="k">then</span>
                 pelican content -o output -s publishconf.py
-                ghp-import output
+                ghp-import -m <span class="s2">&quot;Update with latest content&quot;</span> output
                 git push --no-verify origin gh-pages
         <span class="k">fi</span>
 <span class="k">done</span>
@@ -164,10 +164,9 @@ Specifically, only commits that are pushed to the <strong>master</strong> branch
 <li>If commits are pushed to <strong>master</strong>, it executes pelican command using publishconf.py. 
 This will generate the production version of the blog into output.</li>
 <li>The <a href="https://pypi.org/project/ghp-import/">GitHub Pages Import</a> tool is used for copying the contents of output to a branch named 
-<strong>gh-pages</strong>.</li>
+<strong>gh-pages</strong> with provided commit message.</li>
 <li><strong>gh-pages</strong> is pushed to the remote <strong>gh-pages</strong> branch. --no-verify skips the pre-push hook
- so this 
-script won't run again.</li>
+ so this script won't run again.</li>
 </ol>
 <p>Now, whenever I push to source to <strong>master</strong> branch i get fresh version of my static site on github
  pages at the same time.</p>
@@ -237,16 +236,10 @@ script won't run again.</li>
   <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group " id="tags">
     <li class="list-group-item tag-1">
-      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-1">
       <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
     </li>
-    <li class="list-group-item tag-2">
-      <a href="https://nekrasovp.github.io/tag/finance.html">finance</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
@@ -257,14 +250,50 @@ script won't run again.</li>
     <li class="list-group-item tag-2">
       <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
     </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/finance.html">finance</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
@@ -273,52 +302,22 @@ script won't run again.</li>
       <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
     </li>
   </ul>
 </li>
