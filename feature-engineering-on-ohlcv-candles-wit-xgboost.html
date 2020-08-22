@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="/images/logo2.png" rel="icon">
+    <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
 
-<link rel="canonical" href="/feature-engineering-on-ohlcv-candles-wit-xgboost.html">
+<link rel="canonical" href="https://nekrasovp.github.io/feature-engineering-on-ohlcv-candles-wit-xgboost.html">
 
         <meta name="author" content="Nekrasov Pavel" />
         <meta name="keywords" content="python,notebook,trading,pandas,xgboost,arima,fft" />
@@ -20,7 +20,7 @@
         <meta property="og:site_name" content="Data driven" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data"/>
-        <meta property="og:url" content="/feature-engineering-on-ohlcv-candles-wit-xgboost.html"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/feature-engineering-on-ohlcv-candles-wit-xgboost.html"/>
         <meta property="og:description" content="The goal of this notebook is to apply XGBoost to set of features from ohlcv indicators, fft results and arima predictions to test feature importance."/>
         <meta property="article:published_time" content="2018-12-01" />
             <meta property="article:section" content="Blog" />
@@ -36,14 +36,17 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/friendly.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/style.css" type="text/css"/>
 
+        <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
 
-
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
 </head>
 <body>
 
@@ -56,19 +59,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="/images/logo2.png" width=""/> Data driven            </a>
+            <a href="https://nekrasovp.github.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.github.io/images/logo2.png" width=""/> Data driven            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="/pages/about.html">
+                         <li><a href="https://nekrasovp.github.io/pages/about.html">
                              About
                           </a></li>
-                         <li><a href="/pages/services.html">
+                         <li><a href="https://nekrasovp.github.io/pages/services.html">
                              Services
                           </a></li>
                         <li class="active">
-                            <a href="/category/blog.html">Blog</a>
+                            <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -89,7 +92,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+                    <a href="https://nekrasovp.github.io/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
                        rel="bookmark"
                        title="Permalink to Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data">
                         Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data
@@ -110,19 +113,19 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/python.html">python</a>
+	<a href="https://nekrasovp.github.io/tag/python.html">python</a>
         /
-	<a href="/tag/notebook.html">notebook</a>
+	<a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
         /
-	<a href="/tag/trading.html">trading</a>
+	<a href="https://nekrasovp.github.io/tag/trading.html">trading</a>
         /
-	<a href="/tag/pandas.html">pandas</a>
+	<a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
         /
-	<a href="/tag/xgboost.html">xgboost</a>
+	<a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
         /
-	<a href="/tag/arima.html">arima</a>
+	<a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
         /
-	<a href="/tag/fft.html">fft</a>
+	<a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -1561,11 +1564,11 @@ Dont forget that we do that for pothethic "1d" rounded candles while you can use
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/stock-market-portfolio-optimisation.html">Stock market portfolio optimisation</a></li>
-        <li><a href="/stock-data-with-pandas-datareader.html">Getting stock data with pandas-datareader</a></li>
-        <li><a href="/testing-hypothesis-on-football-data-set.html">Testing hypothesis on football data-set from kaggle</a></li>
-        <li><a href="/number-sequences.html">Number sequences visualisation with python</a></li>
-        <li><a href="/pascals-triangle.html">Pascal's Triangle</a></li>
+        <li><a href="https://nekrasovp.github.io/stock-market-portfolio-optimisation.html">Stock market portfolio optimisation</a></li>
+        <li><a href="https://nekrasovp.github.io/stock-data-with-pandas-datareader.html">Getting stock data with pandas-datareader</a></li>
+        <li><a href="https://nekrasovp.github.io/testing-hypothesis-on-football-data-set.html">Testing hypothesis on football data-set from kaggle</a></li>
+        <li><a href="https://nekrasovp.github.io/number-sequences.html">Number sequences visualisation with python</a></li>
+        <li><a href="https://nekrasovp.github.io/pascals-triangle.html">Pascal's Triangle</a></li>
     </ul>
 </section>
     <hr/>
@@ -1581,6 +1584,7 @@ Dont forget that we do that for pothethic "1d" rounded candles while you can use
                 this.language = "en";
 
                         this.page.identifier = '2018-12-01-feature-engineering-on-ohlcv-candles-wit-xgboost';
+                        this.page.url = 'https://nekrasovp.github.io/feature-engineering-on-ohlcv-candles-wit-xgboost.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -1612,6 +1616,7 @@ Dont forget that we do that for pothethic "1d" rounded candles while you can use
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
   <ul class="list-group" id="social">
     <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://nekrasovp.github.io"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
     <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
   </ul>
 </li>
@@ -1619,88 +1624,91 @@ Dont forget that we do that for pothethic "1d" rounded candles while you can use
 
 <!-- Sidebar/Tag Cloud -->
 <li class="list-group-item">
-  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group " id="tags">
     <li class="list-group-item tag-1">
-      <a href="/tag/python.html">python</a>
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="/tag/notebook.html">notebook</a>
+      <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/pelican.html">pelican</a>
+      <a href="https://nekrasovp.github.io/tag/trading.html">trading</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/markdown.html">markdown</a>
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/trading.html">trading</a>
+      <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/pandas.html">pandas</a>
+      <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/matplotlib.html">matplotlib</a>
+      <a href="https://nekrasovp.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="/tag/numpy.html">numpy</a>
+      <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/networkx.html">networkx</a>
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/cython.html">cython</a>
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/math.html">math</a>
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/seaborn.html">seaborn</a>
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/pydot.html">pydot</a>
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/statistics.html">statistics</a>
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/github.html">github</a>
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/scipy.html">scipy</a>
+      <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/xgboost.html">xgboost</a>
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/openssl.html">openssl</a>
+      <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/linux.html">linux</a>
+      <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/bitbucket.html">bitbucket</a>
+      <a href="https://nekrasovp.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/anova.html">ANOVA</a>
+      <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/kaggle.html">kaggle</a>
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/arbitrage.html">arbitrage</a>
+      <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/ubuntu.html">ubuntu</a>
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/fft.html">fft</a>
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/arima.html">arima</a>
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/portfolio.html">portfolio</a>
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
     </li>
   </ul>
 </li>
@@ -1742,16 +1750,16 @@ Dont forget that we do that for pothethic "1d" rounded candles while you can use
       </div>
    </div>
 </footer>
-<script src="/theme/js/jquery.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/respond.min.js"></script>
 
 
-    <script src="/theme/js/bodypadding.js"></script>
+    <script src="https://nekrasovp.github.io/theme/js/bodypadding.js"></script>
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

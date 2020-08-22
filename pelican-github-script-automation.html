@@ -9,36 +9,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="/images/logo2.png" rel="icon">
+    <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
 
-<link rel="canonical" href="/pelican-github-script-automation.html">
+<link rel="canonical" href="https://nekrasovp.github.io/pelican-github-script-automation.html">
 
         <meta name="author" content="Nekrasov Pavel" />
-        <meta name="keywords" content="pelican,github" />
-        <meta name="description" content="In this post I&#39;ll describe how to move your blog to github and automate git hooks tho update gh" />
+        <meta name="keywords" content="pelican,git,github" />
+        <meta name="description" content="In this post we will describe how to move your blog to github and automate git hooks tho" />
 
         <meta property="og:site_name" content="Data driven" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Move blog to github and automate deploying with git hooks"/>
-        <meta property="og:url" content="/pelican-github-script-automation.html"/>
-        <meta property="og:description" content="In this post I&#39;ll describe how to move your blog to github and automate git hooks tho update gh"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/pelican-github-script-automation.html"/>
+        <meta property="og:description" content="In this post we will describe how to move your blog to github and automate git hooks tho"/>
         <meta property="article:published_time" content="2020-08-22" />
             <meta property="article:section" content="Blog" />
             <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="git" />
             <meta property="article:tag" content="github" />
             <meta property="article:author" content="Nekrasov Pavel" />
 
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/friendly.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/style.css" type="text/css"/>
 
+        <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
 
-
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
 </head>
 <body>
 
@@ -51,19 +55,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="/images/logo2.png" width=""/> Data driven            </a>
+            <a href="https://nekrasovp.github.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.github.io/images/logo2.png" width=""/> Data driven            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="/pages/about.html">
+                         <li><a href="https://nekrasovp.github.io/pages/about.html">
                              About
                           </a></li>
-                         <li><a href="/pages/services.html">
+                         <li><a href="https://nekrasovp.github.io/pages/services.html">
                              Services
                           </a></li>
                         <li class="active">
-                            <a href="/category/blog.html">Blog</a>
+                            <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -84,7 +88,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/pelican-github-script-automation.html"
+                    <a href="https://nekrasovp.github.io/pelican-github-script-automation.html"
                        rel="bookmark"
                        title="Permalink to Move blog to github and automate deploying with git hooks">
                         Move blog to github and automate deploying with git hooks
@@ -105,25 +109,29 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/pelican.html">pelican</a>
+	<a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
         /
-	<a href="/tag/github.html">github</a>
+	<a href="https://nekrasovp.github.io/tag/git.html">git</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/github.html">github</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>-pages branch on commits</p>
+                <p>update gh
+-pages branch on commits</p>
 <p>This blog is powered by <a href="http://docs.getpelican.com/en/stable">Pelican</a> and hosted through 
 GitHub using <a href="https://pages.github.com/">GitHub Pages</a>. </p>
-<p>In this post I'll describe how to move your blog to github and automate git hooks to update gh
+<p>In this post we will describe how to move blog to github and automate git hooks to update gh
 -pages branch on commits.</p>
 <p>For those of you not familiar with these technologies, 
 Pelican is a static site generator - meaning you can write your content in a format such as 
 Markdown or Jupyter notebook(ipynb) and Pelican will automatically generate the HTML files for you; 
 and GitHub Pages is a service provided by GitHub for hosting a 
 website under the <your-username>.github.io URL.</p>
-<p>Previously when blog was hosted on bitbucket i solve it using two separate repositories: one for the
+<p>Previously when blog was hosted on bitbucket we solve it using two separate repositories: one for
+ the
  website "source" files, and one for the output which was be served using bitbucket.io.</p>
-<p>But i decide to move to one repository with different branches. This is how to achive this:</p>
+<p>But i decide to move to one repository with different branches. This is how to achieve this:</p>
 <p>The first step is to create two <em>branches</em>:</p>
 <ul>
 <li><strong>master</strong> will contain the blog's "source" files, namely - all the files such as the content
@@ -132,6 +140,7 @@ website under the <your-username>.github.io URL.</p>
 <li><strong>gh-pages</strong> will contain only the contents of output.</li>
 </ul>
 <p>Github will use <strong>gh-pages</strong> branch for serving <a href="https://nekrasovp.github.io/">Blog pages</a></p>
+<p>Then update your .gitignore file with output\ folder.</p>
 <p>To automate lets create <em>pre-push</em> git hook in <code>.git/hooks/pre-push</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
@@ -141,20 +150,35 @@ website under the <your-username>.github.io URL.</p>
         <span class="k">then</span>
                 pelican content -o output -s publishconf.py
                 ghp-import output
-                git push --no-verify git@github.com:&lt;your-username&gt;/&lt;your-username&gt;.github.io.git gh-pages
+                git push --no-verify origin gh-pages
         <span class="k">fi</span>
 <span class="k">done</span>
 
 <span class="nb">exit</span> <span class="m">0</span>
 </code></pre></div>
+
+
+<ol>
+<li>The first thing the script does is iterating over the commits that are about to be pushed. 
+Specifically, only commits that are pushed to the <strong>master</strong> branch are of interest to us.</li>
+<li>If commits are pushed to <strong>master</strong>, it executes pelican command using publishconf.py. 
+This will generate the production version of the blog into output.</li>
+<li>The <a href="https://pypi.org/project/ghp-import/">GitHub Pages Import</a> tool is used for copying the contents of output to a branch named 
+<strong>gh-pages</strong>.</li>
+<li><strong>gh-pages</strong> is pushed to the remote <strong>gh-pages</strong> branch. --no-verify skips the pre-push hook
+ so this 
+script won't run again.</li>
+</ol>
+<p>Now, whenever I push to source to <strong>master</strong> branch i get fresh version of my static site on github
+ pages at the same time.</p>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/add-theme-and-plugins-to-pelican.html">Add theme and plugins to Pelican installation</a></li>
-        <li><a href="/deploying-a-static-website-to-bitbucket.html">Deploying a static website to bitbucket</a></li>
-        <li><a href="/install-pelican-and-create-project-skeleton.html">Install Pelican and create project skeleton</a></li>
+        <li><a href="https://nekrasovp.github.io/add-theme-and-plugins-to-pelican.html">Add theme and plugins to Pelican installation</a></li>
+        <li><a href="https://nekrasovp.github.io/deploying-a-static-website-to-bitbucket.html">Deploying a static website to bitbucket</a></li>
+        <li><a href="https://nekrasovp.github.io/install-pelican-and-create-project-skeleton.html">Install Pelican and create project skeleton</a></li>
     </ul>
 </section>
     <hr/>
@@ -170,6 +194,7 @@ website under the <your-username>.github.io URL.</p>
                 this.language = "en";
 
                         this.page.identifier = '2020-08-22-pelican-github-script-automation';
+                        this.page.url = 'https://nekrasovp.github.io/pelican-github-script-automation.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -201,6 +226,7 @@ website under the <your-username>.github.io URL.</p>
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
   <ul class="list-group" id="social">
     <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://nekrasovp.github.io"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
     <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
   </ul>
 </li>
@@ -208,88 +234,91 @@ website under the <your-username>.github.io URL.</p>
 
 <!-- Sidebar/Tag Cloud -->
 <li class="list-group-item">
-  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group " id="tags">
     <li class="list-group-item tag-1">
-      <a href="/tag/python.html">python</a>
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="/tag/notebook.html">notebook</a>
+      <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/pelican.html">pelican</a>
+      <a href="https://nekrasovp.github.io/tag/trading.html">trading</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/markdown.html">markdown</a>
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/trading.html">trading</a>
+      <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/pandas.html">pandas</a>
+      <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="/tag/matplotlib.html">matplotlib</a>
+      <a href="https://nekrasovp.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="/tag/numpy.html">numpy</a>
+      <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/networkx.html">networkx</a>
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/cython.html">cython</a>
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/math.html">math</a>
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/seaborn.html">seaborn</a>
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/pydot.html">pydot</a>
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/statistics.html">statistics</a>
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/github.html">github</a>
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/scipy.html">scipy</a>
+      <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/xgboost.html">xgboost</a>
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/openssl.html">openssl</a>
+      <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/linux.html">linux</a>
+      <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/bitbucket.html">bitbucket</a>
+      <a href="https://nekrasovp.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/anova.html">ANOVA</a>
+      <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/kaggle.html">kaggle</a>
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/arbitrage.html">arbitrage</a>
+      <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/ubuntu.html">ubuntu</a>
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/fft.html">fft</a>
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/arima.html">arima</a>
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="/tag/portfolio.html">portfolio</a>
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
     </li>
   </ul>
 </li>
@@ -331,16 +360,16 @@ website under the <your-username>.github.io URL.</p>
       </div>
    </div>
 </footer>
-<script src="/theme/js/jquery.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
+<script src="https://nekrasovp.github.io/theme/js/respond.min.js"></script>
 
 
-    <script src="/theme/js/bodypadding.js"></script>
+    <script src="https://nekrasovp.github.io/theme/js/bodypadding.js"></script>
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
