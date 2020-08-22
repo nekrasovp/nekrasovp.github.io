@@ -1,6 +1,6 @@
 Title: Move blog to github and automate deploying with git hooks
 Author: Nekrasov Pavel
-Date: 2020-08-22 16:00
+Date: 2020-08-22 20:00
 Category: Blog
 Tags: pelican, git, github
 Slug: pelican-github-script-automation
@@ -47,7 +47,7 @@ do
         if [ "$remote_ref" = "refs/heads/master" ]
         then
                 pelican content -o output -s publishconf.py
-                ghp-import output
+                ghp-import -m "Update with latest content" output
                 git push --no-verify origin gh-pages
         fi
 done
@@ -60,10 +60,9 @@ Specifically, only commits that are pushed to the **master** branch are of inter
 2. If commits are pushed to **master**, it executes pelican command using publishconf.py. 
 This will generate the production version of the blog into output.
 3. The [GitHub Pages Import](https://pypi.org/project/ghp-import/) tool is used for copying the contents of output to a branch named 
-**gh-pages**.
+**gh-pages** with provided commit message.
 4. **gh-pages** is pushed to the remote **gh-pages** branch. --no-verify skips the pre-push hook
- so this 
-script won't run again.
+ so this script won't run again.
 
 
 Now, whenever I push to source to **master** branch i get fresh version of my static site on github
