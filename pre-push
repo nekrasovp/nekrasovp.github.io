@@ -5,7 +5,7 @@ do
         if [ "$remote_ref" = "refs/heads/master" ]
         then
                 pelican content -o output -s publishconf.py
-                ghp-import output
+                ghp-import -m "Update with latest content" output
                 git push --no-verify origin gh-pages
         fi
 done
