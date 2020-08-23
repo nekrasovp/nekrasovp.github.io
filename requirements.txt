@@ -5,3 +5,4 @@ nbconvert
 networkx
 pydot
 Pillow
+ghp-import
