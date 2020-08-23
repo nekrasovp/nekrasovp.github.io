@@ -51,7 +51,8 @@ LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Her
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
           ('GitHub', 'https://github.com/nekrasovp/'),
-          ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),)
+          ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),
+          ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),)
 
 DEFAULT_PAGINATION = 5
 DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
