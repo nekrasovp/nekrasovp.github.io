@@ -167,9 +167,31 @@ figure.floatcenter, .align-center {
     margin-right: 10px;
 }
 
-.tagcloud li {
-    padding: 0px;
+/* Tag cloud */
+
+.tagcloud {
+    display: inline-block;
+    list-style-type: none;
+    width: 200px;
+    padding-top: 5px;
 }
+
+.tagcloud li {
+    list-style: none;
+    display: inline;
+}
+
+.tagcloud li.tag-1 {
+    font-size: 2em;
+}
+.tagcloud li.tag-2 {
+    font-size: 1.5em;
+}
+.tagcloud li.tag-3 {
+    font-size: 1em;
+}
+
+/* Banner */
 
 #banner {
     background-repeat: no-repeat;
