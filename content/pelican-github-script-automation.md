@@ -64,6 +64,12 @@ This will generate the production version of the blog into output.
 4. **gh-pages** is pushed to the remote **gh-pages** branch. --no-verify skips the pre-push hook
  so this script won't run again.
 
-
 Now, whenever I push to source to **master** branch i get fresh version of my static site on github
  pages at the same time.
+ 
+We can use different ways to achieve the same goal, 
+check this post [Using git worktree for deploying to GitHub Pages](https://musteresel.github.io/posts/2018/01/git-worktree-for-deploying.html) about git worktree automation.
+
+We can even build pages on remote servers, 
+check this [GitHub Pages Pelican Build Action](https://github.com/nelsonjchen/gh-pages-pelican-action) 
+and [GitHub Pages Pelican Build Action Demo](https://github.com/nelsonjchen/pelican-action-demo) for example.
