@@ -8,6 +8,8 @@ Summary: In this note we try to understand how to: clarify requirements and dete
 
 # How to get well-developed IT solution
 
+You can download [raw Markdown file in blog repository on github](https://github.com/nekrasovp/nekrasovp.github.io/blob/master/content/business-it-solutions.md).
+
 ## Goal of the note
 
 - Develope better it solution

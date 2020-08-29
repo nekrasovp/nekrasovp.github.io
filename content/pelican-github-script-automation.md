@@ -4,9 +4,7 @@ Date: 2020-08-22 20:00
 Category: Blog
 Tags: pelican, git, github
 Slug: pelican-github-script-automation
-Summary: In this post we will describe how to move your blog to github and automate git hooks tho
- update gh
--pages branch on commits
+Summary: In this post we will describe how to move your blog to github and automate git hooks tho update gh-pages branch on commits
 
 This blog is powered by [Pelican](http://docs.getpelican.com/en/stable) and hosted through 
 GitHub using [GitHub Pages](https://pages.github.com/). 

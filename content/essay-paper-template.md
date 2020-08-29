@@ -4,10 +4,11 @@ Date: 2020-08-21 15:00
 Category: Blog
 Tags: science, markdown, template 
 Slug: essay-paper-template
-Summary: In this article template for essay(simple paper) is provided. There are useful 
-markdown examples and source references.
+Summary: In this article template for essay(simple paper) is provided. There are useful markdown examples and source references.
 
 # Essay(simple paper) template
+
+You can download [raw Markdown file in blog repository on github](https://github.com/nekrasovp/nekrasovp.github.io/blob/master/content/essay-paper-template.md).
 
 ## Contents
 * [Abstract](#abstract)
