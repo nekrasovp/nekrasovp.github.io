@@ -141,8 +141,7 @@
 <li><strong>Bad</strong>: <em>It's not worth attracting customers this way, no one does like this</em></li>
 </ul>
 <h2>Developer role</h2>
-<p><pre>
-+-----------------------------------------------+
+<div class="highlight"><pre><span></span><code>+-----------------------------------------------+
 |Company strategy, business goals, markets, etc.|
 +------------------------+----------------------+
                          |
@@ -165,7 +164,9 @@
 +------------------------+----------------------+
 |        Server, code base, ci/cd pipeline      |
 +-----------------------------------------------+
-</pre></p>
+</code></pre></div>
+
+
 <p><a href="https://en.wikipedia.org/wiki/Domain-driven_design">Domain-driven design</a></p>
 <p><a href="https://github.com/heynickc/awesome-ddd">Awesome Domain-Driven Design</a></p>
 <p><a href="https://books.google.ru/books?id=ccRsBgAAQBAJ&amp;lpg=PR1&amp;dq=eric%20evans%202015&amp;hl=ru&amp;pg=PP1#v=onepage&amp;q=eric%20evans%202015&amp;f=false">Domain-Driven Design Reference: Definitions and Pattern Summaries<br>
@@ -242,16 +243,15 @@ Methods for creating domain objects should delegate to a specialized Factory obj
 <h2>Conclusion</h2>
 <p>Generated on previous steps artifacts and other software quality attributes define stack and implementation.  </p>
 <p><a href="https://en.wikipedia.org/wiki/FURPS">FURPS: Functionality, Usability, Reliability, Performance, Supportability</a></p>
-<pre>
-+---------+                                   +---------------------------+
-|Artifacts+---+                           +-->+Stack selection            |
+<div class="highlight"><pre><span></span><code>+---------+                                   +---------------------------+
+|Artifacts+---+                           +--&gt;+Stack selection            |
 +---------+   |   +-------------------+   |   +---------------------------+
-              +-->+System architecture+---+
+              +--&gt;+System architecture+---+
 +---------+   |   +-------------------+   |   +---------------------------+
-|FURPS    +---+                           +-->+Classes, methods, services,|
+|FURPS    +---+                           +--&gt;+Classes, methods, services,|
 +---------+                                   |graphs, integrations       |
                                               +---------------------------+
-</pre>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
