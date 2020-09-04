@@ -35,7 +35,7 @@ The importance of a culture of client-developer relationship
 - **Bad**: _It's not worth attracting customers this way, no one does like this_
 
 ## Developer role
-<pre>
+```text
 +-----------------------------------------------+
 |Company strategy, business goals, markets, etc.|
 +------------------------+----------------------+
@@ -59,7 +59,7 @@ The importance of a culture of client-developer relationship
 +------------------------+----------------------+
 |        Server, code base, ci/cd pipeline      |
 +-----------------------------------------------+
-</pre>
+```
 
 [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design)
 
@@ -184,7 +184,7 @@ Generated on previous steps artifacts and other software quality attributes defi
 
 [FURPS: Functionality, Usability, Reliability, Performance, Supportability](https://en.wikipedia.org/wiki/FURPS)
 
-<pre>
+```text
 +---------+                                   +---------------------------+
 |Artifacts+---+                           +-->+Stack selection            |
 +---------+   |   +-------------------+   |   +---------------------------+
@@ -193,4 +193,4 @@ Generated on previous steps artifacts and other software quality attributes defi
 |FURPS    +---+                           +-->+Classes, methods, services,|
 +---------+                                   |graphs, integrations       |
                                               +---------------------------+
-</pre>
+```
