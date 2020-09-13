@@ -2,7 +2,7 @@ Title: Publishing articles workflow
 Author: Nekrasov Pavel
 Date: 2020-09-09 15:00
 Category: Blog
-Tags: markdown 
+Tags: markdown, notebook, latex 
 Slug: publishing-articles-workflow
 Summary: In this article, I would like to document my blogging experience. After writing and distributing articles for a long time, I kind of set up a framework when it comes to distributing articles.
 
@@ -16,11 +16,12 @@ and over time I have tried to change it to suit my needs.
 
 ## Contents
 
-* [Abstract](#abstract)
-* [Idea](#idea)
-* [Article writing](#article-writing)
-* [Article checking](#article-checking)
-* [Article publishing](#article-publishing)
+- [Abstract](#abstract)
+- [Contents](#contents)
+- [Idea](#idea)
+- [Article writing](#article-writing)
+- [Article checking](#article-checking)
+- [Article publishing](#article-publishing)
 
 ## Idea
 
@@ -34,11 +35,14 @@ And if my articles are useful to someone, it will be an additional bonus!_
 
 ## Article writing
 
-I use [VS Code][vs-code] to write articles because articles are written in 
-Markdown, in my opinion, VS Code offers a few very useful plugins. 
-To get started on a new article, all I have to do is create a blank Markdown file and start writing.
+I use [VS Code][vs-code] to write articles because i prefer to write articles with Markdown, 
+Jupyter notebooks and Latex, in my opinion, VS Code offers a few very useful plugins. 
+To get started on a new article, all I have to do is create a blank Markdown or 
+_.ipynb_ file and start writing.
 
-To make it even better, I use a VS Code extension called [Markdown All in One][markdown-all-in-one],
+Latest vscode supposrt _.ipynb_ files out of the box.
+
+I use a VS Code extension called [Markdown All in One][markdown-all-in-one],
 which adds some important things like keyboard shortcuts, table of contents, auto preview, linter, 
 and more when it comes to Markdown.
 
