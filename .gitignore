@@ -4,6 +4,8 @@ output
 # JetBrains
 .idea
 
+.vscode
+
 # CMake
 cmake-build-*/
 
