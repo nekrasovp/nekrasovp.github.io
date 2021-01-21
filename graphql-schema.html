@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Understand GraphQL Schema - Data driven</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
+
+<link rel="canonical" href="https://nekrasovp.github.io/graphql-schema.html">
+
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="graphql" />
+        <meta name="description" content="In this note, we will discuss what is a GraphQL schema and different ways to retrieve the GraphQL schema from a GraphQL server" />
+
+        <meta property="og:site_name" content="Data driven" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Understand GraphQL Schema"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/graphql-schema.html"/>
+        <meta property="og:description" content="In this note, we will discuss what is a GraphQL schema and different ways to retrieve the GraphQL schema from a GraphQL server"/>
+        <meta property="article:published_time" content="2020-11-29" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="graphql" />
+            <meta property="article:author" content="Nekrasov Pavel" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://nekrasovp.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
+
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://nekrasovp.github.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.github.io/images/logo2.png" width=""/> Data driven            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://nekrasovp.github.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="https://nekrasovp.github.io/pages/services.html">
+                             Services
+                          </a></li>
+                        <li class="active">
+                            <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.github.io/graphql-schema.html"
+                       rel="bookmark"
+                       title="Permalink to Understand GraphQL Schema">
+                        Understand GraphQL Schema
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-11-29T14:00:00+03:00"> Sun 29 November 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://nekrasovp.github.io/tag/graphql.html">graphql</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Understand GraphQL Schema</h1>
+<ul>
+<li><a href="#understand-graphql-schema">Understand GraphQL Schema</a></li>
+<li><a href="#goal-of-the-note">Goal of the note</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#definition-of-a-graphql-schema">Definition of a GraphQL Schema</a></li>
+<li><a href="#the-importance-of-the-graphql-schema">The Importance of the GraphQL Schema</a></li>
+<li><a href="#how-to-get-the-schema--graphql-explorer">How To Get The Schema — GraphQL Explorer</a></li>
+<li><a href="#how-to-get-the-schema--introspection-queries">How To Get The Schema — Introspection Queries</a></li>
+<li><a href="#hiding-the-graphql-schema">Hiding the GraphQL Schema</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h2>Goal of the note</h2>
+<ul>
+<li>Describe what is GraphQL schema</li>
+<li>Understand how do we retrieve schema from the GraphQL server</li>
+<li>Hiding the GraphQL Schema</li>
+</ul>
+<h2>Glossary</h2>
+<ul>
+<li><strong>GraphQL schema</strong>: A document describing how a GraphQL server is structured.</li>
+<li><strong>GraphQL query</strong>: A type of request sent to the GraphQL server used to retrieve records.</li>
+<li><strong>GraphQL mutation</strong>: A type of request sent to the GraphQL server used to create, update, or delete records.</li>
+<li><strong>GraphQL types</strong>: This is an object that we interact with in the GraphQL schema. An object can be a User, a Message, a Post, etc.</li>
+</ul>
+<p>Understand GraphQL types, queries, and mutations. This is an <a href="https://www.freecodecamp.org/news/a-beginners-guide-to-graphql-86f849ce1bec/">example</a> if you’re just getting started with GraphQL.</p>
+<h2>Definition of a GraphQL Schema</h2>
+<p>A GraphQL schema is a document describing how a specific GraphQL server is structured. A GraphQL schema is like a SQL database design. Every GraphQL server has a schema.</p>
+<p>Below is an example of a GraphQL schema:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+   <span class="nx">users</span><span class="o">:</span> <span class="p">[</span><span class="nx">User</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">User</span> <span class="p">{</span>
+   <span class="nx">id</span><span class="o">:</span> <span class="nx">ID</span><span class="o">!</span>
+   <span class="nx">email</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>In the schema above there is a GraphQL query called users which returns an array of users and a User type with an id and email field.</p>
+<p>Every GraphQL server has a schema.</p>
+<h2>The Importance of the GraphQL Schema</h2>
+<p>The GraphQL schema is important for end users because it can provide the following info:</p>
+<ul>
+<li>GraphQL queries we can make to the GraphQL server.</li>
+<li>GraphQL mutations we can make to the GraphQL server.</li>
+<li>A list of GraphQL types.</li>
+<li>What GraphQL types are available to query.</li>
+<li>What GraphQL types are available to mutate (aka create, update, or delete).</li>
+<li>Fields within a GraphQL type. For example, a User type will have a name, email, and bio field.</li>
+<li>Relationships between GraphQL types. For example, a User can have many Friends. A Post can belong to a User.</li>
+<li>Business logic on how the application potentially works. For example, if the Post type has a field called “hidden,” we can implicitly assume that Posts can be hidden from other users. Following this rabbit hole will allow us to understand how features work in the application.</li>
+</ul>
+<p>GraphQL schema is important because it provides us structure of the GraphQL server. The next question we must ask then is how do we retrieve this schema from the GraphQL server?</p>
+<p>Below are two such ways: the GraphQL Explorer and Introspection Queries.</p>
+<h2>How To Get The Schema — GraphQL Explorer</h2>
+<p>Some GraphQL servers provide a GraphQL Explorer (typically called GraphiQL). The GraphQL Explorer is a page where you can manually input GraphQL queries into the page (see the left pane in example below) and see how the GraphQL server responds (see the right pane in the example below).</p>
+<p><img alt="GitHub GraphQL Explorer" src="images/graphiql1.png"></p>
+<p>You can typically find the link to the application’s GraphQL Explorer in the API documentation.</p>
+<h2>How To Get The Schema — Introspection Queries</h2>
+<p>Some GraphQL servers don’t provide a convenient GraphQL API explorer. Instead, to get the schema we need to send a HTTP request to the GraphQL server endpoint asking for the GraphQL schema. This type of HTTP request is called a <strong>GraphQL introspection query</strong>.</p>
+<p>The GraphQL introspection query’s body is made up of GraphQL syntax-text that represents what we are asking the GraphQL server to return.</p>
+<p>For example, the following GraphQL syntax-text is asking the GraphQL server to return a list of all queries available to us from the schema:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="err">__schema</span> <span class="err">{</span>
+    <span class="err">queryType</span> <span class="err">{</span>
+      <span class="err">fields</span> <span class="err">{</span>
+        <span class="err">name</span>
+      <span class="p">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<p>Below are two more GraphQL syntax-text requests you can make to a GraphQL server:</p>
+<p>Returns all mutations available to us from the schema:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="err">__schema</span> <span class="err">{</span>
+    <span class="err">mutationType</span> <span class="err">{</span>
+      <span class="err">fields</span> <span class="err">{</span>
+        <span class="err">name</span>
+      <span class="p">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<p>Returns the entire schema: queries, mutations, fields, etc.:</p>
+<p><a href="https://gist.github.com/nekrasovp/ef015aceed36065a732b4cebf2e5e8c1">GraphQL Endpoint Introspection Query gist</a></p>
+<div class="highlight"><pre><span></span><code><span class="err">query</span> <span class="err">IntrospectionQuery</span> <span class="p">{</span>
+    <span class="err">__schema</span> <span class="err">{</span>
+      <span class="err">queryType</span> <span class="err">{</span> <span class="err">name</span> <span class="p">}</span>
+      <span class="err">mutationType</span> <span class="p">{</span> <span class="err">name</span> <span class="p">}</span>
+      <span class="err">subscriptionType</span> <span class="p">{</span> <span class="err">name</span> <span class="p">}</span>
+      <span class="err">types</span> <span class="p">{</span>
+        <span class="err">...FullType</span>
+      <span class="p">}</span>
+      <span class="err">directives</span> <span class="p">{</span>
+        <span class="err">name</span>
+        <span class="err">description</span>
+        <span class="err">args</span> <span class="err">{</span>
+          <span class="err">...InputValue</span>
+        <span class="p">}</span>
+        <span class="err">locations</span>
+      <span class="err">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+
+  <span class="err">fragment</span> <span class="err">FullType</span> <span class="err">on</span> <span class="err">__Type</span> <span class="p">{</span>
+    <span class="err">kind</span>
+    <span class="err">name</span>
+    <span class="err">description</span>
+    <span class="err">fields(includeDeprecated:</span> <span class="err">true)</span> <span class="err">{</span>
+      <span class="err">name</span>
+      <span class="err">description</span>
+      <span class="err">args</span> <span class="err">{</span>
+        <span class="err">...InputValue</span>
+      <span class="p">}</span>
+      <span class="err">type</span> <span class="p">{</span>
+        <span class="err">...TypeRef</span>
+      <span class="p">}</span>
+      <span class="err">isDeprecated</span>
+      <span class="err">deprecationReason</span>
+    <span class="err">}</span>
+    <span class="err">inputFields</span> <span class="p">{</span>
+      <span class="err">...InputValue</span>
+    <span class="p">}</span>
+    <span class="err">interfaces</span> <span class="p">{</span>
+      <span class="err">...TypeRef</span>
+    <span class="p">}</span>
+    <span class="err">enumValues(includeDeprecated:</span> <span class="kc">true</span><span class="err">)</span> <span class="p">{</span>
+      <span class="err">name</span>
+      <span class="err">description</span>
+      <span class="err">isDeprecated</span>
+      <span class="err">deprecationReason</span>
+    <span class="p">}</span>
+    <span class="err">possibleTypes</span> <span class="p">{</span>
+      <span class="err">...TypeRef</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+
+  <span class="err">fragment</span> <span class="err">InputValue</span> <span class="err">on</span> <span class="err">__InputValue</span> <span class="p">{</span>
+    <span class="err">name</span>
+    <span class="err">description</span>
+    <span class="err">type</span> <span class="err">{</span> <span class="err">...TypeRef</span> <span class="p">}</span>
+    <span class="err">defaultValue</span>
+  <span class="err">}</span>
+
+  <span class="err">fragment</span> <span class="err">TypeRef</span> <span class="err">on</span> <span class="err">__Type</span> <span class="p">{</span>
+    <span class="err">kind</span>
+    <span class="err">name</span>
+    <span class="err">ofType</span> <span class="err">{</span>
+      <span class="err">kind</span>
+      <span class="err">name</span>
+      <span class="err">ofType</span> <span class="err">{</span>
+        <span class="err">kind</span>
+        <span class="err">name</span>
+        <span class="err">ofType</span> <span class="err">{</span>
+          <span class="err">kind</span>
+          <span class="err">name</span>
+        <span class="p">}</span>
+      <span class="err">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+</code></pre></div>
+
+
+<p>Below is an example of a CURL request where we ask the GraphQL server to return us every query from the GraphQL schema:</p>
+<div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;https://beta.motu.world/graphql&#39;</span> -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -H <span class="s1">&#39;Accept: application/json&#39;</span> --compressed --data-binary <span class="s1">&#39;{&quot;query&quot;:&quot;{\n\t__schema{\n queryType {\n fields{\n name\n }\n }\n }\n}&quot;}&#39;</span>
+</code></pre></div>
+
+
+<p>By running the above CURL request, we get the following results:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;data&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;__schema&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;queryType&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:[</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;activity&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;activities&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;category&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;categories&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;currency&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;currencies&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;itinerary&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;itineraries&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;leg&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;legs&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;like&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;likes&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;provider&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;providers&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;providersProperty&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;providersProperties&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;questionary&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;questionaries&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;review&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;reviews&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;files&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;role&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h2>Hiding the GraphQL Schema</h2>
+<p>The GraphQL schema by default exposes valuable information such as connections between types, accessible fields, etc. Therefore, hiding the GraphQL schema(whether that’s part of the schema or the entire schema) from certain users can be an advantage.</p>
+<h2>Conclusion</h2>
+<p>A GraphQL schema is a document describing how a specific GraphQL server is structured. A GraphQL schema is important because it helps end-users understand how a GraphQL server works.</p>
+<p>There are two ways to get the GraphQL schema: accessing an application’s GraphQL Explorer and Introspection Queries. Once we have the schema, we can begin work on further investigating the GraphQL server.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-11-29-graphql-schema';
+                        this.page.url = 'https://nekrasovp.github.io/graphql-schema.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://github.com/nekrasovp/"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
+    <li class="list-group-item"><a href="mailto:nekrasovp@gmail.com"><i class="fa fa-envelope fa-lg"></i> E-mail</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/finance.html">finance</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/graphql.html">graphql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/matplotlib.html">matplotlib</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/science.html">science</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/template.html">template</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/wbdata.html">wbdata</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/workflow.html">workflow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet" target="_blank">Markdown</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Nekrasov Pavel
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://nekrasovp.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://nekrasovp.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://nekrasovp.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://nekrasovp.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
