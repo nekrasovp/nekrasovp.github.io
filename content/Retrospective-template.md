@@ -2,7 +2,7 @@ Title: Шаблон ретроспективы
 Author: Nekrasov Pavel
 Date: 2021-02-11 11:00
 Category: Blog
-Tags: workflow
+Tags: workflow, template
 Slug: retrospective-template
 Summary: Шаблон для проведения ретроспективы на русским языке
 
