@@ -1,0 +1,7 @@
+Title: Визуализации картографических данных в Jupyter notebook
+Author: Nekrasov Pavel
+Date: 2020-04-04 15:00
+Category: Blog
+Tags: python, leaflet, notebook
+Slug: mkrf-spb-geo-data
+Summary: В этой статье, мы углубимся в изучение Jupyter Interactive Widgets и Ipyleaflet package, для визуализации картографических данных в Jupyter notebook.
