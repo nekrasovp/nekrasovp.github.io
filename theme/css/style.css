@@ -172,9 +172,13 @@ figure.floatcenter, .align-center {
 .tagcloud {
     display: inline-block;
     list-style-type: none;
-    width: 200px;
+    width: 220px;
     padding-top: 5px;
 }
+
+.tagcloud a {
+    opacity: calc((15 - (9 - var(--size))) / 15);
+  }
 
 .tagcloud li {
     list-style: none;
@@ -182,15 +186,17 @@ figure.floatcenter, .align-center {
 }
 
 .tagcloud li.tag-1 {
-    font-size: 2em;
+    font-size: 1.75em;
 }
 .tagcloud li.tag-2 {
     font-size: 1.5em;
 }
 .tagcloud li.tag-3 {
+    font-size: 1.25em;
+}
+.tagcloud li.tag-4 {
     font-size: 1em;
 }
-
 /* Banner */
 
 #banner {
