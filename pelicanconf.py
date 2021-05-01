@@ -44,9 +44,9 @@ DISQUS_SITENAME = "nekrasovp"
 # AVATAR = 'images/noava-160x160.png'
 
 # Blogroll
-LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet'),
-         ('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),)
+# LINKS = (('Markdown', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet'),
+#          ('Pelican', 'http://getpelican.com/'),
+#          ('Python.org', 'http://python.org/'),)
 
 # Social widget
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
@@ -66,7 +66,7 @@ OUTPUT_PATH = '/output'
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
     'images',
-    ]
+]
 
 # Theme path
 THEME = 'theme'
