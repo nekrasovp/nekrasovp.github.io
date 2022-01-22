@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Setting Up GitLab CI for a Python Application - Data driven</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
+
+<link rel="canonical" href="https://nekrasovp.github.io/setting-up-gitlab-ci.html">
+
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="gitlab,python,mypy,pytest,flake8,pylint" />
+        <meta name="description" content="This article describes how to configure a Continuous Integration (CI) process on GitLab for a python application. This article utilizes one of my python applications to show how to setup the CI process." />
+
+        <meta property="og:site_name" content="Data driven" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Setting Up GitLab CI for a Python Application"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/setting-up-gitlab-ci.html"/>
+        <meta property="og:description" content="This article describes how to configure a Continuous Integration (CI) process on GitLab for a python application. This article utilizes one of my python applications to show how to setup the CI process."/>
+        <meta property="article:published_time" content="2021-07-10" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="gitlab" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="mypy" />
+            <meta property="article:tag" content="pytest" />
+            <meta property="article:tag" content="flake8" />
+            <meta property="article:tag" content="pylint" />
+            <meta property="article:author" content="Nekrasov Pavel" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://nekrasovp.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
+
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://nekrasovp.github.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.github.io/images/logo2.png" width=""/> Data driven            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://nekrasovp.github.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="https://nekrasovp.github.io/pages/services.html">
+                             Services
+                          </a></li>
+                        <li class="active">
+                            <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.github.io/setting-up-gitlab-ci.html"
+                       rel="bookmark"
+                       title="Permalink to Setting Up GitLab CI for a Python Application">
+                        Setting Up GitLab CI for a Python Application
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-07-10T15:00:00+03:00"> Sat 10 July 2021</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://nekrasovp.github.io/tag/gitlab.html">gitlab</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/python.html">python</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/mypy.html">mypy</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/pytest.html">pytest</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/flake8.html">flake8</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/pylint.html">pylint</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Contents</h2>
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#what-is-ci">What is CI?</a></li>
+<li><a href="#getting-started-with-gitlab-ci">Getting Started with GitLab CI</a></li>
+<li><a href="#creating-a-single-job-in-gitlab-ci">Creating a Single Job in GitLab CI</a></li>
+<li><a href="#running-tests-with-pytest-on-gitlab-ci">Running Tests with pytest on GitLab CI</a></li>
+<li><a href="#final-gitlab-ci-configuration">Final GitLab CI Configuration</a></li>
+</ul>
+<h2>Abstract</h2>
+<p>This article describes how to configure a Continuous Integration (CI) process on GitLab for a python application. This article utilizes one of my python applications to show how to setup the CI process.</p>
+<p><img alt="gitlab-ci-example" src="images/GitLab_CI_Final_Pipeline_Condensed_Screenshot2.png"></p>
+<p>In this article, I’ll show how I setup a GitLab CI process to run the following jobs on a python application:</p>
+<ul>
+<li>Unit and functional testing using pytest</li>
+<li>Linting using flake8</li>
+<li>Static analysis using pylint</li>
+<li>Type checking using mypy</li>
+</ul>
+<h2>What is CI?</h2>
+<p>To me, Continuous Integration (CI) means frequently testing your application in an integrated state.  However, the term ‘testing’ should be interpreted loosely as this can mean:</p>
+<ul>
+<li>Integration testing</li>
+<li>Unit testing</li>
+<li>Functional testing</li>
+<li>Static analysis</li>
+<li>Style checking (linting)</li>
+<li>Dynamic analysis</li>
+</ul>
+<p>To facilitate running these tests, it’s best to have these tests run automatically as part of your configuration management (git) process.  This is where GitLab CI is awesome!</p>
+<h2>Getting Started with GitLab CI</h2>
+<p>Before jumping into GitLab CI, here are a few definitions:</p>
+<ul>
+<li><strong>pipeline</strong>: a set of tests to run against a single git commit.</li>
+<li><strong>runner</strong>: GitLab uses runners on different servers to actually execute the tests in a pipeline; GitLab provides runners to use, but you can also spin up your own servers as runners.</li>
+<li><strong>job</strong>: a single test being run in a pipeline.</li>
+<li><strong>stage</strong>: a group of related tests being run in a pipeline.</li>
+</ul>
+<p><img alt="gitlab-ci-pipeline-example" src="images/GitLab_CI_Pipeline_Screenshot.png"></p>
+<p>GitLab utilizes the ‘.gitlab-ci.yml’ file to run the CI pipeline for each project.  The ‘.gitlab-ci.yml’ file should be found in the top-level directory of your project.</p>
+<p>While there are different methods of running a test in GitLab CI, I prefer to utilize a Docker container to run each test.  I’ve found the overhead in spinning up a Docker container to be trivial (in terms of execution time) when doing CI testing.</p>
+<h2>Creating a Single Job in GitLab CI</h2>
+<p>The first job that I want to add to GitLab CI for my project is to run a linter (flake8).  In my local development environment, I would run this command:</p>
+<div class="highlight"><pre><span></span><code>flake8 --ignore<span class="o">=</span>E501 project
+</code></pre></div>
+
+
+<p>You can find an accessible description of how to configure flake8 in the official documentation at <a href="https://flake8.pycqa.org/en/latest/user/configuration.html">Configuring Flake8</a></p>
+<p>This command can be transformed into a job on GitLab CI in the ‘.gitlab-ci.yml’ file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span> <span class="s">&quot;python:3.9-slim&quot;</span>
+
+<span class="nt">cache</span><span class="p">:</span>
+  <span class="nt">paths</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deps_cache</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">venv/</span>
+
+
+<span class="nt">before_script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python --version</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python -m venv venv</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source venv/bin/activate</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install -r test-requirements.txt --cache-dir deps_cache</span>
+
+<span class="nt">stages</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+
+<span class="nt">flake8</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">flake8 --ignore=E501 project</span>
+</code></pre></div>
+
+
+<p>This YAML file tells GitLab CI what to run on merge request and commits pushed up to master. Let’s break down each section…</p>
+<p>The first part (image: “python: 3.9-slim”) instructs GitLab CI to utilize Docker for performing ALL of the tests for this project, specifically to use the ‘python:3.9-slim‘ image that is found on DockerHub.</p>
+<p>The second part (cache) ised to specify a list of files and directories to cache between jobs. You can only use paths that are in the local working copy.
+Caching is shared between pipelines and jobs. Caches are restored before artifacts.</p>
+<p>The third section (before_script) is the set of commands to run in the Docker container before starting each job. This is really beneficial for getting the Docker container in the correct state by installing all the python packages needed by the application.</p>
+<p>The fourth section (stages) defines the different stages in the pipeline. There is only a single stage (Static Analysis) at this point, but later a second stage (Test) will be added. I like to think of stages as a way to group together related jobs.</p>
+<p>The fourth section (flake8) defines the job; it specifies the stage (Static Analysis) that the job should be part of and the commands to run in the Docker container for this job. For this job, the flake8 linter is run against the project directory.</p>
+<h2>Running Tests with pytest on GitLab CI</h2>
+<p>When I run my unit and functional tests with pytest in my development environment, I run the following command in my top-level directory:</p>
+<div class="highlight"><pre><span></span><code>py.test -v tests
+</code></pre></div>
+
+
+<p>This command transformed into a job on GitLab CI in the ‘.gitlab-ci.yml’ file like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">pytest</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">py.test -v tests --doctest-modules --cov project --cov-report term --cov-report xml</span>
+  <span class="nt">artifacts</span><span class="p">:</span>
+    <span class="nt">paths</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage.xml</span>
+    <span class="nt">reports</span><span class="p">:</span>
+      <span class="nt">cobertura</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage.xml</span>
+</code></pre></div>
+
+
+<p>In this part of the script we also create coverage report and store it in coverage.xml file</p>
+<h2>Final GitLab CI Configuration</h2>
+<p>Final script which run pylint, mypy, flake8, pytest, coverage and allow failure of Static Analysis stages looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python:3.9-slim</span>
+
+<span class="nt">cache</span><span class="p">:</span>
+  <span class="nt">paths</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deps_cache</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">venv/</span>
+
+<span class="nt">before_script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python --version</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python -m venv venv</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source venv/bin/activate</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install -r test-requirements.txt --cache-dir deps_cache</span>
+
+<span class="nt">stages</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Test</span>
+
+<span class="nt">flake8</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">allow_failure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">flake8 --ignore=E501 project</span>
+
+<span class="nt">pylint</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">allow_failure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pylint --fail-under=8 project</span>
+
+<span class="nt">mypy</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Static Analysis</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">allow_failure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mypy --ignore-missing-imports project</span>
+
+<span class="nt">pytest</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test</span>
+  <span class="nt">only</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">merge_requests</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">py.test -v tests --doctest-modules --cov project --cov-report term --cov-report xml</span>
+  <span class="nt">artifacts</span><span class="p">:</span>
+    <span class="nt">paths</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage.xml</span>
+    <span class="nt">reports</span><span class="p">:</span>
+      <span class="nt">cobertura</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage.xml</span>
+</code></pre></div>
+
+
+<p>To configure pylint we will use next <em>.pylintrc</em> file:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[MASTER]</span>
+
+<span class="na">init-hook</span><span class="o">=</span><span class="s">&quot;from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))&quot;</span>
+
+<span class="k">[MESSAGES CONTROL]</span>
+
+<span class="c1"># Disable the message, report, category or checker with the given id(s). You</span>
+<span class="c1"># can either give multiple identifier separated by comma (,) or put this option</span>
+<span class="c1"># multiple time (only on the command line, not in the configuration file where</span>
+<span class="c1"># it should appear only once).</span>
+<span class="na">disable</span><span class="o">=</span><span class="s">C0103</span>
+
+<span class="k">[DESIGN]</span>
+
+<span class="c1"># Maximum number of arguments for function / method</span>
+<span class="na">max-args</span><span class="o">=</span><span class="s">5</span>
+
+<span class="c1"># Maximum number of attributes for a class (see R0902).</span>
+<span class="na">max-attributes</span><span class="o">=</span><span class="s">10</span>
+
+<span class="c1"># Maximum number of boolean expressions in a if statement</span>
+<span class="na">max-bool-expr</span><span class="o">=</span><span class="s">5</span>
+
+<span class="c1"># Maximum number of branch for function / method body</span>
+<span class="na">max-branches</span><span class="o">=</span><span class="s">12</span>
+
+<span class="c1"># Maximum number of locals for function / method body</span>
+<span class="na">max-locals</span><span class="o">=</span><span class="s">15</span>
+
+<span class="c1"># Maximum number of parents for a class (see R0901).</span>
+<span class="na">max-parents</span><span class="o">=</span><span class="s">7</span>
+
+<span class="c1"># Maximum number of public methods for a class (see R0904).</span>
+<span class="na">max-public-methods</span><span class="o">=</span><span class="s">10</span>
+
+<span class="c1"># Maximum number of return / yield for function / method body</span>
+<span class="na">max-returns</span><span class="o">=</span><span class="s">10</span>
+
+<span class="c1"># Maximum number of statements in function / method body</span>
+<span class="na">max-statements</span><span class="o">=</span><span class="s">50</span>
+
+<span class="c1"># Minimum number of public methods for a class (see R0903).</span>
+<span class="na">min-public-methods</span><span class="o">=</span><span class="s">0</span>
+</code></pre></div>
+
+
+<p>Check this resource to find more about pylint messages and they meaning: <a href="http://pylint-messages.wikidot.com/">PyLint Messages</a></p>
+<p>In this article we didnot cover some intersting techincs like testing against different python version with tox, configuring static analysis tools from 1 source of thuth pyproject.toml file and some other cool features, i will try to cover this in next articles.</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://nekrasovp.github.io/mkrf-spb-geo-data.html">Визуализации картографических данных в Jupyter notebook</a></li>
+        <li><a href="https://nekrasovp.github.io/covid-dashboard.html">Just another COVID-19 data visualisation</a></li>
+        <li><a href="https://nekrasovp.github.io/pascals-triangle.html">Pascal's Triangle</a></li>
+        <li><a href="https://nekrasovp.github.io/markov-chain-bean-machine.html">Simulating a Galton board with Markov chains</a></li>
+        <li><a href="https://nekrasovp.github.io/use-cython-to-speedup-your-python-code.html">Use Cython to speed up your Python code</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2021-07-10-setting-up-gitlab-ci';
+                        this.page.url = 'https://nekrasovp.github.io/setting-up-gitlab-ci.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.facebook.com/nekrasovp"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+    <li class="list-group-item"><a href="https://github.com/nekrasovp/"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
+    <li class="list-group-item"><a href="mailto:nekrasovp@gmail.com"><i class="fa fa-envelope fa-lg"></i> E-mail</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/development.html">development</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ffn.html">ffn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/finance.html">finance</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/flake8.html">flake8</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/gitlab.html">gitlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/graphql.html">graphql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/leaflet.html">leaflet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/matplotlib.html">matplotlib</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/mypy.html">mypy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/plotly.html">plotly</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pylint.html">pylint</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pytest.html">pytest</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/science.html">science</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/template.html">template</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/wbdata.html">wbdata</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/workflow.html">workflow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2021 Nekrasov Pavel         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://nekrasovp.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://nekrasovp.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://nekrasovp.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://nekrasovp.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
