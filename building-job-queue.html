@@ -122,18 +122,149 @@
 <li><a href="#abstract">Abstract</a></li>
 <li><a href="#contents">Contents</a></li>
 <li><a href="#install-pre-requisite-packages">Install pre-requisite packages</a></li>
-<li><a href="#article-writing">Article writing</a></li>
-<li><a href="#article-checking">Article checking</a></li>
-<li><a href="#article-publishing">Article publishing</a></li>
+<li><a href="#run-rabitmq-community-docker-image">Run RabitMQ community docker image</a></li>
+<li><a href="#activate-virtual-environment-and-install-dependencies">Activate virtual environment and install dependencies</a></li>
+<li><a href="#prepare-shared-function">Prepare shared function</a></li>
+<li><a href="#create-asyncronious-worker">Create asyncronious worker</a></li>
+<li><a href="#create-job-queue-and-run-shared-function">Create job queue and run shared function</a></li>
+<li><a href="#run-it">Run it</a></li>
 </ul>
 <h2>Install pre-requisite packages</h2>
-<p>123</p>
-<h2>Article writing</h2>
-<p>123</p>
-<h2>Article checking</h2>
-<p>123</p>
-<h2>Article publishing</h2>
-<p>123</p>
+<h3>Run RabitMQ community docker image</h3>
+<div class="highlight"><pre><span></span><code>docker run -it --rm --name rabbitmq -p <span class="m">5672</span>:5672 -p <span class="m">15672</span>:15672 rabbitmq:3.9-management
+</code></pre></div>
+
+
+<h3>Activate virtual environment and install dependencies</h3>
+<div class="highlight"><pre><span></span><code>python -m venv venv
+<span class="nb">source</span> venv/bin/activate
+python -m pip install aio-pika
+</code></pre></div>
+
+
+<h2>Prepare shared function</h2>
+<p>In this example we will use simple shared function:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">simple_func</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Good morning </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2>Create asyncronious worker</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="kn">from</span> <span class="nn">aio_pika</span> <span class="kn">import</span> <span class="n">connect</span><span class="p">,</span> <span class="n">IncomingMessage</span>
+
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">pickled_fn</span><span class="p">):</span>
+    <span class="p">[</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">pickled_fn</span><span class="p">)</span>
+    <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">IncomingMessage</span><span class="p">):</span>
+    <span class="n">wrapper</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+    <span class="n">message</span><span class="o">.</span><span class="n">ack</span><span class="p">()</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Perform connection</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;amqp://guest:guest@localhost/&quot;</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">)</span>
+
+    <span class="c1"># Creating a channel</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">channel</span><span class="o">.</span><span class="n">set_qos</span><span class="p">()</span>
+
+    <span class="c1"># Declaring queue</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="k">await</span> <span class="n">channel</span><span class="o">.</span><span class="n">declare_queue</span><span class="p">(</span>
+        <span class="s2">&quot;task_queue&quot;</span><span class="p">,</span>
+        <span class="n">durable</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Start listening the queue with name &#39;task_queue&#39;</span>
+    <span class="k">await</span> <span class="n">queue</span><span class="o">.</span><span class="n">consume</span><span class="p">(</span><span class="n">on_message</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+    <span class="c1"># we enter a never-ending loop that waits for data and runs</span>
+    <span class="c1"># callbacks whenever necessary.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Waiting for messages. To exit press CTRL+C&quot;</span><span class="p">)</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h2>Create job queue and run shared function</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="kn">from</span> <span class="nn">aio_pika</span> <span class="kn">import</span> <span class="n">connect</span><span class="p">,</span> <span class="n">Message</span><span class="p">,</span> <span class="n">DeliveryMode</span>
+
+<span class="kn">from</span> <span class="nn">shared</span> <span class="kn">import</span> <span class="n">simple_func</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">submit_helper</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">loop</span><span class="p">):</span>
+    <span class="c1"># Perform connection</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;amqp://guest:guest@localhost/&quot;</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">)</span>
+
+    <span class="c1"># Creating a channel</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
+
+    <span class="n">message_body</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">])</span> 
+    <span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span>
+        <span class="n">message_body</span><span class="p">,</span>
+        <span class="n">delivery_mode</span><span class="o">=</span><span class="n">DeliveryMode</span><span class="o">.</span><span class="n">PERSISTENT</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Sending the message</span>
+    <span class="k">await</span> <span class="n">channel</span><span class="o">.</span><span class="n">default_exchange</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span>
+        <span class="n">message</span><span class="p">,</span> <span class="n">routing_key</span><span class="o">=</span><span class="s2">&quot;task_queue&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">submit_job</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">submit_helper</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">loop</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">submit_job</span><span class="p">(</span><span class="n">simple_func</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2>Run it</h2>
+<p>We will need to open 3 terminals to notice all executions</p>
+<ol>
+<li>
+<p>Run docker container with RabitMQ</p>
+</li>
+<li>
+<p>Run  async worker</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python worker_async.py
+</code></pre></div>
+
+
+<ol>
+<li>Run job queue and call our shared function</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python job_queue.py
+</code></pre></div>
+
+
+<p>Finally you have to get something like this in your terminals</p>
+<p><img alt="sio-pika-example" src="images/aio-pika-example.png"></p>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
@@ -280,11 +411,17 @@
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/nginx.html">nginx</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/node.html">node</a>
+    </li>
     <li class="list-group-item tag-1">
       <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/nvm.html">nvm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
@@ -343,6 +480,9 @@
     <li class="list-group-item tag-4">
       <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/yarn.html">yarn</a>
+    </li>
   </ul>
 </li>
 <!-- End Sidebar/Tag Cloud -->
@@ -358,7 +498,7 @@
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 Nekrasov Pavel         </div>
+         <div class="col-xs-10">&copy; 2022 Nekrasov Pavel         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
