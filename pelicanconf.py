@@ -52,10 +52,11 @@ DISQUS_SITENAME = "nekrasovp"
 SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
           ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),
+          ('GitLab','https://gitlab.com/Nekrasovp'),
           ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),)
 
-DEFAULT_PAGINATION = 5
-DEFAULT_DATE = (2017, 3, 2, 14, 1, 1)
+DEFAULT_PAGINATION = 7
+DEFAULT_DATE = (2021, 3, 2, 14, 1, 1)
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
