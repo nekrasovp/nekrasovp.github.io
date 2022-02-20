@@ -49,11 +49,13 @@ DISQUS_SITENAME = "nekrasovp"
 #          ('Python.org', 'http://python.org/'),)
 
 # Social widget
-SOCIAL = (('Facebook', 'https://www.facebook.com/nekrasovp'),
+SOCIAL = (
           ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),
           ('GitLab','https://gitlab.com/Nekrasovp'),
-          ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),)
+          ('Telegram','https://t.me/def12')
+          ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),
+          )
 
 DEFAULT_PAGINATION = 7
 DEFAULT_DATE = (2021, 3, 2, 14, 1, 1)
