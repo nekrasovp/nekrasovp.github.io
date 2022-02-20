@@ -1,6 +1,6 @@
 Title: Analytics checklist
 Author: Nekrasov Pavel
-Date: 2021-02-10 15:00
+Date: 2022-02-10 15:00
 Category: Blog
 Tags: analytics, template
 Slug: analytics-checklist
