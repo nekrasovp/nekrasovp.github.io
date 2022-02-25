@@ -3,8 +3,8 @@ Author: Nekrasov Pavel
 Date: 2022-02-24 21:47
 Category: Blog
 Tags: python, logging
-Slug: building-job-queue
-Summary: This article explains how to get up and running with logging.
+Slug: color-formatter
+Summary: This article explains how to get up and running with custom color fomatter in your logger.
 
 ## Contents
 
