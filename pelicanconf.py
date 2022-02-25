@@ -53,7 +53,7 @@ SOCIAL = (
           ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),
           ('GitLab','https://gitlab.com/Nekrasovp'),
-          ('Telegram','https://t.me/def12')
+          ('Telegram','https://t.me/def12'),
           ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),
           )
 
