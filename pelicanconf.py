@@ -50,10 +50,11 @@ DISQUS_SITENAME = "nekrasovp"
 
 # Social widget
 SOCIAL = (
+          ('LinkedIn', 'https://linked.in/in/nekrasovp'),
           ('GitHub', 'https://github.com/nekrasovp/'),
           ('BitBucket', 'https://bitbucket.org/Nekrasovp/'),
           ('GitLab','https://gitlab.com/Nekrasovp'),
-          ('Telegram','https://t.me/def12'),
+          ('Telegram','https://t.me/def12', 'telegram'),
           ('E-mail', 'mailto:nekrasovp@gmail.com', 'envelope'),
           )
 
