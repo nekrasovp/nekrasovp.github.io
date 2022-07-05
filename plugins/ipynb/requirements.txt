@@ -4,3 +4,4 @@ nbconvert>=4.0
 ipython>=4.0
 markdown>=2.6.1
 pygments>=2.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
+mistune>=2.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
