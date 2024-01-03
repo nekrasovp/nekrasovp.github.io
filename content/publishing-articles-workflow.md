@@ -2,7 +2,7 @@ Title: Publishing articles workflow
 Author: Nekrasov Pavel
 Date: 2020-09-09 15:00
 Category: Blog
-Tags: markdown, notebook
+Tags: markdown, notebook, workflow
 Slug: publishing-articles-workflow
 Summary: In this article, I would like to document my blogging experience. After writing and distributing articles for a long time, I kind of set up a framework when it comes to distributing articles.
 
