@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Что такое технический долг? - Data driven</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
+
+<link rel="canonical" href="https://nekrasovp.github.io/what-is-technical-debt.html">
+
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="development,science,workflow" />
+        <meta name="description" content="Что такое технический долг? Примеры, профилактика и лучшие практики" />
+
+        <meta property="og:site_name" content="Data driven" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Что такое технический долг?"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/what-is-technical-debt.html"/>
+        <meta property="og:description" content="Что такое технический долг? Примеры, профилактика и лучшие практики"/>
+        <meta property="article:published_time" content="2023-09-16" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="development" />
+            <meta property="article:tag" content="science" />
+            <meta property="article:tag" content="workflow" />
+            <meta property="article:author" content="Nekrasov Pavel" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="https://nekrasovp.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://nekrasovp.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://nekrasovp.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven ATOM Feed"/>
+
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://nekrasovp.github.io/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="https://nekrasovp.github.io/images/logo2.png" width=""/> Data driven            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://nekrasovp.github.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="https://nekrasovp.github.io/pages/services.html">
+                             Services
+                          </a></li>
+                        <li class="active">
+                            <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.github.io/what-is-technical-debt.html"
+                       rel="bookmark"
+                       title="Permalink to Что такое технический долг?">
+                        Что такое технический долг?
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2023-09-16T15:00:00+03:00"> Sat 16 September 2023</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://nekrasovp.github.io/tag/development.html">development</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/science.html">science</a>
+        /
+	<a href="https://nekrasovp.github.io/tag/workflow.html">workflow</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Что такое технический долг? Примеры, профилактика и лучшие практики</h1>
+<h2>Сожержание</h2>
+<ul>
+<li><a href="#что-такое-технический-долг-примеры-профилактика-и-лучшие-практики">Что такое технический долг? Примеры, профилактика и лучшие практики</a></li>
+<li><a href="#сожержание">Сожержание</a></li>
+<li><a href="#аннотация">Аннотация</a></li>
+<li><a href="#что-такое-технический-долг">Что такое технический долг?</a></li>
+<li><a href="#примеры-технического-долга">Примеры технического долга</a><ul>
+<li><a href="#каковы-недостатки-технического-долга">Каковы недостатки технического долга?</a></li>
+<li><a href="#какие-виды-технического-долга-существуют">Какие виды технического долга существуют?</a></li>
+<li><a href="#как-возникает-технический-долг">Как возникает технический долг?</a></li>
+<li><a href="#намеренный-технический-долг">Намеренный технический долг</a></li>
+<li><a href="#непреднамеренный-технический-долг">Непреднамеренный технический долг</a></li>
+<li><a href="#задолженность-по-документации">Задолженность по документации</a></li>
+<li><a href="#инфраструктурный-долг">Инфраструктурный долг</a></li>
+<li><a href="#каковы-признаки-технического-долга">Каковы признаки технического долга?</a></li>
+<li><a href="#как-управлять-и-предотвращать-технический-долг">Как управлять и предотвращать технический долг</a></li>
+</ul>
+</li>
+<li><a href="#почему-все-это-важно">Почему все это важно?</a></li>
+<li><a href="#каковы-лучшие-практики">Каковы лучшие практики?</a></li>
+<li><a href="#какие-инструменты-могут-использовать-компании-для-предотвращения-технического-долга">Какие инструменты могут использовать компании для предотвращения технического долга?</a></li>
+</ul>
+<h2>Аннотация</h2>
+<p>Большинству разработчиков программного обеспечения знакома проблема технического долга, но это менее верно для тех, кто не занимается программированием.</p>
+<p>Однако эту концепцию важно понимать, поскольку она применима не только к программированию, но и к широкому спектру сценариев, в которых краткосрочные решения могут иметь долгосрочные последствия. Ниже приведены примеры технического долга и лучшие практики, которые вам необходимо знать.</p>
+<h2>Что такое технический долг?</h2>
+<p>Технический долг возникает, когда команды разработчиков программного обеспечения ставят скорость доставки выше оптимального качества кода.</p>
+<p>Часто это делается намеренно. Пользователю может срочно понадобиться функциональность, поэтому разработчики решают развернуть «достаточно хороший» код с намерением исправить его позже.</p>
+<p>Метафора долга уместна. Когда кто-то берет на себя долг, это часто происходит потому, что финансовые ресурсы необходимы на краткосрочной основе. Однако это создает дополнительные затраты в будущем, когда этот долг придется погасить.</p>
+<p>Технический долг возникает, когда команды разработчиков ставят скорость доставки выше оптимального качества кода.</p>
+<p>Технический долг работает аналогичным образом, обменивая выгоду на дополнительную работу в будущем.</p>
+<p>Если код в конечном итоге не будет пересмотрен и исправлен, он может стать проблемой, так же как могут начисляться проценты и штрафы, если платежи по кредиту не производятся.</p>
+<p>Технический долг не обязательно является проблемой, но он может стать таковой, если продукт плохо оптимизирован или если допущено распространение нефункционального кода.</p>
+<h2>Примеры технического долга</h2>
+<p>Классическим примером технического долга является проблема 2000 года (Y2K).</p>
+<p>Многие разработчики программного обеспечения в 1960-х и 1970-х годах предпочитали экономить драгоценную память, сохраняя даты в виде двух цифр: «73» вместо «1973».</p>
+<p>Такая практика продолжалась в течение многих лет, даже несмотря на то, что цены на память падали. Многие из этих программ были внедрены в операционный бизнес и использовались гораздо дольше, чем кто-либо ожидал.</p>
+<p>По мере приближения 2000 года тысячи предприятий и правительственных учреждений осознали, что расчеты дат в массовом масштабе окажутся неудачными. Это привело к лихорадочным усилиям по очистке, стоимость которых оценивается в 100 миллиардов долларов .</p>
+<p>Технический долг не ограничивается программным обеспечением. Например, лучшая практика в области кибербезопасности — предоставлять права доступа к файлам ролям внутри организации, а не отдельным лицам.</p>
+<p>Предположим, помощник по административным вопросам получает разрешение от начальника на получение временного доступа к конфиденциальным документам, которые ему обычно не разрешают просматривать. Если ИТ-организация предоставляет исключение и не может его отозвать позже, это означает, что она предоставила постоянный доступ к конфиденциальным документам. В конечном итоге учетная запись может быть скомпрометирована и стать уязвимой.</p>
+<h3>Каковы недостатки технического долга?</h3>
+<p>Если краткосрочные исправления быстро рефакторингуются и разработчики знают, как справиться с техническим долгом, недостатков мало. Это может даже принести пользу, поскольку это может позволить бизнесу быстро реагировать на возможности или проблемы.</p>
+<p>Риск возрастает, когда долги наслаиваются друг на друга.</p>
+<p>Быстрые исправления могут быть плохо документированы или не документированы вообще. А когда люди, которые выполняли быстрые исправления, уходят, в компании может не остаться никого, кто знает, как должен работать код или даже о том, что быстрые исправления существуют.</p>
+<p>Улучшения или изменения могут создавать непреднамеренные конфликты, которые приводят к сбоям или медленной работе программ. Инновации замедляются, поскольку организации не могут внести улучшения из-за страха, что изменения сломают приложение.</p>
+<h3>Какие виды технического долга существуют?</h3>
+<p>Двумя основными категориями технического долга являются <strong>преднамеренный</strong> и <strong>непреднамеренный</strong>.</p>
+<p>Намеренный технический это тот долг который берется на себя сознательно и стратегически.</p>
+<p>Непреднамеренный технический возникает как «нестратегический результат плохой работы».</p>
+<p>В 2014 году группа ученых разработала <a href="https://www.researchgate.net/publication/286010286_Towards_an_Ontology_of_Terms_on_Technical_Debt">таксономию технического долга</a> , которая включает 13 различных типов, в том числе:</p>
+<ul>
+<li>Архитектурный долг(Architecture debt)</li>
+<li>Долга кода(Code debt)</li>
+<li>Долг ошибок(Defect debt)</li>
+<li>Долг проектировки(Design debt)</li>
+<li>Долг процессов(Process debt)</li>
+<li>Долг тестирорвания(Test debt)</li>
+</ul>
+<p>Эта классификация полезна, поскольку она охватывает все области, в которых краткосрочное мышление может создать долгосрочные проблемы.</p>
+<h3>Как возникает технический долг?</h3>
+<h4>Намеренный технический долг</h4>
+<p>Намеренный технический долг — это сознательное решение, которое должно быть задокументировано и запланировано для рефакторинга.</p>
+<p>Например: у регионального менеджера по продажам есть крайний срок для создания отчета, который его платформа не может предоставить. Поэтому он внедрил программу создания отчетов с открытым исходным кодом, чтобы уложиться в срок. Это технический долг.</p>
+<p>Однако если команда разработчиков выделяет ресурсы для удаления средства создания отчетов с открытым исходным кодом и изменения основной системы отчетов, это является намеренным техническим долгом.</p>
+<h4>Непреднамеренный технический долг</h4>
+<p>Непреднамеренный технический долг возникает, когда изменения или дополнения вносятся из соображений целесообразности и без преднамеренных планов по рефакторингу кода.</p>
+<p>Это также может быть результатом плохих проектных решений, вызванных недостатком знаний или несоблюдением стандартов разработки. Непреднамеренный технический долг в области тестирования возникает, когда наборы тестов неполны или тестирование сокращено или пропущено ради удобства.</p>
+<h4>Задолженность по документации</h4>
+<p>Задолженность по документации является обычным явлением и возникает, когда разработчики слишком спешат тщательно документировать свой код.</p>
+<p>В долгосрочной перспективе это может стать большой проблемой, если человек уйдет из компании и не сможет оставить след, который другие смогут использовать для понимания его кода. Задолженность по документации стала основной причиной проблемы 2000 года.</p>
+<h4>Инфраструктурный долг</h4>
+<p>Долг инфраструктуры возникает, когда приложения создаются с учетом определенных компонентов инфраструктуры, таких как базы данных и файловые системы. Если такие зависимости не задокументированы и компания переходит на новую инфраструктуру, приложение может не работать.</p>
+<h3>Каковы признаки технического долга?</h3>
+<p>Предупреждающими признаками технического долга являются:</p>
+<ul>
+<li>Проекты застревают из-за того, что разработчики не имеют представления о кодовой базе.</li>
+<li>Выскакивают ошибки, которые сложно исправить из-за сложности или отсутствия документации.</li>
+<li>Исправления ошибок, которые создают новые ошибки или постоянное снижение производительности.</li>
+</ul>
+<h3>Как управлять и предотвращать технический долг</h3>
+<p>Знание того, как справиться с техническим долгом, начинается с разумных методов разработки. В среде DevOps это включает тестирование как со сдвигом влево, так и сдвигом вправо.</p>
+<ul>
+<li><strong>Сдвиг-влево при тестировании</strong> перемещает процесс тестирования на более ранние стадии цикла разработки и на протяжении всего цикла, так что проблемы можно предвидеть и решить до того, как они будут внедрены в производство.</li>
+<li><strong>Тестирование со сдвигом вправо</strong> направлено на получение обратной связи после того, как приложения будут запущены в производство, чтобы можно было обнаружить ошибки на ранней стадии и исправить их до того, как программное обеспечение получит широкое распространение.
+Они создают ограждения, которые предотвращают чрезмерный рост проблем.</li>
+</ul>
+<p>Обходные пути, которые создают технический долг, неизбежны и часто необходимы. Однако важно, чтобы разработчики документировали их, включая причины, по которым были применены хаки, и инструкции по их устранению.</p>
+<p>Регулярные проверки существующего кода также могут позволить членам команды проверять работу друг друга и выявлять пробелы или нарушения в документации.</p>
+<h2>Почему все это важно?</h2>
+<p>Говорят, что каждая компания теперь является компанией-разработчиком программного обеспечения. Даже предприятия тяжелой промышленности стремятся собирать данные, чтобы их клиенты могли получать больше пользы от покупаемых ими продуктов.</p>
+<p>Ежегодно создается больше программного обеспечения, чем было создано за всю историю вычислений, и эта тенденция ускоряется.</p>
+<p>В то же время организации-разработчики испытывают большее, чем когда-либо, давление, требующее быстрого запуска проектов в производство. Для спешащих разработчиков естественно срезать углы, а менеджеры проектов должны понимать и укреплять свои команды, что тестирование и документация — это не одноразовые вещи.</p>
+<h2>Каковы лучшие практики?</h2>
+<p>По мере того, как организации внедряют методы DevOps, им следует разъяснять, что такое технический долг, и применять гибкую тактику для управления им. Это может включать в себя реализацию:</p>
+<ul>
+<li>Тестирование сдвига вправо и сдвига влево</li>
+<li>Методы A/B и канареечного тестирования для выявления проблем до того, как они выйдут из-под контроля.</li>
+</ul>
+<p>Коллегиальные проверки кода позволяют по-новому взглянуть на работу разработчиков. Разработчики должны работать с последовательным и ограниченным набором инструментов и языков и иметь контрольный список задач, которые необходимо выполнить на каждом этапе.</p>
+<p>Эффективная <a href="https://www.mendix.com/blog/why-you-should-consider-devops-for-your-organization/">организация DevOps</a> дает разработчикам большую свободу выбора того, как им создавать свои творения, но также обеспечивает ограждения, гарантирующие, что они не выйдут из-под контроля.</p>
+<h2>Какие инструменты могут использовать компании для предотвращения технического долга?</h2>
+<p>Практики, изложенные выше, являются хорошим началом. Дополнительные преимущества могут быть реализованы за счет:</p>
+<ul>
+<li>Использование автоматического тестирования для запуска нескольких циклов отладки при каждом изменении кода при каждом изменении модуля.</li>
+<li>Создание надежных процедур структуры кода, включая обязательную документацию, для защиты от обходных путей.</li>
+<li>Использование инструментов управления проектами, позволяющих командам видеть состояние работы каждого.</li>
+</ul>
+<p>Программисты работают в командах по два человека, чтобы они могли понимать решения друг друга.
+Все больший объем программного обеспечения пишется с использованием инструментов <em>low-code</em> и <em>no-code</em>. Они в значительной степени самодокументируются, поскольку блок-схемы и методы перетаскивания позволяют представить визуальное представление логики и желаемых результатов.</p>
+<p>Применяя эти инструменты для профессиональной разработки программного обеспечения, организации могут извлечь выгоду из этих функций самодокументирования. Менеджеры по разработке должны поощрять свои команды рассматривать <em>low-code/no-code</em> как повышение производительности, а не замену их элегантных творений.</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://nekrasovp.github.io/technical-debt-examples.html">Примеры технического долга</a></li>
+        <li><a href="https://nekrasovp.github.io/devops-questions.html">Obstacles to successful devops</a></li>
+        <li><a href="https://nekrasovp.github.io/business-it-solutions.html">How to get well-developed IT solution</a></li>
+        <li><a href="https://nekrasovp.github.io/essay-paper-template.html">Essay(simple paper) template</a></li>
+        <li><a href="https://nekrasovp.github.io/retrospective-template.html">Шаблон ретроспективы</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2023-09-16-what-is-technical-debt';
+                        this.page.url = 'https://nekrasovp.github.io/what-is-technical-debt.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://linked.in/in/nekrasovp"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/nekrasovp/"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://bitbucket.org/Nekrasovp/"><i class="fa fa-bitbucket-square fa-lg"></i> BitBucket</a></li>
+    <li class="list-group-item"><a href="https://gitlab.com/Nekrasovp"><i class="fa fa-gitlab fa-lg"></i> GitLab</a></li>
+    <li class="list-group-item"><a href="https://t.me/def12"><i class="fa fa-telegram-square fa-lg"></i> Telegram</a></li>
+    <li class="list-group-item"><a href="mailto:nekrasovp@gmail.com"><i class="fa fa-envelope fa-lg"></i> E-mail</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://nekrasovp.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/analytics.html">analytics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/anova.html">ANOVA</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arbitrage.html">arbitrage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/arima.html">arima</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/bitbucket.html">bitbucket</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/black.html">black</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/cython.html">cython</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/development.html">development</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ffn.html">ffn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/fft.html">fft</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/finance.html">finance</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/flake8.html">flake8</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/gil.html">gil</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/github.html">github</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/gitlab.html">gitlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/graphql.html">graphql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/gunicorn.html">gunicorn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/kaggle.html">kaggle</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/leaflet.html">leaflet</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/logging.html">logging</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/markdown.html">markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/math.html">math</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/matplotlib.html">matplotlib</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/multiprocessing.html">multiprocessing</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/mypy.html">mypy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/mysql.html">mysql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/networkx.html">networkx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/nginx.html">nginx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/node.html">node</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://nekrasovp.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/nvm.html">nvm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/openssl.html">openssl</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pandas.html">pandas</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/plotly.html">plotly</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/portfolio.html">portfolio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pydot.html">pydot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pylint.html">pylint</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/pytest.html">pytest</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://nekrasovp.github.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/rabbitmq.html">rabbitmq</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/science.html">science</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/scipy.html">scipy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/seaborn.html">seaborn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/shell.html">shell</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/statistics.html">statistics</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/template.html">template</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/threading.html">threading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/vscode.html">vscode</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/wbdata.html">wbdata</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://nekrasovp.github.io/tag/workflow.html">workflow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/xgboost.html">xgboost</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://nekrasovp.github.io/tag/yarn.html">yarn</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2023 Nekrasov Pavel         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://nekrasovp.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://nekrasovp.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://nekrasovp.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://nekrasovp.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
