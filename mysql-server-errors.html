@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>pytest - Data driven</title>
+    <title>MySQL server has gone away errors - Data driven</title>
     <!-- Using the latest rendering mode for IE -->
     <meta name="google-site-verification" content="AP0qtbfkG8LUpjz_X6WNeY1YdtdSdg-TBVihg8g4EVA" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +11,22 @@
 
     <link href="https://nekrasovp.github.io/images/logo2.png" rel="icon">
 
+<link rel="canonical" href="https://nekrasovp.github.io/mysql-server-errors.html">
 
-    <meta name="author" content="Nekrasov Pavel" />
-    <meta name="keywords" content="pytest" />
+        <meta name="author" content="Nekrasov Pavel" />
+        <meta name="keywords" content="mysql,linux" />
+        <meta name="description" content="This post is about errors after &#34;The MySQL server has gone away&#34;, which means that the MySQL server (mysqld) timed out and closed the connection." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Data driven" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Data driven"/>
-        <meta property="og:url" content="https://nekrasovp.github.io"/>
-        <meta property="og:description" content="Data driven"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="MySQL server has gone away errors"/>
+        <meta property="og:url" content="https://nekrasovp.github.io/mysql-server-errors.html"/>
+        <meta property="og:description" content="This post is about errors after &#34;The MySQL server has gone away&#34;, which means that the MySQL server (mysqld) timed out and closed the connection."/>
+        <meta property="article:published_time" content="2023-07-11" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="mysql" />
+            <meta property="article:tag" content="linux" />
+            <meta property="article:author" content="Nekrasov Pavel" />
 
 
 
@@ -34,7 +40,8 @@
         <link href="https://nekrasovp.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Data driven ATOM Feed"/>
 
-
+        <link href="https://nekrasovp.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data driven Blog ATOM Feed"/>
 </head>
 <body>
 
@@ -58,7 +65,7 @@
                          <li><a href="https://nekrasovp.github.io/pages/services.html">
                              Services
                           </a></li>
-                        <li >
+                        <li class="active">
                             <a href="https://nekrasovp.github.io/category/blog.html">Blog</a>
                         </li>
             </ul>
@@ -76,13 +83,24 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://nekrasovp.github.io/setting-up-gitlab-ci.html">Setting Up GitLab CI for a Python Application</a></h2>
-                    <div class="well well-sm">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://nekrasovp.github.io/mysql-server-errors.html"
+                       rel="bookmark"
+                       title="Permalink to MySQL server has gone away errors">
+                        MySQL server has gone away errors
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2021-07-10T15:00:00+03:00"> Sat 10 July 2021</time>
+        <i class="fa fa-calendar"></i><time datetime="2023-07-11T13:00:00+03:00"> Tue 11 July 2023</time>
     </span>
 
 
@@ -90,24 +108,105 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://nekrasovp.github.io/tag/gitlab.html">gitlab</a>
+	<a href="https://nekrasovp.github.io/tag/mysql.html">mysql</a>
         /
-	<a href="https://nekrasovp.github.io/tag/python.html">python</a>
-        /
-	<a href="https://nekrasovp.github.io/tag/mypy.html">mypy</a>
-        /
-	<a href="https://nekrasovp.github.io/tag/pytest.html">pytest</a>
-        /
-	<a href="https://nekrasovp.github.io/tag/flake8.html">flake8</a>
-        /
-	<a href="https://nekrasovp.github.io/tag/pylint.html">pylint</a>
+	<a href="https://nekrasovp.github.io/tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>This article describes how to configure a Continuous Integration (CI) process on GitLab for a python application. This article utilizes one of my python applications to show how to setup the CI process.</p>
-                    <a class="btn btn-default btn-xs" href="https://nekrasovp.github.io/setting-up-gitlab-ci.html">more ...</a>
                 </div>
-            </article>
-            <hr/>
+                <h2>Abstract</h2>
+<p>MySQL server has gone away, can be a frustrating error to solve. This is partly because, to solve this error, sometimes the solution involves multiple layers, application, or service config changes. This article includes solutions I’ve seen for this MySQL server general error.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#mysql-server-has-gone-away-error-log-examples">MySQL server has gone away error log examples</a></li>
+<li><a href="#mysql-wait_timeout">MySQL wait_timeout</a></li>
+<li><a href="#mysql-max_allowed_packet">MySQL max_allowed_packet</a></li>
+<li><a href="#mysql-innodb_log_file_size">MySQL innodb_log_file_size</a></li>
+<li><a href="#other-causes-of-mysql-server-has-gone-away">Other causes of MySQL server has gone away</a></li>
+<li><a href="#mysql-database-charset-and-collation">MySQL database charset and collation</a></li>
+<li><a href="#exceeding-mysql-max_connections-setting">Exceeding MySQL max_connections setting</a></li>
+<li><a href="#still-unresolved-see-mysqls-help-page">Still unresolved? See MySQL’s help page</a></li>
+</ul>
+<h2>MySQL server has gone away error log examples</h2>
+<p>Keep in mind that this error can be logged in a few ways, as listed below. In addition, at times, the error is only an indication of a deeper underlying issue. This means the error could be due to a problem or bug in your connecting application or remote service. In this case, you need to check ALL related error logs with the same timestamp to determine whether another issue may be to blame. Here are error log examples of the MySQL server has gone away error:</p>
+<p><code>General error: 2006 MySQL server has gone away</code></p>
+<p><code>Error Code: 2013. Lost connection to MySQL server during query</code></p>
+<p><code>Warning: Error while sending QUERY packet</code></p>
+<p><code>PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away</code></p>
+<h2>MySQL wait_timeout</h2>
+<p>The reason for MySQL server has gone away error is often because MySQL’s <em>wait_timeout</em> was exceeded. MySQL <em>wait_timeout</em> is the number of seconds the server waits for activity on a non-interactive connection before closing it. You should make sure the <em>wait_timeout</em> is not set too low. The default for MySQL <em>wait_timeout</em> is 28800 seconds. Often, it gets lowered arbitrarily. That said, the lower you can set <em>wait_timeout</em> without affecting database connections can be a good sign of MySQL database efficiency. </p>
+<p>Also, check the variables: <em>net_read_timeout</em>, <em>net_write_timeout</em> and <em>interactive_timeout</em>. Adjust or add the following lines in my.cnf to meet your requirements:</p>
+<p>```wait_timeout=90
+net_read_timeout=90
+net_write_timeout=90
+interactive_timeout=300
+connect_timeout=90</p>
+<div class="highlight"><pre><span></span><code><span class="o">##</span> <span class="n">MySQL</span> <span class="n">max_allowed_packet</span>
+
+<span class="o">*</span><span class="n">max_allowed_packet</span><span class="o">*</span> <span class="k">is</span> <span class="n">the</span> <span class="n">maximum</span> <span class="k">size</span> <span class="k">of</span> <span class="n">one</span> <span class="n">packet</span><span class="p">.</span> <span class="n">The</span> <span class="k">default</span> <span class="k">size</span> <span class="k">of</span> <span class="mi">4</span><span class="n">MB</span> <span class="n">helps</span> <span class="n">the</span> <span class="n">MySQL</span> <span class="n">server</span> <span class="n">catch</span> <span class="k">large</span> <span class="p">(</span><span class="n">possibly</span> <span class="n">incorrect</span><span class="p">)</span> <span class="n">packets</span><span class="p">.</span> <span class="k">As</span> <span class="k">of</span> <span class="n">MySQL</span> <span class="mi">8</span><span class="p">,</span> <span class="n">the</span> <span class="k">default</span> <span class="n">has</span> <span class="n">been</span> <span class="n">increased</span> <span class="k">to</span> <span class="mi">16</span><span class="n">MB</span><span class="p">.</span> <span class="k">If</span> <span class="n">mysqld</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">packet</span> <span class="n">that</span> <span class="k">is</span> <span class="n">too</span> <span class="k">large</span><span class="p">,</span> <span class="n">it</span> <span class="n">assumes</span> <span class="n">that</span> <span class="n">something</span> <span class="k">is</span> <span class="n">wrong</span> <span class="k">and</span> <span class="n">closes</span> <span class="n">the</span> <span class="k">connection</span><span class="p">.</span> <span class="k">To</span> <span class="n">fix</span> <span class="n">this</span><span class="p">,</span> <span class="n">you</span> <span class="n">should</span> <span class="n">increase</span> <span class="n">the</span> <span class="o">*</span><span class="n">max_allowed_packet</span><span class="o">*</span> <span class="k">in</span> <span class="n">my</span><span class="p">.</span><span class="n">cnf</span><span class="p">,</span> <span class="k">then</span> <span class="k">restart</span> <span class="n">MySQL</span><span class="p">.</span> <span class="n">The</span> <span class="k">max</span> <span class="k">for</span> <span class="n">this</span> <span class="n">setting</span> <span class="k">is</span> <span class="mi">1</span><span class="n">GB</span><span class="p">.</span> <span class="k">For</span> <span class="n">example</span><span class="p">:</span>
+</code></pre></div>
+
+
+<p>max_allowed_packet = 512M
+```</p>
+<h2>MySQL innodb_log_file_size</h2>
+<p>You may need to increase the <em>innodb_log_file_size</em> MySQL variable in your my.cnf configuration. MySQL’s <em>innodb_log_file_size</em> should be 25% of <em>innodb_buffer_pool_size</em> (if possible, no less than 20%). Remember that the larger this value, the longer it will take to recover from a database crash.</p>
+<p>This means, for example, if your buffer pool size is set to <em>innodb_buffer_pool_size</em>=16G and your <em>innodb_log_files_in_group</em> setting is still set to the recommended default of 2 files (<em>innodb_log_files_in_group</em>=2), then your <em>innodb_log_file_size</em> should be set to 2G. This will create two (2) log files at 2GB each, which equals 25% of <em>innodb_buffer_pool_size</em>=16G.</p>
+<p><strong>WARNING</strong>: You must stop MySQL server in order to change <em>innodb_log_file_size</em> or <em>innodb_log_files_in_group</em>. If you don’t, you risk catastrophe! (Read: <a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-redo-log.html">MySQL Log Redo instructions</a>.)</p>
+<h2>Other causes of MySQL server has gone away</h2>
+<h3>MySQL database charset and collation</h3>
+<p>Changing the default database charset to latin1 and default collation to latin1_general_ci seemed to have solved MySQL server has gone away for sometimes.</p>
+<h3>Exceeding MySQL max_connections setting</h3>
+<p><em>Max_connections</em> set the maximum permitted number of simultaneous client connections. Be careful with this setting!! Exhaustion of memory and other resources can occur <a href="https://linuxblog.io/my-cnf-tuning-avoid-this-common-pitfall/">when set too large</a> and scheduling overhead also increases. As a guide, set <em>max_connections</em> to approximately double the previous number of maximum simultaneous client connections. E.g., if after a month of uptime, the maximum simultaneous client connections were 114, then set to <em>max_connections</em>=250. Before you go crazy with this setting, please read: <a href="https://dev.mysql.com/doc/refman/8.0/en/client-connections.html">How MySQL Handles Client Connections</a>.</p>
+<h2>Still unresolved? See MySQL’s help page</h2>
+<p>Oracle has put together a <a href="https://dev.mysql.com/doc/refman/8.0/en/gone-away.html">nice self-help page for MySQL server has gone away</a> errors. On that page, they also suggest that you make sure MySQL didn’t stop/restart during the query. Excerpt:</p>
+<p>“You can check whether the MySQL server died and restarted by executing <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqladmin.html">mysqladmin version</a> and examining the server’s uptime. If the client connection was broken because <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqld.html">mysqld</a> crashed and restarted, you should concentrate on finding the reason for the crash.”</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://nekrasovp.github.io/fixing-caching-sha2-password.html">Authentication plugin 'caching_sha2_password' cannot be loaded</a></li>
+        <li><a href="https://nekrasovp.github.io/linux-list-users.html">How to List Users in Linux</a></li>
+        <li><a href="https://nekrasovp.github.io/linux-change-swap-size.html">Change swap size in Ubuntu</a></li>
+        <li><a href="https://nekrasovp.github.io/shell-capture.html">Capturing shell output in python</a></li>
+        <li><a href="https://nekrasovp.github.io/linux-port.html">Ways to find out which process is listening on a specific port</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nekrasovp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2023-07-11-mysql-server-errors';
+                        this.page.url = 'https://nekrasovp.github.io/mysql-server-errors.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -332,7 +431,7 @@
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 Nekrasov Pavel         </div>
+         <div class="col-xs-10">&copy; 2023 Nekrasov Pavel         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
