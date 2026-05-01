@@ -6,5 +6,5 @@ networkx
 pydot
 Pillow
 ghp-import
-mistune>=2.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
+mistune>=3.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
 tornado>=6.3.2 # not directly required, pinned by Snyk to avoid a vulnerability
