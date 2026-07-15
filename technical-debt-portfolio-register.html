@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical Debt Portfolio Register — Pavel Nekrasov</title>
+  <meta name="description" content="A reusable technical-debt register, decision record, exposure assessment, and recurring review checklist.">
+  <link rel="canonical" href="https://nekrasovp.ru/technical-debt-portfolio-register.html">
+  <link rel="icon" href="/images/logo2.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Technical Debt Portfolio Register">
+  <meta property="og:description" content="A reusable technical-debt register, decision record, exposure assessment, and recurring review checklist.">
+  <meta property="og:url" content="https://nekrasovp.ru/technical-debt-portfolio-register.html">
+  <meta property="og:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pavel Nekrasov — Hands-on CTO and Product/Platform Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Technical Debt Portfolio Register",
+    "description": "A reusable technical-debt register, decision record, exposure assessment, and recurring review checklist.",
+    "image": "https://nekrasovp.ru/images/social-preview.png",
+    "datePublished": "2026-07-15",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/"
+    },
+    "mainEntityOfPage": "https://nekrasovp.ru/technical-debt-portfolio-register.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/"><span class="brand-mark">PN</span><span>Pavel Nekrasov</span></a>
+      <ul class="nav-links">
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-hero container">
+        <p class="eyebrow">Field guide</p>
+        <h1>Technical Debt Portfolio Register</h1>
+        <p class="lede">A reusable technical-debt register, decision record, exposure assessment, and recurring review checklist.</p>
+        <div class="article-meta"><span>15 Jul 2026</span><span>EN</span><span>4 min read</span></div>
+      </header>
+      <div class="article-body container">
+        <p>Use this register for technical conditions that create recurring cost, increase failure exposure, or constrain a valuable future option. Keep approved delivery tasks in the normal product backlog.</p>
+        <h2>Portfolio view</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>ID</th>
+        <th>Condition</th>
+        <th>Category</th>
+        <th style="text-align:right">Exposure</th>
+        <th>Reach</th>
+        <th>Carrying cost</th>
+        <th>Treatment</th>
+        <th>Owner</th>
+        <th>Trigger</th>
+        <th>Review date</th>
+        <th>State</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>TD-001</td>
+        <td>Example: incompatible request identifiers prevent reliable cross-service incident reconstruction</td>
+        <td>Operability</td>
+        <td style="text-align:right">16/25</td>
+        <td>Platform</td>
+        <td>High</td>
+        <td>Reduce</td>
+        <td>Platform owner</td>
+        <td>Before the next product-area rollout</td>
+        <td>YYYY-MM-DD</td>
+        <td>Assessing</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Suggested states:</p>
+        <ul>
+        <li><code>Observed</code> — the condition has been captured but evidence is incomplete.</li>
+        <li><code>Assessing</code> — consequence, exposure, and treatment are being evaluated.</li>
+        <li><code>Accepted</code> — exposure is understood and has an explicit trigger and review date.</li>
+        <li><code>Planned</code> — a treatment has been approved and delivery work exists.</li>
+        <li><code>Treating</code> — repayment, reduction, containment, or retirement is in progress.</li>
+        <li><code>Monitoring</code> — treatment is complete; outcome signals are being observed.</li>
+        <li><code>Closed</code> — exposure has been removed or reduced to the accepted level.</li>
+        </ul>
+        <h2>Debt decision record</h2>
+        <h3>ID and short name</h3>
+        <p><code>TD-___ — concise condition</code></p>
+        <h3>Current condition</h3>
+        <p>What is true today? Describe the constraint without committing to a preferred solution.</p>
+        <h3>Consequence</h3>
+        <p>What recurring cost, failure exposure, or blocked option does it create?</p>
+        <h3>Evidence</h3>
+        <p>List incidents, lead-time data, repeated manual work, support load, audit gaps, onboarding friction, or concrete examples. State the measurement boundary and identify estimates.</p>
+        <h3>Scope and expected lifetime</h3>
+        <ul>
+        <li>Critical user or business flows:</li>
+        <li>Services or components:</li>
+        <li>Teams and owners:</li>
+        <li>Expected remaining lifetime of the affected capability:</li>
+        </ul>
+        <h3>Category</h3>
+        <p>Select one primary category and any secondary categories:</p>
+        <ul>
+        <li>Delivery friction</li>
+        <li>Reliability and performance</li>
+        <li>Security and compliance</li>
+        <li>Architecture and changeability</li>
+        <li>Operability</li>
+        <li>Knowledge and ownership</li>
+        </ul>
+        <h3>Exposure assessment</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>Dimension</th>
+        <th style="text-align:right">Score</th>
+        <th>Rationale</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Impact</td>
+        <td style="text-align:right">1–5</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Likelihood or frequency</td>
+        <td style="text-align:right">1–5</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Initial exposure (<code>impact × likelihood</code>)</td>
+        <td style="text-align:right">1–25</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Reach</td>
+        <td style="text-align:right">Local / product area / platform</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Carrying cost</td>
+        <td style="text-align:right">Low / medium / high</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>Option value</td>
+        <td style="text-align:right">Low / medium / high</td>
+        <td>Which future decision is constrained?</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The numeric signal structures discussion; it does not replace judgment.</p>
+        <h3>Decision owner</h3>
+        <p>Who owns the next decision? This person does not need to implement all resulting work.</p>
+        <h3>Treatment decision</h3>
+        <p>Choose one:</p>
+        <ul>
+        <li><code>Repay</code> — remove the condition.</li>
+        <li><code>Reduce</code> — lower probability, reach, or carrying cost.</li>
+        <li><code>Contain</code> — limit blast radius or isolate the condition.</li>
+        <li><code>Accept</code> — keep it deliberately until a defined trigger.</li>
+        <li><code>Retire</code> — remove the affected capability.</li>
+        </ul>
+        <p>Explain why this treatment is preferable to the alternatives.</p>
+        <h3>Outcome hypothesis</h3>
+        <p>What observable system behavior should change if the treatment works?</p>
+        <p>Possible signals:</p>
+        <ul>
+        <li>lead time in the affected area;</li>
+        <li>repeated manual steps;</li>
+        <li>incident investigation time or missing diagnostic context;</li>
+        <li>change failures and rollbacks;</li>
+        <li>active exceptions;</li>
+        <li>ownership concentration;</li>
+        <li>onboarding time;</li>
+        <li>conformance to a platform contract;</li>
+        <li>product work delayed by the constraint.</li>
+        </ul>
+        <h3>Trigger and review date</h3>
+        <ul>
+        <li>Trigger that invalidates the current decision:</li>
+        <li>Next review date:</li>
+        <li>Evidence required at the next review:</li>
+        </ul>
+        <h3>Delivery links</h3>
+        <p>Link epics, stories, ADRs, RFCs, incident records, dashboards, and rollout evidence only after the treatment has been selected.</p>
+        <h2>Monthly review checklist</h2>
+        <ul>
+        <li>Remove duplicates and conditions that no longer exist.</li>
+        <li>Confirm evidence, owner, treatment, trigger, and review date for material entries.</li>
+        <li>Escalate repeated local conditions into a product-area or platform decision.</li>
+        <li>Revisit accepted debt whose trigger has fired.</li>
+        <li>Move approved implementation into the normal delivery system.</li>
+        <li>Check whether completed treatments changed the intended outcome signals.</li>
+        </ul>
+        <h2>Quarterly portfolio questions</h2>
+        <ol>
+        <li>Where is exposure increasing despite local work?</li>
+        <li>Which conditions create recurring cost across multiple teams?</li>
+        <li>Which product bets depend on a technical option that is being lost?</li>
+        <li>Which accepted risks have reached their trigger?</li>
+        <li>Which capabilities should be retired instead of repaired?</li>
+        <li>Are platform standards reducing repeated debt or merely centralizing it?</li>
+        <li>Does investment match the highest exposure, or only the most visible requests?</li>
+        </ol>
+        
+        <aside class="article-related">
+          <p class="eyebrow">Companion resource</p>
+          <h2><a href="/technical-debt-as-a-portfolio.html">Read the operating model</a></h2>
+          <p>Why technical debt works better as a portfolio of owned risks and options than as a flat backlog.</p>
+        </aside>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row container"><span>© 2026 Pavel Nekrasov</span><div class="footer-links"><a href="/writing/">Writing</a><a href="https://github.com/nekrasovp">GitHub</a><a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a><a href="mailto:nekrasovp@gmail.com">Email</a></div></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Native Delivery Contract Template — Pavel Nekrasov</title>
+  <meta name="description" content="A lightweight, machine-reviewable contract connecting product intent, implementation, verification, release, and human accountability.">
+  <link rel="canonical" href="https://nekrasovp.ru/ai-native-delivery-contract.html">
+  <link rel="icon" href="/images/logo2.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI-Native Delivery Contract Template">
+  <meta property="og:description" content="A lightweight, machine-reviewable contract connecting product intent, implementation, verification, release, and human accountability.">
+  <meta property="og:url" content="https://nekrasovp.ru/ai-native-delivery-contract.html">
+  <meta property="og:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pavel Nekrasov — Hands-on CTO and Product/Platform Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI-Native Delivery Contract Template",
+    "description": "A lightweight, machine-reviewable contract connecting product intent, implementation, verification, release, and human accountability.",
+    "image": "https://nekrasovp.ru/images/social-preview.png",
+    "datePublished": "2026-07-15",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/"
+    },
+    "mainEntityOfPage": "https://nekrasovp.ru/ai-native-delivery-contract.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/"><span class="brand-mark">PN</span><span>Pavel Nekrasov</span></a>
+      <ul class="nav-links">
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-hero container">
+        <p class="eyebrow">Field guide</p>
+        <h1>AI-Native Delivery Contract Template</h1>
+        <p class="lede">A lightweight, machine-reviewable contract connecting product intent, implementation, verification, release, and human accountability.</p>
+        <div class="article-meta"><span>15 Jul 2026</span><span>EN</span><span>6 min read</span></div>
+      </header>
+      <div class="article-body container">
+        <p><strong>Purpose:</strong> a lightweight, machine-reviewable contract connecting product intent,
+        implementation, verification, and release. Use the smallest subset proportional to the
+        risk of the change.</p>
+        <p>This template is designed for a story, feature, migration, or bounded platform change.
+        It is not a replacement for a PRD or ADR. Link those artifacts when they exist and use
+        this packet to make the current delivery decision explicit.</p>
+        <h2>Contract header</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Field</th>
+        <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Contract ID</td>
+        <td>stable id</td>
+        </tr>
+        <tr>
+        <td>Version</td>
+        <td>version or last-updated timestamp</td>
+        </tr>
+        <tr>
+        <td>Status</td>
+        <td>discovery / review / ready / implementation / verification / released / outcome-checked</td>
+        </tr>
+        <tr>
+        <td>Outcome owner</td>
+        <td>one named person</td>
+        </tr>
+        <tr>
+        <td>Technical owner</td>
+        <td>one named person</td>
+        </tr>
+        <tr>
+        <td>Delivery team</td>
+        <td>team</td>
+        </tr>
+        <tr>
+        <td>Risk class</td>
+        <td>low / medium / high / critical</td>
+        </tr>
+        <tr>
+        <td>Target window</td>
+        <td>date or release train</td>
+        </tr>
+        <tr>
+        <td>Linked PRD / ADR / incident</td>
+        <td>links</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>1. Intent and outcome</h2>
+        <h3>Problem or signal</h3>
+        <p>What triggered the work? Link the customer signal, operational problem, incident,
+        regulatory need, or product hypothesis.</p>
+        <pre><code class="language-text">&lt;problem statement&gt;
+        </code></pre>
+        <h3>Outcome hypothesis</h3>
+        <pre><code class="language-text">If we &lt;change&gt;, then &lt;observable outcome&gt; for &lt;actor/system&gt; will improve,
+        as measured by &lt;signal&gt; within &lt;time boundary&gt;.
+        </code></pre>
+        <h3>Non-goals</h3>
+        <ul>
+        <li>&lt;explicitly excluded outcome or scope&gt;</li>
+        </ul>
+        <h2>2. Functional contract</h2>
+        <h3>Required behavior</h3>
+        <ol>
+        <li>&lt;observable behavior&gt;</li>
+        <li>&lt;observable behavior&gt;</li>
+        </ol>
+        <h3>Failure behavior</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>Condition</th>
+        <th>Expected behavior</th>
+        <th>User/operator signal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>&lt;dependency unavailable&gt;</td>
+        <td>&lt;fail closed / retry / degrade&gt;</td>
+        <td>&lt;response, event, alert&gt;</td>
+        </tr>
+        <tr>
+        <td>&lt;invalid input&gt;</td>
+        <td>&lt;reject or normalize&gt;</td>
+        <td>&lt;response&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Acceptance examples</h3>
+        <pre><code class="language-gherkin">Given &lt;initial state&gt;
+        When &lt;action&gt;
+        Then &lt;observable result&gt;
+        And &lt;required evidence&gt;
+        </code></pre>
+        <p>Include at least one success case, one permission or validation failure, and one
+        dependency-failure case when relevant.</p>
+        <h2>3. Non-functional contract</h2>
+        <p>Complete only relevant rows. Replace vague words such as &quot;fast&quot; or &quot;secure&quot; with a
+        boundary or a linked standard.</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Dimension</th>
+        <th>Constraint</th>
+        <th>Verification</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Latency</td>
+        <td>&lt;percentile and budget&gt;</td>
+        <td>&lt;test/dashboard&gt;</td>
+        </tr>
+        <tr>
+        <td>Capacity</td>
+        <td>&lt;expected and peak load&gt;</td>
+        <td>&lt;load evidence&gt;</td>
+        </tr>
+        <tr>
+        <td>Availability</td>
+        <td>&lt;required behavior during failure&gt;</td>
+        <td>&lt;fault test/runbook&gt;</td>
+        </tr>
+        <tr>
+        <td>Security</td>
+        <td>&lt;identity, authorization, data boundary&gt;</td>
+        <td>&lt;review/scans/tests&gt;</td>
+        </tr>
+        <tr>
+        <td>Privacy</td>
+        <td>&lt;data classification and retention&gt;</td>
+        <td>&lt;review/evidence&gt;</td>
+        </tr>
+        <tr>
+        <td>Compatibility</td>
+        <td>&lt;API/event/schema requirement&gt;</td>
+        <td>&lt;contract test&gt;</td>
+        </tr>
+        <tr>
+        <td>Operability</td>
+        <td>&lt;logs, metrics, traces, alerts&gt;</td>
+        <td>&lt;dashboard/query/runbook&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>4. Interfaces and dependencies</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Dependency or interface</th>
+        <th>Owner</th>
+        <th>Contract/version</th>
+        <th>Change required</th>
+        <th>Failure mode</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>&lt;service, event, schema, vendor&gt;</td>
+        <td>&lt;owner&gt;</td>
+        <td>&lt;link/version&gt;</td>
+        <td>yes/no</td>
+        <td>&lt;effect&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>State ordering, idempotency, retry, timeout, and backward-compatibility expectations
+        explicitly when the change crosses a service boundary.</p>
+        <h2>5. Delivery plan</h2>
+        <h3>Change set</h3>
+        <ul>
+        <li>&lt;repository/component and intended change&gt;</li>
+        </ul>
+        <h3>Migration or data handling</h3>
+        <pre><code class="language-text">&lt;forward migration, compatibility window, data validation, cleanup&gt;
+        </code></pre>
+        <h3>Rollout</h3>
+        <pre><code class="language-text">&lt;feature flag, cohort, canary, sequence, observation period&gt;
+        </code></pre>
+        <h3>Rollback</h3>
+        <pre><code class="language-text">&lt;trigger, authority, steps, data implications, maximum safe rollback time&gt;
+        </code></pre>
+        <h2>6. Human-agent decision map</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Stage</th>
+        <th>Agent may</th>
+        <th>Agent must not</th>
+        <th>Human decision owner</th>
+        <th>Required evidence</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Discovery</td>
+        <td>&lt;search, summarize, list gaps&gt;</td>
+        <td>&lt;choose outcome&gt;</td>
+        <td>&lt;name/role&gt;</td>
+        <td>&lt;brief&gt;</td>
+        </tr>
+        <tr>
+        <td>Ready review</td>
+        <td>&lt;check fields and consistency&gt;</td>
+        <td>&lt;approve exception&gt;</td>
+        <td>&lt;name/role&gt;</td>
+        <td>&lt;findings&gt;</td>
+        </tr>
+        <tr>
+        <td>Implementation</td>
+        <td>&lt;edit, test within scope&gt;</td>
+        <td>&lt;expand scope silently&gt;</td>
+        <td>&lt;name/role&gt;</td>
+        <td>&lt;change and test log&gt;</td>
+        </tr>
+        <tr>
+        <td>Verification</td>
+        <td>&lt;run checks, assemble bundle&gt;</td>
+        <td>&lt;self-approve high risk&gt;</td>
+        <td>&lt;name/role&gt;</td>
+        <td>&lt;evidence bundle&gt;</td>
+        </tr>
+        <tr>
+        <td>Release</td>
+        <td>&lt;prepare, monitor, recommend&gt;</td>
+        <td>&lt;release beyond permission&gt;</td>
+        <td>&lt;name/role&gt;</td>
+        <td>&lt;approval and rollout state&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>7. Evidence bundle</h2>
+        <p>Required before Definition of Done:</p>
+        <ul>
+        <li>[ ] Contract version linked to the change.</li>
+        <li>[ ] Functional acceptance cases executed.</li>
+        <li>[ ] Relevant NFR checks completed.</li>
+        <li>[ ] Interface/contract compatibility verified.</li>
+        <li>[ ] Code and architecture ownership reviews complete.</li>
+        <li>[ ] Security/privacy review complete or explicitly not applicable.</li>
+        <li>[ ] Logs, metrics, traces, alerts, and dashboard links present as required.</li>
+        <li>[ ] Migration and rollback exercised or reviewed.</li>
+        <li>[ ] Documentation and runbook updated.</li>
+        <li>[ ] Known exceptions recorded with owner and follow-up date.</li>
+        <li>[ ] Release observation window and outcome check scheduled.</li>
+        </ul>
+        <h2>8. Exceptions and risk acceptance</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Missing condition or accepted risk</th>
+        <th>Reason</th>
+        <th>Compensating control</th>
+        <th>Owner</th>
+        <th>Expires/follow-up</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>&lt;item&gt;</td>
+        <td>&lt;why ship now&gt;</td>
+        <td>&lt;temporary protection&gt;</td>
+        <td>&lt;one person&gt;</td>
+        <td>&lt;date&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>An agent may identify or draft an exception. A named human owner accepts it.</p>
+        <h2>9. Outcome check</h2>
+        <p>Complete after the agreed observation window.</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Question</th>
+        <th>Evidence</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Did the intended outcome change?</td>
+        <td>&lt;metric, feedback, operational signal&gt;</td>
+        </tr>
+        <tr>
+        <td>Did risk or operating cost move elsewhere?</td>
+        <td>&lt;incidents, queue time, support load&gt;</td>
+        </tr>
+        <tr>
+        <td>What should be retained as a reusable pattern?</td>
+        <td>&lt;template, rule, test, runbook&gt;</td>
+        </tr>
+        <tr>
+        <td>What follow-up work is required?</td>
+        <td>&lt;owned items&gt;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>State-transition checks</h2>
+        <h3>Discovery → Review</h3>
+        <ul>
+        <li>[ ] Problem, outcome owner, outcome hypothesis, and non-goals exist.</li>
+        <li>[ ] Material stakeholders and dependencies are identified.</li>
+        </ul>
+        <h3>Review → Ready</h3>
+        <ul>
+        <li>[ ] Functional and relevant non-functional requirements are testable.</li>
+        <li>[ ] Interfaces, failure behavior, evidence, rollout, and rollback are explicit.</li>
+        <li>[ ] Agent permission boundaries and mandatory human decisions are recorded.</li>
+        </ul>
+        <h3>Implementation → Verification</h3>
+        <ul>
+        <li>[ ] Scope changes are reflected in a new contract version.</li>
+        <li>[ ] Proposed change and machine-generated artifacts are attributable.</li>
+        <li>[ ] Required checks have produced inspectable evidence.</li>
+        </ul>
+        <h3>Verification → Released</h3>
+        <ul>
+        <li>[ ] Reviewer and release owner accepted the evidence and unresolved risk.</li>
+        <li>[ ] Operational monitoring and rollback authority are active.</li>
+        </ul>
+        <h3>Released → Outcome checked</h3>
+        <ul>
+        <li>[ ] The outcome was evaluated within the declared measurement boundary.</li>
+        <li>[ ] Exceptions and follow-up items have owners and dates.</li>
+        <li>[ ] Reusable learning was added to the relevant standard or pattern library.</li>
+        </ul>
+        
+        <aside class="article-related">
+          <p class="eyebrow">Companion resource</p>
+          <h2><a href="/ai-native-sdlc-engineering-accountability.html">Read the accountability model</a></h2>
+          <p>How bounded agent roles and explicit state-transition contracts improve delivery without delegating ownership.</p>
+        </aside>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row container"><span>© 2026 Pavel Nekrasov</span><div class="footer-links"><a href="/writing/">Writing</a><a href="https://github.com/nekrasovp">GitHub</a><a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a><a href="mailto:nekrasovp@gmail.com">Email</a></div></div>
+  </footer>
+</body>
+</html>

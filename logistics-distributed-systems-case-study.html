@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logistics and Distributed Systems: One Causal Pattern — Pavel Nekrasov</title>
+  <meta name="description" content="A sanitized side-by-side case showing how incomplete boundary contracts create late, expensive failures in physical and software systems.">
+  <link rel="canonical" href="https://nekrasovp.ru/logistics-distributed-systems-case-study.html">
+  <link rel="icon" href="/images/logo2.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Logistics and Distributed Systems: One Causal Pattern">
+  <meta property="og:description" content="A sanitized side-by-side case showing how incomplete boundary contracts create late, expensive failures in physical and software systems.">
+  <meta property="og:url" content="https://nekrasovp.ru/logistics-distributed-systems-case-study.html">
+  <meta property="og:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pavel Nekrasov — Hands-on CTO and Product/Platform Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nekrasovp.ru/images/social-preview.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Logistics and Distributed Systems: One Causal Pattern",
+    "description": "A sanitized side-by-side case showing how incomplete boundary contracts create late, expensive failures in physical and software systems.",
+    "image": "https://nekrasovp.ru/images/social-preview.png",
+    "datePublished": "2026-07-15",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/"
+    },
+    "mainEntityOfPage": "https://nekrasovp.ru/logistics-distributed-systems-case-study.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/"><span class="brand-mark">PN</span><span>Pavel Nekrasov</span></a>
+      <ul class="nav-links">
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-hero container">
+        <p class="eyebrow">Case study</p>
+        <h1>Logistics and Distributed Systems: One Causal Pattern</h1>
+        <p class="lede">A sanitized side-by-side case showing how incomplete boundary contracts create late, expensive failures in physical and software systems.</p>
+        <div class="article-meta"><span>15 Jul 2026</span><span>EN</span><span>6 min read</span></div>
+      </header>
+      <div class="article-body container">
+        <p><strong>Purpose:</strong> show where the logistics analogy changes an engineering decision rather
+        than serving as a metaphor.</p>
+        <h2>Scenario boundary</h2>
+        <p>The physical scenario is a deliberately sanitized composite based on remote industrial
+        supply work. It names no customer, supplier, price, route plan, regulated item, or
+        contract term.</p>
+        <p>The software scenario is generic and names no employer, product, service, or internal
+        architecture.</p>
+        <h2>Shared causal model</h2>
+        <figure class="article-diagram" aria-label="Shared causal model for physical and software delivery">
+              <div class="article-flow"><span>Intent</span><b>→</b><span>Boundary contract</span><b>→</b><span>Local execution</span><b>→</b><span>Handoff</span><b>→</b><span>End-to-end verification</span><b>→</b><span>Outcome</span></div>
+              <figcaption>Unresolved ambiguity enters at the contract; checkpoint evidence observes the handoff; a prepared fallback protects the outcome.</figcaption>
+            </figure>
+        <p>The pattern:</p>
+        <ol>
+        <li>Intent is underspecified.</li>
+        <li>A local owner accepts a plausible interpretation.</li>
+        <li>Every local step executes correctly against that interpretation.</li>
+        <li>The mismatch crosses multiple boundaries.</li>
+        <li>End-to-end verification discovers it late.</li>
+        <li>Recovery is more expensive than early clarification.</li>
+        </ol>
+        <h2>Side-by-side case</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Stage</th>
+        <th>Remote industrial supply</th>
+        <th>Multi-service software delivery</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Intent</td>
+        <td>An operation needs a replacement assembly before a constrained delivery window.</td>
+        <td>A product flow needs a new state transition before a release window.</td>
+        </tr>
+        <tr>
+        <td>Ambiguity</td>
+        <td>The request contains a familiar description but lacks one compatibility attribute.</td>
+        <td>The story describes the happy path but leaves failure and retry semantics undefined.</td>
+        </tr>
+        <tr>
+        <td>Local contract</td>
+        <td>Procurement selects an item that matches the recorded specification.</td>
+        <td>Each service team implements a locally reasonable interpretation.</td>
+        </tr>
+        <tr>
+        <td>Local execution</td>
+        <td>Supplier, warehouse, and carrier perform their steps correctly.</td>
+        <td>Code, unit tests, and individual service contracts pass.</td>
+        </tr>
+        <tr>
+        <td>Handoff</td>
+        <td>The item moves through consolidation and long-haul transport.</td>
+        <td>The change moves through events, APIs, integration, and deployment.</td>
+        </tr>
+        <tr>
+        <td>Late discovery</td>
+        <td>The destination discovers that the item does not fit the installed system.</td>
+        <td>End-to-end testing or production reveals inconsistent state across services.</td>
+        </tr>
+        <tr>
+        <td>Immediate effect</td>
+        <td>The required equipment remains unavailable despite a completed delivery.</td>
+        <td>The user flow fails despite individually healthy services.</td>
+        </tr>
+        <tr>
+        <td>Recovery</td>
+        <td>Identify an alternative, secure capacity, repeat transport, and reconcile the original item.</td>
+        <td>Patch contracts and services, migrate or compensate state, redeploy, and reconcile in-flight work.</td>
+        </tr>
+        <tr>
+        <td>Root cause</td>
+        <td>An incomplete boundary contract was treated as sufficient.</td>
+        <td>An incomplete delivery contract was treated as ready.</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Controls mapped to the same failure</h2>
+        <h3>1. Contract review before execution</h3>
+        <p><strong>Physical system</strong></p>
+        <ul>
+        <li>Confirm equipment identity, compatibility attributes, destination constraints, and
+        acceptance evidence before procurement.</li>
+        <li>Assign one owner to accept ambiguity or stop the order.</li>
+        </ul>
+        <p><strong>Software system</strong></p>
+        <ul>
+        <li>Confirm functional behavior, NFRs, interface semantics, retries, timeouts, and failure
+        behavior before implementation.</li>
+        <li>Assign outcome and technical owners; unresolved assumptions block readiness or become
+        explicit exceptions.</li>
+        </ul>
+        <h3>2. Chain-of-custody evidence</h3>
+        <p><strong>Physical system</strong></p>
+        <ul>
+        <li>Preserve order identity, item identity, custody checkpoints, timestamps, and acceptance
+        documents across supplier, warehouse, carrier, and receiver.</li>
+        </ul>
+        <p><strong>Software system</strong></p>
+        <ul>
+        <li>Preserve intent ID, attempt ID, trace context, state transitions, timestamps, and
+        decision evidence across services and workflow tools.</li>
+        </ul>
+        <h3>3. Retry and duplication control</h3>
+        <p><strong>Physical system</strong></p>
+        <ul>
+        <li>Link any replacement shipment to the original intent.</li>
+        <li>Track both attempts and define what happens if both arrive.</li>
+        </ul>
+        <p><strong>Software system</strong></p>
+        <ul>
+        <li>Use idempotency or command identity.</li>
+        <li>Define deduplication, compensation, and reconciliation for repeated attempts.</li>
+        </ul>
+        <h3>4. Prepared fallback</h3>
+        <p><strong>Physical system</strong></p>
+        <ul>
+        <li>Pre-identify alternative sources, compatible substitutes, critical spares, escalation
+        contacts, and available transport options.</li>
+        </ul>
+        <p><strong>Software system</strong></p>
+        <ul>
+        <li>Prepare rollback, degraded mode, manual queue, feature flag, fallback dependency, and
+        the authority to activate them.</li>
+        </ul>
+        <h3>5. End-to-end outcome metric</h3>
+        <p><strong>Physical system</strong></p>
+        <ul>
+        <li>Measure accepted, usable delivery by the required window—not supplier dispatch or
+        warehouse throughput alone.</li>
+        </ul>
+        <p><strong>Software system</strong></p>
+        <ul>
+        <li>Measure verified user or operational outcome—not merged code, deployment success, or
+        service-local availability alone.</li>
+        </ul>
+        <h2>Decision record example</h2>
+        <h3>Risk</h3>
+        <p>Late discovery of a cross-boundary contract mismatch.</p>
+        <h3>Leading signals</h3>
+        <ul>
+        <li>missing compatibility or failure attributes;</li>
+        <li>repeated clarification after work is already in progress;</li>
+        <li>high return rate at acceptance or integration;</li>
+        <li>local success with end-to-end failure;</li>
+        <li>work items whose state differs between operational systems.</li>
+        </ul>
+        <h3>Preventive decision</h3>
+        <p>Require a proportional delivery contract for high-cost or hard-to-reverse work. A named
+        owner either resolves missing information or records a time-bound risk exception.</p>
+        <h3>Detective decision</h3>
+        <p>Add checkpoints that preserve stable intent identity and evidence at each custody or
+        service boundary. Monitor oldest-item age and transition failures, not only volume.</p>
+        <h3>Recovery decision</h3>
+        <p>Prepare at least one viable fallback and define who may activate it. Treat compensation
+        and reconciliation as first-class operations, not an improvised rollback.</p>
+        <h2>Reusable architecture-review questions</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Question</th>
+        <th>Physical interpretation</th>
+        <th>Software interpretation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>What promise is created at intake?</td>
+        <td>Delivery and acceptance obligation</td>
+        <td>Processing and outcome obligation</td>
+        </tr>
+        <tr>
+        <td>Where can work wait?</td>
+        <td>Supplier, warehouse, vehicle, destination</td>
+        <td>backlog, broker, worker, dependency, review</td>
+        </tr>
+        <tr>
+        <td>How old can it safely become?</td>
+        <td>Delivery window and operational need</td>
+        <td>SLA, user expectation, data validity</td>
+        </tr>
+        <tr>
+        <td>Where does ownership transfer?</td>
+        <td>Custody and acceptance checkpoints</td>
+        <td>API, event, deployment, team boundary</td>
+        </tr>
+        <tr>
+        <td>What identifies intent vs attempt?</td>
+        <td>Order vs shipment attempt</td>
+        <td>command/idempotency key vs retry</td>
+        </tr>
+        <tr>
+        <td>What buffer protects the system?</td>
+        <td>inventory, spare capacity, route option</td>
+        <td>queue, cache, replica, headroom</td>
+        </tr>
+        <tr>
+        <td>What does the buffer hide?</td>
+        <td>forecast, supplier, or capacity failure</td>
+        <td>demand, consumer, dependency, or recovery mismatch</td>
+        </tr>
+        <tr>
+        <td>What is the end-to-end outcome?</td>
+        <td>usable item accepted where needed</td>
+        <td>verified user or operational effect</td>
+        </tr>
+        <tr>
+        <td>What is the prepared alternative?</td>
+        <td>substitute, supplier, route, spare</td>
+        <td>rollback, degrade, fallback, manual path</td>
+        </tr>
+        <tr>
+        <td>Who chooses the alternative?</td>
+        <td>named operational owner</td>
+        <td>named technical/release owner</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Use and limitations</h2>
+        <p>Use this artifact to facilitate architecture reviews, incident retrospectives, or
+        product discovery for systems with expensive handoffs. Do not use it to claim that all
+        software patterns have direct physical equivalents.</p>
+        <p>The useful transfer is the causal reasoning:</p>
+        <ul>
+        <li>make promises explicit;</li>
+        <li>separate intent from attempts;</li>
+        <li>observe work across boundaries;</li>
+        <li>size buffers against a scenario;</li>
+        <li>optimize the whole flow;</li>
+        <li>prepare recovery before the failure.</li>
+        </ul>
+        
+        <aside class="article-related">
+          <p class="eyebrow">Companion resource</p>
+          <h2><a href="/logistics-lessons-for-distributed-systems.html">Read the full essay</a></h2>
+          <p>Seven lessons from logistics operations that change practical distributed-systems decisions.</p>
+        </aside>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row container"><span>© 2026 Pavel Nekrasov</span><div class="footer-links"><a href="/writing/">Writing</a><a href="https://github.com/nekrasovp">GitHub</a><a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a><a href="mailto:nekrasovp@gmail.com">Email</a></div></div>
+  </footer>
+</body>
+</html>
