@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Native SDLC Without Losing Engineering Accountability — Pavel Nekrasov</title>
+  <meta name="description" content="An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.">
+  <link rel="canonical" href="https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html">
+  <link rel="icon" href="/images/logo2.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI-Native SDLC Without Losing Engineering Accountability">
+  <meta property="og:description" content="An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.">
+  <meta property="og:url" content="https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AI-Native SDLC Without Losing Engineering Accountability",
+    "description": "An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.",
+    "datePublished": "2026-07-15",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/"
+    },
+    "mainEntityOfPage": "https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/"><span class="brand-mark">PN</span><span>Pavel Nekrasov</span></a>
+      <ul class="nav-links">
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-hero container">
+        <p class="eyebrow">Essay</p>
+        <h1>AI-Native SDLC Without Losing Engineering Accountability</h1>
+        <p class="lede">An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.</p>
+        <div class="article-meta"><span>15 Jul 2026</span><span>EN</span><span>12 min read</span></div>
+      </header>
+      <div class="article-body container">
+        <p>Coding assistants create an unusual kind of success. Code appears faster, tests are
+        easier to start, and routine edits stop consuming an engineer's entire afternoon. Then
+        the delivery system around the code becomes the bottleneck.</p>
+        <p>Product questions arrive half-answered. Review queues grow. Jira says that work is in
+        one state while the repository and deployment environment say something else. A change
+        looks complete until somebody discovers that the non-functional requirements were
+        never written down. The team has increased the rate at which it can produce candidate
+        solutions without increasing the rate at which it can make trustworthy decisions.</p>
+        <p>That is not an AI failure. It is a workflow design failure.</p>
+        <p>I use <strong>AI-native SDLC</strong> to mean something more demanding than giving every developer a
+        coding assistant. It means redesigning the delivery system so that both people and
+        agents can understand its contracts, perform bounded work, produce evidence, and stop
+        at explicit decision boundaries. The goal is not to remove accountability. The goal is
+        to make accountability visible enough that automation can support it.</p>
+        <p>This article describes the operating model I have found useful while introducing
+        agents into engineering and product workflows: automate ambiguity detection and
+        coordination, keep authority with named people, and treat every important state
+        transition as a contract.</p>
+        <h2>Faster code is not the same as faster delivery</h2>
+        <p>A software delivery system is a chain of queues and decisions. Code generation is only
+        one part of it. Before implementation, a team has to understand the problem, choose a
+        scope, expose constraints, agree on interfaces, and decide what evidence will count as
+        done. After implementation, it has to review, integrate, release, observe, and verify
+        the outcome.</p>
+        <p>An agent makes the implementation queue move faster. If the surrounding queues remain
+        unchanged, work simply accumulates elsewhere:</p>
+        <ul>
+        <li>reviewers receive larger volumes of changes with weaker context;</li>
+        <li>analysts and product managers answer questions after implementation has started;</li>
+        <li>engineers repeat discovery because source documents disagree;</li>
+        <li>managers reconcile Jira, documents, merge requests, and release state manually;</li>
+        <li>QA becomes the first place where missing requirements are made explicit.</li>
+        </ul>
+        <p>The common response is to automate more individual tasks. Generate the ticket. Generate
+        the design. Generate the code. Generate the tests. Generate the review. That can produce
+        more output while making the end-to-end system less legible.</p>
+        <p>The better first question is: <strong>what must be true before work is allowed to change
+        state?</strong></p>
+        <h2>Map the delivery system before automating it</h2>
+        <p>Start with the lifecycle the organization actually runs, not the one described in a
+        process presentation. Pick several recently delivered changes and reconstruct their
+        path from initial signal to production. For every transition, record four things:</p>
+        <ol>
+        <li>What information was required?</li>
+        <li>Who had authority to accept the transition?</li>
+        <li>What evidence was created?</li>
+        <li>Where did the work return when the evidence was insufficient?</li>
+        </ol>
+        <p>The resulting map is usually more valuable than an initial list of agent use cases.
+        It reveals hidden approval work, duplicate status updates, recurring document gaps, and
+        places where ownership exists only in people's memory.</p>
+        <p>A practical lifecycle can be represented as a sequence of contracts:</p>
+        <figure class="article-diagram" aria-label="Delivery lifecycle with bounded agent and human roles">
+              <div class="article-flow"><span>Signal</span><b>→</b><span>Intent</span><b>→</b><span>Delivery contract</span><b>→</b><span>Implementation</span><b>→</b><span>Evidence</span><b>→</b><span>Release</span><b>→</b><span>Outcome check</span></div>
+              <figcaption>Agents inspect, propose, execute bounded steps, and assemble evidence. Named people own intent, exceptions, review, and release authority.</figcaption>
+            </figure>
+        <p>The important detail is the direction of authority. Agents can inspect, propose,
+        execute reversible steps, and assemble evidence. Named people own outcomes, approve
+        exceptions, and authorize high-impact transitions.</p>
+        <p>Do not automate a transition whose inputs, owner, and failure path are still disputed.
+        Automation will encode the dispute, not resolve it.</p>
+        <h2>Turn requirements into a delivery contract</h2>
+        <p>&quot;Machine-readable requirements&quot; often sounds like a demand for a perfect formal
+        specification. That is neither necessary nor realistic for most product work. The useful
+        target is more modest: make the document structured enough that another engineer—or an
+        agent—can identify contradictions, omissions, and unverifiable statements.</p>
+        <p>For a normal story or bounded change, the delivery contract should answer:</p>
+        <ul>
+        <li><strong>Owner:</strong> who is accountable for the outcome and who owns the technical decision?</li>
+        <li><strong>Outcome:</strong> what user, operational, or business condition should change?</li>
+        <li><strong>Scope:</strong> what is included and explicitly excluded?</li>
+        <li><strong>Functional behavior:</strong> which observable behaviors must hold?</li>
+        <li><strong>Non-functional constraints:</strong> what matters for latency, availability, security,
+        privacy, capacity, compatibility, or operability?</li>
+        <li><strong>Interfaces and dependencies:</strong> which services, schemas, events, or teams are
+        involved?</li>
+        <li><strong>Acceptance examples:</strong> what concrete scenarios demonstrate success and failure?</li>
+        <li><strong>Evidence:</strong> which tests, traces, dashboards, screenshots, migration checks, or
+        approvals must exist?</li>
+        <li><strong>Rollout and rollback:</strong> how will exposure be controlled and how can the change be
+        reversed?</li>
+        <li><strong>Decision map:</strong> where is a human decision mandatory?</li>
+        </ul>
+        <p>This packet is the bridge between product intent and implementation. It also gives an
+        agent a bounded context. Without it, a model fills missing decisions with plausible
+        guesses. Those guesses often look polished enough to survive until integration.</p>
+        <p>The contract should be proportional to risk. A copy change does not need an architecture
+        document. A payment-flow change involving multiple services does. The discipline is not
+        &quot;write more.&quot; It is &quot;make the decisions that matter explicit before their absence
+        becomes expensive.&quot;</p>
+        <p>A reusable version of this packet accompanies this draft in
+        <a href="/ai-native-delivery-contract.html">AI-native delivery contract template</a>.</p>
+        <h2>Give agents bounded jobs at state transitions</h2>
+        <p>Agents are most useful when their responsibility has a clear input, output, and stopping
+        condition. State transitions provide those boundaries naturally.</p>
+        <h3>1. Intake and discovery assistance</h3>
+        <p>An agent can normalize an incoming request, locate related documents and incidents,
+        identify likely stakeholders, and turn vague statements into questions. It should not
+        decide the product outcome. Its output is a discovery brief for a human owner to accept
+        or revise.</p>
+        <h3>2. Definition-of-Ready review</h3>
+        <p>Before a story becomes ready, an agent can compare the PRD, functional requirements,
+        non-functional requirements, interface descriptions, and implementation notes. It can
+        flag missing owners, undefined terms, contradictory states, absent failure behavior, or
+        acceptance criteria that cannot be tested.</p>
+        <p>The agent should return structured findings, not silently rewrite the source material.
+        The owner decides whether each finding is resolved, accepted as an explicit exception,
+        or irrelevant.</p>
+        <h3>3. Implementation assistance</h3>
+        <p>Once the contract is accepted, an implementation agent can plan changes, modify code,
+        run tests, and prepare documentation within a defined repository and permission scope.
+        The contract gives the work a stable target; repository instructions and architecture
+        rules constrain how it is done.</p>
+        <h3>4. Evidence assembly and review</h3>
+        <p>A separate review role can compare the proposed change with the contract, execute the
+        required checks, and assemble an evidence bundle. Separating proposal from evaluation
+        matters. An agent should not be the sole judge of its own work, just as an engineer does
+        not approve their own high-risk production change.</p>
+        <h3>5. Definition-of-Done and release checks</h3>
+        <p>At completion, automation can verify that required tests passed, operational signals
+        exist, documentation changed, rollout instructions are present, and linked work items
+        reflect reality. It can block or request an exception, but a named owner authorizes a
+        material risk acceptance.</p>
+        <p>This pattern can be summarized as <strong>propose, evaluate, authorize</strong>:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>Typical agent role</th>
+        <th>Human accountability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Propose</td>
+        <td>draft, plan, implement, update</td>
+        <td>owns intent and scope</td>
+        </tr>
+        <tr>
+        <td>Evaluate</td>
+        <td>check contract, run tests, find risk</td>
+        <td>reviews evidence and unresolved risk</td>
+        </tr>
+        <tr>
+        <td>Authorize</td>
+        <td>prepare transition or approval request</td>
+        <td>approves high-impact transition or exception</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The separation is more important than the number of tools or models involved.</p>
+        <h2>Keep accountability human and auditable</h2>
+        <p>&quot;Human in the loop&quot; is too vague to be an operating rule. A human who clicks approve on
+        every agent action is a bottleneck; a human who receives only a final success message is
+        not meaningfully in control.</p>
+        <p>Accountability needs four concrete mechanisms.</p>
+        <p>First, every outcome and material technical decision has a named human owner. &quot;The
+        agent did it&quot; is never a valid ownership statement.</p>
+        <p>Second, the workflow records evidence, not just status. A transition should link to the
+        contract version, change set, test results, review findings, unresolved exceptions, and
+        rollout decision. This makes review faster and post-incident reconstruction possible.</p>
+        <p>Third, authority is risk-adaptive. Read-only discovery, document formatting, or a
+        reversible Jira update can run with broad autonomy. Schema migration, access-control
+        change, production release, or external communication requires stronger review and
+        explicit authorization.</p>
+        <p>Fourth, every gate has an exception path. Real delivery systems encounter incidents,
+        deadlines, and incomplete information. A gate with no exception path will be bypassed.
+        A useful exception records the owner, rationale, expiry or follow-up date, and
+        compensating control. It turns bypassing the process into an auditable risk decision.</p>
+        <h2>Automate coordination work, not only coding</h2>
+        <p>Some of the highest-leverage automation is deliberately unglamorous. In a
+        cross-functional workflow, an agent can:</p>
+        <ul>
+        <li>create correctly linked tasks from an accepted document;</li>
+        <li>check required sections when an epic or story changes state;</li>
+        <li>compare requirement documents and report inconsistencies;</li>
+        <li>keep parent and child work-item state synchronized;</li>
+        <li>request missing review evidence in a standard format;</li>
+        <li>generate a current delivery digest from source systems;</li>
+        <li>detect work marked complete while required artifacts remain open.</li>
+        </ul>
+        <p>Saving five minutes on one Jira transition does not sound strategic. Repeating that
+        transition across many stories and several roles changes the economics. It also prevents
+        the less visible cost of stale state: managers asking for updates, engineers reloading
+        context, and teams making plans from contradictory systems.</p>
+        <p>This is why I prefer to treat Jira and Confluence automation as delivery-system work,
+        not administrative convenience. The value is not the click that disappeared. It is the
+        shared state that stayed trustworthy.</p>
+        <h2>Measure the system, not the agent's output</h2>
+        <p>Lines generated, prompts sent, and agent sessions completed are activity metrics. They
+        say little about delivery performance. A useful measurement set follows work across the
+        whole lifecycle:</p>
+        <ul>
+        <li>lead time from accepted intent to verified production outcome;</li>
+        <li>time spent waiting for clarification before implementation;</li>
+        <li>return rate at Definition of Ready and the reasons for return;</li>
+        <li>rework caused by requirement or interface misunderstandings;</li>
+        <li>age of stale or contradictory workflow state;</li>
+        <li>review queue time and reviewer effort;</li>
+        <li>onboarding time for a new engineer or external contributor;</li>
+        <li>escaped defects and rollback frequency;</li>
+        <li>agent findings accepted, rejected, or overridden by humans;</li>
+        <li>exception count, age, and closure rate.</li>
+        </ul>
+        <p>Use a baseline before expanding automation. Otherwise every improvement discussion
+        turns into an argument about anecdotes. Do not set a percentage target simply because a
+        vendor or planning document contains one. Measure the current system, choose a small
+        number of outcomes, and publish the boundary of the measurement.</p>
+        <p>Watch for displacement. If implementation time falls while review time and rework rise,
+        the system did not become faster. It moved the queue.</p>
+        <h2>Adopt in stages</h2>
+        <p>An accountability-preserving rollout can progress through four stages.</p>
+        <h3>Stage 1: Assist</h3>
+        <p>Agents draft, summarize, search, and suggest. People perform every transition. This
+        stage builds literacy and reveals where context is missing.</p>
+        <h3>Stage 2: Review in shadow mode</h3>
+        <p>Agents evaluate documents and changes, but their findings do not block work. Compare
+        agent findings with human decisions. Tune false positives, identify blind spots, and
+        learn which checks are deterministic enough to automate.</p>
+        <h3>Stage 3: Automate reversible transitions</h3>
+        <p>Allow agents to create tasks, update links and state, run checks, and request evidence.
+        Make actions idempotent and auditable. Humans handle exceptions and high-impact approval.</p>
+        <h3>Stage 4: Redesign the workflow</h3>
+        <p>Only after the earlier stages produce trustworthy evidence should the organization
+        remove obsolete steps, combine queues, or increase autonomy. At this point the question
+        is no longer &quot;where can we add an agent?&quot; It is &quot;which parts of this workflow should
+        exist now that agents and people can share the work differently?&quot;</p>
+        <p>Not every workflow needs Stage 4. Predictable, low-volume work may be better served by a
+        script or a template. High-risk or poorly understood work may remain human-led. Agentic
+        complexity is a cost that needs a reason.</p>
+        <h2>The practical test</h2>
+        <p>Before calling a delivery process AI-native, ask:</p>
+        <ol>
+        <li>Can a new team member identify the current source of truth?</li>
+        <li>Does each state transition have explicit inputs and a named owner?</li>
+        <li>Can the system distinguish a missing decision from a writing problem?</li>
+        <li>Does every agent action have a bounded permission scope and audit trail?</li>
+        <li>Is proposal separated from evaluation and authorization where risk requires it?</li>
+        <li>Can a reviewer inspect the evidence without reconstructing the whole task?</li>
+        <li>Is there an explicit exception and rollback path?</li>
+        <li>Are improvements measured end to end rather than at the code-generation step?</li>
+        </ol>
+        <p>If the answer is no, adding more autonomous agents will usually make the delivery system
+        faster at producing uncertainty.</p>
+        <p>AI-native engineering is not defined by how much work an agent performs. It is defined
+        by whether the organization can increase throughput while preserving a trustworthy
+        chain from intent to evidence to decision. The most important artifact is therefore not
+        the prompt or the generated code. It is the delivery contract that tells both people and
+        agents what they are doing, why it matters, who decides, and how everyone will know that
+        the result is safe enough to ship.</p>
+        
+        <aside class="article-related">
+          <p class="eyebrow">Companion resource</p>
+          <h2><a href="/ai-native-delivery-contract.html">Use the AI-native delivery contract</a></h2>
+          <p>A reusable packet for intent, requirements, NFRs, evidence, rollout, rollback, and human-agent decision boundaries.</p>
+        </aside>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row container"><span>© 2026 Pavel Nekrasov</span><div class="footer-links"><a href="/writing/">Writing</a><a href="https://github.com/nekrasovp">GitHub</a><a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a><a href="mailto:nekrasovp@gmail.com">Email</a></div></div>
+  </footer>
+</body>
+</html>
+

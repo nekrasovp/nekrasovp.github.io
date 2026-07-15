@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical Debt as a Portfolio: A Practical Operating Model — Pavel Nekrasov</title>
+  <meta name="description" content="A lightweight system for turning technical debt from an unbounded backlog into explicit risks, owned decisions, and recurring engineering investments.">
+  <link rel="canonical" href="https://nekrasovp.ru/technical-debt-as-a-portfolio.html">
+  <link rel="icon" href="/images/logo2.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Technical Debt as a Portfolio: A Practical Operating Model">
+  <meta property="og:description" content="A lightweight system for turning technical debt from an unbounded backlog into explicit risks, owned decisions, and recurring engineering investments.">
+  <meta property="og:url" content="https://nekrasovp.ru/technical-debt-as-a-portfolio.html">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Technical Debt as a Portfolio: A Practical Operating Model",
+    "description": "A lightweight system for turning technical debt from an unbounded backlog into explicit risks, owned decisions, and recurring engineering investments.",
+    "datePublished": "2026-07-15",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/"
+    },
+    "mainEntityOfPage": "https://nekrasovp.ru/technical-debt-as-a-portfolio.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/"><span class="brand-mark">PN</span><span>Pavel Nekrasov</span></a>
+      <ul class="nav-links">
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-hero container">
+        <p class="eyebrow">Essay</p>
+        <h1>Technical Debt as a Portfolio: A Practical Operating Model</h1>
+        <p class="lede">A lightweight system for turning technical debt from an unbounded backlog into explicit risks, owned decisions, and recurring engineering investments.</p>
+        <div class="article-meta"><span>15 Jul 2026</span><span>EN</span><span>14 min read</span></div>
+      </header>
+      <div class="article-body container">
+        Installed 2 packages in 11ms
+        <p>Technical debt is usually managed as a list.</p>
+        <p>Someone notices a weak service boundary, an obsolete dependency, a fragile deployment, or a test suite that nobody trusts. A ticket is created. It joins hundreds of other tickets under a label called <code>tech-debt</code>. Product work remains urgent, the list grows, and the team gradually stops believing that the backlog represents a plan.</p>
+        <p>The problem is not that the team failed to document its debt. The problem is that an inventory is being asked to perform the work of an investment system.</p>
+        <p>In the product environments where I have been responsible for architecture and technical-debt planning, the service landscape grew from dozens of services toward roughly one hundred. At that scale, “clean up the code” is not a strategy. Different forms of debt have different carrying costs, failure modes, owners, and repayment options. Some debt should be repaid immediately. Some should be contained. Some is a rational trade that should remain in the system until the product proves that repayment is worthwhile.</p>
+        <p>That makes technical debt closer to a portfolio than to a single loan.</p>
+        <p>This article describes the operating model I use to make that portfolio visible and actionable without turning engineers into accountants.</p>
+        <h2>Debt is a decision, not an insult</h2>
+        <p>Calling every imperfect implementation “technical debt” makes the term useless.</p>
+        <p>A system can be inelegant and still be fit for purpose. A deliberate shortcut can be the correct way to validate a market. A component can use an old technology without creating meaningful business risk. Conversely, a cleanly written service can carry severe debt if nobody can operate it, access rules are inconsistent, or every change requires knowledge held by one person.</p>
+        <p>I use the following working definition:</p>
+        <blockquote>
+        <p>Technical debt is a current technical condition that creates a recurring cost, increases the probability or impact of failure, or constrains a valuable future option.</p>
+        </blockquote>
+        <p>This definition has three useful consequences.</p>
+        <p>First, debt needs a consequence. “I dislike this implementation” is not enough.</p>
+        <p>Second, debt can exist outside application code. It can live in architecture, tests, delivery workflows, observability, security controls, ownership, documentation, or team knowledge.</p>
+        <p>Third, debt is contextual. The same condition may be tolerable in an experiment and unacceptable in a payment path or an access-control boundary.</p>
+        <h2>Why a single backlog fails</h2>
+        <p>A flat technical-debt backlog loses meaning for predictable reasons.</p>
+        <h3>Items have incompatible units</h3>
+        <p>“Upgrade the framework,” “split the service,” “add tracing,” and “remove a shared database” may all be important, but they do not describe comparable risks or outcomes. Ranking them by intuition creates an argument, not a portfolio decision.</p>
+        <h3>Urgency decays faster than the ticket</h3>
+        <p>A workaround created for a launch may stop mattering when the feature is retired. A low-priority logging problem may become critical when a service enters a regulated or financially sensitive flow. Static priority cannot represent changing exposure.</p>
+        <h3>Ownership is ambiguous</h3>
+        <p>Many debt items sit between a product team, a platform team, security, and architecture. When everyone is affected but nobody owns the next decision, the backlog becomes a storage system for organizational uncertainty.</p>
+        <h3>The list contains solutions disguised as problems</h3>
+        <p>“Migrate to technology X” commits the organization to a solution before the constraint is understood. The real debt may be slow delivery, unsupported software, operational fragility, or a missing capability. Different treatments may address the same exposure at radically different cost.</p>
+        <h3>Product work and debt are presented as opposites</h3>
+        <p>Teams are asked to choose between “features” and “technical work,” even when the technical investment is what makes the feature safe, supportable, or economically viable. The portfolio model reconnects both sides through outcomes and constraints.</p>
+        <h2>The minimum viable debt register</h2>
+        <p>The register should contain enough information to support a decision and no more. If creating an entry feels like writing an architecture document, people will stop capturing debt.</p>
+        <p>I use these fields:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Field</th>
+        <th>Question it answers</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Condition</td>
+        <td>What is true today?</td>
+        </tr>
+        <tr>
+        <td>Consequence</td>
+        <td>What cost, failure, or constraint does it create?</td>
+        </tr>
+        <tr>
+        <td>Evidence</td>
+        <td>What signals show that the consequence is real?</td>
+        </tr>
+        <tr>
+        <td>Scope</td>
+        <td>Which users, teams, services, or flows are exposed?</td>
+        </tr>
+        <tr>
+        <td>Owner</td>
+        <td>Who owns the next decision, not necessarily all implementation?</td>
+        </tr>
+        <tr>
+        <td>Treatment</td>
+        <td>Repay, reduce, contain, accept, or retire?</td>
+        </tr>
+        <tr>
+        <td>Trigger</td>
+        <td>What event would change the decision?</td>
+        </tr>
+        <tr>
+        <td>Review date</td>
+        <td>When must the decision be reconsidered?</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>A useful entry is specific enough to challenge.</p>
+        <p>Weak:</p>
+        <blockquote>
+        <p>Logging is bad. Move everything to a new stack.</p>
+        </blockquote>
+        <p>Stronger:</p>
+        <blockquote>
+        <p>Twelve services emit incompatible request identifiers, so incidents crossing the gateway and asynchronous workers cannot be reconstructed reliably. Recent investigations required manual correlation across multiple data sources. The platform owner will evaluate a shared logging contract and rollout path before the next product-area expansion.</p>
+        </blockquote>
+        <p>The stronger entry does not pretend that the solution is already known. It states the condition, consequence, evidence, scope, owner, and decision horizon.</p>
+        <h2>Classify by exposure, not by code smell</h2>
+        <p>Taxonomies can become elaborate. I prefer six categories that correspond to operating decisions:</p>
+        <ol>
+        <li><strong>Delivery friction</strong> — changes are slow, repetitive, or difficult to validate.</li>
+        <li><strong>Reliability and performance</strong> — the system is more likely to fail, recover slowly, or violate capacity expectations.</li>
+        <li><strong>Security and compliance</strong> — controls are inconsistent, unverifiable, or too dependent on manual action.</li>
+        <li><strong>Architecture and changeability</strong> — boundaries, dependencies, or data ownership make valuable change expensive.</li>
+        <li><strong>Operability</strong> — teams cannot observe, deploy, support, or diagnose the system consistently.</li>
+        <li><strong>Knowledge and ownership</strong> — critical behavior is undocumented, unowned, or concentrated in too few people.</li>
+        </ol>
+        <p>One item may belong to several categories. The purpose is not perfect classification; it is to reveal which operating system must respond.</p>
+        <p>For example, inconsistent authorization across services is not merely a security issue. It creates delivery friction because each team reinvents policy, architecture debt because identity context crosses boundaries differently, and knowledge debt because behavior depends on local experts.</p>
+        <h2>Score only what improves the decision</h2>
+        <p>Teams often respond to ambiguity by inventing a precise formula. The result looks objective but hides assumptions inside numbers.</p>
+        <p>A lightweight score is still useful if it structures discussion rather than replacing judgment. For each item, estimate:</p>
+        <ul>
+        <li><strong>Impact:</strong> how severe is the consequence if exposure materializes?</li>
+        <li><strong>Likelihood or frequency:</strong> how often does it occur, or how probable is it within the review horizon?</li>
+        <li><strong>Reach:</strong> how many critical flows, services, teams, or customers are exposed?</li>
+        <li><strong>Carrying cost:</strong> what recurring engineering or operational cost is already being paid?</li>
+        <li><strong>Option value:</strong> which valuable future decisions are blocked or made significantly more expensive?</li>
+        </ul>
+        <p>Use a small scale such as 1–5 and keep the evidence next to the number. I normally treat <code>impact × likelihood</code> as an initial exposure signal, then use reach, carrying cost, and option value to discuss ordering. I do not collapse everything into one magic number.</p>
+        <p>The most valuable output of scoring is often disagreement. If product sees low impact and operations sees high impact, the team has discovered a missing shared model of the system.</p>
+        <h2>Choose a treatment, not just a priority</h2>
+        <p>Repayment is only one possible response.</p>
+        <h3>Repay</h3>
+        <p>Remove the condition: replace the fragile component, redesign the boundary, complete the migration, or build the missing capability.</p>
+        <p>Use this when exposure is high, the target state is understood, and the remaining lifetime of the system justifies the investment.</p>
+        <h3>Reduce</h3>
+        <p>Lower probability, reach, or carrying cost without eliminating the debt. A shared library, compatibility layer, automated check, or paved-road template can turn many local risks into one managed platform concern.</p>
+        <h3>Contain</h3>
+        <p>Limit blast radius. Isolate a legacy component, restrict change, add a gateway or policy boundary, introduce a circuit breaker, or separate a risky data path.</p>
+        <p>Containment is often the fastest rational response when full repayment is too disruptive.</p>
+        <h3>Accept</h3>
+        <p>Keep the debt deliberately. Record why the exposure is tolerable and define the trigger that reopens the decision. Acceptance without a trigger is usually just neglect written in formal language.</p>
+        <h3>Retire</h3>
+        <p>Delete the product, feature, service, or integration that creates the debt. Teams frequently underestimate retirement because the backlog assumes every existing capability must survive.</p>
+        <h2>Run the portfolio at three cadences</h2>
+        <p>Technical debt needs a recurring operating rhythm. An annual cleanup initiative is too slow; reviewing every item every sprint is noise.</p>
+        <h3>Continuous: capture and local treatment</h3>
+        <p>Engineers capture a debt condition when evidence appears in delivery, incidents, reviews, or operational work. Teams can resolve local, low-cost items without portfolio ceremony. Definition of Done should prevent a temporary shortcut from becoming invisible: document the exception, owner, and trigger before closing the work.</p>
+        <h3>Monthly: team or product-area review</h3>
+        <p>Review new high-exposure items, changes in evidence, and work that is repeatedly delayed by the same condition. Remove duplicates and dead items. Confirm that every material entry has an owner and a next decision date.</p>
+        <p>The output is not “more tickets.” It is a small set of proposed treatments with product and engineering consequences.</p>
+        <h3>Quarterly: cross-team portfolio review</h3>
+        <p>Architecture, product, platform, security, and operational owners examine systemic exposure and investment allocation. This is where repeated local symptoms should become a platform initiative, an architectural migration, or an explicit accepted risk.</p>
+        <p>The quarterly review should answer:</p>
+        <ul>
+        <li>Where is exposure increasing despite local work?</li>
+        <li>Which debt creates recurring cost across several teams?</li>
+        <li>Which product bets depend on a technical option we are losing?</li>
+        <li>Which accepted risks have reached their trigger?</li>
+        <li>Which initiatives can be stopped because the affected capability should be retired?</li>
+        </ul>
+        <h2>Allocate capacity through triggers, not ritual percentages</h2>
+        <p>“Reserve 20% for technical debt” is easy to communicate and sometimes useful, but it can become a substitute for prioritization. A team may spend the allocation on comfortable refactoring while a cross-service risk remains untouched.</p>
+        <p>I prefer a base allocation plus explicit triggers.</p>
+        <p>The base allocation funds continuous maintenance, dependency updates, test health, tooling, and small reductions in delivery friction. The exact percentage depends on product stage and system condition.</p>
+        <p>Triggers temporarily raise investment when:</p>
+        <ul>
+        <li>a critical product initiative depends on a blocked technical option;</li>
+        <li>incidents or operational load cross an agreed threshold;</li>
+        <li>the same workaround appears in several teams;</li>
+        <li>a security or compliance boundary cannot be demonstrated;</li>
+        <li>onboarding or lead time degrades because the platform is inconsistent;</li>
+        <li>a migration window is closing because an upstream dependency is ending support.</li>
+        </ul>
+        <p>This frames debt work as a response to observable system conditions rather than as an engineering entitlement.</p>
+        <h2>A platform example: from local fixes to portfolio treatment</h2>
+        <p>Consider a product that grows from roughly thirty services toward one hundred. Different teams and external contributors join at different stages. Logging formats, request identifiers, error models, access-control checks, and service ownership begin to diverge.</p>
+        <p>The flat backlog contains dozens of items:</p>
+        <ul>
+        <li>add structured logs to service A;</li>
+        <li>fix missing correlation in service B;</li>
+        <li>document access rules in service C;</li>
+        <li>add metrics to service D;</li>
+        <li>decide who owns an abandoned integration;</li>
+        <li>standardize another deployment template.</li>
+        </ul>
+        <p>Individually, none wins against product work. Together, they reveal portfolio exposure:</p>
+        <ul>
+        <li>incidents take longer to reconstruct across service boundaries;</li>
+        <li>new engineers learn several local conventions;</li>
+        <li>policy behavior is difficult to audit consistently;</li>
+        <li>each product team pays the cost of solving the same platform problem;</li>
+        <li>migrations stall because ownership is unclear.</li>
+        </ul>
+        <p>The treatment is not a heroic rewrite. It is a sequence:</p>
+        <ol>
+        <li>Define contracts for logging, correlation, metrics, access context, and ownership.</li>
+        <li>Put those contracts into shared libraries, templates, and gateway or policy boundaries where appropriate.</li>
+        <li>Add automated conformance checks and make exceptions visible.</li>
+        <li>Roll out by exposure and product timing, not alphabetically by repository.</li>
+        <li>Track adoption and retire the old paths.</li>
+        </ol>
+        <p>Architecture reviews, CODEOWNERS, observability standards, and Definition of Done then become repayment mechanisms. Their value is not that they create governance. Their value is that they stop the same debt from being issued independently in every service.</p>
+        <h2>Measure the carrying system, not lines of debt</h2>
+        <p>The number of tickets closed is a poor outcome metric. Deleting ten low-impact entries does not prove that the portfolio improved.</p>
+        <p>Useful directional measures include:</p>
+        <ul>
+        <li>lead time for changes in affected areas;</li>
+        <li>repeated manual steps per release or service onboarding;</li>
+        <li>incident investigation time and missing diagnostic context;</li>
+        <li>change failure and rollback patterns;</li>
+        <li>age and count of active exceptions;</li>
+        <li>concentration of ownership and review bottlenecks;</li>
+        <li>time required for a new team or external contributor to reach production;</li>
+        <li>percentage of services conforming to a selected platform contract;</li>
+        <li>product initiatives delayed by technical constraints.</li>
+        </ul>
+        <p>Not every organization has clean historical data. Do not invent precision. Establish the boundary, record a baseline where possible, and look for direction over several review cycles.</p>
+        <h2>Common failure modes</h2>
+        <h3>The debt register becomes a second product backlog</h3>
+        <p>If every item is decomposed into delivery tasks before treatment is selected, the register becomes another queue to maintain. Keep conditions and decisions in the register; track approved implementation in the normal delivery system.</p>
+        <h3>Architecture owns all debt</h3>
+        <p>Architecture can expose systemic patterns and facilitate decisions, but ownership must remain close to the consequence. A platform owner, product team, security owner, or business owner may hold the real decision.</p>
+        <h3>Engineers hide product changes inside debt work</h3>
+        <p>Some “refactoring” changes behavior, operating cost, or product capability. Make that impact explicit. Technical work does not become easier to prioritize by pretending it has no product consequences.</p>
+        <h3>Accepted debt has no expiry condition</h3>
+        <p>An accepted risk without a trigger or review date quietly becomes permanent. Record what would make the decision invalid.</p>
+        <h3>Standardization creates a larger single point of failure</h3>
+        <p>Shared libraries and paved roads reduce repeated debt, but they also centralize responsibility. They need compatibility policy, ownership, rollout support, and observability like any other product.</p>
+        <h2>A copyable review template</h2>
+        <pre><code class="language-markdown"># Debt condition
+        
+        ## Current condition
+        What is true today? Describe the constraint, not the desired solution.
+        
+        ## Consequence
+        What recurring cost, failure exposure, or blocked option does it create?
+        
+        ## Evidence
+        Incidents, lead-time data, repeated work, support load, audit gaps, or examples.
+        
+        ## Scope
+        Critical flows, services, teams, users, and expected system lifetime.
+        
+        ## Exposure
+        - Impact: 1-5, with rationale
+        - Likelihood/frequency: 1-5, with rationale
+        - Reach: local / product area / platform
+        - Carrying cost: low / medium / high, with evidence
+        - Option value: what future decision is constrained?
+        
+        ## Owner
+        Who owns the next decision?
+        
+        ## Proposed treatment
+        Repay / reduce / contain / accept / retire.
+        
+        ## Trigger and review date
+        What changes the decision, and when will it be reviewed?
+        </code></pre>
+        <h2>The goal is a better delivery system</h2>
+        <p>Technical debt will not disappear, and eliminating it should not be the goal. Products need options, experiments, deadlines, and occasionally deliberate shortcuts.</p>
+        <p>The failure is not taking on debt. The failure is losing the ability to explain what was taken on, what it costs, who owns the next decision, and which conditions require a different response.</p>
+        <p>A portfolio model restores that ability. It connects engineering conditions to product outcomes, gives architecture governance a concrete purpose, and lets teams invest where the system is actually paying interest.</p>
+        <p>That is the standard I use: not a clean backlog, but a delivery system that can make its technical trade-offs visible and change them before they become irreversible.</p>
+        
+        <aside class="article-related">
+          <p class="eyebrow">Companion resource</p>
+          <h2><a href="/technical-debt-portfolio-register.html">Use the technical-debt portfolio register</a></h2>
+          <p>A copyable register, decision record, exposure assessment, and review checklist.</p>
+        </aside>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-row container"><span>© 2026 Pavel Nekrasov</span><div class="footer-links"><a href="/writing/">Writing</a><a href="https://github.com/nekrasovp">GitHub</a><a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a><a href="mailto:nekrasovp@gmail.com">Email</a></div></div>
+  </footer>
+</body>
+</html>
+
