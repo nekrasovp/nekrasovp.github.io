@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Pavel Nekrasov — Hands-on CTO and Product/Platform Engineer</title>
+  <desc id="desc">A dark green social preview card with a lime PN monogram and Pavel Nekrasov's engineering positioning.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07100d"/>
+      <stop offset="0.62" stop-color="#0b1511"/>
+      <stop offset="1" stop-color="#15271d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#b7f34a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#b7f34a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#dce8df" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="72" y="66" width="84" height="84" rx="22" fill="#b7f34a"/>
+  <text x="114" y="120" text-anchor="middle" fill="#07100d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="800">PN</text>
+  <text x="184" y="116" fill="#f3f7f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="750">Pavel Nekrasov</text>
+
+  <text x="72" y="244" fill="#b7f34a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="750" letter-spacing="3">ENGINEERING · PRODUCT · OPERATIONS</text>
+  <text x="72" y="326" fill="#f3f7f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="58" font-weight="780">Hands-on CTO &amp;</text>
+  <text x="72" y="396" fill="#f3f7f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="58" font-weight="780">Product/Platform Engineer</text>
+
+  <text x="72" y="478" fill="#aebbb3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="27">Backend architecture, engineering leadership, and systems</text>
+  <text x="72" y="516" fill="#aebbb3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="27">that work under real operational constraints.</text>
+
+  <line x1="72" y1="566" x2="1128" y2="566" stroke="#dce8df" stroke-opacity="0.18"/>
+  <text x="72" y="602" fill="#f3f7f4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">nekrasovp.ru</text>
+  <circle cx="1098" cy="596" r="7" fill="#b7f34a"/>
+  <circle cx="1122" cy="596" r="7" fill="#b7f34a" fill-opacity="0.45"/>
+</svg>
