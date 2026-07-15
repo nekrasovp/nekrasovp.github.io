@@ -120,7 +120,10 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>Abstract</h2>
+                <div class="alert alert-warning" role="note" aria-label="Outdated content notice">
+<strong>Outdated content.</strong> Originally published on 2021-11-03. Kept for URL continuity and historical context; verify commands, versions, and security guidance against current official documentation before use.
+</div>
+<h2>Abstract</h2>
 <p>In this article we will to go through the process of deploying a flask app on a Linux server. We will use gunicorn as a WSGI server to communicate with our flask app, and Nginx as a proxy server between the gunicorn server and the client.</p>
 <p>We need gunicorn between flask and nginx because the flask development server although good for debugging is weak and will not stand in production, so we need gunicorn as a wsgi server to communicate with flask.</p>
 <h2>Contents</h2>
