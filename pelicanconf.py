@@ -70,6 +70,7 @@ OUTPUT_PATH = '/output'
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
     'images',
+    'CNAME',
 ]
 
 # Theme path
