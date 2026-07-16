@@ -131,6 +131,21 @@ img {
   color: var(--text);
 }
 
+.nav-links .language-switch a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 2px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
+.nav-links .language-switch a:hover {
+  border-color: var(--accent);
+}
+
 .hero {
   min-height: 680px;
   display: grid;
@@ -161,6 +176,10 @@ h1 {
   max-width: 880px;
   margin: 0;
   font-size: clamp(48px, 7.3vw, 92px);
+}
+
+.ru-page .hero h1 {
+  font-size: clamp(40px, 6.4vw, 82px);
 }
 
 h2 {
