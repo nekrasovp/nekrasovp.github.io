@@ -1,0 +1,38 @@
+{
+  "baseline_collection_window_utc": {
+    "finished": "2026-07-21T20:20:28Z",
+    "started": "2026-07-21T20:18:41Z"
+  },
+  "determinism": {
+    "excluded_fields": [
+      "collection_started_at_utc",
+      "collection_finished_at_utc"
+    ],
+    "result": "pass",
+    "second_collection_window_utc": {
+      "finished": "2026-07-21T20:24:45Z",
+      "started": "2026-07-21T20:21:22Z"
+    }
+  },
+  "generated_directory_check": {
+    "published_sha": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce",
+    "result": "pass"
+  },
+  "negative_cases": {
+    "missing_feed_entry": "exit_1",
+    "missing_lang": "exit_1",
+    "missing_notebook_article": "exit_1",
+    "missing_route": "exit_1",
+    "wrong_canonical": "exit_1"
+  },
+  "production_unchanged": true,
+  "schema_version": 1,
+  "source_commits": {
+    "gh-pages": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce",
+    "master": "a19169d1507278e845cd4df943d1f92991eddcd1"
+  },
+  "tests": {
+    "count": 6,
+    "result": "pass"
+  }
+}

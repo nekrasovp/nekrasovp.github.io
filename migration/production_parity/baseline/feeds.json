@@ -1,0 +1,1289 @@
+{
+  "feeds": [
+    {
+      "entries": [
+        {
+          "categories": [
+            "Blog",
+            "arbitrage",
+            "finance"
+          ],
+          "id": "tag:nekrasovp.github.io,2018-06-06:/arbitrage.html",
+          "published": "2018-06-06T15:00:00+03:00",
+          "title": "Arbitrage",
+          "updated": "2018-06-06T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/arbitrage.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "arima",
+            "fft",
+            "finance",
+            "notebook",
+            "pandas",
+            "python",
+            "xgboost"
+          ],
+          "id": "tag:nekrasovp.github.io,2018-12-01:/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+          "published": "2018-12-01T15:00:00+03:00",
+          "title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data",
+          "updated": "2018-12-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-01:/install-pelican-and-create-project-skeleton.html",
+          "published": "2019-02-01T16:00:00+03:00",
+          "title": "Install Pelican and create project skeleton",
+          "updated": "2019-02-01T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/install-pelican-and-create-project-skeleton.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-02:/add-theme-and-plugins-to-pelican.html",
+          "published": "2019-02-02T16:00:00+03:00",
+          "title": "Add theme and plugins to Pelican installation",
+          "updated": "2019-02-02T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/add-theme-and-plugins-to-pelican.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "bitbucket",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-02:/deploying-a-static-website-to-bitbucket.html",
+          "published": "2019-02-02T16:00:00+03:00",
+          "title": "Deploying a static website to bitbucket",
+          "updated": "2019-02-02T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/deploying-a-static-website-to-bitbucket.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "openssl",
+            "ubuntu"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-05:/upgrading-openssl-ubuntu.html",
+          "published": "2019-02-05T15:00:00+03:00",
+          "title": "Upgrading OpenSSL on Ubuntu 18.04",
+          "updated": "2019-02-05T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/upgrading-openssl-ubuntu.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-03-01:/stock-data-with-pandas-datareader.html",
+          "published": "2019-03-01T15:00:00+03:00",
+          "title": "Getting stock data with pandas-datareader",
+          "updated": "2019-03-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-data-with-pandas-datareader.html"
+        },
+        {
+          "categories": [
+            "ANOVA",
+            "Blog",
+            "kaggle",
+            "matplotlib",
+            "notebook",
+            "pandas",
+            "python",
+            "seaborn",
+            "statistics"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-05-10:/testing-hypothesis-on-football-data-set.html",
+          "published": "2019-05-10T15:00:00+03:00",
+          "title": "Testing hypothesis on football data-set from kaggle",
+          "updated": "2019-05-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/testing-hypothesis-on-football-data-set.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "plotly",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-10:/candlestick-charts-plotly.html",
+          "published": "2019-07-10T20:00:00+03:00",
+          "title": "Stock market candlestick charts with plotly and python",
+          "updated": "2019-07-10T20:00:00+03:00",
+          "url": "https://nekrasovp.ru/candlestick-charts-plotly.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "ffn",
+            "finance",
+            "matplotlib",
+            "notebook",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-11:/stock-perfomance-analysis.html",
+          "published": "2019-07-11T15:00:00+03:00",
+          "title": "Stock performance analysis using python Financial Functions",
+          "updated": "2019-07-11T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-perfomance-analysis.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "portfolio",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-12:/stock-market-portfolio-optimisation.html",
+          "published": "2019-07-12T15:00:00+03:00",
+          "title": "Stock market portfolio optimisation",
+          "updated": "2019-07-12T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-market-portfolio-optimisation.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "notebook",
+            "numpy",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-08-29:/number-sequences.html",
+          "published": "2019-08-29T15:00:00+03:00",
+          "title": "Number sequences visualisation with python",
+          "updated": "2019-08-29T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/number-sequences.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "cython",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-09-02:/use-cython-to-speedup-your-python-code.html",
+          "published": "2019-09-02T15:00:00+03:00",
+          "title": "Use Cython to speed up your Python code",
+          "updated": "2019-09-02T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/use-cython-to-speedup-your-python-code.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "matplotlib",
+            "numpy",
+            "python",
+            "scipy"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-01-25:/markov-chain-bean-machine.html",
+          "published": "2020-01-25T15:00:00+03:00",
+          "title": "Simulating a Galton board with Markov chains",
+          "updated": "2020-01-25T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/markov-chain-bean-machine.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "math",
+            "matplotlib",
+            "networkx",
+            "pydot",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-01:/pascals-triangle.html",
+          "published": "2020-08-01T15:00:00+03:00",
+          "title": "Pascal's Triangle",
+          "updated": "2020-08-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/pascals-triangle.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "science",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-21:/essay-paper-template.html",
+          "published": "2020-08-21T15:00:00+03:00",
+          "title": "Essay(simple paper) template",
+          "updated": "2020-08-21T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/essay-paper-template.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "git",
+            "github",
+            "pelican"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-22:/pelican-github-script-automation.html",
+          "published": "2020-08-22T20:00:00+03:00",
+          "title": "Move blog to github and automate deploying with git hooks",
+          "updated": "2020-08-22T20:00:00+03:00",
+          "url": "https://nekrasovp.ru/pelican-github-script-automation.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "science",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-29:/business-it-solutions.html",
+          "published": "2020-08-29T14:00:00+03:00",
+          "title": "How to get well-developed IT solution",
+          "updated": "2020-08-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/business-it-solutions.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "notebook",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-09-09:/publishing-articles-workflow.html",
+          "published": "2020-09-09T15:00:00+03:00",
+          "title": "Publishing articles workflow",
+          "updated": "2020-09-09T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/publishing-articles-workflow.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "data",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-09-29:/share-data.html",
+          "published": "2020-09-29T14:00:00+03:00",
+          "title": "How to share data with a statistician",
+          "updated": "2020-09-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/share-data.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "notebook",
+            "pandas",
+            "python",
+            "wbdata"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-10-27:/covid-dashboard.html",
+          "published": "2020-10-27T15:00:00+03:00",
+          "title": "Just another COVID-19 data visualisation",
+          "updated": "2020-10-27T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/covid-dashboard.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "graphql"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-11-29:/graphql-schema.html",
+          "published": "2020-11-29T14:00:00+03:00",
+          "title": "Understand GraphQL Schema",
+          "updated": "2020-11-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/graphql-schema.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "template",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-02-11:/retrospective-template.html",
+          "published": "2021-02-11T11:00:00+03:00",
+          "title": "Шаблон ретроспективы",
+          "updated": "2021-02-11T11:00:00+03:00",
+          "url": "https://nekrasovp.ru/retrospective-template.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "leaflet",
+            "notebook",
+            "pandas",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-04-04:/mkrf-spb-geo-data.html",
+          "published": "2021-04-04T15:00:00+03:00",
+          "title": "Визуализации картографических данных в Jupyter notebook",
+          "updated": "2021-04-04T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/mkrf-spb-geo-data.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "git",
+            "github",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-04-09:/devops-questions.html",
+          "published": "2021-04-09T10:00:00+03:00",
+          "title": "Obstacles to successful devops",
+          "updated": "2021-04-09T10:00:00+03:00",
+          "url": "https://nekrasovp.ru/devops-questions.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "flake8",
+            "gitlab",
+            "mypy",
+            "pylint",
+            "pytest",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-07-10:/setting-up-gitlab-ci.html",
+          "published": "2021-07-10T15:00:00+03:00",
+          "title": "Setting Up GitLab CI for a Python Application",
+          "updated": "2021-07-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/setting-up-gitlab-ci.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "python",
+            "rabbitmq"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-10-01:/building-job-queue.html",
+          "published": "2021-10-01T15:00:00+03:00",
+          "title": "Building job queue",
+          "updated": "2021-10-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/building-job-queue.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "flask",
+            "gunicorn",
+            "nginx",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-11-03:/setting-up-nginx-gunicorn-flask.html",
+          "published": "2021-11-03T15:00:00+03:00",
+          "title": "Setting Up Nginx, Gunicorn for Flask app",
+          "updated": "2021-11-03T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/setting-up-nginx-gunicorn-flask.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "node",
+            "nvm",
+            "yarn"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-01-11:/install-nvm-node-yarn.html",
+          "published": "2022-01-11T15:00:00+03:00",
+          "title": "Install nvm, node and yarn for your Node.js application",
+          "updated": "2022-01-11T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/install-nvm-node-yarn.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "analytics",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-10:/analytics-checklist.html",
+          "published": "2022-02-10T15:00:00+03:00",
+          "title": "Analytics checklist",
+          "updated": "2022-02-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/analytics-checklist.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "logging",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-24:/color-formatter.html",
+          "published": "2022-02-24T21:47:00+03:00",
+          "title": "Custom color formatter with Python logging",
+          "updated": "2022-02-24T21:47:00+03:00",
+          "url": "https://nekrasovp.ru/color-formatter.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "logging",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-25:/custom-logger.html",
+          "published": "2022-02-25T18:45:00+03:00",
+          "title": "Custom logger handlers",
+          "updated": "2022-02-25T18:45:00+03:00",
+          "url": "https://nekrasovp.ru/custom-logger.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-16:/linux-port.html",
+          "published": "2022-03-16T15:00:00+03:00",
+          "title": "Ways to find out which process is listening on a specific port",
+          "updated": "2022-03-16T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-port.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "gil",
+            "multiprocessing",
+            "python",
+            "threading"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-20:/python-gil.html",
+          "published": "2022-03-20T15:00:00+03:00",
+          "title": "Why you need Python Global Interpreter Lock and how it works",
+          "updated": "2022-03-20T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-gil.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "python",
+            "shell"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-26:/shell-capture.html",
+          "published": "2022-03-26T12:00:00+03:00",
+          "title": "Capturing shell output in python",
+          "updated": "2022-03-26T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/shell-capture.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "git"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-04-21:/git-rebase.html",
+          "published": "2022-04-21T12:00:00+03:00",
+          "title": "How to rebase git branch",
+          "updated": "2022-04-21T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/git-rebase.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "black",
+            "python",
+            "vscode"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-05-10:/python-black-isort.html",
+          "published": "2022-05-10T12:00:00+03:00",
+          "title": "Use Black and organize imports on save in VSCode",
+          "updated": "2022-05-10T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-black-isort.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "mysql"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-06-15:/fixing-caching-sha2-password.html",
+          "published": "2022-06-15T12:00:00+03:00",
+          "title": "Authentication plugin 'caching_sha2_password' cannot be loaded",
+          "updated": "2022-06-15T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/fixing-caching-sha2-password.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-07-20:/python-object-reference.html",
+          "published": "2022-07-20T12:00:00+03:00",
+          "title": "Python object reference",
+          "updated": "2022-07-20T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-object-reference.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-08-06:/linux-change-swap-size.html",
+          "published": "2022-08-06T15:00:00+03:00",
+          "title": "Change swap size in Ubuntu",
+          "updated": "2022-08-06T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-change-swap-size.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-08-07:/linux-list-users.html",
+          "published": "2022-08-07T15:00:00+03:00",
+          "title": "How to List Users in Linux",
+          "updated": "2022-08-07T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-list-users.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "poetry",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-02-20:/python-poetry-docker.html",
+          "published": "2023-02-20T12:00:00+03:00",
+          "title": "Python app with poetry & docker",
+          "updated": "2023-02-20T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-poetry-docker.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "mysql"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-07-11:/mysql-server-errors.html",
+          "published": "2023-07-11T13:00:00+03:00",
+          "title": "MySQL server has gone away errors",
+          "updated": "2023-07-11T13:00:00+03:00",
+          "url": "https://nekrasovp.ru/mysql-server-errors.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "django",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-09-02:/update-django-user-password.html",
+          "published": "2023-09-02T15:00:00+03:00",
+          "title": "Update Django user password",
+          "updated": "2023-09-02T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/update-django-user-password.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "science",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-09-16:/what-is-technical-debt.html",
+          "published": "2023-09-16T15:00:00+03:00",
+          "title": "Что такое технический долг?",
+          "updated": "2023-09-16T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/what-is-technical-debt.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "science",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-10-14:/technical-debt-examples.html",
+          "published": "2023-10-14T15:00:00+03:00",
+          "title": "Примеры технического долга",
+          "updated": "2023-10-14T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/technical-debt-examples.html"
+        },
+        {
+          "categories": [
+            "AI-native SDLC",
+            "delivery systems",
+            "engineering leadership"
+          ],
+          "id": "tag:nekrasovp.ru,2026-07-15:/ai-native-sdlc-engineering-accountability.html",
+          "published": "2026-07-15T12:00:00+02:00",
+          "title": "AI-Native SDLC Without Losing Engineering Accountability",
+          "updated": "2026-07-15T12:00:00+02:00",
+          "url": "https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html"
+        },
+        {
+          "categories": [
+            "distributed systems",
+            "logistics",
+            "operations"
+          ],
+          "id": "tag:nekrasovp.ru,2026-07-15:/logistics-lessons-for-distributed-systems.html",
+          "published": "2026-07-15T12:00:00+02:00",
+          "title": "What Logistics Taught Me About Distributed Systems",
+          "updated": "2026-07-15T12:00:00+02:00",
+          "url": "https://nekrasovp.ru/logistics-lessons-for-distributed-systems.html"
+        },
+        {
+          "categories": [
+            "architecture",
+            "engineering leadership",
+            "technical debt"
+          ],
+          "id": "tag:nekrasovp.ru,2026-07-15:/technical-debt-as-a-portfolio.html",
+          "published": "2026-07-15T12:00:00+02:00",
+          "title": "Technical Debt as a Portfolio, Not a Backlog",
+          "updated": "2026-07-15T12:00:00+02:00",
+          "url": "https://nekrasovp.ru/technical-debt-as-a-portfolio.html"
+        }
+      ],
+      "entry_count": 49,
+      "id": "https://nekrasovp.ru/",
+      "links": [
+        {
+          "href": "https://nekrasovp.ru/",
+          "rel": "alternate"
+        },
+        {
+          "href": "https://nekrasovp.ru/feeds/all.atom.xml",
+          "rel": "self"
+        }
+      ],
+      "path": "/feeds/all.atom.xml",
+      "sha256": "0b17949bec8a3f1cc2d22651b60b95f9509a3ec7a52f496734e6cbd6981f5773",
+      "status": 200,
+      "title": "Pavel Nekrasov — Writing",
+      "updated": "2026-07-15T12:00:00+02:00",
+      "url": "https://nekrasovp.ru/feeds/all.atom.xml"
+    },
+    {
+      "entries": [
+        {
+          "categories": [
+            "Blog",
+            "arbitrage",
+            "finance"
+          ],
+          "id": "tag:nekrasovp.github.io,2018-06-06:/arbitrage.html",
+          "published": "2018-06-06T15:00:00+03:00",
+          "title": "Arbitrage",
+          "updated": "2018-06-06T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/arbitrage.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "arima",
+            "fft",
+            "finance",
+            "notebook",
+            "pandas",
+            "python",
+            "xgboost"
+          ],
+          "id": "tag:nekrasovp.github.io,2018-12-01:/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+          "published": "2018-12-01T15:00:00+03:00",
+          "title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data",
+          "updated": "2018-12-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-01:/install-pelican-and-create-project-skeleton.html",
+          "published": "2019-02-01T16:00:00+03:00",
+          "title": "Install Pelican and create project skeleton",
+          "updated": "2019-02-01T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/install-pelican-and-create-project-skeleton.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-02:/add-theme-and-plugins-to-pelican.html",
+          "published": "2019-02-02T16:00:00+03:00",
+          "title": "Add theme and plugins to Pelican installation",
+          "updated": "2019-02-02T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/add-theme-and-plugins-to-pelican.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "bitbucket",
+            "markdown",
+            "pelican",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-02:/deploying-a-static-website-to-bitbucket.html",
+          "published": "2019-02-02T16:00:00+03:00",
+          "title": "Deploying a static website to bitbucket",
+          "updated": "2019-02-02T16:00:00+03:00",
+          "url": "https://nekrasovp.ru/deploying-a-static-website-to-bitbucket.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "openssl",
+            "ubuntu"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-02-05:/upgrading-openssl-ubuntu.html",
+          "published": "2019-02-05T15:00:00+03:00",
+          "title": "Upgrading OpenSSL on Ubuntu 18.04",
+          "updated": "2019-02-05T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/upgrading-openssl-ubuntu.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-03-01:/stock-data-with-pandas-datareader.html",
+          "published": "2019-03-01T15:00:00+03:00",
+          "title": "Getting stock data with pandas-datareader",
+          "updated": "2019-03-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-data-with-pandas-datareader.html"
+        },
+        {
+          "categories": [
+            "ANOVA",
+            "Blog",
+            "kaggle",
+            "matplotlib",
+            "notebook",
+            "pandas",
+            "python",
+            "seaborn",
+            "statistics"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-05-10:/testing-hypothesis-on-football-data-set.html",
+          "published": "2019-05-10T15:00:00+03:00",
+          "title": "Testing hypothesis on football data-set from kaggle",
+          "updated": "2019-05-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/testing-hypothesis-on-football-data-set.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "plotly",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-10:/candlestick-charts-plotly.html",
+          "published": "2019-07-10T20:00:00+03:00",
+          "title": "Stock market candlestick charts with plotly and python",
+          "updated": "2019-07-10T20:00:00+03:00",
+          "url": "https://nekrasovp.ru/candlestick-charts-plotly.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "ffn",
+            "finance",
+            "matplotlib",
+            "notebook",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-11:/stock-perfomance-analysis.html",
+          "published": "2019-07-11T15:00:00+03:00",
+          "title": "Stock performance analysis using python Financial Functions",
+          "updated": "2019-07-11T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-perfomance-analysis.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "finance",
+            "notebook",
+            "pandas",
+            "portfolio",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-07-12:/stock-market-portfolio-optimisation.html",
+          "published": "2019-07-12T15:00:00+03:00",
+          "title": "Stock market portfolio optimisation",
+          "updated": "2019-07-12T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/stock-market-portfolio-optimisation.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "notebook",
+            "numpy",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-08-29:/number-sequences.html",
+          "published": "2019-08-29T15:00:00+03:00",
+          "title": "Number sequences visualisation with python",
+          "updated": "2019-08-29T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/number-sequences.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "cython",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2019-09-02:/use-cython-to-speedup-your-python-code.html",
+          "published": "2019-09-02T15:00:00+03:00",
+          "title": "Use Cython to speed up your Python code",
+          "updated": "2019-09-02T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/use-cython-to-speedup-your-python-code.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "matplotlib",
+            "numpy",
+            "python",
+            "scipy"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-01-25:/markov-chain-bean-machine.html",
+          "published": "2020-01-25T15:00:00+03:00",
+          "title": "Simulating a Galton board with Markov chains",
+          "updated": "2020-01-25T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/markov-chain-bean-machine.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "math",
+            "matplotlib",
+            "networkx",
+            "pydot",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-01:/pascals-triangle.html",
+          "published": "2020-08-01T15:00:00+03:00",
+          "title": "Pascal's Triangle",
+          "updated": "2020-08-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/pascals-triangle.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "science",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-21:/essay-paper-template.html",
+          "published": "2020-08-21T15:00:00+03:00",
+          "title": "Essay(simple paper) template",
+          "updated": "2020-08-21T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/essay-paper-template.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "git",
+            "github",
+            "pelican"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-22:/pelican-github-script-automation.html",
+          "published": "2020-08-22T20:00:00+03:00",
+          "title": "Move blog to github and automate deploying with git hooks",
+          "updated": "2020-08-22T20:00:00+03:00",
+          "url": "https://nekrasovp.ru/pelican-github-script-automation.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "science",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-08-29:/business-it-solutions.html",
+          "published": "2020-08-29T14:00:00+03:00",
+          "title": "How to get well-developed IT solution",
+          "updated": "2020-08-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/business-it-solutions.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "markdown",
+            "notebook",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-09-09:/publishing-articles-workflow.html",
+          "published": "2020-09-09T15:00:00+03:00",
+          "title": "Publishing articles workflow",
+          "updated": "2020-09-09T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/publishing-articles-workflow.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "data",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-09-29:/share-data.html",
+          "published": "2020-09-29T14:00:00+03:00",
+          "title": "How to share data with a statistician",
+          "updated": "2020-09-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/share-data.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "notebook",
+            "pandas",
+            "python",
+            "wbdata"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-10-27:/covid-dashboard.html",
+          "published": "2020-10-27T15:00:00+03:00",
+          "title": "Just another COVID-19 data visualisation",
+          "updated": "2020-10-27T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/covid-dashboard.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "graphql"
+          ],
+          "id": "tag:nekrasovp.github.io,2020-11-29:/graphql-schema.html",
+          "published": "2020-11-29T14:00:00+03:00",
+          "title": "Understand GraphQL Schema",
+          "updated": "2020-11-29T14:00:00+03:00",
+          "url": "https://nekrasovp.ru/graphql-schema.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "template",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-02-11:/retrospective-template.html",
+          "published": "2021-02-11T11:00:00+03:00",
+          "title": "Шаблон ретроспективы",
+          "updated": "2021-02-11T11:00:00+03:00",
+          "url": "https://nekrasovp.ru/retrospective-template.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "leaflet",
+            "notebook",
+            "pandas",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-04-04:/mkrf-spb-geo-data.html",
+          "published": "2021-04-04T15:00:00+03:00",
+          "title": "Визуализации картографических данных в Jupyter notebook",
+          "updated": "2021-04-04T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/mkrf-spb-geo-data.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "git",
+            "github",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-04-09:/devops-questions.html",
+          "published": "2021-04-09T10:00:00+03:00",
+          "title": "Obstacles to successful devops",
+          "updated": "2021-04-09T10:00:00+03:00",
+          "url": "https://nekrasovp.ru/devops-questions.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "flake8",
+            "gitlab",
+            "mypy",
+            "pylint",
+            "pytest",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-07-10:/setting-up-gitlab-ci.html",
+          "published": "2021-07-10T15:00:00+03:00",
+          "title": "Setting Up GitLab CI for a Python Application",
+          "updated": "2021-07-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/setting-up-gitlab-ci.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "python",
+            "rabbitmq"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-10-01:/building-job-queue.html",
+          "published": "2021-10-01T15:00:00+03:00",
+          "title": "Building job queue",
+          "updated": "2021-10-01T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/building-job-queue.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "flask",
+            "gunicorn",
+            "nginx",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2021-11-03:/setting-up-nginx-gunicorn-flask.html",
+          "published": "2021-11-03T15:00:00+03:00",
+          "title": "Setting Up Nginx, Gunicorn for Flask app",
+          "updated": "2021-11-03T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/setting-up-nginx-gunicorn-flask.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "node",
+            "nvm",
+            "yarn"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-01-11:/install-nvm-node-yarn.html",
+          "published": "2022-01-11T15:00:00+03:00",
+          "title": "Install nvm, node and yarn for your Node.js application",
+          "updated": "2022-01-11T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/install-nvm-node-yarn.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "analytics",
+            "template"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-10:/analytics-checklist.html",
+          "published": "2022-02-10T15:00:00+03:00",
+          "title": "Analytics checklist",
+          "updated": "2022-02-10T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/analytics-checklist.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "logging",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-24:/color-formatter.html",
+          "published": "2022-02-24T21:47:00+03:00",
+          "title": "Custom color formatter with Python logging",
+          "updated": "2022-02-24T21:47:00+03:00",
+          "url": "https://nekrasovp.ru/color-formatter.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "logging",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-02-25:/custom-logger.html",
+          "published": "2022-02-25T18:45:00+03:00",
+          "title": "Custom logger handlers",
+          "updated": "2022-02-25T18:45:00+03:00",
+          "url": "https://nekrasovp.ru/custom-logger.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-16:/linux-port.html",
+          "published": "2022-03-16T15:00:00+03:00",
+          "title": "Ways to find out which process is listening on a specific port",
+          "updated": "2022-03-16T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-port.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "gil",
+            "multiprocessing",
+            "python",
+            "threading"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-20:/python-gil.html",
+          "published": "2022-03-20T15:00:00+03:00",
+          "title": "Why you need Python Global Interpreter Lock and how it works",
+          "updated": "2022-03-20T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-gil.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "python",
+            "shell"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-03-26:/shell-capture.html",
+          "published": "2022-03-26T12:00:00+03:00",
+          "title": "Capturing shell output in python",
+          "updated": "2022-03-26T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/shell-capture.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "git"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-04-21:/git-rebase.html",
+          "published": "2022-04-21T12:00:00+03:00",
+          "title": "How to rebase git branch",
+          "updated": "2022-04-21T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/git-rebase.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "black",
+            "python",
+            "vscode"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-05-10:/python-black-isort.html",
+          "published": "2022-05-10T12:00:00+03:00",
+          "title": "Use Black and organize imports on save in VSCode",
+          "updated": "2022-05-10T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-black-isort.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "mysql"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-06-15:/fixing-caching-sha2-password.html",
+          "published": "2022-06-15T12:00:00+03:00",
+          "title": "Authentication plugin 'caching_sha2_password' cannot be loaded",
+          "updated": "2022-06-15T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/fixing-caching-sha2-password.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-07-20:/python-object-reference.html",
+          "published": "2022-07-20T12:00:00+03:00",
+          "title": "Python object reference",
+          "updated": "2022-07-20T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-object-reference.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-08-06:/linux-change-swap-size.html",
+          "published": "2022-08-06T15:00:00+03:00",
+          "title": "Change swap size in Ubuntu",
+          "updated": "2022-08-06T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-change-swap-size.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux"
+          ],
+          "id": "tag:nekrasovp.github.io,2022-08-07:/linux-list-users.html",
+          "published": "2022-08-07T15:00:00+03:00",
+          "title": "How to List Users in Linux",
+          "updated": "2022-08-07T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/linux-list-users.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "poetry",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-02-20:/python-poetry-docker.html",
+          "published": "2023-02-20T12:00:00+03:00",
+          "title": "Python app with poetry & docker",
+          "updated": "2023-02-20T12:00:00+03:00",
+          "url": "https://nekrasovp.ru/python-poetry-docker.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "linux",
+            "mysql"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-07-11:/mysql-server-errors.html",
+          "published": "2023-07-11T13:00:00+03:00",
+          "title": "MySQL server has gone away errors",
+          "updated": "2023-07-11T13:00:00+03:00",
+          "url": "https://nekrasovp.ru/mysql-server-errors.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "django",
+            "python"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-09-02:/update-django-user-password.html",
+          "published": "2023-09-02T15:00:00+03:00",
+          "title": "Update Django user password",
+          "updated": "2023-09-02T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/update-django-user-password.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "science",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-09-16:/what-is-technical-debt.html",
+          "published": "2023-09-16T15:00:00+03:00",
+          "title": "Что такое технический долг?",
+          "updated": "2023-09-16T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/what-is-technical-debt.html"
+        },
+        {
+          "categories": [
+            "Blog",
+            "development",
+            "science",
+            "workflow"
+          ],
+          "id": "tag:nekrasovp.github.io,2023-10-14:/technical-debt-examples.html",
+          "published": "2023-10-14T15:00:00+03:00",
+          "title": "Примеры технического долга",
+          "updated": "2023-10-14T15:00:00+03:00",
+          "url": "https://nekrasovp.ru/technical-debt-examples.html"
+        }
+      ],
+      "entry_count": 46,
+      "id": "https://nekrasovp.ru/",
+      "links": [
+        {
+          "href": "https://nekrasovp.ru/",
+          "rel": "alternate"
+        },
+        {
+          "href": "https://nekrasovp.ru/feeds/blog.atom.xml",
+          "rel": "self"
+        }
+      ],
+      "path": "/feeds/blog.atom.xml",
+      "sha256": "72a0fa1a924107cc43151fd61d203e9333f4fd496dca1e1e7a11cca3044d492a",
+      "status": 200,
+      "title": "Pavel Nekrasov — Writing",
+      "updated": "2023-10-14T15:00:00+03:00",
+      "url": "https://nekrasovp.ru/feeds/blog.atom.xml"
+    }
+  ],
+  "schema_version": 1
+}

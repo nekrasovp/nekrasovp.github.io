@@ -1,0 +1,5499 @@
+{
+  "routes": [
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/add-theme-and-plugins-to-pelican.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/add-theme-and-plugins-to-pelican.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/add-theme-and-plugins-to-pelican.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/analytics-checklist.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/analytics-checklist.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/analytics-checklist.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/arbitrage.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/arbitrage.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/arbitrage.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel2.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel2.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel2.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel3.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel3.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel3.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel4.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel4.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel4.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel5.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel5.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel5.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel6.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel6.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel6.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/author/nekrasov-pavel7.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/author/nekrasov-pavel7.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/author/nekrasov-pavel7.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/building-job-queue.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/building-job-queue.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/building-job-queue.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/business-it-solutions.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/business-it-solutions.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/business-it-solutions.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/candlestick-charts-plotly.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/candlestick-charts-plotly.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/candlestick-charts-plotly.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog2.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog2.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog2.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog3.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog3.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog3.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog4.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog4.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog4.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog5.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog5.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog5.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog6.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog6.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog6.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/category/blog7.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/category/blog7.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/category/blog7.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/color-formatter.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/color-formatter.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/color-formatter.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/covid-dashboard.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/covid-dashboard.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/covid-dashboard.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/custom-logger.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/custom-logger.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/custom-logger.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/deploying-a-static-website-to-bitbucket.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/deploying-a-static-website-to-bitbucket.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/deploying-a-static-website-to-bitbucket.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/devops-questions.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/devops-questions.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/devops-questions.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/essay-paper-template.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/essay-paper-template.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/essay-paper-template.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/fixing-caching-sha2-password.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/fixing-caching-sha2-password.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/fixing-caching-sha2-password.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/git-rebase.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/git-rebase.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/git-rebase.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/graphql-schema.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/graphql-schema.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/graphql-schema.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index2.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index2.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index2.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index3.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index3.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index3.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index4.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index4.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index4.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index5.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index5.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index5.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index6.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index6.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index6.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/index7.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/index7.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/index7.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/install-nvm-node-yarn.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/install-nvm-node-yarn.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/install-nvm-node-yarn.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/install-pelican-and-create-project-skeleton.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/install-pelican-and-create-project-skeleton.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/install-pelican-and-create-project-skeleton.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/linux-change-swap-size.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/linux-change-swap-size.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/linux-change-swap-size.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/linux-list-users.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/linux-list-users.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/linux-list-users.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/linux-port.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/linux-port.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/linux-port.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/markov-chain-bean-machine.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/markov-chain-bean-machine.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/markov-chain-bean-machine.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/mkrf-spb-geo-data.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/mkrf-spb-geo-data.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/mkrf-spb-geo-data.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/mysql-server-errors.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/mysql-server-errors.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/mysql-server-errors.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/number-sequences.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/number-sequences.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/number-sequences.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/pages/about.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/pages/about.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/pages/about.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/pages/services.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/pages/services.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/pages/services.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/pascals-triangle.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/pascals-triangle.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/pascals-triangle.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/pelican-github-script-automation.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/pelican-github-script-automation.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/pelican-github-script-automation.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/publishing-articles-workflow.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/publishing-articles-workflow.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/publishing-articles-workflow.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/python-black-isort.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/python-black-isort.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/python-black-isort.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/python-gil.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/python-gil.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/python-gil.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/python-object-reference.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/python-object-reference.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/python-object-reference.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/python-poetry-docker.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/python-poetry-docker.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/python-poetry-docker.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/retrospective-template.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/retrospective-template.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/retrospective-template.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/setting-up-gitlab-ci.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/setting-up-gitlab-ci.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/setting-up-gitlab-ci.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/setting-up-nginx-gunicorn-flask.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/setting-up-nginx-gunicorn-flask.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/setting-up-nginx-gunicorn-flask.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/share-data.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/share-data.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/share-data.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/shell-capture.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/shell-capture.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/shell-capture.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/stock-data-with-pandas-datareader.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/stock-data-with-pandas-datareader.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/stock-data-with-pandas-datareader.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/stock-market-portfolio-optimisation.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/stock-market-portfolio-optimisation.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/stock-market-portfolio-optimisation.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/stock-perfomance-analysis.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/stock-perfomance-analysis.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/stock-perfomance-analysis.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/analytics.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/analytics.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/analytics.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/anova.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/anova.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/anova.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/arbitrage.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/arbitrage.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/arbitrage.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/arima.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/arima.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/arima.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/bitbucket.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/bitbucket.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/bitbucket.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/black.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/black.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/black.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/cython.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/cython.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/cython.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/data.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/data.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/data.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/development.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/development.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/development.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/django.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/django.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/django.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/ffn.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/ffn.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/ffn.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/fft.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/fft.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/fft.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/finance.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/finance.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/finance.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/flake8.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/flake8.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/flake8.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/flask.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/flask.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/flask.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/gil.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/gil.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/gil.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/git.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/git.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/git.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/github.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/github.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/github.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/gitlab.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/gitlab.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/gitlab.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/graphql.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/graphql.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/graphql.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/gunicorn.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/gunicorn.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/gunicorn.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/kaggle.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/kaggle.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/kaggle.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/leaflet.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/leaflet.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/leaflet.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/linux.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/linux.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/linux.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/logging.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/logging.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/logging.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/markdown.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/markdown.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/markdown.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/math.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/math.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/math.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/matplotlib.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/matplotlib.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/matplotlib.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/multiprocessing.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/multiprocessing.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/multiprocessing.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/mypy.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/mypy.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/mypy.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/mysql.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/mysql.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/mysql.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/networkx.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/networkx.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/networkx.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/nginx.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/nginx.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/nginx.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/node.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/node.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/node.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/notebook.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/notebook.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/notebook.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/notebook2.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/notebook2.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/notebook2.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/numpy.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/numpy.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/numpy.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/nvm.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/nvm.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/nvm.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/openssl.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/openssl.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/openssl.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/pandas.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/pandas.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/pandas.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/pelican.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/pelican.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/pelican.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/plotly.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/plotly.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/plotly.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/poetry.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/poetry.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/poetry.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/portfolio.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/portfolio.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/portfolio.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/pydot.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/pydot.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/pydot.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/pylint.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/pylint.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/pylint.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/pytest.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/pytest.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/pytest.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/python.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/python.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/python.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/python2.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/python2.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/python2.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/python3.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/python3.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/python3.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/python4.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/python4.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/python4.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/rabbitmq.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/rabbitmq.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/rabbitmq.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/science.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/science.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/science.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/scipy.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/scipy.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/scipy.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/seaborn.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/seaborn.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/seaborn.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/shell.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/shell.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/shell.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/statistics.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/statistics.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/statistics.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/template.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/template.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/template.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/threading.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/threading.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/threading.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/ubuntu.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/ubuntu.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/ubuntu.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/vscode.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/vscode.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/vscode.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/wbdata.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/wbdata.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/wbdata.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/workflow.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/workflow.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/workflow.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/xgboost.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/xgboost.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/xgboost.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/tag/yarn.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/tag/yarn.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/tag/yarn.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/technical-debt-examples.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/technical-debt-examples.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/technical-debt-examples.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/testing-hypothesis-on-football-data-set.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/testing-hypothesis-on-football-data-set.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/testing-hypothesis-on-football-data-set.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/update-django-user-password.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/update-django-user-password.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/update-django-user-password.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/upgrading-openssl-ubuntu.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/upgrading-openssl-ubuntu.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/upgrading-openssl-ubuntu.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/use-cython-to-speedup-your-python-code.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/use-cython-to-speedup-your-python-code.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/use-cython-to-speedup-your-python-code.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "internal_link_alias",
+        "legacy_github_host",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/what-is-technical-debt.html",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/what-is-technical-debt.html"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.github.io/what-is-technical-debt.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index.html",
+      "path": "/",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "not_found_document",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "404.html",
+      "path": "/404.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/404.html"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/7",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/7"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/8",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/8"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "special_file"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "CNAME",
+      "path": "/CNAME",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/CNAME"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Clear%20Writing",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Clear%20Writing"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Figure%201.1",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Figure%201.1"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Titles%20and%20Headings%20in%20Initial%20Caps",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Titles%20and%20Headings%20in%20Initial%20Caps"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Use%20a%20Dictionary",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Use%20a%20Dictionary"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Use%20a%20Spelling%20Checker",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Use%20a%20Spelling%20Checker"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "internal_link"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/Use%20a%20Thesaurus",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/Use%20a%20Thesaurus"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "not_found_probe",
+        "live_only"
+      ],
+      "expected_status": 404,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/__base001_expected_missing_route__.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/__base001_expected_missing_route__.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "about/index.html",
+      "path": "/about/",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/about/"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "add-theme-and-plugins-to-pelican.html",
+      "path": "/add-theme-and-plugins-to-pelican.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/add-theme-and-plugins-to-pelican.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "ai-native-delivery-contract.html",
+      "path": "/ai-native-delivery-contract.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/ai-native-delivery-contract.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "ai-native-sdlc-engineering-accountability.html",
+      "path": "/ai-native-sdlc-engineering-accountability.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "analytics-checklist.html",
+      "path": "/analytics-checklist.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/analytics-checklist.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": false,
+      "output_path": "arbitrage.html",
+      "path": "/arbitrage.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/arbitrage.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "archives.html",
+      "path": "/archives.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/archives.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel.html",
+      "path": "/author/nekrasov-pavel.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel2.html",
+      "path": "/author/nekrasov-pavel2.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel2.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel3.html",
+      "path": "/author/nekrasov-pavel3.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel3.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel4.html",
+      "path": "/author/nekrasov-pavel4.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel4.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel5.html",
+      "path": "/author/nekrasov-pavel5.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel5.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel6.html",
+      "path": "/author/nekrasov-pavel6.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel6.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "author/nekrasov-pavel7.html",
+      "path": "/author/nekrasov-pavel7.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/author/nekrasov-pavel7.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page",
+        "taxonomy_index"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "authors.html",
+      "path": "/authors.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/authors.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "building-job-queue.html",
+      "path": "/building-job-queue.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/building-job-queue.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "business-it-solutions.html",
+      "path": "/business-it-solutions.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/business-it-solutions.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": false,
+      "output_path": "candlestick-charts-plotly.html",
+      "path": "/candlestick-charts-plotly.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/candlestick-charts-plotly.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page",
+        "taxonomy_index"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "categories.html",
+      "path": "/categories.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/categories.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog.html",
+      "path": "/category/blog.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog2.html",
+      "path": "/category/blog2.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog2.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog3.html",
+      "path": "/category/blog3.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog3.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog4.html",
+      "path": "/category/blog4.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog4.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog5.html",
+      "path": "/category/blog5.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog5.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog6.html",
+      "path": "/category/blog6.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog6.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "category/blog7.html",
+      "path": "/category/blog7.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/category/blog7.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "color-formatter.html",
+      "path": "/color-formatter.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/color-formatter.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "covid-dashboard.html",
+      "path": "/covid-dashboard.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/covid-dashboard.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "custom-logger.html",
+      "path": "/custom-logger.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/custom-logger.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "deploying-a-static-website-to-bitbucket.html",
+      "path": "/deploying-a-static-website-to-bitbucket.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/deploying-a-static-website-to-bitbucket.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "devops-questions.html",
+      "path": "/devops-questions.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/devops-questions.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": false,
+      "output_path": "essay-paper-template.html",
+      "path": "/essay-paper-template.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/essay-paper-template.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+      "path": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/feature-engineering-on-ohlcv-candles-wit-xgboost.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "feed",
+        "internal_link"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "feeds/all.atom.xml",
+      "path": "/feeds/all.atom.xml",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/feeds/all.atom.xml"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "feed"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "feeds/blog.atom.xml",
+      "path": "/feeds/blog.atom.xml",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/feeds/blog.atom.xml"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "fixing-caching-sha2-password.html",
+      "path": "/fixing-caching-sha2-password.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/fixing-caching-sha2-password.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "git-rebase.html",
+      "path": "/git-rebase.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/git-rebase.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "graphql-schema.html",
+      "path": "/graphql-schema.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/graphql-schema.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree_alias"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index.html",
+      "path": "/index.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index2.html",
+      "path": "/index2.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index2.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index3.html",
+      "path": "/index3.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index3.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index4.html",
+      "path": "/index4.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index4.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index5.html",
+      "path": "/index5.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index5.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index6.html",
+      "path": "/index6.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index6.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "index7.html",
+      "path": "/index7.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/index7.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "install-nvm-node-yarn.html",
+      "path": "/install-nvm-node-yarn.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/install-nvm-node-yarn.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "install-pelican-and-create-project-skeleton.html",
+      "path": "/install-pelican-and-create-project-skeleton.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/install-pelican-and-create-project-skeleton.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "linux-change-swap-size.html",
+      "path": "/linux-change-swap-size.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/linux-change-swap-size.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "linux-list-users.html",
+      "path": "/linux-list-users.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/linux-list-users.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "linux-port.html",
+      "path": "/linux-port.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/linux-port.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "logistics-distributed-systems-case-study.html",
+      "path": "/logistics-distributed-systems-case-study.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/logistics-distributed-systems-case-study.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "logistics-lessons-for-distributed-systems.html",
+      "path": "/logistics-lessons-for-distributed-systems.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/logistics-lessons-for-distributed-systems.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "markov-chain-bean-machine.html",
+      "path": "/markov-chain-bean-machine.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/markov-chain-bean-machine.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "mkrf-spb-geo-data.html",
+      "path": "/mkrf-spb-geo-data.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/mkrf-spb-geo-data.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "mysql-server-errors.html",
+      "path": "/mysql-server-errors.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/mysql-server-errors.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "number-sequences.html",
+      "path": "/number-sequences.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/number-sequences.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "intentional_redirect",
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "pages/about.html",
+      "path": "/pages/about.html",
+      "redirect": {
+        "kind": "meta_refresh",
+        "target": "https://nekrasovp.ru/about/"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/pages/about.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "intentional_redirect",
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "pages/services.html",
+      "path": "/pages/services.html",
+      "redirect": {
+        "kind": "meta_refresh",
+        "target": "https://nekrasovp.ru/work/"
+      },
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/pages/services.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "pascals-triangle.html",
+      "path": "/pascals-triangle.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/pascals-triangle.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "pelican-github-script-automation.html",
+      "path": "/pelican-github-script-automation.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/pelican-github-script-automation.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": false,
+      "output_path": "publishing-articles-workflow.html",
+      "path": "/publishing-articles-workflow.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/publishing-articles-workflow.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "python-black-isort.html",
+      "path": "/python-black-isort.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/python-black-isort.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "python-gil.html",
+      "path": "/python-gil.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/python-gil.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "python-object-reference.html",
+      "path": "/python-object-reference.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/python-object-reference.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "python-poetry-docker.html",
+      "path": "/python-poetry-docker.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/python-poetry-docker.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "retrospective-template.html",
+      "path": "/retrospective-template.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/retrospective-template.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "special_file"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "robots.txt",
+      "path": "/robots.txt",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/robots.txt"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "ru/index.html",
+      "path": "/ru/",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/ru/"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "setting-up-gitlab-ci.html",
+      "path": "/setting-up-gitlab-ci.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/setting-up-gitlab-ci.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "setting-up-nginx-gunicorn-flask.html",
+      "path": "/setting-up-nginx-gunicorn-flask.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/setting-up-nginx-gunicorn-flask.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": false,
+      "output_path": "share-data.html",
+      "path": "/share-data.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/share-data.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "shell-capture.html",
+      "path": "/shell-capture.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/shell-capture.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "special_file"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "sitemap.xml",
+      "path": "/sitemap.xml",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/sitemap.xml"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "stock-data-with-pandas-datareader.html",
+      "path": "/stock-data-with-pandas-datareader.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/stock-data-with-pandas-datareader.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "stock-market-portfolio-optimisation.html",
+      "path": "/stock-market-portfolio-optimisation.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/stock-market-portfolio-optimisation.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "stock-perfomance-analysis.html",
+      "path": "/stock-perfomance-analysis.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/stock-perfomance-analysis.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/analytics.html",
+      "path": "/tag/analytics.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/analytics.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/anova.html",
+      "path": "/tag/anova.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/anova.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/arbitrage.html",
+      "path": "/tag/arbitrage.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/arbitrage.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/arima.html",
+      "path": "/tag/arima.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/arima.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/bitbucket.html",
+      "path": "/tag/bitbucket.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/bitbucket.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/black.html",
+      "path": "/tag/black.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/black.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/cython.html",
+      "path": "/tag/cython.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/cython.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/data.html",
+      "path": "/tag/data.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/data.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/development.html",
+      "path": "/tag/development.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/development.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/django.html",
+      "path": "/tag/django.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/django.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/ffn.html",
+      "path": "/tag/ffn.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/ffn.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/fft.html",
+      "path": "/tag/fft.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/fft.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/finance.html",
+      "path": "/tag/finance.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/finance.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/flake8.html",
+      "path": "/tag/flake8.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/flake8.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/flask.html",
+      "path": "/tag/flask.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/flask.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/gil.html",
+      "path": "/tag/gil.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/gil.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/git.html",
+      "path": "/tag/git.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/git.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/github.html",
+      "path": "/tag/github.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/github.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/gitlab.html",
+      "path": "/tag/gitlab.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/gitlab.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/graphql.html",
+      "path": "/tag/graphql.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/graphql.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/gunicorn.html",
+      "path": "/tag/gunicorn.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/gunicorn.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/kaggle.html",
+      "path": "/tag/kaggle.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/kaggle.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/leaflet.html",
+      "path": "/tag/leaflet.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/leaflet.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/linux.html",
+      "path": "/tag/linux.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/linux.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/logging.html",
+      "path": "/tag/logging.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/logging.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/markdown.html",
+      "path": "/tag/markdown.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/markdown.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/math.html",
+      "path": "/tag/math.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/math.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/matplotlib.html",
+      "path": "/tag/matplotlib.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/matplotlib.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/multiprocessing.html",
+      "path": "/tag/multiprocessing.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/multiprocessing.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/mypy.html",
+      "path": "/tag/mypy.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/mypy.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/mysql.html",
+      "path": "/tag/mysql.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/mysql.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/networkx.html",
+      "path": "/tag/networkx.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/networkx.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/nginx.html",
+      "path": "/tag/nginx.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/nginx.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/node.html",
+      "path": "/tag/node.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/node.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/notebook.html",
+      "path": "/tag/notebook.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/notebook.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/notebook2.html",
+      "path": "/tag/notebook2.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/notebook2.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/numpy.html",
+      "path": "/tag/numpy.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/numpy.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/nvm.html",
+      "path": "/tag/nvm.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/nvm.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/openssl.html",
+      "path": "/tag/openssl.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/openssl.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/pandas.html",
+      "path": "/tag/pandas.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/pandas.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/pelican.html",
+      "path": "/tag/pelican.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/pelican.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/plotly.html",
+      "path": "/tag/plotly.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/plotly.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/poetry.html",
+      "path": "/tag/poetry.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/poetry.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/portfolio.html",
+      "path": "/tag/portfolio.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/portfolio.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/pydot.html",
+      "path": "/tag/pydot.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/pydot.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/pylint.html",
+      "path": "/tag/pylint.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/pylint.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/pytest.html",
+      "path": "/tag/pytest.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/pytest.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/python.html",
+      "path": "/tag/python.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/python.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/python2.html",
+      "path": "/tag/python2.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/python2.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/python3.html",
+      "path": "/tag/python3.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/python3.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "pagination",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/python4.html",
+      "path": "/tag/python4.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/python4.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/rabbitmq.html",
+      "path": "/tag/rabbitmq.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/rabbitmq.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/science.html",
+      "path": "/tag/science.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/science.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/scipy.html",
+      "path": "/tag/scipy.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/scipy.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/seaborn.html",
+      "path": "/tag/seaborn.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/seaborn.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/shell.html",
+      "path": "/tag/shell.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/shell.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/statistics.html",
+      "path": "/tag/statistics.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/statistics.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/template.html",
+      "path": "/tag/template.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/template.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/threading.html",
+      "path": "/tag/threading.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/threading.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/ubuntu.html",
+      "path": "/tag/ubuntu.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/ubuntu.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/vscode.html",
+      "path": "/tag/vscode.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/vscode.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/wbdata.html",
+      "path": "/tag/wbdata.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/wbdata.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/workflow.html",
+      "path": "/tag/workflow.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/workflow.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/xgboost.html",
+      "path": "/tag/xgboost.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/xgboost.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "taxonomy"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tag/yarn.html",
+      "path": "/tag/yarn.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tag/yarn.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "public_outside_sitemap",
+        "published_tree",
+        "special_page",
+        "taxonomy_index"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "tags.html",
+      "path": "/tags.html",
+      "redirect": null,
+      "sitemap": false,
+      "url": "https://nekrasovp.ru/tags.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "technical-debt-as-a-portfolio.html",
+      "path": "/technical-debt-as-a-portfolio.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/technical-debt-as-a-portfolio.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "technical-debt-examples.html",
+      "path": "/technical-debt-examples.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/technical-debt-examples.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "new_article_or_resource",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "technical-debt-portfolio-register.html",
+      "path": "/technical-debt-portfolio-register.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/technical-debt-portfolio-register.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "testing-hypothesis-on-football-data-set.html",
+      "path": "/testing-hypothesis-on-football-data-set.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/testing-hypothesis-on-football-data-set.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "keep",
+      "notebook_article": false,
+      "output_path": "update-django-user-password.html",
+      "path": "/update-django-user-password.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/update-django-user-password.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "deprecated",
+      "notebook_article": false,
+      "output_path": "upgrading-openssl-ubuntu.html",
+      "path": "/upgrading-openssl-ubuntu.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/upgrading-openssl-ubuntu.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "archive",
+      "notebook_article": true,
+      "output_path": "use-cython-to-speedup-your-python-code.html",
+      "path": "/use-cython-to-speedup-your-python-code.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/use-cython-to-speedup-your-python-code.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "legacy_article",
+        "published_tree",
+        "sitemap"
+      ],
+      "expected_status": 200,
+      "legacy_status": "refresh",
+      "notebook_article": false,
+      "output_path": "what-is-technical-debt.html",
+      "path": "/what-is-technical-debt.html",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/what-is-technical-debt.html"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "work/index.html",
+      "path": "/work/",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/work/"
+    },
+    {
+      "check_generated": true,
+      "classifications": [
+        "internal_link",
+        "published_tree",
+        "sitemap",
+        "special_page"
+      ],
+      "expected_status": 200,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": "writing/index.html",
+      "path": "/writing/",
+      "redirect": null,
+      "sitemap": true,
+      "url": "https://nekrasovp.ru/writing/"
+    },
+    {
+      "check_generated": false,
+      "classifications": [
+        "host_redirect",
+        "live_only"
+      ],
+      "expected_status": 301,
+      "legacy_status": null,
+      "notebook_article": false,
+      "output_path": null,
+      "path": "/",
+      "redirect": {
+        "kind": "http",
+        "target": "https://nekrasovp.ru/"
+      },
+      "sitemap": false,
+      "url": "https://www.nekrasovp.ru/"
+    }
+  ],
+  "schema_version": 1
+}
