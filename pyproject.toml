@@ -1,0 +1,33 @@
+[project]
+name = "nekrasovp-site-build"
+version = "0.0.0"
+description = "Locked build environment for nekrasovp.github.io"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "beautifulsoup4==4.15.0",
+    "feedgenerator==2.2.1",
+    "ipython==9.15.0",
+    "jinja2==3.1.6",
+    "markdown==3.10.2",
+    "nbconvert==7.17.1",
+    "pelican==4.12.0",
+    "pillow==12.3.0",
+    "pygments==2.19.2",
+    "six==1.17.0",
+    "traitlets==5.15.1",
+]
+
+[dependency-groups]
+dev = [
+    "ghp-import==2.1.0",
+    "invoke==3.0.3",
+]
+test = [
+    "pytest==9.1.1",
+]
+
+[tool.uv]
+default-groups = []
+
+[tool.pytest.ini_options]
+testpaths = ["migration/site_build/tests"]

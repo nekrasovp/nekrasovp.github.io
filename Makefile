@@ -1,12 +1,15 @@
 PY?=python3
-PELICAN?=pelican
+UV?=uv
+PELICAN?=$(UV) run --locked pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
+OUTPUTDIR?=$(BASEDIR)/.tmp/site
+SMOKE_OUTPUTDIR?=$(BASEDIR)/.tmp/markdown-smoke
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+BUILD_WRAPPER=$(BASEDIR)/migration/site_build/scripts/build.py
 
 
 DEBUG ?= 0
@@ -23,51 +26,55 @@ help:
 	@echo 'Makefile for a pelican Web site                                           '
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
+	@echo '   make html                           run the full local build (red until notebook successor)'
+	@echo '   make smoke                          run the SITE-001 Markdown-only smoke build'
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
-	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
+	@echo '   make publish                        run the full production build (no publish side effect)'
+	@echo '   make serve [PORT=8000]              serve Markdown smoke at http://localhost:8000'
+	@echo '   make serve-global [SERVER=0.0.0.0]  serve Markdown smoke on $(SERVER)  '
+	@echo '   make devserver [PORT=8000]          alias for Markdown smoke serve     '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
 html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) build local --output $(OUTPUTDIR)
+
+smoke:
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) build markdown-smoke --output $(SMOKE_OUTPUTDIR)
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 
 regenerate:
-	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) --fatal errors $(PELICANOPTS)
 
 serve:
 ifdef PORT
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) serve markdown-smoke --output $(SMOKE_OUTPUTDIR) --port $(PORT)
 else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) serve markdown-smoke --output $(SMOKE_OUTPUTDIR)
 endif
 
 serve-global:
 ifdef SERVER
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b $(SERVER)
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) serve markdown-smoke --output $(SMOKE_OUTPUTDIR) --bind $(SERVER) --port $(or $(PORT),8000)
 else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b 0.0.0.0
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) serve markdown-smoke --output $(SMOKE_OUTPUTDIR) --bind 0.0.0.0 --port $(or $(PORT),8000)
 endif
 
 
 devserver:
 ifdef PORT
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+	$(MAKE) serve PORT=$(PORT)
 else
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(MAKE) serve
 endif
 
 publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	$(UV) run --locked $(PY) $(BUILD_WRAPPER) build production --output $(OUTPUTDIR)
 
 
-.PHONY: html help clean regenerate serve serve-global devserver publish 
+.PHONY: html smoke help clean regenerate serve serve-global devserver publish

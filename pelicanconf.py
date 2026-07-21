@@ -64,8 +64,10 @@ DEFAULT_DATE = (2021, 3, 2, 14, 1, 1)
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-# Use other output directory
-OUTPUT_PATH = '/output'
+# Local commands may override this explicitly. Keep the fallback inside the
+# checkout; production and smoke commands always pass --output via SITE-001's
+# failure-propagating wrapper.
+OUTPUT_PATH = '.tmp/site'
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
