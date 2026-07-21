@@ -1,0 +1,38 @@
+[project]
+name = "nekrasovp-site"
+version = "0.0.0"
+description = "Reproducible build environment for nekrasovp.github.io"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "beautifulsoup4>=4.12,<5",
+    "feedgenerator>=2.1,<3",
+    "ipython>=8.31,<10",
+    "markdown>=3.7,<4",
+    "nbconvert>=7.16,<8",
+    "pelican>=4.11,<5",
+    "pillow>=11,<13",
+    "six>=1.17,<2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9,<1",
+]
+test = [
+    "pytest>=8.3,<9",
+]
+
+[tool.uv]
+default-groups = ["dev", "test"]
+package = false
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["migration/site_build/tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]

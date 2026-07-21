@@ -64,9 +64,6 @@ DEFAULT_DATE = (2021, 3, 2, 14, 1, 1)
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-# Use other output directory
-OUTPUT_PATH = '/output'
-
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
     'images',

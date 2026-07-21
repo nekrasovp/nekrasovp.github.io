@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -u
+
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+REPO_ROOT="$(dirname -- "${SCRIPT_DIR}")"
+
+cd "${REPO_ROOT}" || exit $?
+exec uv run --locked --all-groups python migration/site_build/site.py "$@"
