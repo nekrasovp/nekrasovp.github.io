@@ -1,0 +1,47 @@
+route	published_at	language	status	source	title
+/technical-debt-examples.html	2023-10-14	ru	refresh	technical-debt-examples.md	Примеры технического долга
+/what-is-technical-debt.html	2023-09-16	ru	refresh	what-is-technical-debt.md	Что такое технический долг?
+/update-django-user-password.html	2023-09-02	en	keep	update-django-user-password.md	Update Django user password
+/mysql-server-errors.html	2023-07-11	en	keep	mysql-server-errors.md	MySQL server has gone away errors
+/python-poetry-docker.html	2023-02-20	en	keep	python-poetry-docker.md	Python app with Poetry and Docker
+/linux-list-users.html	2022-08-07	en	keep	linux-list-users.md	How to list users in Linux
+/linux-change-swap-size.html	2022-08-06	en	keep	linux-change-swap-size.md	Change swap size in Ubuntu
+/python-object-reference.html	2022-07-20	en	keep	python-object-reference.md	Python object reference
+/fixing-caching-sha2-password.html	2022-06-15	en	deprecated	fixing-caching-sha2-password.md	Authentication plugin caching_sha2_password cannot be loaded
+/python-black-isort.html	2022-05-10	en	keep	vscode-black-isort.md	Use Black and organize imports on save in VSCode
+/git-rebase.html	2022-04-21	en	keep	git-rebase.md	How to rebase a Git branch
+/shell-capture.html	2022-03-26	en	keep	shell-capture.md	Capturing shell output in Python
+/python-gil.html	2022-03-20	en	keep	python-gil.md	Why Python needs the Global Interpreter Lock and how it works
+/linux-port.html	2022-03-16	en	keep	linux-port.md	Find which process is listening on a specific port
+/custom-logger.html	2022-02-25	en	refresh	custom-logger.md	Custom logger handlers
+/color-formatter.html	2022-02-24	en	refresh	color-formatter.md	Custom color formatter with Python logging
+/analytics-checklist.html	2022-02-10	en	keep	analytics-checklist.md	Analytics checklist
+/install-nvm-node-yarn.html	2022-01-11	en	deprecated	install-nvm-node-yarn.md	Install NVM, Node, and Yarn
+/setting-up-nginx-gunicorn-flask.html	2021-11-03	en	deprecated	setting-up-nginx-gunicorn-flask.md	Setting up Nginx and Gunicorn for a Flask application
+/building-job-queue.html	2021-10-01	en	refresh	building-job-queue.md	Building a job queue
+/setting-up-gitlab-ci.html	2021-07-10	en	refresh	setting-up-gitlab-ci.md	Setting up GitLab CI for a Python application
+/devops-questions.html	2021-04-09	en	refresh	devops-questions.md	Obstacles to successful DevOps
+/mkrf-spb-geo-data.html	2021-04-04	ru	archive	mkrf-spb-geo-data.ipynb	Визуализация картографических данных в Jupyter Notebook
+/retrospective-template.html	2021-02-11	ru	refresh	Retrospective-template.md	Шаблон ретроспективы
+/graphql-schema.html	2020-11-29	en	keep	graphql-schema.md	Understand a GraphQL schema
+/covid-dashboard.html	2020-10-27	en	archive	covid-dashboard.ipynb	COVID-19 data visualization
+/share-data.html	2020-09-29	en	archive	share-data.md	How to share data with a statistician
+/publishing-articles-workflow.html	2020-09-09	en	archive	publishing-articles-workflow.md	Publishing articles workflow
+/business-it-solutions.html	2020-08-29	en	refresh	business-it-solutions.md	How to get a well-developed IT solution
+/pelican-github-script-automation.html	2020-08-22	en	deprecated	pelican-github-script-automation.md	Move a blog to GitHub and automate deployment with Git hooks
+/essay-paper-template.html	2020-08-21	en	archive	essay-paper-template.md	Essay template
+/pascals-triangle.html	2020-08-01	en	archive	pascals-triangle.ipynb	Pascal's Triangle
+/markov-chain-bean-machine.html	2020-01-25	en	archive	markov-chain-bean-machine.ipynb	Simulating a Galton board with Markov chains
+/use-cython-to-speedup-your-python-code.html	2019-09-02	en	archive	Use Cython to speed up your Python code.ipynb	Use Cython to speed up Python code
+/number-sequences.html	2019-08-29	en	archive	Number-sequences.ipynb	Number-sequence visualization with Python
+/stock-market-portfolio-optimisation.html	2019-07-12	en	archive	Stock-market-portfolio-optimisation.ipynb	Stock-market portfolio optimization
+/stock-perfomance-analysis.html	2019-07-11	en	archive	stock-perfomance-analysis.ipynb	Stock-performance analysis using Python Financial Functions
+/candlestick-charts-plotly.html	2019-07-10	en	archive	candlestick-charts-plotly.md	Stock-market candlestick charts with Plotly and Python
+/testing-hypothesis-on-football-data-set.html	2019-05-10	en	archive	Testing-hypothesis-on-football-data-set.ipynb	Testing a hypothesis on a football data set from Kaggle
+/stock-data-with-pandas-datareader.html	2019-03-01	en	archive	Getting-stock-data-with-pandas-datareader.ipynb	Getting stock data with pandas-datareader
+/upgrading-openssl-ubuntu.html	2019-02-05	en	deprecated	openssl-ubuntu.md	Upgrading OpenSSL on Ubuntu 18.04
+/deploying-a-static-website-to-bitbucket.html	2019-02-02	en	deprecated	deploying-a-static-website-to-bitbucket.md	Deploying a static website to Bitbucket
+/add-theme-and-plugins-to-pelican.html	2019-02-02	en	deprecated	add-theme-and-plugins-to-pelican.md	Add a theme and plugins to Pelican
+/install-pelican-and-create-project-skeleton.html	2019-02-01	en	deprecated	install-pelican-and-create-project-skeleton.md	Install Pelican and create a project skeleton
+/feature-engineering-on-ohlcv-candles-wit-xgboost.html	2018-12-01	en	archive	feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb	Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data
+/arbitrage.html	2018-06-06	en	archive	arbitrage.md	Arbitrage

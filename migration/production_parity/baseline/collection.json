@@ -1,0 +1,52 @@
+{
+  "canonical_host": "nekrasovp.ru",
+  "collection_finished_at_utc": "2026-07-21T20:20:28Z",
+  "collection_started_at_utc": "2026-07-21T20:18:41Z",
+  "default_branch": "master",
+  "github_pages": {
+    "build_type": "legacy",
+    "cname": "nekrasovp.ru",
+    "https_enforced": true,
+    "protected_domain_state": "verified",
+    "source": {
+      "branch": "gh-pages",
+      "path": "/"
+    },
+    "status": "built"
+  },
+  "production_base_url": "https://nekrasovp.ru",
+  "production_content_evidence": {
+    "feeds_and_sitemap": "live_get",
+    "html_and_site_assets": "published_git_tree_with_live_status_and_content_length",
+    "published_ref": "origin/gh-pages",
+    "published_sha": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce"
+  },
+  "repository": "nekrasovp/nekrasovp.github.io",
+  "schema_version": 1,
+  "source_commits": {
+    "default_branch": {
+      "ref": "origin/master",
+      "sha": "a19169d1507278e845cd4df943d1f92991eddcd1"
+    },
+    "published_branch": {
+      "ref": "origin/gh-pages",
+      "sha": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce"
+    }
+  },
+  "summary_counts": {
+    "asset_references": 23,
+    "feed_entries": {
+      "/feeds/all.atom.xml": 49,
+      "/feeds/blog.atom.xml": 46
+    },
+    "feeds": 2,
+    "html_metadata_records": 150,
+    "legacy_github_host_redirects": 135,
+    "legacy_routes": 46,
+    "new_article_or_resource_routes": 6,
+    "notebook_routes": 11,
+    "public_html_outside_sitemap": 92,
+    "route_records": 300,
+    "sitemap_routes": 58
+  }
+}
