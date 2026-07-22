@@ -1,7 +1,9 @@
-Title: Number sequences visualisation with python
+Title: Number-sequence visualization with Python
 Author: Nekrasov Pavel
 Date: 2019-08-29 15:00
 Category: Blog
 Tags: python, notebook, numpy
 Slug: number-sequences
+Lang: en
+Status: archive
 Summary: In this notebook we will compute and visualise some famous and nice looking number sequences.

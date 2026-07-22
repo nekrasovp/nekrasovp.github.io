@@ -4,6 +4,8 @@ Date: 2021-02-11 11:00
 Category: Blog
 Tags: workflow, template
 Slug: retrospective-template
+Lang: ru
+Status: refresh
 Summary: Шаблон для проведения ретроспективы на русским языке
 
 # Оглавление

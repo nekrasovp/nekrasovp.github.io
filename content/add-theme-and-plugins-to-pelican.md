@@ -1,9 +1,11 @@
-Title: Add theme and plugins to Pelican installation
+Title: Add a theme and plugins to Pelican
 Author: Nekrasov Pavel
 Date: 2019-02-02 16:00
 Category: Blog
 Tags: python, markdown, pelican
 Slug: add-theme-and-plugins-to-pelican
+Lang: en
+Status: deprecated
 Summary: The standard theme that comes with Pelican has one huge disadvantage: it does not display properly on mobile devices.
 To accomplish this we will change our website to use the excellent pelican-bootstrap3 theme.
 

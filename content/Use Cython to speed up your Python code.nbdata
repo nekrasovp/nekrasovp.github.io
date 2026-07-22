@@ -1,7 +1,9 @@
-Title: Use Cython to speed up your Python code
+Title: Use Cython to speed up Python code
 Author: Nekrasov Pavel
 Date: 2019-09-02 15:00
 Category: Blog
 Tags: python, cython
 Slug: use-cython-to-speedup-your-python-code
+Lang: en
+Status: archive
 Summary: In this notebook will try to convert pure Python code to Cython and test speed up with magic functions.

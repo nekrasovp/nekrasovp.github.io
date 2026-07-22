@@ -1,9 +1,11 @@
-Title: How to rebase git branch
+Title: How to rebase a Git branch
 Author: Nekrasov Pavel
 Date: 2022-04-21 12:00
 Category: Blog
 Tags: git
 Slug: git-rebase
+Lang: en
+Status: keep
 Summary: Choosing between git rebase and git merge remains one of the most discussed topics in the community.
 
 ## Abstract

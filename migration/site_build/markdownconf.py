@@ -12,4 +12,4 @@ MARKUP = ("md",)
 IGNORE_FILES = [*IGNORE_FILES, "*.ipynb"]  # noqa: F405
 THEME = str(REPO_ROOT / "theme")
 PLUGIN_PATHS = [str(REPO_ROOT / "plugins")]
-PLUGINS = ["i18n_subsites", "related_posts", "tag_cloud"]
+PLUGINS = ["i18n_subsites", "related_posts", "site_metadata", "tag_cloud"]

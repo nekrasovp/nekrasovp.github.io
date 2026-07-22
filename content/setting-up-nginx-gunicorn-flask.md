@@ -1,9 +1,11 @@
-Title: Setting Up Nginx, Gunicorn for Flask app 
+Title: Setting up Nginx and Gunicorn for a Flask application
 Author: Nekrasov Pavel
 Date: 2021-11-03 15:00
 Category: Blog
 Tags: nginx, gunicorn, flask, python
 Slug: setting-up-nginx-gunicorn-flask
+Lang: en
+Status: deprecated
 Summary: This article describes how to configure a Nginx and gunicorn to run Flask app.
 
 ## Abstract

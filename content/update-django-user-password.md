@@ -4,6 +4,8 @@ Date: 2023-09-02 15:00
 Category: Blog
 Tags: python, django
 Slug: update-django-user-password
+Lang: en
+Status: keep
 Summary: Update Django user password from shell.
 
 ## Update Django user password from shell

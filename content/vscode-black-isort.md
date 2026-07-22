@@ -4,6 +4,8 @@ Date: 2022-05-10 12:00
 Category: Blog
 Tags: python, vscode, black
 Slug: python-black-isort
+Lang: en
+Status: keep
 Summary: How to use Black to format python code, and organise imports on save.
 
 How to use Black to format Python code, and organise imports on save in VSCode.

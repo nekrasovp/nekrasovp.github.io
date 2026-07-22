@@ -1,9 +1,11 @@
-Title: Setting Up GitLab CI for a Python Application
+Title: Setting up GitLab CI for a Python application
 Author: Nekrasov Pavel
 Date: 2021-07-10 15:00
 Category: Blog
 Tags: gitlab, python, mypy, pytest, flake8, pylint
 Slug: setting-up-gitlab-ci
+Lang: en
+Status: refresh
 Summary: This article describes how to configure a Continuous Integration (CI) process on GitLab for a python application. This article utilizes one of my python applications to show how to setup the CI process.
 
 ## Contents

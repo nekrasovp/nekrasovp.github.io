@@ -21,6 +21,7 @@ DEFAULT_CONFIGS = {
     "serve": Path("migration/site_build/markdownconf.py"),
 }
 SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
+SITE003_VALIDATOR = REPO_ROOT / "migration/site003/validate.py"
 
 
 def resolve_from_repo(value: str | Path) -> Path:
@@ -75,6 +76,12 @@ def run(command: Sequence[str]) -> int:
         return 130
 
 
+def run_site003_preflight() -> int:
+    """Reject invalid lifecycle status or language before Pelican starts."""
+
+    return run([sys.executable, str(SITE003_VALIDATOR)])
+
+
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
     subparsers = result.add_subparsers(dest="command", required=True)
@@ -108,13 +115,27 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.report_out:
             command.extend(["--report-out", args.report_out])
         return run(command)
-    return run(
+    preflight = run_site003_preflight()
+    if preflight:
+        return preflight
+    output = args.output or DEFAULT_OUTPUTS[args.command]
+    build = run(
         pelican_command(
             args.command,
-            output=args.output,
+            output=output,
             config=args.config,
             port=getattr(args, "port", 8000),
         )
+    )
+    if build or args.command != "build":
+        return build
+    return run(
+        [
+            sys.executable,
+            str(SITE003_VALIDATOR),
+            "--output-root",
+            str(resolve_from_repo(output)),
+        ]
     )
 
 

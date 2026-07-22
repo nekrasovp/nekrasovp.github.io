@@ -4,6 +4,8 @@ Date: 2020-09-29 14:00
 Category: Blog
 Tags: data, workflow
 Slug: share-data
+Lang: en
+Status: archive
 Summary: This is a guide for anyone who needs to share data with a statistician or data scientist.
 
 Initial article was writen by [Jeff Leek](http://biostat.jhsph.edu/~jleek/)

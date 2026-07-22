@@ -4,6 +4,8 @@ Date: 2023-07-11 13:00
 Category: Blog
 Tags: mysql, linux
 Slug: mysql-server-errors
+Lang: en
+Status: keep
 Summary: This post is about errors after "The MySQL server has gone away", which means that the MySQL server (mysqld) timed out and closed the connection.
 
 ## Abstract

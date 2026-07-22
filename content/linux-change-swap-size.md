@@ -4,6 +4,8 @@ Date: 2022-08-06 15:00
 Category: Blog
 Tags: linux
 Slug: linux-change-swap-size
+Lang: en
+Status: keep
 Summary: If you want to change the size of your swap file just follow the following steps.
 
 ## Change swap size in Ubuntu

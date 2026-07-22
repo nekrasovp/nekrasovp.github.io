@@ -4,4 +4,6 @@ Date: 2020-01-25 15:00
 Category: Blog
 Tags: python, numpy, scipy, matplotlib
 Slug: markov-chain-bean-machine
+Lang: en
+Status: archive
 Summary: We will use the stationary distribution of an absorbing markov chain to simulate a Galton board.

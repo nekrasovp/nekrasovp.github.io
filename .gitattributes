@@ -1,0 +1,2 @@
+theme/templates/*.html whitespace=cr-at-eol
+theme/templates/includes/*.html whitespace=cr-at-eol

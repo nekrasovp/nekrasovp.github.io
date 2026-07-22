@@ -4,6 +4,8 @@ Date: 2022-02-25 18:45
 Category: Blog
 Tags: python, logging
 Slug: custom-logger
+Lang: en
+Status: refresh
 Summary: The Python logging module may be used to build your own custom logger featuring special functionality according to your use case.
 
 ## Contents

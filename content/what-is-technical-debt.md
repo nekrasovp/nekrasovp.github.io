@@ -4,6 +4,8 @@ Date: 2023-09-16 15:00
 Category: Blog
 Tags: development, science, workflow
 Slug: what-is-technical-debt
+Lang: ru
+Status: refresh
 Summary: Что такое технический долг? Примеры, профилактика и лучшие практики
 
 # Что такое технический долг? Примеры, профилактика и лучшие практики

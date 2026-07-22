@@ -49,13 +49,14 @@ uses `build/markdown`, deletes that explicit directory before generation, and
 treats every Pelican warning as fatal.
 
 `./scripts/site build` is the full production-intent build. It always uses
-`build/production` and passes `--fatal errors`; the separate SITE-002V
-validation command independently requires all 46 historical article routes.
+`build/production` and passes `--fatal errors`. SITE-003 inventory validation
+runs before Pelican and exact rendered metadata validation runs afterward.
 
 `./scripts/site validate` creates an external locked environment, proves the
 exact installed Git provenance of the notebook reader, runs and gates two clean
-46-article builds, and runs the isolated negative and no-execution cases. See
-`migration/site002v/README.md` for the complete contract.
+46-article builds, and runs the isolated negative and no-execution cases. It
+also reuses the SITE-003 inventory, preservation, and rendered metadata gates.
+See `migration/site002v/README.md` and `migration/site003/README.md`.
 
 `./scripts/site serve` serves the Markdown-only configuration from the explicit
 `build/local` directory with autoreload. It deliberately uses the same

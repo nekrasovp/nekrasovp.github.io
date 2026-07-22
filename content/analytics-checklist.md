@@ -4,6 +4,8 @@ Date: 2022-02-10 15:00
 Category: Blog
 Tags: analytics, template
 Slug: analytics-checklist
+Lang: en
+Status: keep
 Summary: Five ways to help users become more data-driven in order to guarantee the success of your analytics project
 
 ## Abstract

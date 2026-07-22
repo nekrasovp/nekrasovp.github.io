@@ -1,9 +1,11 @@
-Title: Python app with poetry & docker
+Title: Python app with Poetry and Docker
 Author: Nekrasov Pavel
 Date: 2023-02-20 12:00
 Category: Blog
 Tags: python, poetry, development
 Slug: python-poetry-docker
+Lang: en
+Status: keep
 Summary: This post is about building multi-stage docker image with python app and poetry.
 
 ## Abstract

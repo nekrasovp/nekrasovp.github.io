@@ -17,6 +17,11 @@ from pathlib import Path
 from typing import Any, Sequence
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from migration.site003 import validate as site003_validation  # noqa: E402
+
 CONTENT_ROOT = REPO_ROOT / "content"
 FULL_MANIFEST = REPO_ROOT / "migration/production_parity/inputs/legacy_routes.tsv"
 NOTEBOOK_MANIFEST = REPO_ROOT / "migration/site002v/notebooks.tsv"
@@ -32,9 +37,10 @@ EXPECTED_MARKDOWN = 35
 EXPECTED_NOTEBOOKS = 11
 EXPECTED_MISSING_ALT = 57
 EXPECTED_EMPTY_ALT = 2
-EXPECTED_TITLE_GAPS = 8
-EXPECTED_READER_LANGUAGE_ABSENT = 11
-EXPECTED_RENDERED_LANGUAGE_GAPS = 1
+EXPECTED_TITLE_GAPS = 0
+EXPECTED_READER_LANGUAGE_ABSENT = 0
+EXPECTED_RENDERED_LANGUAGE_GAPS = 0
+EXPECTED_TITLE_OVERRIDES = 28
 REQUIRED_CORPUS_OUTPUT_MODES = {"code", "image", "markdown", "png", "svg", "table"}
 
 
@@ -416,6 +422,7 @@ def _build_command(python: Path, output: Path) -> list[str]:
 def _gate_command(
     python: Path,
     *,
+    baseline_metadata: Path,
     content_root: Path,
     output_root: Path,
     evidence_out: Path,
@@ -427,7 +434,7 @@ def _gate_command(
         "--expected-manifest",
         str(FULL_MANIFEST),
         "--baseline-metadata",
-        str(BASELINE_METADATA),
+        str(baseline_metadata),
         "--content-root",
         str(content_root),
         "--output-root",
@@ -447,6 +454,39 @@ def _gate_command(
         "--evidence-out",
         str(evidence_out),
     ]
+
+
+def _write_site003_baseline_overlay(path: Path) -> dict[str, Any]:
+    payload = json.loads(BASELINE_METADATA.read_text(encoding="utf-8"))
+    pages = {page["path"]: page for page in payload["pages"]}
+    changed: list[dict[str, str]] = []
+    for row in _load_tsv(FULL_MANIFEST):
+        page = pages[row["route"]]
+        expected_title = f"{row['title']} - {site003_validation.SITENAME}"
+        if page["title"] != expected_title:
+            changed.append(
+                {
+                    "after": expected_title,
+                    "before": page["title"],
+                    "route": row["route"],
+                    "source": row["source"],
+                }
+            )
+            page["title"] = expected_title
+    if len(changed) != EXPECTED_TITLE_OVERRIDES:
+        raise RuntimeError(
+            f"SITE-003 title overlay expected {EXPECTED_TITLE_OVERRIDES} changes, "
+            f"observed {len(changed)}"
+        )
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    return {
+        "frozen_baseline_sha256": _sha256(BASELINE_METADATA),
+        "overlay_sha256": _sha256(path),
+        "title_overrides": changed,
+    }
 
 
 def _metadata_observations(evidence: dict[str, Any]) -> dict[str, Any]:
@@ -533,6 +573,7 @@ def _negative_gates(
     work_root: Path,
     notebooks: list[dict[str, str]],
     positive_output: Path,
+    baseline_metadata: Path,
 ) -> dict[str, Any]:
     selected = notebooks[0]
     source_name = selected["source"]
@@ -548,6 +589,7 @@ def _negative_gates(
     missing_source = _run(
         _gate_command(
             python,
+            baseline_metadata=baseline_metadata,
             content_root=missing_source_content,
             output_root=positive_output,
             evidence_out=fixtures / "missing-source/evidence.json",
@@ -567,6 +609,7 @@ def _negative_gates(
     missing_route = _run(
         _gate_command(
             python,
+            baseline_metadata=baseline_metadata,
             content_root=CONTENT_ROOT,
             output_root=missing_route_output,
             evidence_out=fixtures / "missing-route/evidence.json",
@@ -641,6 +684,50 @@ def _negative_gates(
         source=source_name,
         tokens=("notebook_parsing", "malformed_notebook"),
     )
+
+    metadata_source = next(
+        row["source"]
+        for row in _load_tsv(FULL_MANIFEST)
+        if row["source"].casefold().endswith(".md")
+    )
+    invalid_metadata_root = fixtures / "invalid-metadata/content"
+    shutil.copytree(CONTENT_ROOT, invalid_metadata_root)
+    metadata_path = invalid_metadata_root / metadata_source
+    original_metadata = metadata_path.read_bytes()
+    cases = {
+        "invalid_language": (b"Lang", b"xx", ("invalid_language", "InvalidLanguage")),
+        "unknown_status": (b"Status", b"unknown", ("unknown_status", "UnknownStatus")),
+    }
+    for label, (field, value, tokens) in cases.items():
+        mutated, replacements = re.subn(
+            rb"(?im)^" + field + rb":[^\r\n]*",
+            field + b": " + value,
+            original_metadata,
+            count=1,
+        )
+        if replacements != 1:
+            raise RuntimeError(f"could not create {label} SITE-003 fixture")
+        metadata_path.write_bytes(mutated)
+        failure = _run(
+            [
+                str(python),
+                str(REPO_ROOT / "migration/site003/validate.py"),
+                "--content-root",
+                str(invalid_metadata_root),
+                "--manifest",
+                str(FULL_MANIFEST),
+                "--base-commit",
+                site003_validation.SITE003_BASE_COMMIT,
+            ],
+            cwd=fixtures / "invalid-metadata",
+        )
+        results[label] = _assert_typed_failure(
+            failure,
+            label=f"{label} gate",
+            source=metadata_source,
+            tokens=("inventory_validation", *tokens),
+        )
+    metadata_path.write_bytes(original_metadata)
     return results
 
 
@@ -654,6 +741,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     _verify_site_base()
     notebooks = _validate_manifests()
+    inventory = site003_validation.validate_inventory()
+    baseline_overlay = work_root / "site003-baseline-overlay.json"
+    overlay_evidence = _write_site003_baseline_overlay(baseline_overlay)
     lock_source = _verify_dependency_input()
     status_before = _git_status()
     sources_before = _source_hashes()
@@ -669,6 +759,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     evidence_paths: list[Path] = []
     warning_ledgers: list[dict[str, int]] = []
     observations: list[dict[str, int]] = []
+    rendered_contracts: list[dict[str, Any]] = []
 
     for number in (1, 2):
         output = work_root / f"output-{number}"
@@ -699,6 +790,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         gate = _run(
             _gate_command(
                 external_python,
+                baseline_metadata=baseline_overlay,
                 content_root=CONTENT_ROOT,
                 output_root=output,
                 evidence_out=evidence,
@@ -707,11 +799,19 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         )
         _require_success(gate, f"publication completeness gate {number}")
         evidence_paths.append(evidence)
+        rendered_contracts.append(
+            site003_validation.validate_output(
+                output_root=output,
+                manifest_path=FULL_MANIFEST,
+            )
+        )
 
     if evidence_paths[0].read_bytes() != evidence_paths[1].read_bytes():
         raise RuntimeError("the two normalized publication evidence files differ")
     if warning_ledgers[0] != warning_ledgers[1]:
         raise RuntimeError("the two warning ledgers differ")
+    if rendered_contracts[0] != rendered_contracts[1]:
+        raise RuntimeError("the two SITE-003 rendered contract reports differ")
     if marker.exists():
         raise RuntimeError("the build created the execution marker")
     if _source_hashes() != sources_before:
@@ -731,12 +831,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if missing_modes:
         raise RuntimeError(f"representative committed output modes are missing: {missing_modes!r}")
 
-    negative = _negative_gates(external_python, work_root, notebooks, work_root / "output-1")
+    negative = _negative_gates(
+        external_python,
+        work_root,
+        notebooks,
+        work_root / "output-1",
+        baseline_overlay,
+    )
     if _source_hashes() != sources_before or _git_status() != status_before:
         raise RuntimeError("isolated negative fixtures changed repository sources or status")
 
     result = {
-        "contract": "nekrasovp-site002v-validation.v1",
+        "contract": "nekrasovp-site002v-validation.v2",
         "counts": publication["counts"],
         "dependency": {
             "direct_requirement": PLUGIN_REQUIREMENT,
@@ -766,6 +872,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "publication_records": publication["records"],
         "representative_committed_output_fixture": representative,
         "site_base_commit": SITE_BASE_COMMIT,
+        "site003": {
+            "baseline_overlay": overlay_evidence,
+            "inventory": inventory,
+            "rendered": rendered_contracts[0],
+        },
         "warning_ledger": publication["warning_ledger"],
     }
     report_out.parent.mkdir(parents=True, exist_ok=True)

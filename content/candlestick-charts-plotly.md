@@ -1,9 +1,11 @@
-Title: Stock market candlestick charts with plotly and python
+Title: Stock-market candlestick charts with Plotly and Python
 Author: Nekrasov Pavel
 Date: 2019-07-10 20:00
 Category: Blog
 Tags: python, notebook, finance, pandas, plotly
 Slug: candlestick-charts-plotly
+Lang: en
+Status: archive
 Summary: This article is the first of a short series on data analysis applied to finance, in which I’ll seek to demonstrate a few useful artifacts used by stock market professionals, data analysts and traders. The whole approach is done using Python.
 
 ## Candlesticks Interpretation

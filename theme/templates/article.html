@@ -69,7 +69,7 @@
 
 {% block content %}
     <section id="content">
-        <article>
+        <article data-content-status="{{ article.lifecycle_status }}">
             <header class="page-header">
                 <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
@@ -85,6 +85,25 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 </div>
+                {% if article.lifecycle_status == 'archive' %}
+                    <div class="alert alert-warning content-notice content-notice-archive"
+                         data-content-status="archive" role="note">
+                        {% if article.lang == 'ru' %}
+                            <strong>Исторический материал.</strong>
+                            Статья сохранена как исторический материал и может не отражать современные практики.
+                        {% else %}
+                            <strong>Historical content.</strong>
+                            This article is preserved as a historical record and may not reflect current practices.
+                        {% endif %}
+                    </div>
+                {% elif article.lifecycle_status == 'deprecated' %}
+                    <div class="alert alert-danger content-notice content-notice-deprecated"
+                         data-content-status="deprecated" role="alert">
+                        <strong>Outdated content warning.</strong>
+                        This article is deprecated and may contain outdated or unsafe guidance.
+                        Verify current documentation before use.
+                    </div>
+                {% endif %}
                 {{ article.content }}
             </div>
             <!-- /.entry-content -->

@@ -1,7 +1,9 @@
-Title: Stock market portfolio optimisation
+Title: Stock-market portfolio optimization
 Author: Nekrasov Pavel
 Date: 2019-07-12 15:00
 Category: Blog
 Tags: python, notebook, finance, pandas, portfolio
 Slug: stock-market-portfolio-optimisation
+Lang: en
+Status: archive
 Summary: The goal of this notebook is to provide an introduction to stock market portfolio optimisation using Python.

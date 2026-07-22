@@ -4,6 +4,8 @@ Date: 2023-10-14 15:00
 Category: Blog
 Tags: development, science, workflow
 Slug: technical-debt-examples
+Lang: ru
+Status: refresh
 Summary: В этом посте я хочу более подробно рассмотреть примеры технического долга в существующем коде.
 
 # Примеры технического долга
