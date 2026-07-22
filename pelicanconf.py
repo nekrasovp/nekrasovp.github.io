@@ -89,7 +89,12 @@ IPYNB_GENERATE_SUMMARY = True
 PLUGIN_PATHS = ['plugins/']
 
 # Plugin list
-PLUGINS = ['i18n_subsites', 'related_posts', 'tag_cloud', 'ipynb.markup']
+PLUGINS = [
+    'i18n_subsites',
+    'related_posts',
+    'tag_cloud',
+    'pelican.plugins.ipynb_reader',
+]
 
 # IPYNB_FIX_CSS = False
 IPYNB_SKIP_CSS = True

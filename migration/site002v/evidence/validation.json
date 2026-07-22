@@ -1,0 +1,928 @@
+{
+  "contract": "nekrasovp-site002v-validation.v1",
+  "counts": {
+    "articles": 46,
+    "markdown": 35,
+    "notebooks": 11
+  },
+  "dependency": {
+    "direct_requirement": "pelican-jupyter @ git+https://github.com/nekrasovp/pelican-jupyter.git@137e1eb0ea620f1b15fff0ba81725eea23de1b7a",
+    "installed": {
+      "commit_id": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a",
+      "import_path": "site-packages/pelican/plugins/ipynb_reader/__init__.py",
+      "outside_source_checkouts": true,
+      "repository": "https://github.com/nekrasovp/pelican-jupyter.git",
+      "requested_revision": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a",
+      "version": "0.10.2.dev16+g137e1eb0e"
+    },
+    "lock_source": "https://github.com/nekrasovp/pelican-jupyter.git?rev=137e1eb0ea620f1b15fff0ba81725eea23de1b7a#137e1eb0ea620f1b15fff0ba81725eea23de1b7a",
+    "plugin_commit": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+  },
+  "determinism": {
+    "normalized_publication_evidence_sha256": "49f128cc08aaac57ad5c2d2b42a7911a6a99838cd698e2f7c715af1e5de38d18",
+    "publication_evidence_identical": true,
+    "warning_ledgers_identical": true
+  },
+  "emitted_build_warning_ledger": {
+    "empty_alt": 2,
+    "nbconvert_missing_alt": 48,
+    "warning_records": 8
+  },
+  "metadata_observations": {
+    "inventory_reader_title_mismatches": [
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "Use Cython to speed up your Python code.ipynb",
+      "covid-dashboard.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "mkrf-spb-geo-data.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "owner": "SITE-003",
+    "reader_language_absent": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "Use Cython to speed up your Python code.ipynb",
+      "covid-dashboard.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "markov-chain-bean-machine.ipynb",
+      "mkrf-spb-geo-data.ipynb",
+      "pascals-triangle.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "rendered_language_target_mismatches": [
+      "mkrf-spb-geo-data.ipynb"
+    ]
+  },
+  "negative_gates": {
+    "malformed_notebook": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "mkrf-spb-geo-data.ipynb",
+      "tokens": [
+        "notebook_parsing",
+        "malformed_notebook"
+      ]
+    },
+    "missing_metadata": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "mkrf-spb-geo-data.ipynb",
+      "tokens": [
+        "metadata_discovery",
+        "missing_metadata",
+        "MissingMetadata"
+      ]
+    },
+    "missing_required_title": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "mkrf-spb-geo-data.ipynb",
+      "tokens": [
+        "validation",
+        "missing_title",
+        "MissingTitle"
+      ]
+    },
+    "missing_route": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "mkrf-spb-geo-data.ipynb",
+      "tokens": [
+        "publication_verification",
+        "missing_expected_route",
+        "MissingExpectedRoute"
+      ]
+    },
+    "missing_source": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "mkrf-spb-geo-data.ipynb",
+      "tokens": [
+        "publication_verification",
+        "missing_expected_source",
+        "MissingExpectedSource"
+      ]
+    }
+  },
+  "no_execution": {
+    "committed_fixture_observation": {
+      "client_executes": 0,
+      "kernel_starts": 0,
+      "network_connects": 0
+    },
+    "marker_created": false,
+    "observations": [
+      {
+        "client_executes": 0,
+        "kernel_starts": 0,
+        "network_connects": 0
+      },
+      {
+        "client_executes": 0,
+        "kernel_starts": 0,
+        "network_connects": 0
+      }
+    ],
+    "repository_status_unchanged": true,
+    "source_bytes_unchanged": true
+  },
+  "notebook_manifest": [
+    {
+      "metadata": "mkrf-spb-geo-data.nbdata",
+      "route": "/mkrf-spb-geo-data.html",
+      "source": "mkrf-spb-geo-data.ipynb"
+    },
+    {
+      "metadata": "covid-dashboard.nbdata",
+      "route": "/covid-dashboard.html",
+      "source": "covid-dashboard.ipynb"
+    },
+    {
+      "metadata": "pascals-triangle.nbdata",
+      "route": "/pascals-triangle.html",
+      "source": "pascals-triangle.ipynb"
+    },
+    {
+      "metadata": "markov-chain-bean-machine.nbdata",
+      "route": "/markov-chain-bean-machine.html",
+      "source": "markov-chain-bean-machine.ipynb"
+    },
+    {
+      "metadata": "Use Cython to speed up your Python code.nbdata",
+      "route": "/use-cython-to-speedup-your-python-code.html",
+      "source": "Use Cython to speed up your Python code.ipynb"
+    },
+    {
+      "metadata": "Number-sequences.nbdata",
+      "route": "/number-sequences.html",
+      "source": "Number-sequences.ipynb"
+    },
+    {
+      "metadata": "Stock-market-portfolio-optimisation.nbdata",
+      "route": "/stock-market-portfolio-optimisation.html",
+      "source": "Stock-market-portfolio-optimisation.ipynb"
+    },
+    {
+      "metadata": "stock-perfomance-analysis.nbdata",
+      "route": "/stock-perfomance-analysis.html",
+      "source": "stock-perfomance-analysis.ipynb"
+    },
+    {
+      "metadata": "Testing-hypothesis-on-football-data-set.nbdata",
+      "route": "/testing-hypothesis-on-football-data-set.html",
+      "source": "Testing-hypothesis-on-football-data-set.ipynb"
+    },
+    {
+      "metadata": "Getting-stock-data-with-pandas-datareader.nbdata",
+      "route": "/stock-data-with-pandas-datareader.html",
+      "source": "Getting-stock-data-with-pandas-datareader.ipynb"
+    },
+    {
+      "metadata": "feature-engineering-on-ohlcv-candles-wit-xgboost.nbdata",
+      "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+      "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb"
+    }
+  ],
+  "output_modes": {
+    "code": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "Use Cython to speed up your Python code.ipynb",
+      "covid-dashboard.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "markov-chain-bean-machine.ipynb",
+      "mkrf-spb-geo-data.ipynb",
+      "pascals-triangle.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "image": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "covid-dashboard.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "markov-chain-bean-machine.ipynb",
+      "pascals-triangle.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "markdown": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "Use Cython to speed up your Python code.ipynb",
+      "covid-dashboard.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "markov-chain-bean-machine.ipynb",
+      "mkrf-spb-geo-data.ipynb",
+      "pascals-triangle.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "png": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Number-sequences.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "markov-chain-bean-machine.ipynb",
+      "pascals-triangle.ipynb"
+    ],
+    "svg": [
+      "covid-dashboard.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ],
+    "table": [
+      "Getting-stock-data-with-pandas-datareader.ipynb",
+      "Stock-market-portfolio-optimisation.ipynb",
+      "Testing-hypothesis-on-football-data-set.ipynb",
+      "covid-dashboard.ipynb",
+      "stock-perfomance-analysis.ipynb"
+    ]
+  },
+  "publication_records": [
+    {
+      "route": "/add-theme-and-plugins-to-pelican.html",
+      "source": "add-theme-and-plugins-to-pelican.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/analytics-checklist.html",
+      "source": "analytics-checklist.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/arbitrage.html",
+      "source": "arbitrage.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/building-job-queue.html",
+      "source": "building-job-queue.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/business-it-solutions.html",
+      "source": "business-it-solutions.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/candlestick-charts-plotly.html",
+      "source": "candlestick-charts-plotly.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/color-formatter.html",
+      "source": "color-formatter.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Just another COVID-19 data visualisation - Data driven"
+      },
+      "content_class_sha256": "c321e97238b0065495767ea87ced42338e0e512a687d1d360ea98c5aeed66021",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "svg",
+        "table"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2020-10-27",
+        "language": null,
+        "summary": "The goal of this notebook is to explore COVID-19 and World Bank API data",
+        "tags": [
+          "python",
+          "notebook",
+          "pandas",
+          "wbdata"
+        ],
+        "title": "Just another COVID-19 data visualisation"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "COVID-19 data visualization"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Just another COVID-19 data visualisation - Data driven"
+      },
+      "route": "/covid-dashboard.html",
+      "source": "covid-dashboard.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "43693165d473484125847c67d9f261f8d95f106ad18228f7cba3be00974d211a"
+    },
+    {
+      "route": "/custom-logger.html",
+      "source": "custom-logger.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/deploying-a-static-website-to-bitbucket.html",
+      "source": "deploying-a-static-website-to-bitbucket.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/devops-questions.html",
+      "source": "devops-questions.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/essay-paper-template.html",
+      "source": "essay-paper-template.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven"
+      },
+      "content_class_sha256": "5baeb77b86d88841eab210554a5ba4df4b13e5e3a7bcc1325588a8aac0d05e7f",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2018-12-01",
+        "language": null,
+        "summary": "The goal of this notebook is to apply XGBoost to set of features from ohlcv indicators, fft results and arima predictions to test feature importance.",
+        "tags": [
+          "python",
+          "notebook",
+          "finance",
+          "pandas",
+          "xgboost",
+          "arima",
+          "fft"
+        ],
+        "title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven"
+      },
+      "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+      "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "93dc68809993362905c39ab24280a3e15051f13f3018cfbd3c404f87119f9575"
+    },
+    {
+      "route": "/fixing-caching-sha2-password.html",
+      "source": "fixing-caching-sha2-password.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/git-rebase.html",
+      "source": "git-rebase.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/graphql-schema.html",
+      "source": "graphql-schema.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/install-nvm-node-yarn.html",
+      "source": "install-nvm-node-yarn.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/install-pelican-and-create-project-skeleton.html",
+      "source": "install-pelican-and-create-project-skeleton.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/linux-change-swap-size.html",
+      "source": "linux-change-swap-size.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/linux-list-users.html",
+      "source": "linux-list-users.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/linux-port.html",
+      "source": "linux-port.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Simulating a Galton board with Markov chains - Data driven"
+      },
+      "content_class_sha256": "f713336df1ce60889b6e31d9afd8a6c25464e079916722b0a0cf297fc3abb84c",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2020-01-25",
+        "language": null,
+        "summary": "We will use the stationary distribution of an absorbing markov chain to simulate a Galton board.",
+        "tags": [
+          "python",
+          "numpy",
+          "scipy",
+          "matplotlib"
+        ],
+        "title": "Simulating a Galton board with Markov chains"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Simulating a Galton board with Markov chains"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Simulating a Galton board with Markov chains - Data driven"
+      },
+      "route": "/markov-chain-bean-machine.html",
+      "source": "markov-chain-bean-machine.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "02bc62e422f044fc64c97931ac836060ebcdb85754fbdfba490698febdcc14cd"
+    },
+    {
+      "baseline_metadata": {
+        "language": "ru",
+        "page_title": "Визуализации картографических данных в Jupyter notebook - Data driven"
+      },
+      "content_class_sha256": "2bab522bd75d2678ad3d4f4a86583950a7cf0ea803789f5e49e35647b7ff3370",
+      "content_modes": [
+        "code",
+        "markdown"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2021-04-04",
+        "language": null,
+        "summary": "В этой статье, мы углубимся в изучение Jupyter Interactive Widgets и Ipyleaflet package, для визуализации картографических данных в Jupyter notebook.",
+        "tags": [
+          "python",
+          "leaflet",
+          "notebook",
+          "pandas"
+        ],
+        "title": "Визуализации картографических данных в Jupyter notebook"
+      },
+      "publisher_target": {
+        "language": "ru",
+        "route_inventory_title": "Визуализация картографических данных в Jupyter Notebook"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Визуализации картографических данных в Jupyter notebook - Data driven"
+      },
+      "route": "/mkrf-spb-geo-data.html",
+      "source": "mkrf-spb-geo-data.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "13f96e200b478630a3e22c1828a0b71e7bb335a713e18d93706a1b86b203be99"
+    },
+    {
+      "route": "/mysql-server-errors.html",
+      "source": "mysql-server-errors.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Number sequences visualisation with python - Data driven"
+      },
+      "content_class_sha256": "8b14d3d572b98f6905edca3c12e6ecfac2e7b470aec1490f3ea951865960cdcc",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-08-29",
+        "language": null,
+        "summary": "In this notebook we will compute and visualise some famous and nice looking number sequences.",
+        "tags": [
+          "python",
+          "notebook",
+          "numpy"
+        ],
+        "title": "Number sequences visualisation with python"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Number-sequence visualization with Python"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Number sequences visualisation with python - Data driven"
+      },
+      "route": "/number-sequences.html",
+      "source": "Number-sequences.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "1e0346c768a3c1594117d4878f40619e782c6fb96ebd5efb7c55f1eb400de570"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Pascal's Triangle - Data driven"
+      },
+      "content_class_sha256": "f4ce963ab0e85298639befdd47ac7e3eccb06805456b786d55308eec2bbdbcfa",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2020-08-01",
+        "language": null,
+        "summary": "In this notebook we will build and visualise Pascal's Triangle with networkx and pydot",
+        "tags": [
+          "python",
+          "math",
+          "matplotlib",
+          "networkx",
+          "pydot"
+        ],
+        "title": "Pascal's Triangle"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Pascal's Triangle"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Pascal's Triangle - Data driven"
+      },
+      "route": "/pascals-triangle.html",
+      "source": "pascals-triangle.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "71ffc0396ee2c33fa8530866381e9533f4462862abc4fe4af8ab346b53aeb356"
+    },
+    {
+      "route": "/pelican-github-script-automation.html",
+      "source": "pelican-github-script-automation.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/publishing-articles-workflow.html",
+      "source": "publishing-articles-workflow.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/python-black-isort.html",
+      "source": "vscode-black-isort.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/python-gil.html",
+      "source": "python-gil.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/python-object-reference.html",
+      "source": "python-object-reference.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/python-poetry-docker.html",
+      "source": "python-poetry-docker.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/retrospective-template.html",
+      "source": "Retrospective-template.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/setting-up-gitlab-ci.html",
+      "source": "setting-up-gitlab-ci.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/setting-up-nginx-gunicorn-flask.html",
+      "source": "setting-up-nginx-gunicorn-flask.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/share-data.html",
+      "source": "share-data.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/shell-capture.html",
+      "source": "shell-capture.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Getting stock data with pandas-datareader - Data driven"
+      },
+      "content_class_sha256": "dc7a080c64afbeeb70222b21eacbcfd1d945d54c6063bd87c435638ab3726bb9",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png",
+        "table"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-03-01",
+        "language": null,
+        "summary": "The goal of this article is to provide an easy introduction to stock market analysis using Python. In this notebook we will use pandas_datareader module. We will walk through a simple Python script to retrieve, analyze, and visualize data from different markets.",
+        "tags": [
+          "python",
+          "notebook",
+          "finance",
+          "pandas"
+        ],
+        "title": "Getting stock data with pandas-datareader"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Getting stock data with pandas-datareader"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Getting stock data with pandas-datareader - Data driven"
+      },
+      "route": "/stock-data-with-pandas-datareader.html",
+      "source": "Getting-stock-data-with-pandas-datareader.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "7730773bbf67a5cf1e03666d92cf0c5a79008ccf981129989c76d07acf4e899f"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Stock market portfolio optimisation - Data driven"
+      },
+      "content_class_sha256": "91dc46be61d8434c72f32cdee24636ac52dc26c3ccdd53b29687fd695ef807a6",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png",
+        "table"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-07-12",
+        "language": null,
+        "summary": "The goal of this notebook is to provide an introduction to stock market portfolio optimisation using Python.",
+        "tags": [
+          "python",
+          "notebook",
+          "finance",
+          "pandas",
+          "portfolio"
+        ],
+        "title": "Stock market portfolio optimisation"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Stock-market portfolio optimization"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Stock market portfolio optimisation - Data driven"
+      },
+      "route": "/stock-market-portfolio-optimisation.html",
+      "source": "Stock-market-portfolio-optimisation.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "bd18aa66d5cf5c2274cd3cccd8c3541ea7090a273ca9b20ad6e24d5d8f96e9a2"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Stock performance analysis using python Financial Functions - Data driven"
+      },
+      "content_class_sha256": "cb69f556a5df167b11d3876cf5c6037b1b01883631927a052a1ac5aa915fc930",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "svg",
+        "table"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-07-11",
+        "language": null,
+        "summary": "Continuing short series on data analysis applied to finance, this article is a step further into exploring Python’s many functionalities towards stock market diagnosis.",
+        "tags": [
+          "python",
+          "notebook",
+          "finance",
+          "ffn",
+          "matplotlib"
+        ],
+        "title": "Stock performance analysis using python Financial Functions"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Stock-performance analysis using Python Financial Functions"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Stock performance analysis using python Financial Functions - Data driven"
+      },
+      "route": "/stock-perfomance-analysis.html",
+      "source": "stock-perfomance-analysis.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "e3722efae1d81baa8f8eefdd4c9e5dc9d0e4f5cc5e098104a5a87ae605fa1684"
+    },
+    {
+      "route": "/technical-debt-examples.html",
+      "source": "technical-debt-examples.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Testing hypothesis on football data-set from kaggle - Data driven"
+      },
+      "content_class_sha256": "4c52d966699b3838f3568c402a603cabf96503d7b76418a4ae67b023da580607",
+      "content_modes": [
+        "code",
+        "image",
+        "markdown",
+        "png",
+        "table"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-05-10",
+        "language": null,
+        "summary": "In this notebook we will use the data-set, International football results from 1872 to 2019. We will try ANOVA hypothesis testing technique.",
+        "tags": [
+          "python",
+          "notebook",
+          "statistics",
+          "pandas",
+          "kaggle",
+          "seaborn",
+          "matplotlib",
+          "ANOVA"
+        ],
+        "title": "Testing hypothesis on football data-set from kaggle"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Testing a hypothesis on a football data set from Kaggle"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Testing hypothesis on football data-set from kaggle - Data driven"
+      },
+      "route": "/testing-hypothesis-on-football-data-set.html",
+      "source": "Testing-hypothesis-on-football-data-set.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "7607b7df414c88d61ce6c82183ff504413888b1ba3a62c8c2ede17f0e9a8925e"
+    },
+    {
+      "route": "/update-django-user-password.html",
+      "source": "update-django-user-password.md",
+      "source_kind": "markdown"
+    },
+    {
+      "route": "/upgrading-openssl-ubuntu.html",
+      "source": "openssl-ubuntu.md",
+      "source_kind": "markdown"
+    },
+    {
+      "baseline_metadata": {
+        "language": "en",
+        "page_title": "Use Cython to speed up your Python code - Data driven"
+      },
+      "content_class_sha256": "c8ef403e744c8481c16c662324cfe27ffbdc1d8d5515307a206e0b3728ad958f",
+      "content_modes": [
+        "code",
+        "markdown"
+      ],
+      "metadata": {
+        "category": "Blog",
+        "date": "2019-09-02",
+        "language": null,
+        "summary": "In this notebook will try to convert pure Python code to Cython and test speed up with magic functions.",
+        "tags": [
+          "python",
+          "cython"
+        ],
+        "title": "Use Cython to speed up your Python code"
+      },
+      "publisher_target": {
+        "language": "en",
+        "route_inventory_title": "Use Cython to speed up Python code"
+      },
+      "rendered_observation": {
+        "html_lang": "en",
+        "page_title": "Use Cython to speed up your Python code - Data driven"
+      },
+      "route": "/use-cython-to-speedup-your-python-code.html",
+      "source": "Use Cython to speed up your Python code.ipynb",
+      "source_kind": "notebook",
+      "source_sha256": "a5c19b66edad6c2b26a1388855d96f595d6fb9cefcdc0d7a2c071f8bf58d530d"
+    },
+    {
+      "route": "/what-is-technical-debt.html",
+      "source": "what-is-technical-debt.md",
+      "source_kind": "markdown"
+    }
+  ],
+  "representative_committed_output_fixture": {
+    "html_contract": "nbconvert-basic.v1",
+    "metadata_sha256": "0d9f868774f59969b8eab748a577e778e5117bfe5597b0a609eaec4f0e2dd8a7",
+    "nested_document": false,
+    "notebook_sha256": "fe915c7c54437ae81232a423e0d83e85f66dc35034092204f94c1935eed7a12e",
+    "required_class_tokens": [
+      "cell",
+      "input_area",
+      "output_error",
+      "output_html",
+      "representative-rich-output"
+    ],
+    "title": "SITE-002V representative committed outputs"
+  },
+  "site_base_commit": "cac7d59b7a691ebdedea17f5978ce24693830bf8",
+  "warning_ledger": {
+    "empty_alt": 2,
+    "nbconvert_missing_alt": 57,
+    "records": [
+      {
+        "empty_alt": 0,
+        "missing_alt": 7,
+        "source": "covid-dashboard.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 8,
+        "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb"
+      },
+      {
+        "empty_alt": 1,
+        "missing_alt": 3,
+        "source": "markov-chain-bean-machine.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 0,
+        "source": "mkrf-spb-geo-data.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 23,
+        "source": "Number-sequences.ipynb"
+      },
+      {
+        "empty_alt": 1,
+        "missing_alt": 2,
+        "source": "pascals-triangle.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 3,
+        "source": "Getting-stock-data-with-pandas-datareader.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 5,
+        "source": "Stock-market-portfolio-optimisation.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 3,
+        "source": "stock-perfomance-analysis.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 3,
+        "source": "Testing-hypothesis-on-football-data-set.ipynb"
+      },
+      {
+        "empty_alt": 0,
+        "missing_alt": 0,
+        "source": "Use Cython to speed up your Python code.ipynb"
+      }
+    ]
+  }
+}
