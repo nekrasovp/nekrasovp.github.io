@@ -2,6 +2,13 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+from pathlib import Path
+
+from pelican_engineering_theme import get_theme_path
+
+
+REPO_ROOT = Path(__file__).resolve().parent
+
 AUTHOR = 'Nekrasov Pavel'
 SITENAME = 'Data driven'
 SITESUBTITLE = 'Nekrasov Pavel personal page'
@@ -75,11 +82,8 @@ STATIC_PATHS = [
 ]
 
 # Theme path
-THEME = 'theme'
-
-BOOTSTRAP_THEME = 'flatly'
-
-PYGMENTS_STYLE = 'friendly'
+THEME = str(get_theme_path())
+THEME_TEMPLATES_OVERRIDES = [str(REPO_ROOT / 'templates')]
 
 MARKUP = ('md', 'ipynb')
 

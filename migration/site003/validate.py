@@ -421,7 +421,7 @@ def validate_output(
                 row.source,
                 f"html lang expected={row.language!r} actual={html_lang!r}",
             )
-        expected_title = f"{row.title} - {SITENAME}"
+        expected_title = f"{row.title} — {SITENAME}"
         rendered_title = soup.title.get_text(strip=True) if soup.title else None
         if rendered_title != expected_title:
             raise RenderedContractMismatch(
@@ -436,17 +436,15 @@ def validate_output(
                 f"canonical expected={expected_canonical!r} actual={canonical!r}",
             )
 
-        article = soup.find("article", attrs={"data-content-status": True})
-        rendered_status = article.get("data-content-status") if article else None
-        if rendered_status != row.status:
+        articles = soup.select("article.pet-prose")
+        if len(articles) != 1:
             raise RenderedContractMismatch(
-                row.source,
-                f"status expected={row.status!r} actual={rendered_status!r}",
+                row.source, "expected one packaged-theme semantic article"
             )
 
-        labels = soup.select(".article-language[data-language-code]")
+        labels = soup.select("[data-site-language-code]")
         expected_label = LANGUAGE_LABELS[row.language]
-        if len(labels) != 1 or labels[0].get("data-language-code") != row.language:
+        if len(labels) != 1 or labels[0].get("data-site-language-code") != row.language:
             raise RenderedContractMismatch(row.source, "expected exactly one language label")
         label_text = " ".join(labels[0].get_text(" ", strip=True).split())
         if label_text != expected_label:
@@ -456,12 +454,28 @@ def validate_output(
             )
         label_counts[row.language] += 1
 
-        notices = soup.select(".content-notice[data-content-status]")
+        notices = soup.select(".pet-content-status[data-content-status]")
         if row.status in {"archive", "deprecated"}:
             if len(notices) != 1 or notices[0].get("data-content-status") != row.status:
                 raise RenderedContractMismatch(row.source, "expected one status-specific notice")
+            expected_class = f"pet-content-status--{row.status}"
+            if expected_class not in notices[0].get("class", []):
+                raise RenderedContractMismatch(
+                    row.source, f"notice does not use public class {expected_class!r}"
+                )
             notice_counts[row.status] += 1
             notice_text = " ".join(notices[0].get_text(" ", strip=True).split())
+            expected_notice_token = (
+                "Исторический материал"
+                if row.status == "archive" and row.language == "ru"
+                else "historical record"
+                if row.status == "archive"
+                else "outdated or unsafe guidance"
+            )
+            if expected_notice_token.casefold() not in notice_text.casefold():
+                raise RenderedContractMismatch(
+                    row.source, "status notice lost its user-visible meaning"
+                )
         else:
             if notices:
                 raise RenderedContractMismatch(

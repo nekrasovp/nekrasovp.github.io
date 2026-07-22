@@ -4,6 +4,17 @@ from pelican import signals
 from pelican.contents import Article
 
 LIFECYCLE_STATUSES = {"archive", "deprecated", "keep", "refresh"}
+ARCHIVE_NOTICES = {
+    "en": "This article is preserved as a historical record and may not reflect current practices.",
+    "ru": (
+        "Статья сохранена как исторический материал и может не отражать "
+        "современные практики."
+    ),
+}
+DEPRECATED_WARNING = (
+    "This article is deprecated and may contain outdated or unsafe guidance. "
+    "Verify current documentation before use."
+)
 
 
 def normalize_article_status(content):
@@ -18,6 +29,11 @@ def normalize_article_status(content):
             f"for {content.source_path}"
         )
     content.lifecycle_status = lifecycle_status
+    language = str(getattr(content, "lang", "en")).casefold()
+    if lifecycle_status == "archive":
+        content.archive_notice = ARCHIVE_NOTICES.get(language, ARCHIVE_NOTICES["en"])
+    elif lifecycle_status == "deprecated":
+        content.deprecated_warning = DEPRECATED_WARNING
     content.status = "published"
 
 

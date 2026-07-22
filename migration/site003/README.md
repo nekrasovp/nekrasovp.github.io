@@ -31,6 +31,13 @@ stronger outdated-content warning; `refresh` and `keep` receive no notice.
 Canonical URLs are deterministically `https://nekrasovp.ru` plus the manifest
 route.
 
+SITE-006V keeps those semantic requirements while replacing the vendored
+theme's brittle presentation selectors. The validator accepts the reviewed
+em-dash title separator, reads the site-owned language marker, requires the
+packaged theme's public `.pet-prose` article and `.pet-content-status--*`
+notice contracts, and does not require `.article-language`, `.content-notice`,
+or `article[data-content-status]`.
+
 ## Validation
 
 Run from the repository root on Python 3.12:
@@ -42,7 +49,7 @@ uv sync --locked --all-groups
 ./scripts/site test
 uv run --locked --all-groups ruff check \
   migration/site_build migration/site002v/validate.py migration/site003 \
-  plugins/site_metadata.py
+  migration/site006v plugins/site_metadata.py
 ```
 
 `./scripts/site validate` reuses the SITE-002V harness for two clean locked
