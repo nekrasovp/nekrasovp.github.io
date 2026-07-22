@@ -10,6 +10,7 @@ dependencies = [
     "markdown>=3.7,<4",
     "nbconvert>=7.16,<8",
     "pelican>=4.11,<5",
+    "pelican-jupyter @ git+https://github.com/nekrasovp/pelican-jupyter.git@137e1eb0ea620f1b15fff0ba81725eea23de1b7a",
     "pillow>=11,<13",
     "six>=1.17,<2",
 ]

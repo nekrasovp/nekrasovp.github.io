@@ -38,6 +38,7 @@ Run all commands from the repository root:
 uv sync --locked --all-groups
 ./scripts/site markdown
 ./scripts/site build
+./scripts/site validate
 ./scripts/site serve --port 8000
 ./scripts/site test
 uv run --locked --all-groups ruff check migration/site_build
@@ -47,14 +48,19 @@ uv run --locked --all-groups ruff check migration/site_build
 uses `build/markdown`, deletes that explicit directory before generation, and
 treats every Pelican warning as fatal.
 
-`./scripts/site build` is the full production-settings build. It always uses
-`build/production` and passes `--fatal errors`; Pelican must not return a false
-green after logging a reader error and silently omitting notebook routes.
+`./scripts/site build` is the full production-intent build. It always uses
+`build/production` and passes `--fatal errors`; the separate SITE-002V
+validation command independently requires all 46 historical article routes.
+
+`./scripts/site validate` creates an external locked environment, proves the
+exact installed Git provenance of the notebook reader, runs and gates two clean
+46-article builds, and runs the isolated negative and no-execution cases. See
+`migration/site002v/README.md` for the complete contract.
 
 `./scripts/site serve` serves the Markdown-only configuration from the explicit
-`build/local` directory with autoreload. The notebook reader remains blocked,
-so the local working server deliberately uses the same green Markdown scope as
-the smoke build.
+`build/local` directory with autoreload. It deliberately uses the same
+Markdown-only scope as the smoke build; use `build` or `validate` for the full
+notebook corpus.
 
 All build commands pass both input and output paths explicitly. Neither the
 wrapper nor `pelicanconf.py` uses the former implicit absolute `/output` path.
@@ -69,29 +75,27 @@ the child command's non-zero status.
 | `i18n_subsites` | Retained; not replaced or removed | Loaded from the existing vendored `plugins/` tree in both clean Markdown builds. The theme still contains translation templates and catalogs. |
 | `related_posts` | Retained; not replaced or removed | Loaded in both clean Markdown builds; the current theme still renders `includes/related-posts.html`. |
 | `tag_cloud` | Retained; not replaced or removed | Loaded in both clean Markdown builds; the current sidebar still renders the tag cloud. |
-| `ipynb.markup` | Temporarily retained in production; not replaced or removed | Production still declares `MARKUP = ('md', 'ipynb')` and the vendored reader. It is excluded only from the Markdown smoke/serve configuration so its known incompatibility cannot hide Markdown build health. Its successor belongs to `PLUGIN-001`; immutable site integration belongs to `SITE-002`. |
+| `pelican.plugins.ipynb_reader` | Active immutable SITE-002V validation dependency | Production-intent configuration resolves the exact fork commit from `uv.lock`. The former `ipynb.markup` source is outside active `PLUGIN_PATHS` under `migration/site002v/archive/` and is retained only as an inactive comparison archive until SITE-002. |
 
-No plugin migration is performed by SITE-001.
+SITE-001 performed no plugin migration. SITE-002V is the later, separately
+reviewed migration recorded by the current tree.
 
-## Notebook blocker and BASE-001 completeness
+## Resolved SITE-001 notebook blocker and BASE-001 completeness
 
 The repository contains 11 `.ipynb` articles and 11 adjacent `.nbdata` files.
-With the locked modern environment, the vendored reader reaches
-`plugins/ipynb/core.py`, asks nbconvert 7.17.1 for the removed legacy Jinja
-template `basic`, and raises `jinja2.exceptions.TemplateNotFound: basic`.
+At the SITE-001 baseline, the vendored reader reached `plugins/ipynb/core.py`,
+asked nbconvert 7.17.1 for the removed legacy Jinja template `basic`, and raised
+`jinja2.exceptions.TemplateNotFound: basic`.
 
-This failure is expected and must remain visible. Without `--fatal errors`,
-Pelican 4.12.0 logs the error for all 11 notebooks, emits only the 35 Markdown
-articles, and incorrectly exits zero. The wrapper converts that dangerous
-behavior into an immediate native Pelican non-zero result; it does not pin
-nbconvert 5, downgrade Python, skip production notebooks, or change their
-routes. The BASE-001 notebook inputs and production configuration remain
-present, so an incomplete production artifact cannot be accepted as green.
+SITE-002V resolves that blocker through the immutable modern fork while keeping
+the dangerous omission case explicit. The publication gate does not trust
+Pelican's exit status alone: it requires the 35 Markdown and 11 notebook
+sources, their 46 routes, metadata, representative committed outputs, and
+classic fragment classes.
 
-Fixing or replacing the reader is explicitly outside SITE-001. That work starts
-with `PLUGIN-001`, followed later by the separately reviewed `SITE-002`
-integration. The production parity checker is not run against the intentionally
-incomplete output.
+The original failure remains historical SITE-001 evidence below. Current
+positive, negative, warning, provenance, no-execution, and source-clean evidence
+is committed under `migration/site002v/evidence/`.
 
 ## SITE-001 validation record
 
@@ -111,7 +115,8 @@ Validated on 2026-07-21 from `origin/master` commit
 | `uv run --locked --all-groups ruff check migration/site_build` | Exit 0 |
 | `./scripts/site serve --port 8765`, then HTTP GET `/` | HTTP 200; stopped manually after verification |
 
-The acceptance fixtures are under `migration/site_build/tests/fixtures/`. They
+This table is the historical SITE-001 record at its named commit, before
+SITE-002V. The acceptance fixtures are under `migration/site_build/tests/fixtures/`. They
 exist only to prove warning and template-error propagation and are never used by
 normal or production configuration.
 

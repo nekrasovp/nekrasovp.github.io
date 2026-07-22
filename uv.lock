@@ -439,6 +439,7 @@ dependencies = [
     { name = "markdown" },
     { name = "nbconvert" },
     { name = "pelican" },
+    { name = "pelican-jupyter" },
     { name = "pillow" },
     { name = "six" },
 ]
@@ -459,6 +460,7 @@ requires-dist = [
     { name = "markdown", specifier = ">=3.7,<4" },
     { name = "nbconvert", specifier = ">=7.16,<8" },
     { name = "pelican", specifier = ">=4.11,<5" },
+    { name = "pelican-jupyter", git = "https://github.com/nekrasovp/pelican-jupyter.git?rev=137e1eb0ea620f1b15fff0ba81725eea23de1b7a" },
     { name = "pillow", specifier = ">=11,<13" },
     { name = "six", specifier = ">=1.17,<2" },
 ]
@@ -523,6 +525,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c4/8d/da26b77f0d9827d341bdedea357ccb5670717e3a9b4142e3e44c7f34db44/pelican-4.12.0.tar.gz", hash = "sha256:3983b5d2dc84c7bdf967154359077a2b78c0bbd2f7dcc55292133a7779609458", size = 1252907, upload-time = "2026-04-20T15:30:17.322Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6e/55/4adcce41a45f8f77e69d7e84ea447819dae1a78b4b9762a104599e5ec811/pelican-4.12.0-py3-none-any.whl", hash = "sha256:3697230f56cfcca9e98d3ac9ac26f655bb20cad807f7eacf156601e241f69ad8", size = 1358275, upload-time = "2026-04-20T15:30:15.383Z" },
+]
+
+[[package]]
+name = "pelican-jupyter"
+version = "0.10.2.dev16+g137e1eb0e"
+source = { git = "https://github.com/nekrasovp/pelican-jupyter.git?rev=137e1eb0ea620f1b15fff0ba81725eea23de1b7a#137e1eb0ea620f1b15fff0ba81725eea23de1b7a" }
+dependencies = [
+    { name = "jinja2" },
+    { name = "markdown" },
+    { name = "nbconvert" },
+    { name = "nbformat" },
+    { name = "pelican" },
 ]
 
 [[package]]

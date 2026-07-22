@@ -20,6 +20,7 @@ DEFAULT_CONFIGS = {
     "build": Path("publishconf.py"),
     "serve": Path("migration/site_build/markdownconf.py"),
 }
+SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
 
 
 def resolve_from_repo(value: str | Path) -> Path:
@@ -88,6 +89,10 @@ def parser() -> argparse.ArgumentParser:
     serve.add_argument("--config")
     serve.add_argument("--port", type=int, default=8000)
 
+    validate = subparsers.add_parser("validate")
+    validate.add_argument("--work-root")
+    validate.add_argument("--report-out")
+
     subparsers.add_parser("test")
     return result
 
@@ -96,6 +101,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser().parse_args(argv)
     if args.command == "test":
         return run([sys.executable, "-m", "pytest"])
+    if args.command == "validate":
+        command = [sys.executable, str(SITE002V_VALIDATOR), "--python", sys.executable]
+        if args.work_root:
+            command.extend(["--work-root", args.work_root])
+        if args.report_out:
+            command.extend(["--report-out", args.report_out])
+        return run(command)
     return run(
         pelican_command(
             args.command,
