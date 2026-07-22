@@ -1,9 +1,11 @@
-Title: How to get well-developed IT solution
+Title: How to get a well-developed IT solution
 Author: Nekrasov Pavel
 Date: 2020-08-29 14:00
 Category: Blog
 Tags: science, markdown, template 
 Slug: business-it-solutions
+Lang: en
+Status: refresh
 Summary: In this note we try to understand how to: clarify requirements and determine the importance and urgency
 
 # How to get well-developed IT solution

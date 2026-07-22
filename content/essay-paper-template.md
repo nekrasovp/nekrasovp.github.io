@@ -1,9 +1,11 @@
-Title: Essay(simple paper) template
+Title: Essay template
 Author: Nekrasov Pavel
 Date: 2020-08-21 15:00
 Category: Blog
 Tags: science, markdown, template 
 Slug: essay-paper-template
+Lang: en
+Status: archive
 Summary: In this article template for essay(simple paper) is provided. There are useful markdown examples and source references.
 
 # Essay(simple paper) template

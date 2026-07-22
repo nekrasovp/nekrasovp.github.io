@@ -1,9 +1,11 @@
-Title: Understand GraphQL Schema
+Title: Understand a GraphQL schema
 Author: Nekrasov Pavel
 Date: 2020-11-29 14:00
 Category: Blog
 Tags: graphql
 Slug: graphql-schema
+Lang: en
+Status: keep
 Summary: In this note, we will discuss what is a GraphQL schema and different ways to retrieve the GraphQL schema from a GraphQL server
 
 # Understand GraphQL Schema

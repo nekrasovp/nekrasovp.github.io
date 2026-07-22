@@ -1,5 +1,5 @@
 {
-  "contract": "nekrasovp-site002v-validation.v1",
+  "contract": "nekrasovp-site002v-validation.v2",
   "counts": {
     "articles": 46,
     "markdown": 35,
@@ -19,7 +19,7 @@
     "plugin_commit": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
   },
   "determinism": {
-    "normalized_publication_evidence_sha256": "49f128cc08aaac57ad5c2d2b42a7911a6a99838cd698e2f7c715af1e5de38d18",
+    "normalized_publication_evidence_sha256": "f13343b164247f5e205fe058733b779a55bfb4de81561bcff5dc49ddf1c45f6d",
     "publication_evidence_identical": true,
     "warning_ledgers_identical": true
   },
@@ -29,35 +29,22 @@
     "warning_records": 8
   },
   "metadata_observations": {
-    "inventory_reader_title_mismatches": [
-      "Number-sequences.ipynb",
-      "Stock-market-portfolio-optimisation.ipynb",
-      "Testing-hypothesis-on-football-data-set.ipynb",
-      "Use Cython to speed up your Python code.ipynb",
-      "covid-dashboard.ipynb",
-      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
-      "mkrf-spb-geo-data.ipynb",
-      "stock-perfomance-analysis.ipynb"
-    ],
+    "inventory_reader_title_mismatches": [],
     "owner": "SITE-003",
-    "reader_language_absent": [
-      "Getting-stock-data-with-pandas-datareader.ipynb",
-      "Number-sequences.ipynb",
-      "Stock-market-portfolio-optimisation.ipynb",
-      "Testing-hypothesis-on-football-data-set.ipynb",
-      "Use Cython to speed up your Python code.ipynb",
-      "covid-dashboard.ipynb",
-      "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
-      "markov-chain-bean-machine.ipynb",
-      "mkrf-spb-geo-data.ipynb",
-      "pascals-triangle.ipynb",
-      "stock-perfomance-analysis.ipynb"
-    ],
-    "rendered_language_target_mismatches": [
-      "mkrf-spb-geo-data.ipynb"
-    ]
+    "reader_language_absent": [],
+    "rendered_language_target_mismatches": []
   },
   "negative_gates": {
+    "invalid_language": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "technical-debt-examples.md",
+      "tokens": [
+        "inventory_validation",
+        "invalid_language",
+        "InvalidLanguage"
+      ]
+    },
     "malformed_notebook": {
       "exit_code": 1,
       "isolated_fixture": true,
@@ -105,6 +92,16 @@
         "publication_verification",
         "missing_expected_source",
         "MissingExpectedSource"
+      ]
+    },
+    "unknown_status": {
+      "exit_code": 1,
+      "isolated_fixture": true,
+      "source": "technical-debt-examples.md",
+      "tokens": [
+        "inventory_validation",
+        "unknown_status",
+        "UnknownStatus"
       ]
     }
   },
@@ -285,9 +282,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Just another COVID-19 data visualisation - Data driven"
+        "page_title": "COVID-19 data visualization - Data driven"
       },
-      "content_class_sha256": "c321e97238b0065495767ea87ced42338e0e512a687d1d360ea98c5aeed66021",
+      "content_class_sha256": "a54a5595a88c8ce90c087250e639e206dd5961ac004c4da3ffbf686a3bfbb5f5",
       "content_modes": [
         "code",
         "image",
@@ -298,7 +295,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2020-10-27",
-        "language": null,
+        "language": "en",
         "summary": "The goal of this notebook is to explore COVID-19 and World Bank API data",
         "tags": [
           "python",
@@ -306,7 +303,7 @@
           "pandas",
           "wbdata"
         ],
-        "title": "Just another COVID-19 data visualisation"
+        "title": "COVID-19 data visualization"
       },
       "publisher_target": {
         "language": "en",
@@ -314,7 +311,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Just another COVID-19 data visualisation - Data driven"
+        "page_title": "COVID-19 data visualization - Data driven"
       },
       "route": "/covid-dashboard.html",
       "source": "covid-dashboard.ipynb",
@@ -344,9 +341,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven"
+        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven"
       },
-      "content_class_sha256": "5baeb77b86d88841eab210554a5ba4df4b13e5e3a7bcc1325588a8aac0d05e7f",
+      "content_class_sha256": "c16faac6d9170e93e573debae65a29dda9298c4513ae8c4f1185bdbb0ab87981",
       "content_modes": [
         "code",
         "image",
@@ -356,7 +353,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2018-12-01",
-        "language": null,
+        "language": "en",
         "summary": "The goal of this notebook is to apply XGBoost to set of features from ohlcv indicators, fft results and arima predictions to test feature importance.",
         "tags": [
           "python",
@@ -367,7 +364,7 @@
           "arima",
           "fft"
         ],
-        "title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data"
+        "title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data"
       },
       "publisher_target": {
         "language": "en",
@@ -375,7 +372,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven"
+        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven"
       },
       "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
       "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
@@ -427,7 +424,7 @@
         "language": "en",
         "page_title": "Simulating a Galton board with Markov chains - Data driven"
       },
-      "content_class_sha256": "f713336df1ce60889b6e31d9afd8a6c25464e079916722b0a0cf297fc3abb84c",
+      "content_class_sha256": "21c33a13ee32446bec0b0f5be345c664de6653ac21e216e325c5a431a2fae979",
       "content_modes": [
         "code",
         "image",
@@ -437,7 +434,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2020-01-25",
-        "language": null,
+        "language": "en",
         "summary": "We will use the stationary distribution of an absorbing markov chain to simulate a Galton board.",
         "tags": [
           "python",
@@ -463,9 +460,9 @@
     {
       "baseline_metadata": {
         "language": "ru",
-        "page_title": "Визуализации картографических данных в Jupyter notebook - Data driven"
+        "page_title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
       },
-      "content_class_sha256": "2bab522bd75d2678ad3d4f4a86583950a7cf0ea803789f5e49e35647b7ff3370",
+      "content_class_sha256": "fe4a6bb0779dcff010e3c989b3efcd68306935386ee83ecd928e9355ac38a912",
       "content_modes": [
         "code",
         "markdown"
@@ -473,7 +470,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2021-04-04",
-        "language": null,
+        "language": "ru",
         "summary": "В этой статье, мы углубимся в изучение Jupyter Interactive Widgets и Ipyleaflet package, для визуализации картографических данных в Jupyter notebook.",
         "tags": [
           "python",
@@ -481,15 +478,15 @@
           "notebook",
           "pandas"
         ],
-        "title": "Визуализации картографических данных в Jupyter notebook"
+        "title": "Визуализация картографических данных в Jupyter Notebook"
       },
       "publisher_target": {
         "language": "ru",
         "route_inventory_title": "Визуализация картографических данных в Jupyter Notebook"
       },
       "rendered_observation": {
-        "html_lang": "en",
-        "page_title": "Визуализации картографических данных в Jupyter notebook - Data driven"
+        "html_lang": "ru",
+        "page_title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
       },
       "route": "/mkrf-spb-geo-data.html",
       "source": "mkrf-spb-geo-data.ipynb",
@@ -504,9 +501,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Number sequences visualisation with python - Data driven"
+        "page_title": "Number-sequence visualization with Python - Data driven"
       },
-      "content_class_sha256": "8b14d3d572b98f6905edca3c12e6ecfac2e7b470aec1490f3ea951865960cdcc",
+      "content_class_sha256": "09049d751c8b74caee0bab75ce713373b39162b2653d35ff41b82e84596a61d2",
       "content_modes": [
         "code",
         "image",
@@ -516,14 +513,14 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-08-29",
-        "language": null,
+        "language": "en",
         "summary": "In this notebook we will compute and visualise some famous and nice looking number sequences.",
         "tags": [
           "python",
           "notebook",
           "numpy"
         ],
-        "title": "Number sequences visualisation with python"
+        "title": "Number-sequence visualization with Python"
       },
       "publisher_target": {
         "language": "en",
@@ -531,7 +528,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Number sequences visualisation with python - Data driven"
+        "page_title": "Number-sequence visualization with Python - Data driven"
       },
       "route": "/number-sequences.html",
       "source": "Number-sequences.ipynb",
@@ -543,7 +540,7 @@
         "language": "en",
         "page_title": "Pascal's Triangle - Data driven"
       },
-      "content_class_sha256": "f4ce963ab0e85298639befdd47ac7e3eccb06805456b786d55308eec2bbdbcfa",
+      "content_class_sha256": "2bb2ffc5b2a906374a1d4da9100d9ed7d1ce09a98bf098759ece338b21ae3b19",
       "content_modes": [
         "code",
         "image",
@@ -553,7 +550,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2020-08-01",
-        "language": null,
+        "language": "en",
         "summary": "In this notebook we will build and visualise Pascal's Triangle with networkx and pydot",
         "tags": [
           "python",
@@ -637,7 +634,7 @@
         "language": "en",
         "page_title": "Getting stock data with pandas-datareader - Data driven"
       },
-      "content_class_sha256": "dc7a080c64afbeeb70222b21eacbcfd1d945d54c6063bd87c435638ab3726bb9",
+      "content_class_sha256": "1a1d5fa049c31fdec0efb6b2e4f78bdae24f6fa05bda6bd864c3c719707c81ac",
       "content_modes": [
         "code",
         "image",
@@ -648,7 +645,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-03-01",
-        "language": null,
+        "language": "en",
         "summary": "The goal of this article is to provide an easy introduction to stock market analysis using Python. In this notebook we will use pandas_datareader module. We will walk through a simple Python script to retrieve, analyze, and visualize data from different markets.",
         "tags": [
           "python",
@@ -674,9 +671,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Stock market portfolio optimisation - Data driven"
+        "page_title": "Stock-market portfolio optimization - Data driven"
       },
-      "content_class_sha256": "91dc46be61d8434c72f32cdee24636ac52dc26c3ccdd53b29687fd695ef807a6",
+      "content_class_sha256": "8a9ba2144250a8fae04b4b86e76da308e98f09daa8626200626f1364bce04844",
       "content_modes": [
         "code",
         "image",
@@ -687,7 +684,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-07-12",
-        "language": null,
+        "language": "en",
         "summary": "The goal of this notebook is to provide an introduction to stock market portfolio optimisation using Python.",
         "tags": [
           "python",
@@ -696,7 +693,7 @@
           "pandas",
           "portfolio"
         ],
-        "title": "Stock market portfolio optimisation"
+        "title": "Stock-market portfolio optimization"
       },
       "publisher_target": {
         "language": "en",
@@ -704,7 +701,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Stock market portfolio optimisation - Data driven"
+        "page_title": "Stock-market portfolio optimization - Data driven"
       },
       "route": "/stock-market-portfolio-optimisation.html",
       "source": "Stock-market-portfolio-optimisation.ipynb",
@@ -714,9 +711,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Stock performance analysis using python Financial Functions - Data driven"
+        "page_title": "Stock-performance analysis using Python Financial Functions - Data driven"
       },
-      "content_class_sha256": "cb69f556a5df167b11d3876cf5c6037b1b01883631927a052a1ac5aa915fc930",
+      "content_class_sha256": "9e7d77439fe20d5be9e7eb1d227240101dcf4c9b8456da0d85d1bd0fca105dab",
       "content_modes": [
         "code",
         "image",
@@ -727,7 +724,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-07-11",
-        "language": null,
+        "language": "en",
         "summary": "Continuing short series on data analysis applied to finance, this article is a step further into exploring Python’s many functionalities towards stock market diagnosis.",
         "tags": [
           "python",
@@ -736,7 +733,7 @@
           "ffn",
           "matplotlib"
         ],
-        "title": "Stock performance analysis using python Financial Functions"
+        "title": "Stock-performance analysis using Python Financial Functions"
       },
       "publisher_target": {
         "language": "en",
@@ -744,7 +741,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Stock performance analysis using python Financial Functions - Data driven"
+        "page_title": "Stock-performance analysis using Python Financial Functions - Data driven"
       },
       "route": "/stock-perfomance-analysis.html",
       "source": "stock-perfomance-analysis.ipynb",
@@ -759,9 +756,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Testing hypothesis on football data-set from kaggle - Data driven"
+        "page_title": "Testing a hypothesis on a football data set from Kaggle - Data driven"
       },
-      "content_class_sha256": "4c52d966699b3838f3568c402a603cabf96503d7b76418a4ae67b023da580607",
+      "content_class_sha256": "8b722cafe93ddce4b908b0366cb14e72345a9ae181b0b5e18d8a2fa8057b42c7",
       "content_modes": [
         "code",
         "image",
@@ -772,7 +769,7 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-05-10",
-        "language": null,
+        "language": "en",
         "summary": "In this notebook we will use the data-set, International football results from 1872 to 2019. We will try ANOVA hypothesis testing technique.",
         "tags": [
           "python",
@@ -784,7 +781,7 @@
           "matplotlib",
           "ANOVA"
         ],
-        "title": "Testing hypothesis on football data-set from kaggle"
+        "title": "Testing a hypothesis on a football data set from Kaggle"
       },
       "publisher_target": {
         "language": "en",
@@ -792,7 +789,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Testing hypothesis on football data-set from kaggle - Data driven"
+        "page_title": "Testing a hypothesis on a football data set from Kaggle - Data driven"
       },
       "route": "/testing-hypothesis-on-football-data-set.html",
       "source": "Testing-hypothesis-on-football-data-set.ipynb",
@@ -812,9 +809,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Use Cython to speed up your Python code - Data driven"
+        "page_title": "Use Cython to speed up Python code - Data driven"
       },
-      "content_class_sha256": "c8ef403e744c8481c16c662324cfe27ffbdc1d8d5515307a206e0b3728ad958f",
+      "content_class_sha256": "f383afdac3cc9a36d27599e8b7b1b1825c6b6f1e58acad5e3df9177874d4b611",
       "content_modes": [
         "code",
         "markdown"
@@ -822,13 +819,13 @@
       "metadata": {
         "category": "Blog",
         "date": "2019-09-02",
-        "language": null,
+        "language": "en",
         "summary": "In this notebook will try to convert pure Python code to Cython and test speed up with magic functions.",
         "tags": [
           "python",
           "cython"
         ],
-        "title": "Use Cython to speed up your Python code"
+        "title": "Use Cython to speed up Python code"
       },
       "publisher_target": {
         "language": "en",
@@ -836,7 +833,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Use Cython to speed up your Python code - Data driven"
+        "page_title": "Use Cython to speed up Python code - Data driven"
       },
       "route": "/use-cython-to-speedup-your-python-code.html",
       "source": "Use Cython to speed up your Python code.ipynb",
@@ -862,6 +859,265 @@
       "representative-rich-output"
     ],
     "title": "SITE-002V representative committed outputs"
+  },
+  "site003": {
+    "baseline_overlay": {
+      "frozen_baseline_sha256": "b209396e3d2926af6cdf69e8feab3afa1adec2fbadc13517866e3f3d2ecec653",
+      "overlay_sha256": "fcd3384160992071eaa81bd1a3d509eaeac071bf48f8cb9b7bf6c09a2445abe9",
+      "title_overrides": [
+        {
+          "after": "Python app with Poetry and Docker - Data driven",
+          "before": "Python app with poetry & docker - Data driven",
+          "route": "/python-poetry-docker.html",
+          "source": "python-poetry-docker.md"
+        },
+        {
+          "after": "How to list users in Linux - Data driven",
+          "before": "How to List Users in Linux - Data driven",
+          "route": "/linux-list-users.html",
+          "source": "linux-list-users.md"
+        },
+        {
+          "after": "Authentication plugin caching_sha2_password cannot be loaded - Data driven",
+          "before": "Authentication plugin 'caching_sha2_password' cannot be loaded - Data driven",
+          "route": "/fixing-caching-sha2-password.html",
+          "source": "fixing-caching-sha2-password.md"
+        },
+        {
+          "after": "How to rebase a Git branch - Data driven",
+          "before": "How to rebase git branch - Data driven",
+          "route": "/git-rebase.html",
+          "source": "git-rebase.md"
+        },
+        {
+          "after": "Capturing shell output in Python - Data driven",
+          "before": "Capturing shell output in python - Data driven",
+          "route": "/shell-capture.html",
+          "source": "shell-capture.md"
+        },
+        {
+          "after": "Why Python needs the Global Interpreter Lock and how it works - Data driven",
+          "before": "Why you need Python Global Interpreter Lock and how it works - Data driven",
+          "route": "/python-gil.html",
+          "source": "python-gil.md"
+        },
+        {
+          "after": "Find which process is listening on a specific port - Data driven",
+          "before": "Ways to find out which process is listening on a specific port - Data driven",
+          "route": "/linux-port.html",
+          "source": "linux-port.md"
+        },
+        {
+          "after": "Install NVM, Node, and Yarn - Data driven",
+          "before": "Install nvm, node and yarn for your Node.js application - Data driven",
+          "route": "/install-nvm-node-yarn.html",
+          "source": "install-nvm-node-yarn.md"
+        },
+        {
+          "after": "Setting up Nginx and Gunicorn for a Flask application - Data driven",
+          "before": "Setting Up Nginx, Gunicorn for Flask app - Data driven",
+          "route": "/setting-up-nginx-gunicorn-flask.html",
+          "source": "setting-up-nginx-gunicorn-flask.md"
+        },
+        {
+          "after": "Building a job queue - Data driven",
+          "before": "Building job queue - Data driven",
+          "route": "/building-job-queue.html",
+          "source": "building-job-queue.md"
+        },
+        {
+          "after": "Setting up GitLab CI for a Python application - Data driven",
+          "before": "Setting Up GitLab CI for a Python Application - Data driven",
+          "route": "/setting-up-gitlab-ci.html",
+          "source": "setting-up-gitlab-ci.md"
+        },
+        {
+          "after": "Obstacles to successful DevOps - Data driven",
+          "before": "Obstacles to successful devops - Data driven",
+          "route": "/devops-questions.html",
+          "source": "devops-questions.md"
+        },
+        {
+          "after": "Визуализация картографических данных в Jupyter Notebook - Data driven",
+          "before": "Визуализации картографических данных в Jupyter notebook - Data driven",
+          "route": "/mkrf-spb-geo-data.html",
+          "source": "mkrf-spb-geo-data.ipynb"
+        },
+        {
+          "after": "Understand a GraphQL schema - Data driven",
+          "before": "Understand GraphQL Schema - Data driven",
+          "route": "/graphql-schema.html",
+          "source": "graphql-schema.md"
+        },
+        {
+          "after": "COVID-19 data visualization - Data driven",
+          "before": "Just another COVID-19 data visualisation - Data driven",
+          "route": "/covid-dashboard.html",
+          "source": "covid-dashboard.ipynb"
+        },
+        {
+          "after": "How to get a well-developed IT solution - Data driven",
+          "before": "How to get well-developed IT solution - Data driven",
+          "route": "/business-it-solutions.html",
+          "source": "business-it-solutions.md"
+        },
+        {
+          "after": "Move a blog to GitHub and automate deployment with Git hooks - Data driven",
+          "before": "Move blog to github and automate deploying with git hooks - Data driven",
+          "route": "/pelican-github-script-automation.html",
+          "source": "pelican-github-script-automation.md"
+        },
+        {
+          "after": "Essay template - Data driven",
+          "before": "Essay(simple paper) template - Data driven",
+          "route": "/essay-paper-template.html",
+          "source": "essay-paper-template.md"
+        },
+        {
+          "after": "Use Cython to speed up Python code - Data driven",
+          "before": "Use Cython to speed up your Python code - Data driven",
+          "route": "/use-cython-to-speedup-your-python-code.html",
+          "source": "Use Cython to speed up your Python code.ipynb"
+        },
+        {
+          "after": "Number-sequence visualization with Python - Data driven",
+          "before": "Number sequences visualisation with python - Data driven",
+          "route": "/number-sequences.html",
+          "source": "Number-sequences.ipynb"
+        },
+        {
+          "after": "Stock-market portfolio optimization - Data driven",
+          "before": "Stock market portfolio optimisation - Data driven",
+          "route": "/stock-market-portfolio-optimisation.html",
+          "source": "Stock-market-portfolio-optimisation.ipynb"
+        },
+        {
+          "after": "Stock-performance analysis using Python Financial Functions - Data driven",
+          "before": "Stock performance analysis using python Financial Functions - Data driven",
+          "route": "/stock-perfomance-analysis.html",
+          "source": "stock-perfomance-analysis.ipynb"
+        },
+        {
+          "after": "Stock-market candlestick charts with Plotly and Python - Data driven",
+          "before": "Stock market candlestick charts with plotly and python - Data driven",
+          "route": "/candlestick-charts-plotly.html",
+          "source": "candlestick-charts-plotly.md"
+        },
+        {
+          "after": "Testing a hypothesis on a football data set from Kaggle - Data driven",
+          "before": "Testing hypothesis on football data-set from kaggle - Data driven",
+          "route": "/testing-hypothesis-on-football-data-set.html",
+          "source": "Testing-hypothesis-on-football-data-set.ipynb"
+        },
+        {
+          "after": "Deploying a static website to Bitbucket - Data driven",
+          "before": "Deploying a static website to bitbucket - Data driven",
+          "route": "/deploying-a-static-website-to-bitbucket.html",
+          "source": "deploying-a-static-website-to-bitbucket.md"
+        },
+        {
+          "after": "Add a theme and plugins to Pelican - Data driven",
+          "before": "Add theme and plugins to Pelican installation - Data driven",
+          "route": "/add-theme-and-plugins-to-pelican.html",
+          "source": "add-theme-and-plugins-to-pelican.md"
+        },
+        {
+          "after": "Install Pelican and create a project skeleton - Data driven",
+          "before": "Install Pelican and create project skeleton - Data driven",
+          "route": "/install-pelican-and-create-project-skeleton.html",
+          "source": "install-pelican-and-create-project-skeleton.md"
+        },
+        {
+          "after": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven",
+          "before": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven",
+          "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+          "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb"
+        }
+      ]
+    },
+    "inventory": {
+      "canonical_contract": "https://nekrasovp.ru<manifest route>",
+      "counts": {
+        "articles": 46,
+        "languages": {
+          "en": 42,
+          "ru": 4
+        },
+        "markdown": 35,
+        "notebooks": 11,
+        "statuses": {
+          "archive": 16,
+          "deprecated": 8,
+          "keep": 13,
+          "refresh": 9
+        }
+      },
+      "manifest_sha256": "2c66cf1012cf52f3482b9ad6704b2a1ad2b76c321dc96cd20815af06eb8e5cea",
+      "metadata_records_validated": 46,
+      "source_preservation": {
+        "base_commit": "8e80e4d6ada80f9ad06896674bbcaab8f98a7bfe",
+        "dates_preserved": 46,
+        "markdown_bodies_preserved": 35,
+        "markdown_body_aggregate_sha256": "284c829c356cb3c04d1eab5201ba082fa6db6170265b651d2c3d286be170fc21",
+        "notebook_bytes_preserved": 11,
+        "notebook_source_aggregate_sha256": "06e6426f70abb024292f8b876db7a35b298117256007bd350252b86da929c99a",
+        "routes_preserved": 46,
+        "stable_metadata_preserved": 46
+      }
+    },
+    "rendered": {
+      "canonical_routes": 46,
+      "language_labels": {
+        "en": 42,
+        "ru": 4
+      },
+      "manual_source_and_render_inspection": {
+        "fixing-caching-sha2-password.md": {
+          "canonical": "https://nekrasovp.ru/fixing-caching-sha2-password.html",
+          "html_language": "en",
+          "language_label": "English",
+          "notice_text": "Outdated content warning. This article is deprecated and may contain outdated or unsafe guidance. Verify current documentation before use.",
+          "route": "/fixing-caching-sha2-password.html",
+          "status": "deprecated",
+          "title": "Authentication plugin caching_sha2_password cannot be loaded - Data driven"
+        },
+        "mkrf-spb-geo-data.ipynb": {
+          "canonical": "https://nekrasovp.ru/mkrf-spb-geo-data.html",
+          "html_language": "ru",
+          "language_label": "Русский",
+          "notice_text": "Исторический материал. Статья сохранена как исторический материал и может не отражать современные практики.",
+          "route": "/mkrf-spb-geo-data.html",
+          "status": "archive",
+          "title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
+        },
+        "technical-debt-examples.md": {
+          "canonical": "https://nekrasovp.ru/technical-debt-examples.html",
+          "html_language": "ru",
+          "language_label": "Русский",
+          "notice_text": null,
+          "route": "/technical-debt-examples.html",
+          "status": "refresh",
+          "title": "Примеры технического долга - Data driven"
+        },
+        "update-django-user-password.md": {
+          "canonical": "https://nekrasovp.ru/update-django-user-password.html",
+          "html_language": "en",
+          "language_label": "English",
+          "notice_text": null,
+          "route": "/update-django-user-password.html",
+          "status": "keep",
+          "title": "Update Django user password - Data driven"
+        }
+      },
+      "noindex_from_status": 0,
+      "notices": {
+        "archive": 16,
+        "deprecated": 8,
+        "keep": 0,
+        "refresh": 0
+      },
+      "routes": 46
+    }
   },
   "site_base_commit": "cac7d59b7a691ebdedea17f5978ce24693830bf8",
   "warning_ledger": {

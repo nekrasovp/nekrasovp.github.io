@@ -1,9 +1,11 @@
-Title: How to List Users in Linux
+Title: How to list users in Linux
 Author: Nekrasov Pavel
 Date: 2022-08-07 15:00
 Category: Blog
 Tags: linux
 Slug: linux-list-users
+Lang: en
+Status: keep
 Summary: This article will show you how to list users in Linux systems.
 
 ## Abstract

@@ -1,9 +1,11 @@
-Title: Why you need Python Global Interpreter Lock and how it works
+Title: Why Python needs the Global Interpreter Lock and how it works
 Author: Nekrasov Pavel
 Date: 2022-03-20 15:00
 Category: Blog
 Tags: python, gil, threading, multiprocessing
 Slug: python-gil
+Lang: en
+Status: keep
 Summary: In this article we will discuss how the GIL impacts application performance and how that impact can be mitigated.
 
 ## Abstract

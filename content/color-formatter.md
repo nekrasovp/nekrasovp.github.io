@@ -4,6 +4,8 @@ Date: 2022-02-24 21:47
 Category: Blog
 Tags: python, logging
 Slug: color-formatter
+Lang: en
+Status: refresh
 Summary: This article explains how to get up and running with custom color fomatter in your logger.
 
 ## Contents

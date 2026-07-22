@@ -1,9 +1,11 @@
-Title: Building job queue
+Title: Building a job queue
 Author: Nekrasov Pavel
 Date: 2021-10-01 15:00
 Category: Blog
 Tags: python, rabbitmq
 Slug: building-job-queue
+Lang: en
+Status: refresh
 Summary: In this article, we will build simple job queue on top of rabbitmq-server with aio-pika package.
 
 ## Abstract

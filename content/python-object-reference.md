@@ -4,6 +4,8 @@ Date: 2022-07-20 12:00
 Category: Blog
 Tags: python
 Slug: python-object-reference
+Lang: en
+Status: keep
 Summary: This post is about how python treats object assignment and some of the hidden gotcha’s that can cause unintended errors along the way.
 
 ## Abstract

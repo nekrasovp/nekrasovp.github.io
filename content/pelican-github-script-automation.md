@@ -1,9 +1,11 @@
-Title: Move blog to github and automate deploying with git hooks
+Title: Move a blog to GitHub and automate deployment with Git hooks
 Author: Nekrasov Pavel
 Date: 2020-08-22 20:00
 Category: Blog
 Tags: pelican, git, github
 Slug: pelican-github-script-automation
+Lang: en
+Status: deprecated
 Summary: In this post we will describe how to move your blog to github and automate git hooks tho update gh-pages branch on commits
 
 This blog is powered by [Pelican](http://docs.getpelican.com/en/stable) and hosted through 

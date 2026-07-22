@@ -14,6 +14,10 @@ PATH = 'content'
 
 DEFAULT_LANG = 'en'
 
+# Explicit source language must not change the authoritative legacy route.
+ARTICLE_LANG_URL = '{slug}.html'
+ARTICLE_LANG_SAVE_AS = '{slug}.html'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -92,6 +96,7 @@ PLUGIN_PATHS = ['plugins/']
 PLUGINS = [
     'i18n_subsites',
     'related_posts',
+    'site_metadata',
     'tag_cloud',
     'pelican.plugins.ipynb_reader',
 ]

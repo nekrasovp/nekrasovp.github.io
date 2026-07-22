@@ -1,9 +1,11 @@
-Title: Capturing shell output in python
+Title: Capturing shell output in Python
 Author: Nekrasov Pavel
 Date: 2022-03-26 12:00
 Category: Blog
 Tags: linux, python, shell
 Slug: shell-capture
+Lang: en
+Status: keep
 Summary: In this article we will use python subprocess to run shell comand and capture its output.
 
 ## Abstract

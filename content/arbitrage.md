@@ -4,6 +4,8 @@ Date: 2018-06-06 15:00
 Category: Blog
 Tags: finance, arbitrage
 Slug: arbitrage
+Lang: en
+Status: archive
 Summary: Here, we will give some detail on how to do real trading using arbitrage. There are always many ways to do so, and the method below is just one of them. But the key ideas are same. 
 
 This post is based on [High Frequency Trading and Probability Theory - Zhaodong Wang](https://scribd.com/document/346123211/High-Frequency-Trading-and-Probability-Theory-Zhaodong-Wang)

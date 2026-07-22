@@ -4,4 +4,6 @@ Date: 2020-08-01 15:00
 Category: Blog
 Tags: python, math, matplotlib, networkx, pydot
 Slug: pascals-triangle
+Lang: en
+Status: archive
 Summary: In this notebook we will build and visualise Pascal's Triangle with networkx and pydot

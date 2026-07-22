@@ -1,9 +1,11 @@
-Title: Obstacles to successful devops
+Title: Obstacles to successful DevOps
 Author: Nekrasov Pavel
 Date: 2021-04-09 10:00
 Category: Blog
 Tags: git, github, development, workflow
 Slug: devops-questions
+Lang: en
+Status: refresh
 Summary: In today’s enterprises, software is your company’s everyday face, whether through the desktop, the cloud, or a mobile device, to all parts of the globe.
 Software updates serve customer’s demands. Each one you deliver is your opportunity to renew -- or, if
 botched, destroy -- their trust. How can you make every update top-notch at top speed?

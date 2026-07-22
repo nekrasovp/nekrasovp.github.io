@@ -1,9 +1,11 @@
-Title: Ways to find out which process is listening on a specific port
+Title: Find which process is listening on a specific port
 Author: Nekrasov Pavel
 Date: 2022-03-16 15:00
 Category: Blog
 Tags: linux
 Slug: linux-port
+Lang: en
+Status: keep
 Summary: In this article, we will show three different ways to find the process listening on a specific port in Linux.
 
 ## Abstract

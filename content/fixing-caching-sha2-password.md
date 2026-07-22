@@ -1,9 +1,11 @@
-Title: Authentication plugin 'caching_sha2_password' cannot be loaded
+Title: Authentication plugin caching_sha2_password cannot be loaded
 Author: Nekrasov Pavel
 Date: 2022-06-15 12:00
 Category: Blog
 Tags: mysql
 Slug: fixing-caching-sha2-password
+Lang: en
+Status: deprecated
 Summary: Fixing "Authentication plugin 'caching_sha2_password' cannot be loaded. The specific module can not be found" errors
 
 ## Contents

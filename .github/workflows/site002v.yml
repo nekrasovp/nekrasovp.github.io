@@ -1,4 +1,4 @@
-name: SITE-002V
+name: SITE-002V and SITE-003
 
 on:
   pull_request:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   immutable-reader:
-    name: Immutable reader and 46-article corpus
+    name: Immutable reader and normalized 46-article corpus
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -51,7 +51,7 @@ jobs:
               print(f"{name}=={version(name)}")
           PY
 
-      - name: Run two full builds and all SITE-002V gates
+      - name: Run two full builds and SITE-002V plus SITE-003 gates
         run: |
           ./scripts/site validate \
             --work-root "$RUNNER_TEMP/site002v" \
@@ -63,7 +63,8 @@ jobs:
         run: |
           ./scripts/site test
           uv run --locked --all-groups ruff check \
-            migration/site_build migration/site002v/validate.py
+            migration/site_build migration/site002v/validate.py \
+            migration/site003 plugins/site_metadata.py
           git diff --check
           test -z "$(git status --porcelain=v1 --untracked-files=all)"
           github_token_prefix='github''_pat_'

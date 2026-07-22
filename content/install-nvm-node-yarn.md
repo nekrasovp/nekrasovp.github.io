@@ -1,9 +1,11 @@
-Title: Install nvm, node and yarn for your Node.js application
+Title: Install NVM, Node, and Yarn
 Author: Nekrasov Pavel
 Date: 2022-01-11 15:00
 Category: Blog
 Tags: nvm, node, yarn
 Slug: install-nvm-node-yarn
+Lang: en
+Status: deprecated
 Summary: The official package manager for node is npm which comes pre-installed with node. We use npm to install yarn
 
 ## Abstract
