@@ -101,6 +101,7 @@ PLUGINS = [
     'i18n_subsites',
     'related_posts',
     'site_metadata',
+    'site005_materials',
     'tag_cloud',
     'pelican.plugins.ipynb_reader',
 ]

@@ -1,11 +1,24 @@
 {% extends "!theme/base.html" %}
 
 {% block head_meta %}
-  {{ super() }}
-  {% set site_description = pet_content.summary | default('', true) | striptags | trim if pet_content else ENGINEERING_THEME_META_DESCRIPTION | default('', true) %}
-  {% if site_description %}<meta name="description" content="{{ site_description | forceescape }}">{% endif %}
-  {% if article is defined and article.category %}<meta property="article:section" content="{{ article.category | forceescape }}">{% endif %}
-  {% if article is defined %}{% for tag in article.tags %}<meta property="article:tag" content="{{ tag | forceescape }}">{% endfor %}{% endif %}
+  {% set site005_material = article is defined and article.site005_material | default(false) %}
+  {% if site005_material %}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ article.title | striptags | forceescape }}">
+    <meta property="og:description" content="{{ article.summary | striptags | trim | forceescape }}">
+    <meta property="og:url" content="{{ pet_canonical_url | forceescape }}">
+    <meta property="og:image" content="https://nekrasovp.ru/images/social-preview.png">
+    <meta property="og:image:alt" content="Pavel Nekrasov — Tech Lead and Backend/Platform Engineer">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://nekrasovp.ru/images/social-preview.png">
+    <meta name="description" content="{{ article.summary | striptags | trim | forceescape }}">
+  {% else %}
+    {{ super() }}
+    {% set site_description = pet_content.summary | default('', true) | striptags | trim if pet_content else ENGINEERING_THEME_META_DESCRIPTION | default('', true) %}
+    {% if site_description %}<meta name="description" content="{{ site_description | forceescape }}">{% endif %}
+    {% if article is defined and article.category %}<meta property="article:section" content="{{ article.category | forceescape }}">{% endif %}
+    {% if article is defined %}{% for tag in article.tags %}<meta property="article:tag" content="{{ tag | forceescape }}">{% endfor %}{% endif %}
+  {% endif %}
 {% endblock head_meta %}
 
 {% block head_styles %}

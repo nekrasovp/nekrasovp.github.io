@@ -1,5 +1,30 @@
 {% extends "!theme/article.html" %}
 
+{% set site005_material = article.site005_material | default(false) %}
+{% set site005_update_notice = article.url in ["what-is-technical-debt.html", "technical-debt-examples.html"] %}
+
+{% block title %}{% if site005_material %}{{ article.title | striptags | forceescape }} — Pavel Nekrasov{% else %}{{ super() }}{% endif %}{% endblock title %}
+{% block body_class %}{{ super() }}{% if site005_material %} site005-material{% endif %}{% endblock body_class %}
+
+{% block structured_data %}
+  {% if site005_material %}
+    {% set site005_schema = {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      'author': {'@type': 'Person', 'name': 'Pavel Nekrasov', 'url': 'https://nekrasovp.ru/'},
+      'datePublished': '2026-07-15',
+      'description': article.summary | striptags | trim,
+      'headline': article.title | string,
+      'image': 'https://nekrasovp.ru/images/social-preview.png',
+      'inLanguage': article.lang | string,
+      'mainEntityOfPage': pet_canonical_url
+    } %}
+    <script type="application/ld+json" data-site005-schema="tech-article">{{ site005_schema | tojson }}</script>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock structured_data %}
+
 {% block content_header %}
   {{ super() }}
   <p class="site-content-language">
@@ -8,4 +33,127 @@
   </p>
 {% endblock content_header %}
 
-{% block content %}<div class="entry-content">{{ super() }}</div>{% endblock content %}
+{% block content %}
+  <div class="entry-content">
+    {% if article.url == "what-is-technical-debt.html" %}
+      <div class="site005-update-notice" role="note">
+        <strong>Обновление, июль 2026.</strong> Продолжение темы: англоязычная статья
+        <a href="/technical-debt-as-a-portfolio.html">Technical Debt as a Portfolio, Not a Backlog</a>
+        и практический <a href="/technical-debt-portfolio-register.html">реестр технического долга</a>.
+      </div>
+    {% elif article.url == "technical-debt-examples.html" %}
+      <div class="site005-update-notice" role="note">
+        <strong>Обновление, июль 2026.</strong> Новая англоязычная статья
+        <a href="/technical-debt-as-a-portfolio.html">Technical Debt as a Portfolio, Not a Backlog</a>
+        показывает, как превратить такие примеры в управляемый портфель рисков; рядом доступен
+        <a href="/technical-debt-portfolio-register.html">готовый шаблон реестра</a>.
+      </div>
+    {% endif %}
+    {{ super() }}
+    {% if site005_material %}
+      <aside class="article-related">
+        <p class="eyebrow">Companion resource</p>
+        <h2><a href="{{ article.site005_companion_route | forceescape }}">{{ article.site005_companion_title | forceescape }}</a></h2>
+        <p>{{ article.site005_companion_description | forceescape }}</p>
+      </aside>
+    {% endif %}
+  </div>
+{% endblock content %}
+
+{% block head_styles %}
+  {{ super() }}
+  {% if site005_material or site005_update_notice %}
+    <style data-site005-materials>
+      .site005-material .pet-prose table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        table-layout: auto;
+      }
+
+      .site005-material .pet-prose pre {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .site005-material .article-diagram,
+      .site005-material .article-related,
+      .site005-update-notice {
+        border: 1px solid var(--pet-color-border);
+        border-radius: 0.5rem;
+        margin-block: 1.5rem;
+        padding: 1rem;
+      }
+
+      .site005-material .article-flow {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .site005-material .article-flow span {
+        background: var(--pet-color-code-bg);
+        border: 1px solid var(--pet-color-code-border);
+        border-radius: 0.35rem;
+        color: var(--pet-color-code-text);
+        padding: 0.35rem 0.55rem;
+      }
+
+      .site005-material .article-flow b {
+        background: var(--pet-color-code-bg);
+        color: var(--pet-color-code-text);
+        padding-inline: 0.15rem;
+      }
+
+      .site005-material .article-flow b::before {
+        content: "→";
+      }
+
+      .site005-material .article-diagram figcaption {
+        margin-top: 0.75rem;
+      }
+
+      .site005-material .article-related .eyebrow {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .site005-update-notice {
+        background: var(--pet-color-code-bg);
+        color: var(--pet-color-text);
+      }
+
+      @media print {
+        .site005-material .pet-prose table,
+        .site005-material .pet-prose pre {
+          overflow: visible;
+          white-space: pre-wrap;
+        }
+
+        .site005-material .article-flow {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  {% endif %}
+{% endblock head_styles %}
+
+{% block scripts %}
+  {{ super() }}
+  {% if site005_material %}
+    <script data-site005-table-accessibility>
+      window.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".site005-material .pet-prose table").forEach(function (table, index) {
+          if (table.scrollWidth > table.clientWidth + 1) {
+            table.setAttribute("tabindex", "0");
+            table.setAttribute("role", "region");
+            table.setAttribute("aria-label", "Scrollable article table " + (index + 1));
+          }
+        });
+      });
+    </script>
+  {% endif %}
+{% endblock scripts %}

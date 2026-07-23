@@ -1,0 +1,384 @@
+{
+  "asset": {
+    "bytes": 795628,
+    "canonical_url": "https://nekrasovp.ru/images/social-preview.png",
+    "path": "content/images/social-preview.png",
+    "production_path": "images/social-preview.png",
+    "sha256": "144c820197a2ee7f80516dd71dc1aad567e12207242902f8155df300117f066c"
+  },
+  "contract": "nekrasovp-site005-materials.v1",
+  "feed_baseline": {
+    "all_atom_entry_count": 46,
+    "all_atom_legacy_entries_sha256": "bda10f8af636f3113851e4a7b4467adf8072ab55b87a566692dd7b7be76ffad6",
+    "blog_entries_sha256": "bda10f8af636f3113851e4a7b4467adf8072ab55b87a566692dd7b7be76ffad6"
+  },
+  "frozen_provenance": {
+    "production_commit": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce",
+    "site_base_commit": "3acbb7168f55b100cfd8debab2b096baa6ff4919"
+  },
+  "materials": [
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/technical-debt-as-a-portfolio.html",
+      "companion": {
+        "description": "A copyable register, decision record, exposure assessment, and review checklist.",
+        "title": "Use the technical-debt portfolio register"
+      },
+      "companion_route": "/technical-debt-portfolio-register.html",
+      "cv_source": {
+        "path": "article_technical_debt_as_portfolio_draft.md",
+        "sha256": "0587921cb3a267bbe6dc2a3b982686d595553b99d521624d9dc31f843bc2ffc6"
+      },
+      "description": "A lightweight system for turning technical debt from an unbounded backlog into explicit risks, owned decisions, and recurring engineering investments.",
+      "feed": {
+        "id": "tag:nekrasovp.ru,2026-07-15:/technical-debt-as-a-portfolio.html",
+        "summary": "A practical operating model for making technical debt visible, comparable, owned, and reviewable without turning it into a second product backlog.",
+        "tags": [
+          "architecture",
+          "engineering leadership",
+          "technical debt"
+        ],
+        "title": "Technical Debt as a Portfolio, Not a Backlog"
+      },
+      "language": "en",
+      "production": {
+        "bytes": 24693,
+        "path": "technical-debt-as-a-portfolio.html",
+        "sha256": "aa63f057e71dccc433a4ef1089de4609a2647c950877754f505af64c90366e31"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "cb20fa2a5bcee43717bceb9656cb6cf047a3c7b119316a303516a22ab920ae1c",
+        "headings_sha256": "99d6653c928ad7a4700b6185339320f137d8f585680dd7d2bb7593590c69eb29",
+        "paragraphs_sha256": "fe4eaf03d492abe2b325e98bab7c21e5378574385b8f2e15b82313b93aa2c0af",
+        "table_shapes": [
+          [
+            9,
+            2
+          ]
+        ],
+        "visible_placeholders": []
+      },
+      "role": "essay",
+      "route": "/technical-debt-as-a-portfolio.html",
+      "source": "technical-debt-as-a-portfolio.md",
+      "source_sha256": "fe7cd1a7314930cff4db4a10ffe1c3f50a6025136a9c63e9abee7f126c57d58c",
+      "title": "Technical Debt as a Portfolio: A Practical Operating Model"
+    },
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/technical-debt-portfolio-register.html",
+      "companion": {
+        "description": "Why technical debt works better as a portfolio of owned risks and options than as a flat backlog.",
+        "title": "Read the operating model"
+      },
+      "companion_route": "/technical-debt-as-a-portfolio.html",
+      "cv_source": {
+        "path": "technical_debt_portfolio_register_template.md",
+        "sha256": "db0d1700a3ae6ffd707240b48350d82790da12b22000a50be16538ae2c9a2bac"
+      },
+      "description": "A reusable technical-debt register, decision record, exposure assessment, and recurring review checklist.",
+      "language": "en",
+      "production": {
+        "bytes": 10994,
+        "path": "technical-debt-portfolio-register.html",
+        "sha256": "7d22e00469c9399277ac3fcb572fb3090dc4e5ba3536cc57398ca9b1cc1c511c"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "headings_sha256": "6392effe894a1a77110589846465fc9eef0032244a9c656ecfb83567dfde727a",
+        "paragraphs_sha256": "46863d0426904d6a24dd347e8aaf2f863c0fd9cc0c84028d3f232820946e864e",
+        "table_shapes": [
+          [
+            2,
+            11
+          ],
+          [
+            7,
+            3
+          ]
+        ],
+        "visible_placeholders": []
+      },
+      "role": "companion",
+      "route": "/technical-debt-portfolio-register.html",
+      "source": "technical-debt-portfolio-register.md",
+      "source_sha256": "415cfbd74634f732ea052949f50fb66406a100be6eb41357db2d1c04484cabbb",
+      "title": "Technical Debt Portfolio Register"
+    },
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/ai-native-sdlc-engineering-accountability.html",
+      "companion": {
+        "description": "A reusable packet for intent, requirements, NFRs, evidence, rollout, rollback, and human-agent decision boundaries.",
+        "title": "Use the AI-native delivery contract"
+      },
+      "companion_route": "/ai-native-delivery-contract.html",
+      "cv_source": {
+        "path": "article_ai_native_sdlc_accountability_draft.md",
+        "sha256": "e3be86704adec64c23381e6cce89813dda30692f2e5d0c6bf2bf2aba0c95bc3a"
+      },
+      "description": "An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.",
+      "feed": {
+        "id": "tag:nekrasovp.ru,2026-07-15:/ai-native-sdlc-engineering-accountability.html",
+        "summary": "An operating model for using agents at delivery transitions while keeping ownership, evidence, exceptions, and release authority explicit.",
+        "tags": [
+          "AI-native SDLC",
+          "engineering leadership",
+          "delivery systems"
+        ],
+        "title": "AI-Native SDLC Without Losing Engineering Accountability"
+      },
+      "figure": {
+        "aria_label": "Delivery lifecycle with bounded agent and human roles",
+        "caption": "Agents inspect, propose, execute bounded steps, and assemble evidence. Named people own intent, exceptions, review, and release authority."
+      },
+      "language": "en",
+      "production": {
+        "bytes": 22205,
+        "path": "ai-native-sdlc-engineering-accountability.html",
+        "sha256": "ed5daa72c30ef66f772cd51cbf1cb0be521bfd826d21618ed683157d1a629b0e"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "headings_sha256": "fbeada48dae112a2a0faacf970c9d057ba2702eed751ebbb42dc66b1c0c20c01",
+        "paragraphs_sha256": "16331172c414afa8a9abeee7c8cba67f8b2cb3c6c830bcab975385ad17b84e54",
+        "table_shapes": [
+          [
+            4,
+            3
+          ]
+        ],
+        "visible_placeholders": []
+      },
+      "role": "essay",
+      "route": "/ai-native-sdlc-engineering-accountability.html",
+      "source": "ai-native-sdlc-engineering-accountability.md",
+      "source_sha256": "9d389cd5e7164dec2b81ff2c5d4447221d77fb51e0e3808d65f86c92bb6d4454",
+      "title": "AI-Native SDLC Without Losing Engineering Accountability"
+    },
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/ai-native-delivery-contract.html",
+      "companion": {
+        "description": "How bounded agent roles and explicit state-transition contracts improve delivery without delegating ownership.",
+        "title": "Read the accountability model"
+      },
+      "companion_route": "/ai-native-sdlc-engineering-accountability.html",
+      "cv_source": {
+        "path": "ai_native_delivery_contract_template.md",
+        "sha256": "a53bf75941af71b3b0d8882bfb0b8e5f0016b09a88b28897104cb06153f6d54c"
+      },
+      "description": "A lightweight, machine-reviewable contract connecting product intent, implementation, verification, release, and human accountability.",
+      "language": "en",
+      "production": {
+        "bytes": 15442,
+        "path": "ai-native-delivery-contract.html",
+        "sha256": "37449112242bd8570c72a3dd893889cc6d8e67033c5ecbd6f3d17debb4112247"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "5a55294986ef8aeccfe70201377db37c5227074718969a116d47b85a4657b340",
+        "headings_sha256": "b5305523e387de8af49ae28b50df96e1d826260b79ba0e1fda4b1c89666e5df9",
+        "paragraphs_sha256": "fed106d7d84cf1ff8ecdf98728ad915628a6acb7a9f359ba4b4955b20eb041b2",
+        "table_shapes": [
+          [
+            10,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "visible_placeholders": [
+          "<API/event/schema requirement>",
+          "<action>",
+          "<actor/system>",
+          "<approval and rollout state>",
+          "<approve exception>",
+          "<brief>",
+          "<change and test log>",
+          "<change>",
+          "<check fields and consistency>",
+          "<choose outcome>",
+          "<contract test>",
+          "<dashboard/query/runbook>",
+          "<data classification and retention>",
+          "<date>",
+          "<dependency unavailable>",
+          "<edit, test within scope>",
+          "<effect>",
+          "<evidence bundle>",
+          "<expand scope silently>",
+          "<expected and peak load>",
+          "<explicitly excluded outcome or scope>",
+          "<fail closed / retry / degrade>",
+          "<fault test/runbook>",
+          "<feature flag, cohort, canary, sequence, observation period>",
+          "<findings>",
+          "<forward migration, compatibility window, data validation, cleanup>",
+          "<identity, authorization, data boundary>",
+          "<incidents, queue time, support load>",
+          "<initial state>",
+          "<invalid input>",
+          "<item>",
+          "<link/version>",
+          "<load evidence>",
+          "<logs, metrics, traces, alerts>",
+          "<metric, feedback, operational signal>",
+          "<name/role>",
+          "<observable behavior>",
+          "<observable outcome>",
+          "<observable result>",
+          "<one person>",
+          "<owned items>",
+          "<owner>",
+          "<percentile and budget>",
+          "<prepare, monitor, recommend>",
+          "<problem statement>",
+          "<reject or normalize>",
+          "<release beyond permission>",
+          "<repository/component and intended change>",
+          "<required behavior during failure>",
+          "<required evidence>",
+          "<response, event, alert>",
+          "<response>",
+          "<review/evidence>",
+          "<review/scans/tests>",
+          "<run checks, assemble bundle>",
+          "<search, summarize, list gaps>",
+          "<self-approve high risk>",
+          "<service, event, schema, vendor>",
+          "<signal>",
+          "<template, rule, test, runbook>",
+          "<temporary protection>",
+          "<test/dashboard>",
+          "<time boundary>",
+          "<trigger, authority, steps, data implications, maximum safe rollback time>",
+          "<why ship now>"
+        ]
+      },
+      "role": "companion",
+      "route": "/ai-native-delivery-contract.html",
+      "source": "ai-native-delivery-contract.md",
+      "source_sha256": "de6154fad7722ab6d6b8873992d4ea3003b1122b991a9f08ce6b7ee75cbfd56f",
+      "title": "AI-Native Delivery Contract Template"
+    },
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/logistics-lessons-for-distributed-systems.html",
+      "companion": {
+        "description": "The same causal failure pattern mapped across remote industrial supply and a multi-service software workflow.",
+        "title": "Open the side-by-side case study"
+      },
+      "companion_route": "/logistics-distributed-systems-case-study.html",
+      "cv_source": {
+        "path": "article_logistics_distributed_systems_draft.md",
+        "sha256": "61e87df4ec90f0ef140767572d49b47ae46edc219e0a132a53c554a2bcd7fa84"
+      },
+      "description": "Seven operating lessons connecting queues, handoffs, retries, buffers, observability, and incident response across logistics and software.",
+      "feed": {
+        "id": "tag:nekrasovp.ru,2026-07-15:/logistics-lessons-for-distributed-systems.html",
+        "summary": "How remote supply chains sharpen engineering judgment about partial failure, handoffs, observability, recovery, and operational ownership.",
+        "tags": [
+          "distributed systems",
+          "operations",
+          "logistics"
+        ],
+        "title": "What Logistics Taught Me About Distributed Systems"
+      },
+      "figure": {
+        "aria_label": "Causal chain from ambiguous intent to expensive recovery",
+        "caption": "Early contract review prevents the mismatch; chain-of-custody evidence shortens discovery; prepared alternatives limit recovery cost."
+      },
+      "language": "en",
+      "production": {
+        "bytes": 21799,
+        "path": "logistics-lessons-for-distributed-systems.html",
+        "sha256": "b1a3f1e7bc0cc5735466e39b9f8c4b3c786e79399fd5f92b94a37e01af033e4b"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "headings_sha256": "1bf5a085a21700ad291e2f4f7d9e3877ab1c445e931fb425931f676ae105e7a9",
+        "paragraphs_sha256": "771ee2a1e800dfc94dbfeb1ff6ce9bb3899f69fda150a3db31cd21e8b286bf78",
+        "table_shapes": [],
+        "visible_placeholders": []
+      },
+      "role": "essay",
+      "route": "/logistics-lessons-for-distributed-systems.html",
+      "source": "logistics-lessons-for-distributed-systems.md",
+      "source_sha256": "78c92b67443eab09929d8ea0f6ee3913d6f2a27eee041516e3a3ea81ed8db864",
+      "title": "What Running Logistics Operations Taught Me About Distributed Systems"
+    },
+    {
+      "author": "Pavel Nekrasov",
+      "canonical_url": "https://nekrasovp.ru/logistics-distributed-systems-case-study.html",
+      "companion": {
+        "description": "Seven lessons from logistics operations that change practical distributed-systems decisions.",
+        "title": "Read the full essay"
+      },
+      "companion_route": "/logistics-lessons-for-distributed-systems.html",
+      "cv_source": {
+        "path": "logistics_distributed_systems_case_study.md",
+        "sha256": "4c0e8a1002402a89932fc2eddb1cfe4d9fbdca13ad484ab9803540fe1cb12276"
+      },
+      "description": "A sanitized side-by-side case showing how incomplete boundary contracts create late, expensive failures in physical and software systems.",
+      "figure": {
+        "aria_label": "Shared causal model for physical and software delivery",
+        "caption": "Unresolved ambiguity enters at the contract; checkpoint evidence observes the handoff; a prepared fallback protects the outcome."
+      },
+      "language": "en",
+      "production": {
+        "bytes": 14571,
+        "path": "logistics-distributed-systems-case-study.html",
+        "sha256": "e110632b83b25629e608a33c1fb40e6262cf60e42a8bea5058553af171c3121d"
+      },
+      "published": "2026-07-15T12:00:00+02:00",
+      "rendered": {
+        "code_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "headings_sha256": "225c6375f0d41b744805bf7fe38836e60d5a0198443df3341b6b23fa0c770cfd",
+        "paragraphs_sha256": "b56c5d6bd21ffbed3713f5154d5e421f7ff8785bd3f5d3bdfa5a51b6b26b1c25",
+        "table_shapes": [
+          [
+            10,
+            3
+          ],
+          [
+            11,
+            3
+          ]
+        ],
+        "visible_placeholders": []
+      },
+      "role": "companion",
+      "route": "/logistics-distributed-systems-case-study.html",
+      "source": "logistics-distributed-systems-case-study.md",
+      "source_sha256": "816107d96aabcfcb220a946f2cd4edd1ee5f0165ef48b3bb0b00a607a08ccdc6",
+      "title": "Logistics and Distributed Systems: One Causal Pattern"
+    }
+  ]
+}
