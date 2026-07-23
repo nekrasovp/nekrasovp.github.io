@@ -1,4 +1,4 @@
-"""Expose SITE-003 lifecycle metadata without consuming Pelican publication status."""
+"""Expose SITE-003 lifecycle metadata while preserving SITE-005 hidden Articles."""
 
 from pelican import signals
 from pelican.contents import Article
@@ -21,6 +21,19 @@ def normalize_article_status(content):
     """Keep lifecycle status for templates while publishing every legacy article."""
 
     if not isinstance(content, Article) or "status" not in content.metadata:
+        return
+    if str(content.metadata.get("site005_material", "")).casefold() == "true":
+        publication_status = str(content.metadata["status"]).casefold()
+        if publication_status != "hidden":
+            raise ValueError(
+                f"SITE-005 material must use hidden status for {content.source_path}"
+            )
+        role = str(content.metadata.get("site005_role", "")).casefold()
+        if role not in {"essay", "companion"}:
+            raise ValueError(f"unknown SITE-005 role {role!r} for {content.source_path}")
+        content.site005_material = True
+        content.site005_role = role
+        content.status = "hidden"
         return
     lifecycle_status = str(content.metadata["status"]).casefold()
     if lifecycle_status not in LIFECYCLE_STATUSES:

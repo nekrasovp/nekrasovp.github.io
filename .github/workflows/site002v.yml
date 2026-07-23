@@ -1,4 +1,4 @@
-name: SITE-002V, SITE-003, and SITE-006V
+name: SITE-002V, SITE-003, SITE-005, and SITE-006V
 
 on:
   pull_request:
@@ -63,15 +63,18 @@ jobs:
           ./scripts/site validate \
             --work-root "$RUNNER_TEMP/site002v" \
             --report-out "$RUNNER_TEMP/site002v-report.json"
-          cmp "$RUNNER_TEMP/site002v-report.json" \
-            migration/site002v/evidence/validation.json
+          jq 'del(.repository_head)' "$RUNNER_TEMP/site002v-report.json" \
+            > "$RUNNER_TEMP/site005-report.normalized.json"
+          cmp "$RUNNER_TEMP/site005-report.normalized.json" \
+            migration/site005/evidence/validation.json
 
       - name: Run repository regressions and cleanliness checks
         run: |
           ./scripts/site test
           uv run --locked --all-groups ruff check \
             migration/site_build migration/site002v/validate.py \
-            migration/site003 migration/site006v plugins/site_metadata.py
+            migration/site003 migration/site005 migration/site006v \
+            plugins/site005_materials.py plugins/site_metadata.py
           git diff --check
           test -z "$(git status --porcelain=v1 --untracked-files=all)"
           github_token_prefix='github''_pat_'

@@ -79,6 +79,7 @@ def test_invalid_language_is_typed_and_source_aware() -> None:
 def test_validator_is_the_pre_pelican_entrypoint() -> None:
     site_script = (REPO_ROOT / "migration/site_build/site.py").read_text(encoding="utf-8")
 
-    assert "run_site003_preflight()" in site_script
+    assert "run_composite_preflight()" in site_script
+    assert "SITE005_VALIDATOR" in site_script
     assert "if preflight:" in site_script
     assert site_script.index("if preflight:") < site_script.index("pelican_command(", 3000)

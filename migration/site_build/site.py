@@ -22,6 +22,7 @@ DEFAULT_CONFIGS = {
 }
 SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
 SITE003_VALIDATOR = REPO_ROOT / "migration/site003/validate.py"
+SITE005_VALIDATOR = REPO_ROOT / "migration/site005/validate.py"
 
 
 def resolve_from_repo(value: str | Path) -> Path:
@@ -76,10 +77,13 @@ def run(command: Sequence[str]) -> int:
         return 130
 
 
-def run_site003_preflight() -> int:
-    """Reject invalid lifecycle status or language before Pelican starts."""
+def run_composite_preflight() -> int:
+    """Reject invalid legacy lifecycle or SITE-005 allowlist input before Pelican."""
 
-    return run([sys.executable, str(SITE003_VALIDATOR)])
+    legacy = run([sys.executable, str(SITE003_VALIDATOR)])
+    if legacy:
+        return legacy
+    return run([sys.executable, str(SITE005_VALIDATOR)])
 
 
 def parser() -> argparse.ArgumentParser:
@@ -115,7 +119,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.report_out:
             command.extend(["--report-out", args.report_out])
         return run(command)
-    preflight = run_site003_preflight()
+    preflight = run_composite_preflight()
     if preflight:
         return preflight
     output = args.output or DEFAULT_OUTPUTS[args.command]
@@ -129,10 +133,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if build or args.command != "build":
         return build
-    return run(
+    legacy = run(
         [
             sys.executable,
             str(SITE003_VALIDATOR),
+            "--output-root",
+            str(resolve_from_repo(output)),
+        ]
+    )
+    if legacy:
+        return legacy
+    return run(
+        [
+            sys.executable,
+            str(SITE005_VALIDATOR),
             "--output-root",
             str(resolve_from_repo(output)),
         ]

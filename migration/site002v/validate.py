@@ -21,6 +21,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from migration.site003 import validate as site003_validation  # noqa: E402
+from migration.site005 import validate as site005_validation  # noqa: E402
 from migration.site006v import validate as site006v_validation  # noqa: E402
 
 CONTENT_ROOT = REPO_ROOT / "content"
@@ -36,6 +37,7 @@ PLUGIN_REQUIREMENT = f"pelican-jupyter @ git+{PLUGIN_REPOSITORY}@{PLUGIN_COMMIT}
 EXPECTED_ARTICLES = 46
 EXPECTED_MARKDOWN = 35
 EXPECTED_NOTEBOOKS = 11
+EXPECTED_HIDDEN_ARTICLES = 6
 EXPECTED_MISSING_ALT = 57
 EXPECTED_EMPTY_ALT = 2
 EXPECTED_TITLE_GAPS = 0
@@ -388,6 +390,13 @@ def _validate_build_log(log: str) -> dict[str, int]:
     processed = re.search(r"Done: Processed (\d+) articles", log)
     if not processed or int(processed.group(1)) != EXPECTED_ARTICLES:
         raise RuntimeError(f"Pelican did not report exactly {EXPECTED_ARTICLES} articles")
+    hidden = re.search(
+        r"Done: Processed \d+ articles, \d+ drafts, (\d+) hidden articles", log
+    )
+    if not hidden or int(hidden.group(1)) != EXPECTED_HIDDEN_ARTICLES:
+        raise RuntimeError(
+            f"Pelican did not report exactly {EXPECTED_HIDDEN_ARTICLES} hidden articles"
+        )
     missing_alt = [
         int(value)
         for value in re.findall(r"WARNING\s+Alternative text is missing on (\d+) image\(s\)\.", log)
@@ -729,6 +738,81 @@ def _negative_gates(
             tokens=("inventory_validation", *tokens),
         )
     metadata_path.write_bytes(original_metadata)
+
+    site005_content = fixtures / "site005-invalid/content"
+    shutil.copytree(CONTENT_ROOT, site005_content)
+    undeclared_name = "undeclared-seventh.md"
+    (site005_content / undeclared_name).write_text(
+        "Title: Undeclared\nStatus: hidden\n\nbody\n", encoding="utf-8"
+    )
+    undeclared = _run(
+        [
+            str(python),
+            str(REPO_ROOT / "migration/site005/validate.py"),
+            "--content-root",
+            str(site005_content),
+        ],
+        cwd=fixtures / "site005-invalid",
+    )
+    results["site005_undeclared_source"] = _assert_typed_failure(
+        undeclared,
+        label="SITE-005 undeclared source gate",
+        source=undeclared_name,
+        tokens=(
+            "inventory_validation",
+            "undeclared_site005_source",
+            "UndeclaredSite005Source",
+        ),
+    )
+    (site005_content / undeclared_name).unlink()
+
+    site005_source = site005_validation.load_manifest().materials[0].source
+    site005_path = site005_content / site005_source
+    original_site005 = site005_path.read_bytes()
+    invalid_status, replacements = re.subn(
+        rb"(?im)^Status:[^\r\n]*",
+        b"Status: published",
+        original_site005,
+        count=1,
+    )
+    if replacements != 1:
+        raise RuntimeError("could not create invalid SITE-005 hidden-status fixture")
+    site005_path.write_bytes(invalid_status)
+    wrong_status = _run(
+        [
+            str(python),
+            str(REPO_ROOT / "migration/site005/validate.py"),
+            "--content-root",
+            str(site005_content),
+        ],
+        cwd=fixtures / "site005-invalid",
+    )
+    results["site005_wrong_status"] = _assert_typed_failure(
+        wrong_status,
+        label="SITE-005 hidden status gate",
+        source=site005_source,
+        tokens=("inventory_validation", "metadata_mismatch", "Site005MetadataMismatch"),
+    )
+    site005_path.write_bytes(original_site005)
+
+    asset_path = site005_content / "images/social-preview.png"
+    original_asset = asset_path.read_bytes()
+    asset_path.write_bytes(original_asset[:-1] + bytes([original_asset[-1] ^ 1]))
+    wrong_asset = _run(
+        [
+            str(python),
+            str(REPO_ROOT / "migration/site005/validate.py"),
+            "--content-root",
+            str(site005_content),
+        ],
+        cwd=fixtures / "site005-invalid",
+    )
+    results["site005_asset_hash"] = _assert_typed_failure(
+        wrong_asset,
+        label="SITE-005 asset hash gate",
+        source="social-preview.png",
+        tokens=("inventory_validation", "asset_mismatch", "Site005AssetMismatch"),
+    )
     return results
 
 
@@ -743,6 +827,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     _verify_site_base()
     notebooks = _validate_manifests()
     inventory = site003_validation.validate_inventory()
+    site005_inventory = site005_validation.validate_inventory()
     baseline_overlay = work_root / "site003-baseline-overlay.json"
     overlay_evidence = _write_site003_baseline_overlay(baseline_overlay)
     lock_source = _verify_dependency_input()
@@ -764,6 +849,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     observations: list[dict[str, int]] = []
     rendered_contracts: list[dict[str, Any]] = []
     theme_outputs: list[dict[str, Any]] = []
+    site005_outputs: list[dict[str, Any]] = []
 
     for number in (1, 2):
         output = work_root / f"output-{number}"
@@ -810,6 +896,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             )
         )
         theme_outputs.append(site006v_validation.output_evidence(output))
+        site005_outputs.append(site005_validation.validate_output(output_root=output))
 
     if evidence_paths[0].read_bytes() != evidence_paths[1].read_bytes():
         raise RuntimeError("the two normalized publication evidence files differ")
@@ -819,6 +906,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("the two SITE-003 rendered contract reports differ")
     if theme_outputs[0] != theme_outputs[1]:
         raise RuntimeError("the two normalized SITE-006V output reports differ")
+    if site005_outputs[0] != site005_outputs[1]:
+        raise RuntimeError("the two normalized SITE-005 output reports differ")
     if marker.exists():
         raise RuntimeError("the build created the execution marker")
     if _source_hashes() != sources_before:
@@ -849,7 +938,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("isolated negative fixtures changed repository sources or status")
 
     result = {
-        "contract": "nekrasovp-site002v-site003-site006v-validation.v3",
+        "contract": "nekrasovp-site002v-site003-site005-site006v-validation.v4",
         "counts": publication["counts"],
         "dependency": {
             "direct_requirement": PLUGIN_REQUIREMENT,
@@ -888,6 +977,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "inventory": inventory,
             "rendered": rendered_contracts[0],
         },
+        "site005": {
+            "inventory": site005_inventory,
+            "output": site005_outputs[0],
+        },
         "site006v": {
             "candidate": {
                 **theme_input,
@@ -902,6 +995,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             },
         },
         "warning_ledger": publication["warning_ledger"],
+        "repository_head": _git("rev-parse", "HEAD").stdout.strip(),
     }
     report_out.parent.mkdir(parents=True, exist_ok=True)
     report_out.write_text(
@@ -932,7 +1026,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     counts = evidence["counts"]
     print(
-        "SITE-006V validation passed twice: "
+        "Cumulative SITE-002V/SITE-003/SITE-005/SITE-006V validation passed twice: "
         f"{counts['markdown']} Markdown + {counts['notebooks']} notebooks = "
         f"{counts['articles']} articles; {len(evidence['negative_gates'])} negative gates"
     )

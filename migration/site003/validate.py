@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CONTENT_ROOT = REPO_ROOT / "content"
 MANIFEST = REPO_ROOT / "migration/production_parity/inputs/legacy_routes.tsv"
+SITE005_MANIFEST = REPO_ROOT / "migration/site005/materials.json"
 SITE003_BASE_COMMIT = "8e80e4d6ada80f9ad06896674bbcaab8f98a7bfe"
 SITEURL = "https://nekrasovp.ru"
 SITENAME = "Data driven"
@@ -294,6 +295,19 @@ def validate_inventory(
 
     rows = _load_manifest(manifest_path)
     manifest_sources = {row.source for row in rows}
+    site005_sources: set[str] = set()
+    if SITE005_MANIFEST.is_file():
+        try:
+            site005_payload = json.loads(SITE005_MANIFEST.read_text(encoding="utf-8"))
+            site005_sources = {
+                str(item["source"]) for item in site005_payload.get("materials", ())
+            }
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            raise InvalidManifest(SITE005_MANIFEST.as_posix(), str(error)) from error
+        if len(site005_sources) != 6:
+            raise InvalidManifest(
+                SITE005_MANIFEST.as_posix(), "composite allowlist must declare six sources"
+            )
     actual_sources = {
         path.name
         for pattern in ("*.md", "*.ipynb")
@@ -301,7 +315,7 @@ def validate_inventory(
         if path.is_file()
     }
     missing = sorted(manifest_sources - actual_sources)
-    unexpected = sorted(actual_sources - manifest_sources)
+    unexpected = sorted(actual_sources - manifest_sources - site005_sources)
     if missing:
         raise MissingExpectedSource(missing[0], f"missing sources={missing!r}")
     if unexpected:
@@ -375,6 +389,7 @@ def validate_inventory(
         },
         "manifest_sha256": _sha256(manifest_path),
         "metadata_records_validated": metadata_records,
+        "site005_composite_allowlist": sorted(site005_sources),
         "source_preservation": {
             "base_commit": base_commit,
             "dates_preserved": len(rows),
