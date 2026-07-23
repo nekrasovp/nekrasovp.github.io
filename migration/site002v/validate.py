@@ -21,6 +21,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from migration.site003 import validate as site003_validation  # noqa: E402
+from migration.site006v import validate as site006v_validation  # noqa: E402
 
 CONTENT_ROOT = REPO_ROOT / "content"
 FULL_MANIFEST = REPO_ROOT / "migration/production_parity/inputs/legacy_routes.tsv"
@@ -40,7 +41,7 @@ EXPECTED_EMPTY_ALT = 2
 EXPECTED_TITLE_GAPS = 0
 EXPECTED_READER_LANGUAGE_ABSENT = 0
 EXPECTED_RENDERED_LANGUAGE_GAPS = 0
-EXPECTED_TITLE_OVERRIDES = 28
+EXPECTED_TITLE_OVERRIDES = 46
 REQUIRED_CORPUS_OUTPUT_MODES = {"code", "image", "markdown", "png", "svg", "table"}
 
 
@@ -462,7 +463,7 @@ def _write_site003_baseline_overlay(path: Path) -> dict[str, Any]:
     changed: list[dict[str, str]] = []
     for row in _load_tsv(FULL_MANIFEST):
         page = pages[row["route"]]
-        expected_title = f"{row['title']} - {site003_validation.SITENAME}"
+        expected_title = f"{row['title']} — {site003_validation.SITENAME}"
         if page["title"] != expected_title:
             changed.append(
                 {
@@ -745,10 +746,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     baseline_overlay = work_root / "site003-baseline-overlay.json"
     overlay_evidence = _write_site003_baseline_overlay(baseline_overlay)
     lock_source = _verify_dependency_input()
+    theme_input = site006v_validation.verify_dependency_input()
     status_before = _git_status()
     sources_before = _source_hashes()
     external_python = _create_locked_environment(work_root, python)
     provenance = _installed_provenance(external_python)
+    theme_provenance = site006v_validation.installed_provenance(external_python)
 
     instrumentation = work_root / "instrumentation"
     _write_instrumentation(instrumentation)
@@ -760,6 +763,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     warning_ledgers: list[dict[str, int]] = []
     observations: list[dict[str, int]] = []
     rendered_contracts: list[dict[str, Any]] = []
+    theme_outputs: list[dict[str, Any]] = []
 
     for number in (1, 2):
         output = work_root / f"output-{number}"
@@ -805,6 +809,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 manifest_path=FULL_MANIFEST,
             )
         )
+        theme_outputs.append(site006v_validation.output_evidence(output))
 
     if evidence_paths[0].read_bytes() != evidence_paths[1].read_bytes():
         raise RuntimeError("the two normalized publication evidence files differ")
@@ -812,6 +817,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("the two warning ledgers differ")
     if rendered_contracts[0] != rendered_contracts[1]:
         raise RuntimeError("the two SITE-003 rendered contract reports differ")
+    if theme_outputs[0] != theme_outputs[1]:
+        raise RuntimeError("the two normalized SITE-006V output reports differ")
     if marker.exists():
         raise RuntimeError("the build created the execution marker")
     if _source_hashes() != sources_before:
@@ -842,7 +849,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("isolated negative fixtures changed repository sources or status")
 
     result = {
-        "contract": "nekrasovp-site002v-validation.v2",
+        "contract": "nekrasovp-site002v-site003-site006v-validation.v3",
         "counts": publication["counts"],
         "dependency": {
             "direct_requirement": PLUGIN_REQUIREMENT,
@@ -851,8 +858,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "plugin_commit": PLUGIN_COMMIT,
         },
         "determinism": {
+            "normalized_asset_evidence_identical": True,
+            "normalized_metadata_evidence_identical": True,
             "normalized_publication_evidence_sha256": _sha256(evidence_paths[0]),
             "publication_evidence_identical": True,
+            "route_evidence_identical": True,
+            "theme_identity_evidence_identical": True,
             "warning_ledgers_identical": True,
         },
         "emitted_build_warning_ledger": warning_ledgers[0],
@@ -876,6 +887,19 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "baseline_overlay": overlay_evidence,
             "inventory": inventory,
             "rendered": rendered_contracts[0],
+        },
+        "site006v": {
+            "candidate": {
+                **theme_input,
+                "installed": theme_provenance,
+                "theme_commit": site006v_validation.THEME_COMMIT,
+            },
+            "output": theme_outputs[0],
+            "presentation_changes": {
+                "approved_title_separator": " — ",
+                "baseline_title_overrides": EXPECTED_TITLE_OVERRIDES,
+                "legacy_presentation_selectors_required": False,
+            },
         },
         "warning_ledger": publication["warning_ledger"],
     }
@@ -908,7 +932,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     counts = evidence["counts"]
     print(
-        "SITE-002V validation passed twice: "
+        "SITE-006V validation passed twice: "
         f"{counts['markdown']} Markdown + {counts['notebooks']} notebooks = "
         f"{counts['articles']} articles; {len(evidence['negative_gates'])} negative gates"
     )

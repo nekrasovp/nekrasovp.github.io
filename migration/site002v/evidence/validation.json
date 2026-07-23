@@ -1,5 +1,5 @@
 {
-  "contract": "nekrasovp-site002v-validation.v2",
+  "contract": "nekrasovp-site002v-site003-site006v-validation.v3",
   "counts": {
     "articles": 46,
     "markdown": 35,
@@ -19,8 +19,12 @@
     "plugin_commit": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
   },
   "determinism": {
-    "normalized_publication_evidence_sha256": "f13343b164247f5e205fe058733b779a55bfb4de81561bcff5dc49ddf1c45f6d",
+    "normalized_asset_evidence_identical": true,
+    "normalized_metadata_evidence_identical": true,
+    "normalized_publication_evidence_sha256": "03b7699bd9bd33387da84a570193d05ce4b4d66539f4e099b3ee67d37b5fa35a",
     "publication_evidence_identical": true,
+    "route_evidence_identical": true,
+    "theme_identity_evidence_identical": true,
     "warning_ledgers_identical": true
   },
   "emitted_build_warning_ledger": {
@@ -282,9 +286,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "COVID-19 data visualization - Data driven"
+        "page_title": "COVID-19 data visualization — Data driven"
       },
-      "content_class_sha256": "a54a5595a88c8ce90c087250e639e206dd5961ac004c4da3ffbf686a3bfbb5f5",
+      "content_class_sha256": "f30669c4767cbf9d7b6bfd32fba3e439027b7786ddd6b8db7cc536ea4ec6b2a8",
       "content_modes": [
         "code",
         "image",
@@ -311,7 +315,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "COVID-19 data visualization - Data driven"
+        "page_title": "COVID-19 data visualization — Data driven"
       },
       "route": "/covid-dashboard.html",
       "source": "covid-dashboard.ipynb",
@@ -341,9 +345,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven"
+        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data — Data driven"
       },
-      "content_class_sha256": "c16faac6d9170e93e573debae65a29dda9298c4513ae8c4f1185bdbb0ab87981",
+      "content_class_sha256": "887228276262b3206c0b3a07621a3311ea4d7b8adb97168557071fa42123f6cf",
       "content_modes": [
         "code",
         "image",
@@ -372,7 +376,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven"
+        "page_title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data — Data driven"
       },
       "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
       "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb",
@@ -422,9 +426,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Simulating a Galton board with Markov chains - Data driven"
+        "page_title": "Simulating a Galton board with Markov chains — Data driven"
       },
-      "content_class_sha256": "21c33a13ee32446bec0b0f5be345c664de6653ac21e216e325c5a431a2fae979",
+      "content_class_sha256": "9ab970c6c925d6ecc0ea09190f18259fc71ee15a181c3067069cd794b8656b21",
       "content_modes": [
         "code",
         "image",
@@ -450,7 +454,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Simulating a Galton board with Markov chains - Data driven"
+        "page_title": "Simulating a Galton board with Markov chains — Data driven"
       },
       "route": "/markov-chain-bean-machine.html",
       "source": "markov-chain-bean-machine.ipynb",
@@ -460,9 +464,9 @@
     {
       "baseline_metadata": {
         "language": "ru",
-        "page_title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
+        "page_title": "Визуализация картографических данных в Jupyter Notebook — Data driven"
       },
-      "content_class_sha256": "fe4a6bb0779dcff010e3c989b3efcd68306935386ee83ecd928e9355ac38a912",
+      "content_class_sha256": "20290c3ab303c53e4b336d8685ea1ce51f996196cdaea447fcc494009008e7d6",
       "content_modes": [
         "code",
         "markdown"
@@ -486,7 +490,7 @@
       },
       "rendered_observation": {
         "html_lang": "ru",
-        "page_title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
+        "page_title": "Визуализация картографических данных в Jupyter Notebook — Data driven"
       },
       "route": "/mkrf-spb-geo-data.html",
       "source": "mkrf-spb-geo-data.ipynb",
@@ -501,9 +505,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Number-sequence visualization with Python - Data driven"
+        "page_title": "Number-sequence visualization with Python — Data driven"
       },
-      "content_class_sha256": "09049d751c8b74caee0bab75ce713373b39162b2653d35ff41b82e84596a61d2",
+      "content_class_sha256": "d231b6726778d7f5df79344abb08ede89bb574804fe106b8c18e20f35484d334",
       "content_modes": [
         "code",
         "image",
@@ -528,7 +532,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Number-sequence visualization with Python - Data driven"
+        "page_title": "Number-sequence visualization with Python — Data driven"
       },
       "route": "/number-sequences.html",
       "source": "Number-sequences.ipynb",
@@ -538,9 +542,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Pascal's Triangle - Data driven"
+        "page_title": "Pascal's Triangle — Data driven"
       },
-      "content_class_sha256": "2bb2ffc5b2a906374a1d4da9100d9ed7d1ce09a98bf098759ece338b21ae3b19",
+      "content_class_sha256": "367920b742816f7d9b2bb00b4315873087fa8b67c369b72123c3d2b67a9dd981",
       "content_modes": [
         "code",
         "image",
@@ -567,7 +571,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Pascal's Triangle - Data driven"
+        "page_title": "Pascal's Triangle — Data driven"
       },
       "route": "/pascals-triangle.html",
       "source": "pascals-triangle.ipynb",
@@ -632,9 +636,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Getting stock data with pandas-datareader - Data driven"
+        "page_title": "Getting stock data with pandas-datareader — Data driven"
       },
-      "content_class_sha256": "1a1d5fa049c31fdec0efb6b2e4f78bdae24f6fa05bda6bd864c3c719707c81ac",
+      "content_class_sha256": "1aa1784b20a6a3e54d863eaf46a112d90fc6f458b74afece13d56a0734d6be28",
       "content_modes": [
         "code",
         "image",
@@ -661,7 +665,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Getting stock data with pandas-datareader - Data driven"
+        "page_title": "Getting stock data with pandas-datareader — Data driven"
       },
       "route": "/stock-data-with-pandas-datareader.html",
       "source": "Getting-stock-data-with-pandas-datareader.ipynb",
@@ -671,9 +675,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Stock-market portfolio optimization - Data driven"
+        "page_title": "Stock-market portfolio optimization — Data driven"
       },
-      "content_class_sha256": "8a9ba2144250a8fae04b4b86e76da308e98f09daa8626200626f1364bce04844",
+      "content_class_sha256": "84419a2e20176eff9e425c58a3083c2ca999c4a7366ec03b7cab7f3461c23917",
       "content_modes": [
         "code",
         "image",
@@ -701,7 +705,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Stock-market portfolio optimization - Data driven"
+        "page_title": "Stock-market portfolio optimization — Data driven"
       },
       "route": "/stock-market-portfolio-optimisation.html",
       "source": "Stock-market-portfolio-optimisation.ipynb",
@@ -711,9 +715,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Stock-performance analysis using Python Financial Functions - Data driven"
+        "page_title": "Stock-performance analysis using Python Financial Functions — Data driven"
       },
-      "content_class_sha256": "9e7d77439fe20d5be9e7eb1d227240101dcf4c9b8456da0d85d1bd0fca105dab",
+      "content_class_sha256": "9d71cb1a7cfa610f58d941befb737bb88fc3faeec2550cb2ad9bba64cdcb67fd",
       "content_modes": [
         "code",
         "image",
@@ -741,7 +745,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Stock-performance analysis using Python Financial Functions - Data driven"
+        "page_title": "Stock-performance analysis using Python Financial Functions — Data driven"
       },
       "route": "/stock-perfomance-analysis.html",
       "source": "stock-perfomance-analysis.ipynb",
@@ -756,9 +760,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Testing a hypothesis on a football data set from Kaggle - Data driven"
+        "page_title": "Testing a hypothesis on a football data set from Kaggle — Data driven"
       },
-      "content_class_sha256": "8b722cafe93ddce4b908b0366cb14e72345a9ae181b0b5e18d8a2fa8057b42c7",
+      "content_class_sha256": "d106d8815e5df90e3de419eff4c9d4d52bee9b4c8ca69939950fe6e065483d3f",
       "content_modes": [
         "code",
         "image",
@@ -789,7 +793,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Testing a hypothesis on a football data set from Kaggle - Data driven"
+        "page_title": "Testing a hypothesis on a football data set from Kaggle — Data driven"
       },
       "route": "/testing-hypothesis-on-football-data-set.html",
       "source": "Testing-hypothesis-on-football-data-set.ipynb",
@@ -809,9 +813,9 @@
     {
       "baseline_metadata": {
         "language": "en",
-        "page_title": "Use Cython to speed up Python code - Data driven"
+        "page_title": "Use Cython to speed up Python code — Data driven"
       },
-      "content_class_sha256": "f383afdac3cc9a36d27599e8b7b1b1825c6b6f1e58acad5e3df9177874d4b611",
+      "content_class_sha256": "80802a9eebb526570cd542ecdf11a9cab9a6e4bf2582294c257d836a8cf12926",
       "content_modes": [
         "code",
         "markdown"
@@ -833,7 +837,7 @@
       },
       "rendered_observation": {
         "html_lang": "en",
-        "page_title": "Use Cython to speed up Python code - Data driven"
+        "page_title": "Use Cython to speed up Python code — Data driven"
       },
       "route": "/use-cython-to-speedup-your-python-code.html",
       "source": "Use Cython to speed up your Python code.ipynb",
@@ -863,175 +867,283 @@
   "site003": {
     "baseline_overlay": {
       "frozen_baseline_sha256": "b209396e3d2926af6cdf69e8feab3afa1adec2fbadc13517866e3f3d2ecec653",
-      "overlay_sha256": "fcd3384160992071eaa81bd1a3d509eaeac071bf48f8cb9b7bf6c09a2445abe9",
+      "overlay_sha256": "0632ce4b86e3906dd7b499f89fab590b9e7e9a1cbb4e7393ee30dd2d05836409",
       "title_overrides": [
         {
-          "after": "Python app with Poetry and Docker - Data driven",
+          "after": "Примеры технического долга — Data driven",
+          "before": "Примеры технического долга - Data driven",
+          "route": "/technical-debt-examples.html",
+          "source": "technical-debt-examples.md"
+        },
+        {
+          "after": "Что такое технический долг? — Data driven",
+          "before": "Что такое технический долг? - Data driven",
+          "route": "/what-is-technical-debt.html",
+          "source": "what-is-technical-debt.md"
+        },
+        {
+          "after": "Update Django user password — Data driven",
+          "before": "Update Django user password - Data driven",
+          "route": "/update-django-user-password.html",
+          "source": "update-django-user-password.md"
+        },
+        {
+          "after": "MySQL server has gone away errors — Data driven",
+          "before": "MySQL server has gone away errors - Data driven",
+          "route": "/mysql-server-errors.html",
+          "source": "mysql-server-errors.md"
+        },
+        {
+          "after": "Python app with Poetry and Docker — Data driven",
           "before": "Python app with poetry & docker - Data driven",
           "route": "/python-poetry-docker.html",
           "source": "python-poetry-docker.md"
         },
         {
-          "after": "How to list users in Linux - Data driven",
+          "after": "How to list users in Linux — Data driven",
           "before": "How to List Users in Linux - Data driven",
           "route": "/linux-list-users.html",
           "source": "linux-list-users.md"
         },
         {
-          "after": "Authentication plugin caching_sha2_password cannot be loaded - Data driven",
+          "after": "Change swap size in Ubuntu — Data driven",
+          "before": "Change swap size in Ubuntu - Data driven",
+          "route": "/linux-change-swap-size.html",
+          "source": "linux-change-swap-size.md"
+        },
+        {
+          "after": "Python object reference — Data driven",
+          "before": "Python object reference - Data driven",
+          "route": "/python-object-reference.html",
+          "source": "python-object-reference.md"
+        },
+        {
+          "after": "Authentication plugin caching_sha2_password cannot be loaded — Data driven",
           "before": "Authentication plugin 'caching_sha2_password' cannot be loaded - Data driven",
           "route": "/fixing-caching-sha2-password.html",
           "source": "fixing-caching-sha2-password.md"
         },
         {
-          "after": "How to rebase a Git branch - Data driven",
+          "after": "Use Black and organize imports on save in VSCode — Data driven",
+          "before": "Use Black and organize imports on save in VSCode - Data driven",
+          "route": "/python-black-isort.html",
+          "source": "vscode-black-isort.md"
+        },
+        {
+          "after": "How to rebase a Git branch — Data driven",
           "before": "How to rebase git branch - Data driven",
           "route": "/git-rebase.html",
           "source": "git-rebase.md"
         },
         {
-          "after": "Capturing shell output in Python - Data driven",
+          "after": "Capturing shell output in Python — Data driven",
           "before": "Capturing shell output in python - Data driven",
           "route": "/shell-capture.html",
           "source": "shell-capture.md"
         },
         {
-          "after": "Why Python needs the Global Interpreter Lock and how it works - Data driven",
+          "after": "Why Python needs the Global Interpreter Lock and how it works — Data driven",
           "before": "Why you need Python Global Interpreter Lock and how it works - Data driven",
           "route": "/python-gil.html",
           "source": "python-gil.md"
         },
         {
-          "after": "Find which process is listening on a specific port - Data driven",
+          "after": "Find which process is listening on a specific port — Data driven",
           "before": "Ways to find out which process is listening on a specific port - Data driven",
           "route": "/linux-port.html",
           "source": "linux-port.md"
         },
         {
-          "after": "Install NVM, Node, and Yarn - Data driven",
+          "after": "Custom logger handlers — Data driven",
+          "before": "Custom logger handlers - Data driven",
+          "route": "/custom-logger.html",
+          "source": "custom-logger.md"
+        },
+        {
+          "after": "Custom color formatter with Python logging — Data driven",
+          "before": "Custom color formatter with Python logging - Data driven",
+          "route": "/color-formatter.html",
+          "source": "color-formatter.md"
+        },
+        {
+          "after": "Analytics checklist — Data driven",
+          "before": "Analytics checklist - Data driven",
+          "route": "/analytics-checklist.html",
+          "source": "analytics-checklist.md"
+        },
+        {
+          "after": "Install NVM, Node, and Yarn — Data driven",
           "before": "Install nvm, node and yarn for your Node.js application - Data driven",
           "route": "/install-nvm-node-yarn.html",
           "source": "install-nvm-node-yarn.md"
         },
         {
-          "after": "Setting up Nginx and Gunicorn for a Flask application - Data driven",
+          "after": "Setting up Nginx and Gunicorn for a Flask application — Data driven",
           "before": "Setting Up Nginx, Gunicorn for Flask app - Data driven",
           "route": "/setting-up-nginx-gunicorn-flask.html",
           "source": "setting-up-nginx-gunicorn-flask.md"
         },
         {
-          "after": "Building a job queue - Data driven",
+          "after": "Building a job queue — Data driven",
           "before": "Building job queue - Data driven",
           "route": "/building-job-queue.html",
           "source": "building-job-queue.md"
         },
         {
-          "after": "Setting up GitLab CI for a Python application - Data driven",
+          "after": "Setting up GitLab CI for a Python application — Data driven",
           "before": "Setting Up GitLab CI for a Python Application - Data driven",
           "route": "/setting-up-gitlab-ci.html",
           "source": "setting-up-gitlab-ci.md"
         },
         {
-          "after": "Obstacles to successful DevOps - Data driven",
+          "after": "Obstacles to successful DevOps — Data driven",
           "before": "Obstacles to successful devops - Data driven",
           "route": "/devops-questions.html",
           "source": "devops-questions.md"
         },
         {
-          "after": "Визуализация картографических данных в Jupyter Notebook - Data driven",
+          "after": "Визуализация картографических данных в Jupyter Notebook — Data driven",
           "before": "Визуализации картографических данных в Jupyter notebook - Data driven",
           "route": "/mkrf-spb-geo-data.html",
           "source": "mkrf-spb-geo-data.ipynb"
         },
         {
-          "after": "Understand a GraphQL schema - Data driven",
+          "after": "Шаблон ретроспективы — Data driven",
+          "before": "Шаблон ретроспективы - Data driven",
+          "route": "/retrospective-template.html",
+          "source": "Retrospective-template.md"
+        },
+        {
+          "after": "Understand a GraphQL schema — Data driven",
           "before": "Understand GraphQL Schema - Data driven",
           "route": "/graphql-schema.html",
           "source": "graphql-schema.md"
         },
         {
-          "after": "COVID-19 data visualization - Data driven",
+          "after": "COVID-19 data visualization — Data driven",
           "before": "Just another COVID-19 data visualisation - Data driven",
           "route": "/covid-dashboard.html",
           "source": "covid-dashboard.ipynb"
         },
         {
-          "after": "How to get a well-developed IT solution - Data driven",
+          "after": "How to share data with a statistician — Data driven",
+          "before": "How to share data with a statistician - Data driven",
+          "route": "/share-data.html",
+          "source": "share-data.md"
+        },
+        {
+          "after": "Publishing articles workflow — Data driven",
+          "before": "Publishing articles workflow - Data driven",
+          "route": "/publishing-articles-workflow.html",
+          "source": "publishing-articles-workflow.md"
+        },
+        {
+          "after": "How to get a well-developed IT solution — Data driven",
           "before": "How to get well-developed IT solution - Data driven",
           "route": "/business-it-solutions.html",
           "source": "business-it-solutions.md"
         },
         {
-          "after": "Move a blog to GitHub and automate deployment with Git hooks - Data driven",
+          "after": "Move a blog to GitHub and automate deployment with Git hooks — Data driven",
           "before": "Move blog to github and automate deploying with git hooks - Data driven",
           "route": "/pelican-github-script-automation.html",
           "source": "pelican-github-script-automation.md"
         },
         {
-          "after": "Essay template - Data driven",
+          "after": "Essay template — Data driven",
           "before": "Essay(simple paper) template - Data driven",
           "route": "/essay-paper-template.html",
           "source": "essay-paper-template.md"
         },
         {
-          "after": "Use Cython to speed up Python code - Data driven",
+          "after": "Pascal's Triangle — Data driven",
+          "before": "Pascal's Triangle - Data driven",
+          "route": "/pascals-triangle.html",
+          "source": "pascals-triangle.ipynb"
+        },
+        {
+          "after": "Simulating a Galton board with Markov chains — Data driven",
+          "before": "Simulating a Galton board with Markov chains - Data driven",
+          "route": "/markov-chain-bean-machine.html",
+          "source": "markov-chain-bean-machine.ipynb"
+        },
+        {
+          "after": "Use Cython to speed up Python code — Data driven",
           "before": "Use Cython to speed up your Python code - Data driven",
           "route": "/use-cython-to-speedup-your-python-code.html",
           "source": "Use Cython to speed up your Python code.ipynb"
         },
         {
-          "after": "Number-sequence visualization with Python - Data driven",
+          "after": "Number-sequence visualization with Python — Data driven",
           "before": "Number sequences visualisation with python - Data driven",
           "route": "/number-sequences.html",
           "source": "Number-sequences.ipynb"
         },
         {
-          "after": "Stock-market portfolio optimization - Data driven",
+          "after": "Stock-market portfolio optimization — Data driven",
           "before": "Stock market portfolio optimisation - Data driven",
           "route": "/stock-market-portfolio-optimisation.html",
           "source": "Stock-market-portfolio-optimisation.ipynb"
         },
         {
-          "after": "Stock-performance analysis using Python Financial Functions - Data driven",
+          "after": "Stock-performance analysis using Python Financial Functions — Data driven",
           "before": "Stock performance analysis using python Financial Functions - Data driven",
           "route": "/stock-perfomance-analysis.html",
           "source": "stock-perfomance-analysis.ipynb"
         },
         {
-          "after": "Stock-market candlestick charts with Plotly and Python - Data driven",
+          "after": "Stock-market candlestick charts with Plotly and Python — Data driven",
           "before": "Stock market candlestick charts with plotly and python - Data driven",
           "route": "/candlestick-charts-plotly.html",
           "source": "candlestick-charts-plotly.md"
         },
         {
-          "after": "Testing a hypothesis on a football data set from Kaggle - Data driven",
+          "after": "Testing a hypothesis on a football data set from Kaggle — Data driven",
           "before": "Testing hypothesis on football data-set from kaggle - Data driven",
           "route": "/testing-hypothesis-on-football-data-set.html",
           "source": "Testing-hypothesis-on-football-data-set.ipynb"
         },
         {
-          "after": "Deploying a static website to Bitbucket - Data driven",
+          "after": "Getting stock data with pandas-datareader — Data driven",
+          "before": "Getting stock data with pandas-datareader - Data driven",
+          "route": "/stock-data-with-pandas-datareader.html",
+          "source": "Getting-stock-data-with-pandas-datareader.ipynb"
+        },
+        {
+          "after": "Upgrading OpenSSL on Ubuntu 18.04 — Data driven",
+          "before": "Upgrading OpenSSL on Ubuntu 18.04 - Data driven",
+          "route": "/upgrading-openssl-ubuntu.html",
+          "source": "openssl-ubuntu.md"
+        },
+        {
+          "after": "Deploying a static website to Bitbucket — Data driven",
           "before": "Deploying a static website to bitbucket - Data driven",
           "route": "/deploying-a-static-website-to-bitbucket.html",
           "source": "deploying-a-static-website-to-bitbucket.md"
         },
         {
-          "after": "Add a theme and plugins to Pelican - Data driven",
+          "after": "Add a theme and plugins to Pelican — Data driven",
           "before": "Add theme and plugins to Pelican installation - Data driven",
           "route": "/add-theme-and-plugins-to-pelican.html",
           "source": "add-theme-and-plugins-to-pelican.md"
         },
         {
-          "after": "Install Pelican and create a project skeleton - Data driven",
+          "after": "Install Pelican and create a project skeleton — Data driven",
           "before": "Install Pelican and create project skeleton - Data driven",
           "route": "/install-pelican-and-create-project-skeleton.html",
           "source": "install-pelican-and-create-project-skeleton.md"
         },
         {
-          "after": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data - Data driven",
+          "after": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data — Data driven",
           "before": "Using XGBoost regressor on Indicators, ARIMA and FFT of ohlcv data - Data driven",
           "route": "/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
           "source": "feature-engineering-on-ohlcv-candles-wit-xgboost.ipynb"
+        },
+        {
+          "after": "Arbitrage — Data driven",
+          "before": "Arbitrage - Data driven",
+          "route": "/arbitrage.html",
+          "source": "arbitrage.md"
         }
       ]
     },
@@ -1076,19 +1188,19 @@
           "canonical": "https://nekrasovp.ru/fixing-caching-sha2-password.html",
           "html_language": "en",
           "language_label": "English",
-          "notice_text": "Outdated content warning. This article is deprecated and may contain outdated or unsafe guidance. Verify current documentation before use.",
+          "notice_text": "Deprecated content This article is deprecated and may contain outdated or unsafe guidance. Verify current documentation before use.",
           "route": "/fixing-caching-sha2-password.html",
           "status": "deprecated",
-          "title": "Authentication plugin caching_sha2_password cannot be loaded - Data driven"
+          "title": "Authentication plugin caching_sha2_password cannot be loaded — Data driven"
         },
         "mkrf-spb-geo-data.ipynb": {
           "canonical": "https://nekrasovp.ru/mkrf-spb-geo-data.html",
           "html_language": "ru",
           "language_label": "Русский",
-          "notice_text": "Исторический материал. Статья сохранена как исторический материал и может не отражать современные практики.",
+          "notice_text": "Archived content Статья сохранена как исторический материал и может не отражать современные практики.",
           "route": "/mkrf-spb-geo-data.html",
           "status": "archive",
-          "title": "Визуализация картографических данных в Jupyter Notebook - Data driven"
+          "title": "Визуализация картографических данных в Jupyter Notebook — Data driven"
         },
         "technical-debt-examples.md": {
           "canonical": "https://nekrasovp.ru/technical-debt-examples.html",
@@ -1097,7 +1209,7 @@
           "notice_text": null,
           "route": "/technical-debt-examples.html",
           "status": "refresh",
-          "title": "Примеры технического долга - Data driven"
+          "title": "Примеры технического долга — Data driven"
         },
         "update-django-user-password.md": {
           "canonical": "https://nekrasovp.ru/update-django-user-password.html",
@@ -1106,7 +1218,7 @@
           "notice_text": null,
           "route": "/update-django-user-password.html",
           "status": "keep",
-          "title": "Update Django user password - Data driven"
+          "title": "Update Django user password — Data driven"
         }
       },
       "noindex_from_status": 0,
@@ -1117,6 +1229,1193 @@
         "refresh": 0
       },
       "routes": 46
+    }
+  },
+  "site006v": {
+    "candidate": {
+      "direct_requirement": "pelican-engineering-theme @ git+https://github.com/nekrasovp/pelican-engineering-theme.git@027a170ac6c8288347de5353569a089c526afae2",
+      "installed": {
+        "active_theme_matches_public_api": true,
+        "commit_id": "027a170ac6c8288347de5353569a089c526afae2",
+        "direct_url": {
+          "url": "https://github.com/nekrasovp/pelican-engineering-theme.git",
+          "vcs_info": {
+            "commit_id": "027a170ac6c8288347de5353569a089c526afae2",
+            "requested_revision": "027a170ac6c8288347de5353569a089c526afae2",
+            "vcs": "git"
+          }
+        },
+        "distribution_root": "site-packages",
+        "get_theme_path": "site-packages/pelican_engineering_theme/theme",
+        "import_path": "site-packages/pelican_engineering_theme/__init__.py",
+        "outside_source_checkouts": true,
+        "override_path": "site/templates",
+        "requested_revision": "027a170ac6c8288347de5353569a089c526afae2",
+        "version": "0.1.0"
+      },
+      "lock_source": "https://github.com/nekrasovp/pelican-engineering-theme.git?rev=027a170ac6c8288347de5353569a089c526afae2#027a170ac6c8288347de5353569a089c526afae2",
+      "override_boundary": {
+        "documented_public_blocks": [
+          "body_class",
+          "body_end",
+          "body_start",
+          "canonical",
+          "content",
+          "content_footer",
+          "content_header",
+          "head_meta",
+          "head_styles",
+          "hero",
+          "html_head",
+          "page_class",
+          "scripts",
+          "site_footer",
+          "site_header",
+          "site_navigation",
+          "structured_data",
+          "title"
+        ],
+        "public_block_count": 18,
+        "templates": [
+          {
+            "blocks": [
+              "content",
+              "content_header"
+            ],
+            "path": "templates/article.html",
+            "theme_parent": "!theme/article.html"
+          },
+          {
+            "blocks": [
+              "head_meta",
+              "head_styles",
+              "scripts"
+            ],
+            "path": "templates/base.html",
+            "theme_parent": "!theme/base.html"
+          }
+        ]
+      },
+      "theme_commit": "027a170ac6c8288347de5353569a089c526afae2",
+      "vendored_theme_configured": false,
+      "vendored_theme_present": true
+    },
+    "output": {
+      "assets": {
+        "count": 21,
+        "records": [
+          {
+            "path": "CNAME",
+            "sha256": "22dff4c8d24d7bc16fdff08edf451c871819c4b94f84f6769b90d5357f79513b",
+            "size": 13
+          },
+          {
+            "path": "images/GitLab_CI_Final_Pipeline_Condensed_Screenshot2.png",
+            "sha256": "2b866a1e8d7f2782823c0f7854a1f9d4feac36119f22ad0d05c1f5e1aba3ec55",
+            "size": 6813
+          },
+          {
+            "path": "images/GitLab_CI_Pipeline_Screenshot.png",
+            "sha256": "24ca01a8dffa670c90bf178474c67b96cd73a087cbdb43bf926ebfba578e30d9",
+            "size": 48301
+          },
+          {
+            "path": "images/aio-pika-example.png",
+            "sha256": "003f74174782f16085689413efeb526d7212064c99c24b4078ac0ce31cfff51b",
+            "size": 65573
+          },
+          {
+            "path": "images/ava2.jpg",
+            "sha256": "271a57f9dd400f07c33c416d5ed6f86f7c3a44c20571c18dd40322afd31be934",
+            "size": 15956
+          },
+          {
+            "path": "images/ava_1_147x150.jpg",
+            "sha256": "788225a60605252265fe01665e9fda65ce295d536051dd78e121a40ab1732aa3",
+            "size": 12257
+          },
+          {
+            "path": "images/business-it-solutions-1.png",
+            "sha256": "a12a02e43d00f1ad3f5631eb2def350f7d995b7492a24f2bb7b0c399e3b03ab7",
+            "size": 7158
+          },
+          {
+            "path": "images/calendar-spread-img.png",
+            "sha256": "505515dc155692a3366945fa29a46373b474bdd613e24a6e34ac4cbdec1a33fa",
+            "size": 108635
+          },
+          {
+            "path": "images/candle-desc.png",
+            "sha256": "c723e08a24f9ae8d6737d215d293c740757a2764ecc117016976cb9ac29dc9b6",
+            "size": 121975
+          },
+          {
+            "path": "images/cross-market-img.png",
+            "sha256": "ae2e577155f48f1a709ad49082ead686445a4a43bd259ff1900cf777c502826e",
+            "size": 97292
+          },
+          {
+            "path": "images/distracted-guy-tech-debt.jpeg",
+            "sha256": "8afa5e4e76bab938e7b6ca006ce7530ec2b3b8e495586b7ed7ace9faa705b824",
+            "size": 92054
+          },
+          {
+            "path": "images/graphiql1.png",
+            "sha256": "57aaa835d4ef260ee297e97a0619046e8b69cfebbc1237695418e1423b14ccf4",
+            "size": 33125
+          },
+          {
+            "path": "images/heatmap.gif",
+            "sha256": "881f5a404e3d329230fccdc34e029b5962dc7f8d068dc96e0bbea40e6fec81f8",
+            "size": 5089100
+          },
+          {
+            "path": "images/logo.png",
+            "sha256": "9b5a2bde925c630f3f04b8c7471d4162c8c41108e493dfb1205cbf0e93ab1b0d",
+            "size": 45426
+          },
+          {
+            "path": "images/logo2.png",
+            "sha256": "e25596bb1c3c28eb4cdc45f860e1daa56795a73c0c4f328178c89dbaa61c71fb",
+            "size": 943
+          },
+          {
+            "path": "images/marker-clusters.gif",
+            "sha256": "d5b58d8f2927b47709aab8b7f46fed9d5ec4710b1fbfb61138d425d10d401e23",
+            "size": 2603462
+          },
+          {
+            "path": "images/noava-160x160.png",
+            "sha256": "b37369eed0e881d76a467bfe2353ac805cc623490343ebe0cea23454bddd961a",
+            "size": 2003
+          },
+          {
+            "path": "images/python-logging.png",
+            "sha256": "14314f3ddfc48308480ca28c347932b9c0c7c58137e8531e8318c5570c003e36",
+            "size": 38407
+          },
+          {
+            "path": "images/wireframe2.png",
+            "sha256": "4cff507c4c012e53fff25385c859c18e78d8d7aaea01d5699ad202e2394366a2",
+            "size": 461523
+          },
+          {
+            "path": "theme/css/scaffold.css",
+            "sha256": "7db229ba0504f623644d79846960b7f3ca26900f6ff84178fd38a1f4949238d0",
+            "size": 23853
+          },
+          {
+            "path": "theme/js/theme.js",
+            "sha256": "6fe91df9c13d1ef92ee6a6ae0e66e89b7c56f8d3ae04306100239a8600ed7940",
+            "size": 2789
+          }
+        ],
+        "sha256": "b7cc5293fd2d898e35ede42be18e1b827969b861cd5841f58f523501041b401e"
+      },
+      "inactive_legacy_theme": {
+        "active_references": [],
+        "copied_assets": [],
+        "vendored_sources_preserved": true
+      },
+      "metadata": {
+        "records": [
+          {
+            "canonical": "https://nekrasovp.ru/add-theme-and-plugins-to-pelican.html",
+            "language": "en",
+            "route": "add-theme-and-plugins-to-pelican.html",
+            "title": "Add a theme and plugins to Pelican — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/analytics-checklist.html",
+            "language": "en",
+            "route": "analytics-checklist.html",
+            "title": "Analytics checklist — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/arbitrage.html",
+            "language": "en",
+            "route": "arbitrage.html",
+            "title": "Arbitrage — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/archives.html",
+            "language": "en",
+            "route": "archives.html",
+            "title": "Archives — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel2.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel2.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel3.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel3.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel4.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel4.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel5.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel5.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel6.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel6.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/author/nekrasov-pavel7.html",
+            "language": "en",
+            "route": "author/nekrasov-pavel7.html",
+            "title": "Nekrasov Pavel — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/authors.html",
+            "language": "en",
+            "route": "authors.html",
+            "title": "Authors — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/building-job-queue.html",
+            "language": "en",
+            "route": "building-job-queue.html",
+            "title": "Building a job queue — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/business-it-solutions.html",
+            "language": "en",
+            "route": "business-it-solutions.html",
+            "title": "How to get a well-developed IT solution — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/candlestick-charts-plotly.html",
+            "language": "en",
+            "route": "candlestick-charts-plotly.html",
+            "title": "Stock-market candlestick charts with Plotly and Python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/categories.html",
+            "language": "en",
+            "route": "categories.html",
+            "title": "Categories — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog.html",
+            "language": "en",
+            "route": "category/blog.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog2.html",
+            "language": "en",
+            "route": "category/blog2.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog3.html",
+            "language": "en",
+            "route": "category/blog3.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog4.html",
+            "language": "en",
+            "route": "category/blog4.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog5.html",
+            "language": "en",
+            "route": "category/blog5.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog6.html",
+            "language": "en",
+            "route": "category/blog6.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/category/blog7.html",
+            "language": "en",
+            "route": "category/blog7.html",
+            "title": "Blog — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/color-formatter.html",
+            "language": "en",
+            "route": "color-formatter.html",
+            "title": "Custom color formatter with Python logging — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/covid-dashboard.html",
+            "language": "en",
+            "route": "covid-dashboard.html",
+            "title": "COVID-19 data visualization — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/custom-logger.html",
+            "language": "en",
+            "route": "custom-logger.html",
+            "title": "Custom logger handlers — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/deploying-a-static-website-to-bitbucket.html",
+            "language": "en",
+            "route": "deploying-a-static-website-to-bitbucket.html",
+            "title": "Deploying a static website to Bitbucket — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/devops-questions.html",
+            "language": "en",
+            "route": "devops-questions.html",
+            "title": "Obstacles to successful DevOps — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/essay-paper-template.html",
+            "language": "en",
+            "route": "essay-paper-template.html",
+            "title": "Essay template — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+            "language": "en",
+            "route": "feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+            "title": "Use XGBoost on indicators, ARIMA, and FFT features from OHLCV data — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/fixing-caching-sha2-password.html",
+            "language": "en",
+            "route": "fixing-caching-sha2-password.html",
+            "title": "Authentication plugin caching_sha2_password cannot be loaded — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/git-rebase.html",
+            "language": "en",
+            "route": "git-rebase.html",
+            "title": "How to rebase a Git branch — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/graphql-schema.html",
+            "language": "en",
+            "route": "graphql-schema.html",
+            "title": "Understand a GraphQL schema — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index.html",
+            "language": "en",
+            "route": "index.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index2.html",
+            "language": "en",
+            "route": "index2.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index3.html",
+            "language": "en",
+            "route": "index3.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index4.html",
+            "language": "en",
+            "route": "index4.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index5.html",
+            "language": "en",
+            "route": "index5.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index6.html",
+            "language": "en",
+            "route": "index6.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/index7.html",
+            "language": "en",
+            "route": "index7.html",
+            "title": "Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/install-nvm-node-yarn.html",
+            "language": "en",
+            "route": "install-nvm-node-yarn.html",
+            "title": "Install NVM, Node, and Yarn — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/install-pelican-and-create-project-skeleton.html",
+            "language": "en",
+            "route": "install-pelican-and-create-project-skeleton.html",
+            "title": "Install Pelican and create a project skeleton — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/linux-change-swap-size.html",
+            "language": "en",
+            "route": "linux-change-swap-size.html",
+            "title": "Change swap size in Ubuntu — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/linux-list-users.html",
+            "language": "en",
+            "route": "linux-list-users.html",
+            "title": "How to list users in Linux — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/linux-port.html",
+            "language": "en",
+            "route": "linux-port.html",
+            "title": "Find which process is listening on a specific port — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/markov-chain-bean-machine.html",
+            "language": "en",
+            "route": "markov-chain-bean-machine.html",
+            "title": "Simulating a Galton board with Markov chains — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/mkrf-spb-geo-data.html",
+            "language": "ru",
+            "route": "mkrf-spb-geo-data.html",
+            "title": "Визуализация картографических данных в Jupyter Notebook — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/mysql-server-errors.html",
+            "language": "en",
+            "route": "mysql-server-errors.html",
+            "title": "MySQL server has gone away errors — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/number-sequences.html",
+            "language": "en",
+            "route": "number-sequences.html",
+            "title": "Number-sequence visualization with Python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/pages/about.html",
+            "language": "en",
+            "route": "pages/about.html",
+            "title": "About — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/pages/services.html",
+            "language": "en",
+            "route": "pages/services.html",
+            "title": "Services — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/pascals-triangle.html",
+            "language": "en",
+            "route": "pascals-triangle.html",
+            "title": "Pascal's Triangle — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/pelican-github-script-automation.html",
+            "language": "en",
+            "route": "pelican-github-script-automation.html",
+            "title": "Move a blog to GitHub and automate deployment with Git hooks — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/publishing-articles-workflow.html",
+            "language": "en",
+            "route": "publishing-articles-workflow.html",
+            "title": "Publishing articles workflow — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/python-black-isort.html",
+            "language": "en",
+            "route": "python-black-isort.html",
+            "title": "Use Black and organize imports on save in VSCode — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/python-gil.html",
+            "language": "en",
+            "route": "python-gil.html",
+            "title": "Why Python needs the Global Interpreter Lock and how it works — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/python-object-reference.html",
+            "language": "en",
+            "route": "python-object-reference.html",
+            "title": "Python object reference — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/python-poetry-docker.html",
+            "language": "en",
+            "route": "python-poetry-docker.html",
+            "title": "Python app with Poetry and Docker — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/retrospective-template.html",
+            "language": "ru",
+            "route": "retrospective-template.html",
+            "title": "Шаблон ретроспективы — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/setting-up-gitlab-ci.html",
+            "language": "en",
+            "route": "setting-up-gitlab-ci.html",
+            "title": "Setting up GitLab CI for a Python application — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/setting-up-nginx-gunicorn-flask.html",
+            "language": "en",
+            "route": "setting-up-nginx-gunicorn-flask.html",
+            "title": "Setting up Nginx and Gunicorn for a Flask application — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/share-data.html",
+            "language": "en",
+            "route": "share-data.html",
+            "title": "How to share data with a statistician — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/shell-capture.html",
+            "language": "en",
+            "route": "shell-capture.html",
+            "title": "Capturing shell output in Python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/stock-data-with-pandas-datareader.html",
+            "language": "en",
+            "route": "stock-data-with-pandas-datareader.html",
+            "title": "Getting stock data with pandas-datareader — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/stock-market-portfolio-optimisation.html",
+            "language": "en",
+            "route": "stock-market-portfolio-optimisation.html",
+            "title": "Stock-market portfolio optimization — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/stock-perfomance-analysis.html",
+            "language": "en",
+            "route": "stock-perfomance-analysis.html",
+            "title": "Stock-performance analysis using Python Financial Functions — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/analytics.html",
+            "language": "en",
+            "route": "tag/analytics.html",
+            "title": "analytics — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/anova.html",
+            "language": "en",
+            "route": "tag/anova.html",
+            "title": "ANOVA — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/arbitrage.html",
+            "language": "en",
+            "route": "tag/arbitrage.html",
+            "title": "arbitrage — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/arima.html",
+            "language": "en",
+            "route": "tag/arima.html",
+            "title": "arima — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/bitbucket.html",
+            "language": "en",
+            "route": "tag/bitbucket.html",
+            "title": "bitbucket — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/black.html",
+            "language": "en",
+            "route": "tag/black.html",
+            "title": "black — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/cython.html",
+            "language": "en",
+            "route": "tag/cython.html",
+            "title": "cython — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/data.html",
+            "language": "en",
+            "route": "tag/data.html",
+            "title": "data — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/development.html",
+            "language": "en",
+            "route": "tag/development.html",
+            "title": "development — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/django.html",
+            "language": "en",
+            "route": "tag/django.html",
+            "title": "django — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/ffn.html",
+            "language": "en",
+            "route": "tag/ffn.html",
+            "title": "ffn — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/fft.html",
+            "language": "en",
+            "route": "tag/fft.html",
+            "title": "fft — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/finance.html",
+            "language": "en",
+            "route": "tag/finance.html",
+            "title": "finance — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/flake8.html",
+            "language": "en",
+            "route": "tag/flake8.html",
+            "title": "flake8 — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/flask.html",
+            "language": "en",
+            "route": "tag/flask.html",
+            "title": "flask — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/gil.html",
+            "language": "en",
+            "route": "tag/gil.html",
+            "title": "gil — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/git.html",
+            "language": "en",
+            "route": "tag/git.html",
+            "title": "git — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/github.html",
+            "language": "en",
+            "route": "tag/github.html",
+            "title": "github — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/gitlab.html",
+            "language": "en",
+            "route": "tag/gitlab.html",
+            "title": "gitlab — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/graphql.html",
+            "language": "en",
+            "route": "tag/graphql.html",
+            "title": "graphql — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/gunicorn.html",
+            "language": "en",
+            "route": "tag/gunicorn.html",
+            "title": "gunicorn — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/kaggle.html",
+            "language": "en",
+            "route": "tag/kaggle.html",
+            "title": "kaggle — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/leaflet.html",
+            "language": "en",
+            "route": "tag/leaflet.html",
+            "title": "leaflet — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/linux.html",
+            "language": "en",
+            "route": "tag/linux.html",
+            "title": "linux — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/logging.html",
+            "language": "en",
+            "route": "tag/logging.html",
+            "title": "logging — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/markdown.html",
+            "language": "en",
+            "route": "tag/markdown.html",
+            "title": "markdown — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/math.html",
+            "language": "en",
+            "route": "tag/math.html",
+            "title": "math — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/matplotlib.html",
+            "language": "en",
+            "route": "tag/matplotlib.html",
+            "title": "matplotlib — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/multiprocessing.html",
+            "language": "en",
+            "route": "tag/multiprocessing.html",
+            "title": "multiprocessing — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/mypy.html",
+            "language": "en",
+            "route": "tag/mypy.html",
+            "title": "mypy — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/mysql.html",
+            "language": "en",
+            "route": "tag/mysql.html",
+            "title": "mysql — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/networkx.html",
+            "language": "en",
+            "route": "tag/networkx.html",
+            "title": "networkx — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/nginx.html",
+            "language": "en",
+            "route": "tag/nginx.html",
+            "title": "nginx — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/node.html",
+            "language": "en",
+            "route": "tag/node.html",
+            "title": "node — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/notebook.html",
+            "language": "en",
+            "route": "tag/notebook.html",
+            "title": "notebook — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/notebook2.html",
+            "language": "en",
+            "route": "tag/notebook2.html",
+            "title": "notebook — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/numpy.html",
+            "language": "en",
+            "route": "tag/numpy.html",
+            "title": "numpy — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/nvm.html",
+            "language": "en",
+            "route": "tag/nvm.html",
+            "title": "nvm — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/openssl.html",
+            "language": "en",
+            "route": "tag/openssl.html",
+            "title": "openssl — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/pandas.html",
+            "language": "en",
+            "route": "tag/pandas.html",
+            "title": "pandas — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/pelican.html",
+            "language": "en",
+            "route": "tag/pelican.html",
+            "title": "pelican — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/plotly.html",
+            "language": "en",
+            "route": "tag/plotly.html",
+            "title": "plotly — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/poetry.html",
+            "language": "en",
+            "route": "tag/poetry.html",
+            "title": "poetry — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/portfolio.html",
+            "language": "en",
+            "route": "tag/portfolio.html",
+            "title": "portfolio — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/pydot.html",
+            "language": "en",
+            "route": "tag/pydot.html",
+            "title": "pydot — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/pylint.html",
+            "language": "en",
+            "route": "tag/pylint.html",
+            "title": "pylint — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/pytest.html",
+            "language": "en",
+            "route": "tag/pytest.html",
+            "title": "pytest — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/python.html",
+            "language": "en",
+            "route": "tag/python.html",
+            "title": "python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/python2.html",
+            "language": "en",
+            "route": "tag/python2.html",
+            "title": "python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/python3.html",
+            "language": "en",
+            "route": "tag/python3.html",
+            "title": "python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/python4.html",
+            "language": "en",
+            "route": "tag/python4.html",
+            "title": "python — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/rabbitmq.html",
+            "language": "en",
+            "route": "tag/rabbitmq.html",
+            "title": "rabbitmq — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/science.html",
+            "language": "en",
+            "route": "tag/science.html",
+            "title": "science — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/scipy.html",
+            "language": "en",
+            "route": "tag/scipy.html",
+            "title": "scipy — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/seaborn.html",
+            "language": "en",
+            "route": "tag/seaborn.html",
+            "title": "seaborn — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/shell.html",
+            "language": "en",
+            "route": "tag/shell.html",
+            "title": "shell — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/statistics.html",
+            "language": "en",
+            "route": "tag/statistics.html",
+            "title": "statistics — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/template.html",
+            "language": "en",
+            "route": "tag/template.html",
+            "title": "template — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/threading.html",
+            "language": "en",
+            "route": "tag/threading.html",
+            "title": "threading — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/ubuntu.html",
+            "language": "en",
+            "route": "tag/ubuntu.html",
+            "title": "ubuntu — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/vscode.html",
+            "language": "en",
+            "route": "tag/vscode.html",
+            "title": "vscode — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/wbdata.html",
+            "language": "en",
+            "route": "tag/wbdata.html",
+            "title": "wbdata — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/workflow.html",
+            "language": "en",
+            "route": "tag/workflow.html",
+            "title": "workflow — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/xgboost.html",
+            "language": "en",
+            "route": "tag/xgboost.html",
+            "title": "xgboost — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tag/yarn.html",
+            "language": "en",
+            "route": "tag/yarn.html",
+            "title": "yarn — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/tags.html",
+            "language": "en",
+            "route": "tags.html",
+            "title": "Tags — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/technical-debt-examples.html",
+            "language": "ru",
+            "route": "technical-debt-examples.html",
+            "title": "Примеры технического долга — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/testing-hypothesis-on-football-data-set.html",
+            "language": "en",
+            "route": "testing-hypothesis-on-football-data-set.html",
+            "title": "Testing a hypothesis on a football data set from Kaggle — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/update-django-user-password.html",
+            "language": "en",
+            "route": "update-django-user-password.html",
+            "title": "Update Django user password — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/upgrading-openssl-ubuntu.html",
+            "language": "en",
+            "route": "upgrading-openssl-ubuntu.html",
+            "title": "Upgrading OpenSSL on Ubuntu 18.04 — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/use-cython-to-speedup-your-python-code.html",
+            "language": "en",
+            "route": "use-cython-to-speedup-your-python-code.html",
+            "title": "Use Cython to speed up Python code — Data driven"
+          },
+          {
+            "canonical": "https://nekrasovp.ru/what-is-technical-debt.html",
+            "language": "ru",
+            "route": "what-is-technical-debt.html",
+            "title": "Что такое технический долг? — Data driven"
+          }
+        ],
+        "sha256": "a6439bb66bd31e90f8a6177e58790faf75787168e965a7b6e3c6f37f2642daa9"
+      },
+      "routes": {
+        "count": 138,
+        "paths": [
+          "add-theme-and-plugins-to-pelican.html",
+          "analytics-checklist.html",
+          "arbitrage.html",
+          "archives.html",
+          "author/nekrasov-pavel.html",
+          "author/nekrasov-pavel2.html",
+          "author/nekrasov-pavel3.html",
+          "author/nekrasov-pavel4.html",
+          "author/nekrasov-pavel5.html",
+          "author/nekrasov-pavel6.html",
+          "author/nekrasov-pavel7.html",
+          "authors.html",
+          "building-job-queue.html",
+          "business-it-solutions.html",
+          "candlestick-charts-plotly.html",
+          "categories.html",
+          "category/blog.html",
+          "category/blog2.html",
+          "category/blog3.html",
+          "category/blog4.html",
+          "category/blog5.html",
+          "category/blog6.html",
+          "category/blog7.html",
+          "color-formatter.html",
+          "covid-dashboard.html",
+          "custom-logger.html",
+          "deploying-a-static-website-to-bitbucket.html",
+          "devops-questions.html",
+          "essay-paper-template.html",
+          "feature-engineering-on-ohlcv-candles-wit-xgboost.html",
+          "fixing-caching-sha2-password.html",
+          "git-rebase.html",
+          "graphql-schema.html",
+          "index.html",
+          "index2.html",
+          "index3.html",
+          "index4.html",
+          "index5.html",
+          "index6.html",
+          "index7.html",
+          "install-nvm-node-yarn.html",
+          "install-pelican-and-create-project-skeleton.html",
+          "linux-change-swap-size.html",
+          "linux-list-users.html",
+          "linux-port.html",
+          "markov-chain-bean-machine.html",
+          "mkrf-spb-geo-data.html",
+          "mysql-server-errors.html",
+          "number-sequences.html",
+          "pages/about.html",
+          "pages/services.html",
+          "pascals-triangle.html",
+          "pelican-github-script-automation.html",
+          "publishing-articles-workflow.html",
+          "python-black-isort.html",
+          "python-gil.html",
+          "python-object-reference.html",
+          "python-poetry-docker.html",
+          "retrospective-template.html",
+          "setting-up-gitlab-ci.html",
+          "setting-up-nginx-gunicorn-flask.html",
+          "share-data.html",
+          "shell-capture.html",
+          "stock-data-with-pandas-datareader.html",
+          "stock-market-portfolio-optimisation.html",
+          "stock-perfomance-analysis.html",
+          "tag/analytics.html",
+          "tag/anova.html",
+          "tag/arbitrage.html",
+          "tag/arima.html",
+          "tag/bitbucket.html",
+          "tag/black.html",
+          "tag/cython.html",
+          "tag/data.html",
+          "tag/development.html",
+          "tag/django.html",
+          "tag/ffn.html",
+          "tag/fft.html",
+          "tag/finance.html",
+          "tag/flake8.html",
+          "tag/flask.html",
+          "tag/gil.html",
+          "tag/git.html",
+          "tag/github.html",
+          "tag/gitlab.html",
+          "tag/graphql.html",
+          "tag/gunicorn.html",
+          "tag/kaggle.html",
+          "tag/leaflet.html",
+          "tag/linux.html",
+          "tag/logging.html",
+          "tag/markdown.html",
+          "tag/math.html",
+          "tag/matplotlib.html",
+          "tag/multiprocessing.html",
+          "tag/mypy.html",
+          "tag/mysql.html",
+          "tag/networkx.html",
+          "tag/nginx.html",
+          "tag/node.html",
+          "tag/notebook.html",
+          "tag/notebook2.html",
+          "tag/numpy.html",
+          "tag/nvm.html",
+          "tag/openssl.html",
+          "tag/pandas.html",
+          "tag/pelican.html",
+          "tag/plotly.html",
+          "tag/poetry.html",
+          "tag/portfolio.html",
+          "tag/pydot.html",
+          "tag/pylint.html",
+          "tag/pytest.html",
+          "tag/python.html",
+          "tag/python2.html",
+          "tag/python3.html",
+          "tag/python4.html",
+          "tag/rabbitmq.html",
+          "tag/science.html",
+          "tag/scipy.html",
+          "tag/seaborn.html",
+          "tag/shell.html",
+          "tag/statistics.html",
+          "tag/template.html",
+          "tag/threading.html",
+          "tag/ubuntu.html",
+          "tag/vscode.html",
+          "tag/wbdata.html",
+          "tag/workflow.html",
+          "tag/xgboost.html",
+          "tag/yarn.html",
+          "tags.html",
+          "technical-debt-examples.html",
+          "testing-hypothesis-on-football-data-set.html",
+          "update-django-user-password.html",
+          "upgrading-openssl-ubuntu.html",
+          "use-cython-to-speedup-your-python-code.html",
+          "what-is-technical-debt.html"
+        ],
+        "sha256": "257879d1b6ab79a3b922d16fd83b4a9f2707e5ab27eb13b111bd3fff72cac332"
+      },
+      "runtime": {
+        "active_urls": [
+          "https://nekrasovp.ru/theme/css/scaffold.css",
+          "https://nekrasovp.ru/theme/js/theme.js"
+        ],
+        "external_content_media": [
+          "https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_Triangle_4_paths.svg/685px-Pascal%27s_Triangle_4_paths.svg.png",
+          "https://vknight.org/blog/src/2018-11-26-galton-board/diagram/main.png",
+          "https://www.nps.gov/aboutus/news/images/CDC-coronavirus-image-23311-for-web.jpg?maxwidth=650&autorotate=false"
+        ],
+        "external_requests": []
+      },
+      "theme_assets": [
+        "theme/css/scaffold.css",
+        "theme/js/theme.js"
+      ]
+    },
+    "presentation_changes": {
+      "approved_title_separator": " — ",
+      "baseline_title_overrides": 46,
+      "legacy_presentation_selectors_required": false
     }
   },
   "site_base_commit": "cac7d59b7a691ebdedea17f5978ce24693830bf8",

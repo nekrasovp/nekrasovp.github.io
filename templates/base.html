@@ -1,0 +1,66 @@
+{% extends "!theme/base.html" %}
+
+{% block head_meta %}
+  {{ super() }}
+  {% set site_description = pet_content.summary | default('', true) | striptags | trim if pet_content else ENGINEERING_THEME_META_DESCRIPTION | default('', true) %}
+  {% if site_description %}<meta name="description" content="{{ site_description | forceescape }}">{% endif %}
+  {% if article is defined and article.category %}<meta property="article:section" content="{{ article.category | forceescape }}">{% endif %}
+  {% if article is defined %}{% for tag in article.tags %}<meta property="article:tag" content="{{ tag | forceescape }}">{% endfor %}{% endif %}
+{% endblock head_meta %}
+
+{% block head_styles %}
+  {{ super() }}
+  <style data-site-theme-bridge>
+    .site-visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    @media screen and (max-width: 48rem) {
+      .pet-notebook-document .pet-notebook-region .output_html {
+        contain: layout paint;
+      }
+
+      .pet-notebook-document .pet-notebook-region .output_html table {
+        min-width: 56rem;
+        table-layout: auto;
+      }
+    }
+
+    html[data-theme="dark"] .pet-notebook-region .output_html th,
+    html[data-theme="dark"] .pet-notebook-region .output_html td {
+      background-color: #f7f8f3 !important;
+      color: #151515 !important;
+    }
+
+    @media print {
+      .pet-notebook-document .pet-notebook-region .output_html table {
+        min-width: 0;
+      }
+    }
+  </style>
+{% endblock head_styles %}
+
+{% block scripts %}
+  {{ super() }}
+  <script data-site-notebook-accessibility-bridge>
+    window.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".pet-notebook-region table th").forEach(function (header) {
+        if (!header.textContent.trim()) {
+          var label = document.createElement("span");
+          label.className = "site-visually-hidden";
+          label.textContent = "Unlabeled table header";
+          header.appendChild(label);
+        }
+      });
+      document.querySelectorAll('[data-pet-table-scroller="true"]').forEach(function (scroller, index) {
+        scroller.setAttribute("aria-label", "Scrollable notebook table output " + (index + 1));
+      });
+    });
+  </script>
+{% endblock scripts %}

@@ -1,0 +1,11 @@
+{% extends "!theme/article.html" %}
+
+{% block content_header %}
+  {{ super() }}
+  <p class="site-content-language">
+    <span data-site-language-code="{{ article.lang | forceescape }}"
+          lang="{{ article.lang | forceescape }}">{% if article.lang == "ru" %}Русский{% else %}English{% endif %}</span>
+  </p>
+{% endblock content_header %}
+
+{% block content %}<div class="entry-content">{{ super() }}</div>{% endblock content %}

@@ -1,7 +1,7 @@
 help:
 	@echo 'make markdown  Markdown-only smoke build (warnings are errors)'
 	@echo 'make build     Full production-intent build (46 historical articles)'
-	@echo 'make validate  Full SITE-002V/SITE-003 deterministic and negative gates'
+	@echo 'make validate  Full SITE-002V/SITE-003/SITE-006V deterministic gates'
 	@echo 'make serve     Local Markdown-only server (PORT=8000 by default)'
 	@echo 'make test      SITE-001 acceptance tests'
 

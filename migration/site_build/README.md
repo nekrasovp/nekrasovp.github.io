@@ -56,7 +56,11 @@ runs before Pelican and exact rendered metadata validation runs afterward.
 exact installed Git provenance of the notebook reader, runs and gates two clean
 46-article builds, and runs the isolated negative and no-execution cases. It
 also reuses the SITE-003 inventory, preservation, and rendered metadata gates.
-See `migration/site002v/README.md` and `migration/site003/README.md`.
+SITE-006V additionally proves the exact installed theme candidate, public
+`get_theme_path()` and override boundaries, deterministic routes/metadata/
+assets, and the absence of active vendored-theme references. See
+`migration/site002v/README.md`, `migration/site003/README.md`, and
+`migration/site006v/README.md`.
 
 `./scripts/site serve` serves the Markdown-only configuration from the explicit
 `build/local` directory with autoreload. It deliberately uses the same
