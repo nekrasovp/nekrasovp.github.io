@@ -22,6 +22,7 @@ DEFAULT_CONFIGS = {
 }
 SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
 SITE003_VALIDATOR = REPO_ROOT / "migration/site003/validate.py"
+SITE004_VALIDATOR = REPO_ROOT / "migration/site004/validate.py"
 SITE005_VALIDATOR = REPO_ROOT / "migration/site005/validate.py"
 
 
@@ -78,12 +79,15 @@ def run(command: Sequence[str]) -> int:
 
 
 def run_composite_preflight() -> int:
-    """Reject invalid legacy lifecycle or SITE-005 allowlist input before Pelican."""
+    """Reject invalid legacy, SITE-004, or SITE-005 inputs before Pelican."""
 
     legacy = run([sys.executable, str(SITE003_VALIDATOR)])
     if legacy:
         return legacy
-    return run([sys.executable, str(SITE005_VALIDATOR)])
+    materials = run([sys.executable, str(SITE005_VALIDATOR)])
+    if materials:
+        return materials
+    return run([sys.executable, str(SITE004_VALIDATOR)])
 
 
 def parser() -> argparse.ArgumentParser:
@@ -143,10 +147,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if legacy:
         return legacy
-    return run(
+    materials = run(
         [
             sys.executable,
             str(SITE005_VALIDATOR),
+            "--output-root",
+            str(resolve_from_repo(output)),
+        ]
+    )
+    if materials:
+        return materials
+    return run(
+        [
+            sys.executable,
+            str(SITE004_VALIDATOR),
             "--output-root",
             str(resolve_from_repo(output)),
         ]
