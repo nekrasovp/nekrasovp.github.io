@@ -24,6 +24,7 @@ SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
 SITE003_VALIDATOR = REPO_ROOT / "migration/site003/validate.py"
 SITE004_VALIDATOR = REPO_ROOT / "migration/site004/validate.py"
 SITE005_VALIDATOR = REPO_ROOT / "migration/site005/validate.py"
+OPS001_FINALIZER = REPO_ROOT / "migration/ops001/finalize.py"
 
 
 def resolve_from_repo(value: str | Path) -> Path:
@@ -157,11 +158,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if materials:
         return materials
-    return run(
+    modern_pages = run(
         [
             sys.executable,
             str(SITE004_VALIDATOR),
             "--output-root",
+            str(resolve_from_repo(output)),
+        ]
+    )
+    if modern_pages:
+        return modern_pages
+    return run(
+        [
+            sys.executable,
+            str(OPS001_FINALIZER),
             str(resolve_from_repo(output)),
         ]
     )
