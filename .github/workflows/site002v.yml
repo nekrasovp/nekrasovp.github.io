@@ -65,8 +65,10 @@ jobs:
             --report-out "$RUNNER_TEMP/site002v-report.json"
           jq 'del(.repository_head)' "$RUNNER_TEMP/site002v-report.json" \
             > "$RUNNER_TEMP/site004-report.normalized.json"
+          jq 'del(.repository_head)' migration/site004/evidence/validation.json \
+            > "$RUNNER_TEMP/site004-evidence.normalized.json"
           cmp "$RUNNER_TEMP/site004-report.normalized.json" \
-            migration/site004/evidence/validation.json
+            "$RUNNER_TEMP/site004-evidence.normalized.json"
 
       - name: Run repository regressions and cleanliness checks
         run: |
