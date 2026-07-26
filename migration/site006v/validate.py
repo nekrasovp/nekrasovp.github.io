@@ -155,13 +155,13 @@ def verify_dependency_input() -> dict[str, Any]:
     if 'THEME = \'theme\'' in config or 'REPO_ROOT / "theme"' in markdown:
         raise RuntimeError("the vendored theme remains configured as active")
     vendored = REPO_ROOT / "theme"
-    if not (vendored / "templates/base.html").is_file():
-        raise RuntimeError("rollback-only vendored theme was unexpectedly deleted")
+    if vendored.exists():
+        raise RuntimeError("vendored theme remains after SITE-006")
     return {
         "direct_requirement": THEME_REQUIREMENT,
         "lock_source": _lock_source(),
         "override_boundary": _template_boundary(),
-        "vendored_theme_present": True,
+        "vendored_theme_present": False,
         "vendored_theme_configured": False,
     }
 
@@ -397,7 +397,7 @@ def output_evidence(output_root: Path) -> dict[str, Any]:
         "inactive_legacy_theme": {
             "active_references": [],
             "copied_assets": [],
-            "vendored_sources_preserved": True,
+            "vendored_sources_absent": True,
         },
         "site_owned_standalone_documents": {
             "theme_shell_exemptions": theme_shell_exemptions,

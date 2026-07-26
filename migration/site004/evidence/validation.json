@@ -1920,7 +1920,7 @@
       },
       "theme_commit": "027a170ac6c8288347de5353569a089c526afae2",
       "vendored_theme_configured": false,
-      "vendored_theme_present": true
+      "vendored_theme_present": false
     },
     "output": {
       "assets": {
@@ -2042,7 +2042,7 @@
       "inactive_legacy_theme": {
         "active_references": [],
         "copied_assets": [],
-        "vendored_sources_preserved": true
+        "vendored_sources_absent": true
       },
       "metadata": {
         "records": [
