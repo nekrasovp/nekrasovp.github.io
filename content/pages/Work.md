@@ -1,0 +1,86 @@
+Title: Work
+Description: Selected engineering leadership, backend architecture, high-load systems, and open-source projects by Pavel Nekrasov.
+Lang: en
+URL: work/
+Save_as: work/index.html
+Template: site004_page
+Site004_kind: work
+Site004_document_title: Work — Pavel Nekrasov
+Site004_og_type: website
+Site004_og_title: Work — Pavel Nekrasov
+Site004_og_description: Hands-on technical leadership across backend platforms, high-load systems, product development, and engineering operations.
+Site004_social_image_alt: Pavel Nekrasov — Tech Lead and Backend/Platform Engineer
+
+<section class="page-hero container">
+  <p class="eyebrow">Selected work</p>
+  <h1>Engineering leadership that stays connected to implementation.</h1>
+  <p class="lede">I work across architecture, backend development, technical-debt strategy, hiring, delivery systems, and product discovery. This is a selective record of outcomes, not a complete CV.</p>
+</section>
+
+<section class="section" id="navio">
+  <div class="container">
+    <div class="metrics">
+      <div class="metric"><strong>30–60%</strong><span>hands-on coding time in leadership roles</span></div>
+      <div class="metric"><strong>20</strong><span>engineers including contractors; around 10 in direct team scope</span></div>
+      <div class="metric"><strong>50–80</strong><span>cross-functional workflow scope in an active AI pilot</span></div>
+      <div class="metric"><strong>100+</strong><span>backend interviews conducted</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">Experience</p><h2>Roles and outcomes.</h2></div>
+      <p class="section-intro">The titles changed as the organization and product changed. The through-line is ownership: architecture, engineering quality, hiring, and the system used to turn product intent into reliable software.</p>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item">
+        <div class="timeline-date">Mar 2025 — Present</div>
+        <div class="timeline-copy">
+          <h3>Navio · Tech Lead</h3>
+          <p>Lead backend architecture and technical direction across evolving automotive platforms while spending approximately 30–60% of time on hands-on implementation. Own architecture review, service patterns, CODEOWNERS, and technical-debt planning across service estates growing from roughly 30 to 100 services.</p>
+          <p>Lead an active AI-assisted SDLC/PDLC pilot covering Jira automation, document review, PRD and FR/NFR consistency, and DoR/DoD checks with human-controlled decisions.</p>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-date">Apr 2024 — Feb 2025</div>
+        <div class="timeline-copy">
+          <h3>Navio · Backend Team Lead</h3>
+          <p>Led backend delivery for up to 20 engineers including external contractors, with around 10 backend engineers in direct management scope. Owned backend hiring, goal setting, performance reviews, release coordination, and technical-debt planning while remaining involved in implementation and production support.</p>
+          <p>Standardized logging, metrics, and tracing through shared Python libraries and middleware, improving production diagnostics and service onboarding consistency.</p>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-date">Jun 2022 — Apr 2024</div>
+        <div class="timeline-copy">
+          <h3>Ruform / RUTUBE ecosystem · Backend Developer</h3>
+          <p>Developed internal tools, an ELK-oriented logging library, CIDR filtering integrated with Kubernetes/WAF, and high-load proxy services for search, suggestions, and recommendations. Proxy traffic peaked around 30k RPS.</p>
+          <p>Worked in a team continuously improving the company SDLC: clarifying DoR/DoD, reducing requirement returns, and making releases and ownership more predictable.</p>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-date">2020 — 2022 · part-time</div>
+        <div class="timeline-copy">
+          <h3>MyOpenTour · Co-founder, CTO, Backend &amp; DevOps</h3>
+          <p>Owned the technical side of an invested travel startup: architecture, backend, infrastructure, delivery, and management of two frontend engineers within a team that reached seven people.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">Open source</p><h2>Selected public engineering.</h2></div>
+      <p class="section-intro">Public repositories are useful when they demonstrate a decision: performance, type design, deployment shape, security boundaries, or the operating ergonomics around a system.</p>
+    </div>
+    <div class="grid grid-2">
+      <article class="card"><div class="card-kicker">Python · Performance</div><h3>fastuuid7</h3><p>RFC 9562 UUIDv7 with fork safety, CSPRNG-backed monotonicity, typed APIs, and native batch performance.</p><a class="card-link" href="https://github.com/nekrasovp/uuidv7">GitHub →</a></article>
+      <article class="card"><div class="card-kicker">SDK · Market data</div><h3>predxt</h3><p>Typed websocket clients for prediction-market venues and a foundation for higher-level product workflows.</p><a class="card-link" href="https://github.com/hzprotocol/predxt">GitHub →</a></article>
+      <article class="card"><div class="card-kicker">Security architecture</div><h3>FastAPI + OPA</h3><p>A deployable authorization reference using a sidecar policy engine, Rego policies, and Kubernetes.</p><a class="card-link" href="https://github.com/nekrasovp/fastapi-with-opa-on-kubernetes">GitHub →</a></article>
+      <article class="card"><div class="card-kicker">Engineering automation</div><h3>Telegram release notifications</h3><p>A zero-dependency GitHub Action for release notifications, built around Bash, curl, and explicit operational limits.</p><a class="card-link" href="https://github.com/nekrasovp/telegram-release-notify">GitHub →</a></article>
+    </div>
+  </div>
+</section>

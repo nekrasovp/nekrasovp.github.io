@@ -1,0 +1,29 @@
+{% extends "!theme/base.html" %}
+{% set site004_kind = "404" %}
+
+{% block title %}Page not found — Pavel Nekrasov{% endblock title %}
+{% block body_class %}{{ super() }} site004-page site004-404{% endblock body_class %}
+{% block page_class %}{{ super() }} site004-main{% endblock page_class %}
+{% block head_meta %}
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/images/logo2.png">
+{% endblock head_meta %}
+{% block canonical %}{% endblock canonical %}
+{% block structured_data %}{% endblock structured_data %}
+{% block head_styles %}
+  {{ super() }}
+  {% include "site004/includes/styles.html" %}
+{% endblock head_styles %}
+{% block site_header %}{% include "site004/includes/header.html" %}{% endblock site_header %}
+{% block content %}
+  <section class="page-hero container">
+    <p class="eyebrow">404 · Page not found</p>
+    <h1>This route no longer leads anywhere.</h1>
+    <p class="lede">The page may have moved during the site update. The writing archive still contains the original articles and their URLs.</p>
+    <div class="actions">
+      <a class="button button-primary" href="/">Go to the homepage</a>
+      <a class="button button-secondary" href="/writing/">Browse writing</a>
+    </div>
+  </section>
+{% endblock content %}
+{% block site_footer %}{% include "site004/includes/footer.html" %}{% endblock site_footer %}

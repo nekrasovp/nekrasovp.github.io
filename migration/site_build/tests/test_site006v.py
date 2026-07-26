@@ -1,10 +1,22 @@
 from __future__ import annotations
 
+import importlib.util
 import re
+import sys
 import tomllib
 from pathlib import Path
 
+import pytest
+from bs4 import BeautifulSoup
+
 REPO_ROOT = Path(__file__).resolve().parents[3]
+VALIDATOR = REPO_ROOT / "migration/site006v/validate.py"
+spec = importlib.util.spec_from_file_location("site006v_validate", VALIDATOR)
+assert spec and spec.loader
+site006v = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = site006v
+spec.loader.exec_module(site006v)
+
 THEME_COMMIT = "027a170ac6c8288347de5353569a089c526afae2"
 THEME_REPOSITORY = "https://github.com/nekrasovp/pelican-engineering-theme.git"
 THEME_REQUIREMENT = (
@@ -98,3 +110,30 @@ def test_browser_matrix_keeps_the_wide_table_case_and_single_focus_label() -> No
 
     assert browser_validator.count("WIDE_TABLE_ROUTE") >= 6
     assert browser_validator.count("ariaLabel:") == 1
+
+
+def test_only_site004_redirects_are_exempt_from_the_theme_shell() -> None:
+    minimal = BeautifulSoup("<!doctype html><html><body></body></html>", "html.parser")
+    assert site006v.THEMELESS_REDIRECT_ROUTES == {
+        "pages/about.html",
+        "pages/services.html",
+    }
+    for route in site006v.THEMELESS_REDIRECT_ROUTES:
+        assert site006v._validate_theme_shell(route, minimal) is False
+
+    with pytest.raises(RuntimeError, match="does not use the packaged theme loader"):
+        site006v._validate_theme_shell("pages/third-redirect.html", minimal)
+
+
+def test_site004_redirect_exemption_rejects_an_inherited_theme_shell() -> None:
+    themed = BeautifulSoup(
+        (
+            '<html><body class="pet-shell">'
+            '<main id="main-content" tabindex="-1"></main>'
+            '<script data-pet-theme-loader></script>'
+            "</body></html>"
+        ),
+        "html.parser",
+    )
+    with pytest.raises(RuntimeError, match="not a minimal standalone redirect"):
+        site006v._validate_theme_shell("pages/about.html", themed)

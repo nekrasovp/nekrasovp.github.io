@@ -1,0 +1,11 @@
+<footer class="pet-site-footer site004-footer">
+  <div class="pet-container pet-site-footer__inner">
+    <span>© 2026 {% if site004_kind == "ru" %}Павел{% else %}Pavel{% endif %} Nekrasov</span>
+    <nav class="site004-footer-links" aria-label="{% if site004_kind == "ru" %}Ссылки в подвале{% else %}Footer links{% endif %}">
+      <a href="https://github.com/nekrasovp">GitHub</a>
+      <a href="https://www.linkedin.com/in/nekrasovp/">LinkedIn</a>
+      <a href="https://t.me/def12">Telegram</a>
+      {% if site004_kind != "404" %}<a href="mailto:nekrasovp@gmail.com">Email</a>{% endif %}
+    </nav>
+  </div>
+</footer>

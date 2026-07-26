@@ -1,0 +1,552 @@
+{
+  "contract": "nekrasovp-site004-pages.v1",
+  "frozen_provenance": {
+    "production_commit": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce",
+    "site_base_commit": "2f91ab0fe347e8c7bc26fa08943d068397ca83a7",
+    "theme_commit": "027a170ac6c8288347de5353569a089c526afae2"
+  },
+  "outputs": [
+    {
+      "baseline_sha256": "c608727aa902fad1f9fba916d32c12c44a7692c7e99d9e1b619289f903f4ccaa",
+      "canonical": "https://nekrasovp.ru/",
+      "content_hrefs": [
+        "/about/",
+        "/ai-native-sdlc-engineering-accountability.html",
+        "/logistics-lessons-for-distributed-systems.html",
+        "/technical-debt-as-a-portfolio.html",
+        "/work/",
+        "/work/#navio",
+        "/writing/",
+        "https://github.com/hzprotocol/predxt",
+        "https://github.com/nekrasovp",
+        "https://github.com/nekrasovp/dash-auth-flask-nginx",
+        "https://github.com/nekrasovp/fastapi-with-opa-on-kubernetes",
+        "https://github.com/nekrasovp/uuidv7"
+      ],
+      "content_text_sha256": "dde9cad63630c746194309ba034f7cb0dbee66790a68ffa98a0835a2da581599",
+      "description": "Pavel Nekrasov is a Tech Lead and staff-level backend/platform engineer building distributed systems, engineering platforms, and delivery workflows.",
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "headings": [
+        "I build the product, the platform, and the engineering system around it.",
+        "Code, architecture, and the operating model.",
+        "Technical leadership for automotive platforms",
+        "Reusable foundations for production services",
+        "Practical tools and reference architectures",
+        "Evidence, not a technology inventory.",
+        "fastuuid7",
+        "predxt",
+        "FastAPI + OPA on Kubernetes",
+        "Dash authentication stack",
+        "Engineering informed by operations.",
+        "Notes from building and operating systems.",
+        "Technical Debt as a Portfolio",
+        "AI-Native SDLC Without Losing Accountability",
+        "What Logistics Taught Me About Distributed Systems"
+      ],
+      "hreflang": {
+        "en": "https://nekrasovp.ru/",
+        "ru": "https://nekrasovp.ru/ru/",
+        "x-default": "https://nekrasovp.ru/"
+      },
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "jobTitle": "Tech Lead and Backend/Platform Engineer",
+          "knowsAbout": [
+            "Backend architecture",
+            "Distributed systems",
+            "Platform engineering",
+            "Engineering leadership",
+            "SDLC automation",
+            "Supply chain and logistics"
+          ],
+          "name": "Pavel Nekrasov",
+          "sameAs": [
+            "https://github.com/nekrasovp",
+            "https://www.linkedin.com/in/nekrasovp/",
+            "https://t.me/def12"
+          ],
+          "url": "https://nekrasovp.ru/"
+        }
+      ],
+      "kind": "home",
+      "lang": "en",
+      "navigation_hrefs": [
+        "/",
+        "/about/",
+        "/ru/",
+        "/work/",
+        "/writing/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {
+        "og:description": "Python backend architecture, platform engineering, technical leadership, and systems that work under real operational constraints.",
+        "og:image": "https://nekrasovp.ru/images/social-preview.png",
+        "og:image:alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "og:image:height": "630",
+        "og:image:width": "1200",
+        "og:title": "Pavel Nekrasov — Tech Lead & Backend/Platform Engineer",
+        "og:type": "website",
+        "og:url": "https://nekrasovp.ru/"
+      },
+      "output": "index.html",
+      "owner": "templates/index.html",
+      "robots": null,
+      "route": "/",
+      "title": "Pavel Nekrasov — Tech Lead & Backend/Platform Engineer",
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://nekrasovp.ru/images/social-preview.png"
+      }
+    },
+    {
+      "baseline_sha256": "971fdb150633d5873e1d7f75cdc289f858d731d980fbe9b2d5f32aa1252153a1",
+      "canonical": "https://nekrasovp.ru/ru/",
+      "content_hrefs": [
+        "#experience",
+        "/retrospective-template.html",
+        "/technical-debt-examples.html",
+        "/what-is-technical-debt.html",
+        "/writing/",
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "content_text_sha256": "0b8a0a9162b5b192fa4535316ec7013841a07df1edca328222b99ddc9c57763f",
+      "description": "Tech Lead и senior Python backend/platform engineer: архитектура распределённых систем, инженерные платформы, техническое лидерство и SDLC.",
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "headings": [
+        "Строю backend-системы, платформы и инженерные процессы.",
+        "Архитектура, поставка и эксплуатация.",
+        "Платформы из десятков сервисов",
+        "Команда и инженерная система",
+        "Защита production-прокси",
+        "Роли и ожидаемые результаты.",
+        "Navio · Tech Lead",
+        "Navio · Backend Team Lead",
+        "Ruform / экосистема RUTUBE · Backend Developer",
+        "MyOpenTour · Сооснователь, CTO, Backend и DevOps",
+        "Backend и quantitative engineering",
+        "Логистика, торговля и сложные цепочки поставок.",
+        "Инженерная практика без лишней теории.",
+        "Примеры технического долга",
+        "Что такое технический долг?",
+        "Шаблон ретроспективы",
+        "Готов обсуждать сложные продуктовые и инженерные задачи."
+      ],
+      "hreflang": {
+        "en": "https://nekrasovp.ru/",
+        "ru": "https://nekrasovp.ru/ru/",
+        "x-default": "https://nekrasovp.ru/"
+      },
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "jobTitle": "Tech Lead и Backend/Platform Engineer",
+          "knowsAbout": [
+            "Python backend",
+            "Архитектура распределённых систем",
+            "Platform engineering",
+            "Техническое лидерство",
+            "SDLC",
+            "Логистика и управление цепями поставок"
+          ],
+          "knowsLanguage": [
+            "ru",
+            "en"
+          ],
+          "name": "Павел Некрасов",
+          "sameAs": [
+            "https://github.com/nekrasovp",
+            "https://www.linkedin.com/in/nekrasovp/",
+            "https://t.me/def12"
+          ],
+          "url": "https://nekrasovp.ru/ru/"
+        }
+      ],
+      "kind": "ru",
+      "lang": "ru",
+      "navigation_hrefs": [
+        "#background",
+        "#experience",
+        "#results",
+        "#writing",
+        "/",
+        "/ru/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {
+        "og:description": "Архитектура, Python backend, инженерные платформы и техническое лидерство с опорой на реальную эксплуатацию.",
+        "og:image": "https://nekrasovp.ru/images/social-preview.png",
+        "og:image:alt": "Павел Некрасов — Tech Lead и Backend/Platform Engineer",
+        "og:image:height": "630",
+        "og:image:width": "1200",
+        "og:locale": "ru_RU",
+        "og:title": "Павел Некрасов — Tech Lead и Backend/Platform Engineer",
+        "og:type": "profile",
+        "og:url": "https://nekrasovp.ru/ru/"
+      },
+      "output": "ru/index.html",
+      "owner": "content/pages/Ru.md",
+      "robots": null,
+      "route": "/ru/",
+      "source_metadata": {
+        "description": "Tech Lead и senior Python backend/platform engineer: архитектура распределённых систем, инженерные платформы, техническое лидерство и SDLC.",
+        "lang": "ru",
+        "save_as": "ru/index.html",
+        "site004_document_title": "Павел Некрасов — Tech Lead, Python Backend и Platform Engineering",
+        "site004_kind": "ru",
+        "site004_og_description": "Архитектура, Python backend, инженерные платформы и техническое лидерство с опорой на реальную эксплуатацию.",
+        "site004_og_locale": "ru_RU",
+        "site004_og_title": "Павел Некрасов — Tech Lead и Backend/Platform Engineer",
+        "site004_og_type": "profile",
+        "site004_social_image_alt": "Павел Некрасов — Tech Lead и Backend/Platform Engineer",
+        "template": "site004_page",
+        "title": "Павел Некрасов",
+        "url": "ru/"
+      },
+      "title": "Павел Некрасов — Tech Lead, Python Backend и Platform Engineering",
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://nekrasovp.ru/images/social-preview.png"
+      }
+    },
+    {
+      "baseline_sha256": "c9cc20b3dd025e9171c86b073ae34fb27988f5caa8581b5e46ab18ac2b9f41d4",
+      "canonical": "https://nekrasovp.ru/work/",
+      "content_hrefs": [
+        "https://github.com/hzprotocol/predxt",
+        "https://github.com/nekrasovp/fastapi-with-opa-on-kubernetes",
+        "https://github.com/nekrasovp/telegram-release-notify",
+        "https://github.com/nekrasovp/uuidv7"
+      ],
+      "content_text_sha256": "e17b1081d555f480cb98a61ccd61dd38e08202f97f69813b6dbdb1d2c9b89e9a",
+      "description": "Selected engineering leadership, backend architecture, high-load systems, and open-source projects by Pavel Nekrasov.",
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "headings": [
+        "Engineering leadership that stays connected to implementation.",
+        "Roles and outcomes.",
+        "Navio · Tech Lead",
+        "Navio · Backend Team Lead",
+        "Ruform / RUTUBE ecosystem · Backend Developer",
+        "MyOpenTour · Co-founder, CTO, Backend & DevOps",
+        "Selected public engineering.",
+        "fastuuid7",
+        "predxt",
+        "FastAPI + OPA",
+        "Telegram release notifications"
+      ],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "work",
+      "lang": "en",
+      "navigation_hrefs": [
+        "/",
+        "/about/",
+        "/ru/#experience",
+        "/work/",
+        "/writing/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {
+        "og:description": "Hands-on technical leadership across backend platforms, high-load systems, product development, and engineering operations.",
+        "og:image": "https://nekrasovp.ru/images/social-preview.png",
+        "og:image:alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "og:image:height": "630",
+        "og:image:width": "1200",
+        "og:title": "Work — Pavel Nekrasov",
+        "og:type": "website",
+        "og:url": "https://nekrasovp.ru/work/"
+      },
+      "output": "work/index.html",
+      "owner": "content/pages/Work.md",
+      "robots": null,
+      "route": "/work/",
+      "source_metadata": {
+        "description": "Selected engineering leadership, backend architecture, high-load systems, and open-source projects by Pavel Nekrasov.",
+        "lang": "en",
+        "save_as": "work/index.html",
+        "site004_document_title": "Work — Pavel Nekrasov",
+        "site004_kind": "work",
+        "site004_og_description": "Hands-on technical leadership across backend platforms, high-load systems, product development, and engineering operations.",
+        "site004_og_title": "Work — Pavel Nekrasov",
+        "site004_og_type": "website",
+        "site004_social_image_alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "template": "site004_page",
+        "title": "Work",
+        "url": "work/"
+      },
+      "title": "Work — Pavel Nekrasov",
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://nekrasovp.ru/images/social-preview.png"
+      }
+    },
+    {
+      "baseline_sha256": "7078249ac0fdaabd816493f6409e5c4c9f5ac364d4e0555383de3d43fa15aec4",
+      "canonical": "https://nekrasovp.ru/writing/",
+      "content_hrefs": [
+        "/ai-native-delivery-contract.html",
+        "/ai-native-sdlc-engineering-accountability.html",
+        "/archives.html",
+        "/feeds/all.atom.xml",
+        "/logistics-distributed-systems-case-study.html",
+        "/logistics-lessons-for-distributed-systems.html",
+        "/mysql-server-errors.html",
+        "/python-poetry-docker.html",
+        "/technical-debt-as-a-portfolio.html",
+        "/technical-debt-examples.html",
+        "/technical-debt-portfolio-register.html",
+        "/what-is-technical-debt.html"
+      ],
+      "content_text_sha256": "db34b02fc7354efcf50c7c327fc00d02cf83fe229a68ad7a0f80244a2eb18be0",
+      "description": "Writing by Pavel Nekrasov about backend architecture, technical debt, engineering leadership, platform engineering, and operations.",
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "headings": [
+        "Notes from building and operating systems.",
+        "Engineering practice.",
+        "Technical Debt as a Portfolio",
+        "AI-Native SDLC Without Losing Accountability",
+        "What Logistics Taught Me About Distributed Systems",
+        "Examples of technical debt",
+        "What is technical debt?",
+        "Python app with Poetry and Docker",
+        "MySQL server has gone away",
+        "Use the operating models."
+      ],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "writing",
+      "lang": "en",
+      "navigation_hrefs": [
+        "/",
+        "/about/",
+        "/ru/#writing",
+        "/work/",
+        "/writing/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {
+        "og:description": "Notes from building and operating backend systems, engineering organizations, and products.",
+        "og:image": "https://nekrasovp.ru/images/social-preview.png",
+        "og:image:alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "og:image:height": "630",
+        "og:image:width": "1200",
+        "og:title": "Writing — Pavel Nekrasov",
+        "og:type": "website",
+        "og:url": "https://nekrasovp.ru/writing/"
+      },
+      "output": "writing/index.html",
+      "owner": "content/pages/Writing.md",
+      "robots": null,
+      "route": "/writing/",
+      "source_metadata": {
+        "description": "Writing by Pavel Nekrasov about backend architecture, technical debt, engineering leadership, platform engineering, and operations.",
+        "lang": "en",
+        "save_as": "writing/index.html",
+        "site004_document_title": "Writing — Pavel Nekrasov",
+        "site004_kind": "writing",
+        "site004_og_description": "Notes from building and operating backend systems, engineering organizations, and products.",
+        "site004_og_title": "Writing — Pavel Nekrasov",
+        "site004_og_type": "website",
+        "site004_social_image_alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "template": "site004_page",
+        "title": "Writing",
+        "url": "writing/"
+      },
+      "title": "Writing — Pavel Nekrasov",
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://nekrasovp.ru/images/social-preview.png"
+      }
+    },
+    {
+      "baseline_sha256": "acf4960e4e30ab3f47ddc1d8e3df84070da1736aca8eea950c9eba63d92454f0",
+      "canonical": "https://nekrasovp.ru/about/",
+      "content_hrefs": [
+        "https://t.me/def12",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "content_text_sha256": "056946bc5308497a49d62b73a881d5c92fa631f5a26f83c6352fc531e13d6397",
+      "description": "The path from logistics operator to Tech Lead, backend/platform engineer, and product builder.",
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "mailto:nekrasovp@gmail.com"
+      ],
+      "headings": [
+        "I learned systems through operations before I learned them through code.",
+        "Technical depth with operating context.",
+        "Logistics, trade, and difficult supply chains.",
+        "MBA — Logistics & Supply Chain Management",
+        "Moscow · remote-friendly",
+        "Platform, product, and technical leadership",
+        "Meaningful technical and product conversations are welcome."
+      ],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "about",
+      "lang": "en",
+      "navigation_hrefs": [
+        "/",
+        "/about/",
+        "/ru/#background",
+        "/work/",
+        "/writing/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {
+        "og:description": "Engineering leadership grounded in hands-on code, business ownership, logistics, and real operating constraints.",
+        "og:image": "https://nekrasovp.ru/images/social-preview.png",
+        "og:image:alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "og:image:height": "630",
+        "og:image:width": "1200",
+        "og:title": "About Pavel Nekrasov",
+        "og:type": "profile",
+        "og:url": "https://nekrasovp.ru/about/"
+      },
+      "output": "about/index.html",
+      "owner": "content/pages/About.md",
+      "robots": null,
+      "route": "/about/",
+      "source_metadata": {
+        "description": "The path from logistics operator to Tech Lead, backend/platform engineer, and product builder.",
+        "lang": "en",
+        "save_as": "about/index.html",
+        "site004_document_title": "About — Pavel Nekrasov",
+        "site004_kind": "about",
+        "site004_og_description": "Engineering leadership grounded in hands-on code, business ownership, logistics, and real operating constraints.",
+        "site004_og_title": "About Pavel Nekrasov",
+        "site004_og_type": "profile",
+        "site004_social_image_alt": "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer",
+        "template": "site004_page",
+        "title": "About",
+        "url": "about/"
+      },
+      "title": "About — Pavel Nekrasov",
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://nekrasovp.ru/images/social-preview.png"
+      }
+    },
+    {
+      "baseline_sha256": "9698226ef15c9a982a61c1249a4575e5c370ddc68626f5b6cc1c3c025f7e2b84",
+      "canonical": null,
+      "content_hrefs": [
+        "/",
+        "/writing/"
+      ],
+      "content_text_sha256": "b0572ae457c05efe31adc0bdb1169932900c47b7c7244b178ff22f6ac0cac4bf",
+      "description": null,
+      "footer_hrefs": [
+        "https://github.com/nekrasovp",
+        "https://t.me/def12",
+        "https://www.linkedin.com/in/nekrasovp/"
+      ],
+      "headings": [
+        "This route no longer leads anywhere."
+      ],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "404",
+      "lang": "en",
+      "navigation_hrefs": [
+        "/",
+        "/about/",
+        "/ru/",
+        "/work/",
+        "/writing/",
+        "https://github.com/nekrasovp"
+      ],
+      "og": {},
+      "output": "404.html",
+      "owner": "templates/site004/404.html",
+      "robots": "noindex",
+      "route": "/404.html",
+      "title": "Page not found — Pavel Nekrasov",
+      "twitter": {}
+    },
+    {
+      "baseline_sha256": "7e2be1a8623050eb5035ddc3c72a108f58a8cd94f7419762d9ccdd189f75d9df",
+      "canonical": "https://nekrasovp.ru/about/",
+      "content_hrefs": [
+        "/about/"
+      ],
+      "content_text_sha256": "b0660148920046505a81c712256de2168f6cf68fd07dae8c6e42df1ec44b4b7b",
+      "description": null,
+      "footer_hrefs": [],
+      "headings": [],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "redirect",
+      "lang": "en",
+      "navigation_hrefs": [],
+      "og": {},
+      "output": "pages/about.html",
+      "owner": "templates/site004/redirect-about.html",
+      "redirect_target": "/about/",
+      "robots": "noindex, follow",
+      "route": "/pages/about.html",
+      "title": "About — Pavel Nekrasov",
+      "twitter": {}
+    },
+    {
+      "baseline_sha256": "ca1ce9410f2a149002a158406858d4c1e3dee389d1b20857d8868cf38049dc7a",
+      "canonical": "https://nekrasovp.ru/work/",
+      "content_hrefs": [
+        "/work/"
+      ],
+      "content_text_sha256": "409e2be000c03306f8346f971a9e44daef9c4f12b5bdfd0e96d77cda6c5d8892",
+      "description": null,
+      "footer_hrefs": [],
+      "headings": [],
+      "hreflang": {},
+      "jsonld": [],
+      "kind": "redirect",
+      "lang": "en",
+      "navigation_hrefs": [],
+      "og": {},
+      "output": "pages/services.html",
+      "owner": "templates/site004/redirect-services.html",
+      "redirect_target": "/work/",
+      "robots": "noindex, follow",
+      "route": "/pages/services.html",
+      "title": "Work — Pavel Nekrasov",
+      "twitter": {}
+    }
+  ],
+  "required_generated_routes": [
+    "/ai-native-delivery-contract.html",
+    "/ai-native-sdlc-engineering-accountability.html",
+    "/logistics-distributed-systems-case-study.html",
+    "/logistics-lessons-for-distributed-systems.html",
+    "/technical-debt-as-a-portfolio.html",
+    "/technical-debt-examples.html",
+    "/technical-debt-portfolio-register.html",
+    "/what-is-technical-debt.html"
+  ]
+}

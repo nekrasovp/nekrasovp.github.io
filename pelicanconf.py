@@ -84,6 +84,11 @@ STATIC_PATHS = [
 # Theme path
 THEME = str(get_theme_path())
 THEME_TEMPLATES_OVERRIDES = [str(REPO_ROOT / 'templates')]
+TEMPLATE_PAGES = {
+    'site004/404.html': '404.html',
+    'site004/redirect-about.html': 'pages/about.html',
+    'site004/redirect-services.html': 'pages/services.html',
+}
 
 MARKUP = ('md', 'ipynb')
 

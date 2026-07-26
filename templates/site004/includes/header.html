@@ -1,0 +1,30 @@
+<header class="pet-site-header site004-header">
+  <div class="pet-container pet-site-header__inner">
+    <a class="pet-brand" href="{% if site004_kind == "ru" %}/ru/{% else %}/{% endif %}"{% if site004_kind in ("home", "ru") %} aria-current="page"{% endif %}>
+      {% if site004_kind == "ru" %}Павел{% else %}Pavel{% endif %} Nekrasov
+    </a>
+    <nav class="pet-navigation" aria-label="{% if site004_kind == "ru" %}Основная навигация{% else %}Main navigation{% endif %}">
+      <ul class="pet-navigation__list">
+        {% if site004_kind == "ru" %}
+          <li><a href="#results">Результаты</a></li>
+          <li><a href="#experience">Опыт</a></li>
+          <li><a href="#background">Бэкграунд</a></li>
+          <li><a href="#writing">Статьи</a></li>
+          <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+          <li><a class="pet-language-link" href="/" lang="en" hreflang="en">EN</a></li>
+        {% else %}
+          <li><a href="/work/"{% if site004_kind == "work" %} aria-current="page"{% endif %}>Work</a></li>
+          <li><a href="/writing/"{% if site004_kind == "writing" %} aria-current="page"{% endif %}>Writing</a></li>
+          <li><a href="/about/"{% if site004_kind == "about" %} aria-current="page"{% endif %}>About</a></li>
+          <li><a href="https://github.com/nekrasovp">GitHub</a></li>
+          <li>
+            <a class="pet-language-link"
+               href="{% if site004_kind == "work" %}/ru/#experience{% elif site004_kind == "writing" %}/ru/#writing{% elif site004_kind == "about" %}/ru/#background{% else %}/ru/{% endif %}"
+               lang="ru" hreflang="ru">RU</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% include "includes/theme-toggle.html" %}
+  </div>
+</header>
