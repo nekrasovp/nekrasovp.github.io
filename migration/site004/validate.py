@@ -493,6 +493,7 @@ def _resolve_anchor(
     output_root: Path,
     source_output: str,
     href: str,
+    check_fragment: bool = True,
 ) -> None:
     split = urlsplit(href)
     if split.scheme in {"mailto", "tel"}:
@@ -519,7 +520,7 @@ def _resolve_anchor(
         raise Site004UnresolvedLink(
             source_output, f"href={href!r} expected_output={target_output!r}"
         )
-    if split.fragment and target.suffix == ".html":
+    if check_fragment and split.fragment and target.suffix == ".html":
         soup = BeautifulSoup(target.read_bytes(), "html.parser")
         if soup.find(id=unquote(split.fragment)) is None:
             raise Site004UnresolvedLink(
@@ -543,6 +544,7 @@ def validate_internal_links(
             "required_generated_routes", f"missing={missing_required!r}"
         )
     checked_documents = {record.output for record in manifest.outputs} | required_outputs
+    site004_outputs = {record.output for record in manifest.outputs}
     checked_links = 0
     for source_output in sorted(checked_documents):
         source = output_root / source_output
@@ -555,6 +557,7 @@ def validate_internal_links(
                 output_root=output_root,
                 source_output=source_output,
                 href=href,
+                check_fragment=source_output in site004_outputs,
             )
             checked_links += 1
     return {

@@ -92,9 +92,11 @@ def test_manifest_enumerates_exactly_eight_outputs_and_required_routes() -> None
     assert len(manifest.required_generated_routes) == 8
 
 
-def test_preimplementation_tree_is_an_honest_red() -> None:
-    with pytest.raises((site004.MissingSite004Owner, Site004MetadataMismatch)):
-        validate_inventory()
+def test_current_inventory_has_one_explicit_writer_per_output() -> None:
+    evidence = validate_inventory()
+    assert evidence["outputs"] == 8
+    assert evidence["page_sources"] == 4
+    assert all(len(owners) == 1 for owners in evidence["writers"].values())
 
 
 def test_duplicate_output_writer_is_a_hard_error(tmp_path: Path) -> None:

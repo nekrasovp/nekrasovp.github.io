@@ -21,6 +21,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from migration.site003 import validate as site003_validation  # noqa: E402
+from migration.site004 import validate as site004_validation  # noqa: E402
 from migration.site005 import validate as site005_validation  # noqa: E402
 from migration.site006v import validate as site006v_validation  # noqa: E402
 
@@ -827,6 +828,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     _verify_site_base()
     notebooks = _validate_manifests()
     inventory = site003_validation.validate_inventory()
+    site004_inventory = site004_validation.validate_inventory()
     site005_inventory = site005_validation.validate_inventory()
     baseline_overlay = work_root / "site003-baseline-overlay.json"
     overlay_evidence = _write_site003_baseline_overlay(baseline_overlay)
@@ -848,6 +850,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     warning_ledgers: list[dict[str, int]] = []
     observations: list[dict[str, int]] = []
     rendered_contracts: list[dict[str, Any]] = []
+    site004_outputs: list[dict[str, Any]] = []
     theme_outputs: list[dict[str, Any]] = []
     site005_outputs: list[dict[str, Any]] = []
 
@@ -895,6 +898,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 manifest_path=FULL_MANIFEST,
             )
         )
+        site004_outputs.append(site004_validation.validate_rendered(output))
         theme_outputs.append(site006v_validation.output_evidence(output))
         site005_outputs.append(site005_validation.validate_output(output_root=output))
 
@@ -904,6 +908,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("the two warning ledgers differ")
     if rendered_contracts[0] != rendered_contracts[1]:
         raise RuntimeError("the two SITE-003 rendered contract reports differ")
+    if site004_outputs[0] != site004_outputs[1]:
+        raise RuntimeError("the two normalized SITE-004 output reports differ")
     if theme_outputs[0] != theme_outputs[1]:
         raise RuntimeError("the two normalized SITE-006V output reports differ")
     if site005_outputs[0] != site005_outputs[1]:
@@ -938,7 +944,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("isolated negative fixtures changed repository sources or status")
 
     result = {
-        "contract": "nekrasovp-site002v-site003-site005-site006v-validation.v4",
+        "contract": "nekrasovp-site002v-site003-site004-site005-site006v-validation.v5",
         "counts": publication["counts"],
         "dependency": {
             "direct_requirement": PLUGIN_REQUIREMENT,
@@ -976,6 +982,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "baseline_overlay": overlay_evidence,
             "inventory": inventory,
             "rendered": rendered_contracts[0],
+        },
+        "site004": {
+            "inventory": site004_inventory,
+            "output": site004_outputs[0],
         },
         "site005": {
             "inventory": site005_inventory,
@@ -1026,7 +1036,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     counts = evidence["counts"]
     print(
-        "Cumulative SITE-002V/SITE-003/SITE-005/SITE-006V validation passed twice: "
+        "Cumulative SITE-002V/SITE-003/SITE-004/SITE-005/SITE-006V "
+        "validation passed twice: "
         f"{counts['markdown']} Markdown + {counts['notebooks']} notebooks = "
         f"{counts['articles']} articles; {len(evidence['negative_gates'])} negative gates"
     )

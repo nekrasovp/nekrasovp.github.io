@@ -26,7 +26,20 @@
 {% endblock structured_data %}
 
 {% block content_header %}
-  {{ super() }}
+  {% if site005_material %}
+    <header class="pet-content-header">
+      <h1>{{ article.title | striptags | forceescape }}</h1>
+      <dl class="pet-content-metadata" aria-label="Content metadata">
+        <div>
+          <dt>Published</dt>
+          <dd><time datetime="{{ article.date.isoformat() | forceescape }}">{{ article.locale_date | forceescape }}</time></dd>
+        </div>
+        <div><dt>By</dt><dd>{{ article.author | forceescape }}</dd></div>
+      </dl>
+    </header>
+  {% else %}
+    {{ super() }}
+  {% endif %}
   <p class="site-content-language">
     <span data-site-language-code="{{ article.lang | forceescape }}"
           lang="{{ article.lang | forceescape }}">{% if article.lang == "ru" %}Русский{% else %}English{% endif %}</span>

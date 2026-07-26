@@ -1,0 +1,196 @@
+{% extends "!theme/index.html" %}
+{% set site004_kind = "home" %}
+{% set site004_description = "Pavel Nekrasov is a Tech Lead and staff-level backend/platform engineer building distributed systems, engineering platforms, and delivery workflows." %}
+{% set site004_canonical = "https://nekrasovp.ru/" %}
+{% set site004_og_type = "website" %}
+{% set site004_og_locale = "" %}
+{% set site004_og_title = "Pavel Nekrasov — Tech Lead & Backend/Platform Engineer" %}
+{% set site004_og_description = "Python backend architecture, platform engineering, technical leadership, and systems that work under real operational constraints." %}
+{% set site004_social_image_alt = "Pavel Nekrasov — Tech Lead and Backend/Platform Engineer" %}
+{% set site004_is_home = output_file | default("") == INDEX_SAVE_AS | default("index.html", true) %}
+
+{% block title %}{% if site004_is_home %}Pavel Nekrasov — Tech Lead &amp; Backend/Platform Engineer{% else %}{{ super() }}{% endif %}{% endblock title %}
+{% block body_class %}{{ super() }}{% if site004_is_home %} site004-page site004-home{% endif %}{% endblock body_class %}
+{% block page_class %}{{ super() }}{% if site004_is_home %} site004-main{% endif %}{% endblock page_class %}
+{% block head_meta %}{% if site004_is_home %}{% include "site004/includes/head-meta.html" %}{% else %}{{ super() }}{% endif %}{% endblock head_meta %}
+{% block canonical %}
+  {% if site004_is_home %}
+    <link rel="canonical" href="https://nekrasovp.ru/">
+    {% include "site004/includes/hreflang.html" %}
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock canonical %}
+{% block structured_data %}
+  {% if site004_is_home %}
+    {% set site004_person = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pavel Nekrasov",
+      "url": "https://nekrasovp.ru/",
+      "jobTitle": "Tech Lead and Backend/Platform Engineer",
+      "sameAs": [
+        "https://github.com/nekrasovp",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "https://t.me/def12"
+      ],
+      "knowsAbout": [
+        "Backend architecture",
+        "Distributed systems",
+        "Platform engineering",
+        "Engineering leadership",
+        "SDLC automation",
+        "Supply chain and logistics"
+      ]
+    } %}
+    <script type="application/ld+json">{{ site004_person | tojson }}</script>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock structured_data %}
+{% block head_styles %}
+  {{ super() }}
+  {% if site004_is_home %}{% include "site004/includes/styles.html" %}{% endif %}
+{% endblock head_styles %}
+{% block site_header %}{% if site004_is_home %}{% include "site004/includes/header.html" %}{% else %}{{ super() }}{% endif %}{% endblock site_header %}
+{% block content_header %}{% if not site004_is_home %}{{ super() }}{% endif %}{% endblock content_header %}
+{% block content %}
+{% if site004_is_home %}
+  <section class="hero container">
+    <div>
+      <p class="eyebrow">Engineering systems that survive real operations</p>
+      <h1>I build the product, the platform, and the engineering system around it.</h1>
+      <p class="lede">Tech Lead and staff-level backend/platform engineer working across distributed systems, delivery platforms, and technical leadership. I stay close to the code while building engineering practices that can scale.</p>
+      <div class="actions">
+        <a class="button button-primary" href="/work/">View selected work</a>
+        <a class="button button-secondary" href="/writing/">Read engineering notes</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Current focus">
+      <div class="monogram" aria-hidden="true">PN</div>
+      <div class="status-label">Current focus</div>
+      <p class="status-value">Navio · Backend/platform engineering · Open source</p>
+      <p class="status-note">Backend architecture, AI-assisted SDLC/PDLC pilots, engineering governance, and production Python.</p>
+    </aside>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="metrics" role="group" aria-label="Selected experience metrics">
+        <div class="metric"><strong>7+ years</strong><span>building backend and platform systems</span></div>
+        <div class="metric"><strong>20</strong><span>engineers including contractors; around 10 in direct team scope</span></div>
+        <div class="metric"><strong>≈100</strong><span>services under evolving architecture governance</span></div>
+        <div class="metric"><strong>30k RPS</strong><span>peak proxy workload in production</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="selected-work">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected work</p><h2>Code, architecture, and the operating model.</h2></div>
+        <p class="section-intro">My strongest work happens where product pressure, technical complexity, and organizational change meet. I combine hands-on engineering with explicit ownership of architecture, hiring, technical debt, and delivery practices.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-kicker">Navio</div>
+          <h3>Technical leadership for automotive platforms</h3>
+          <p>Backend architecture, engineering governance, technical-debt planning, hiring, and an active AI-assisted SDLC/PDLC pilot.</p>
+          <a class="card-link" href="/work/#navio">Role and outcomes →</a>
+        </article>
+        <article class="card">
+          <div class="card-kicker">Platform engineering</div>
+          <h3>Reusable foundations for production services</h3>
+          <p>Shared observability components, high-load proxy protections, service standards, and architecture practices that improve diagnostics and delivery.</p>
+          <a class="card-link" href="/work/">Backend and platform outcomes →</a>
+        </article>
+        <article class="card">
+          <div class="card-kicker">Open source</div>
+          <h3>Practical tools and reference architectures</h3>
+          <p>High-performance Python identifiers, typed SDKs, authentication starters, authorization patterns, and delivery automation.</p>
+          <a class="card-link" href="https://github.com/nekrasovp">View GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected engineering</p><h2>Evidence, not a technology inventory.</h2></div>
+        <p class="section-intro">These projects represent the kind of systems I enjoy: narrow interfaces, explicit operating constraints, measurable performance, and documentation that helps another engineer run the thing.</p>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-kicker">Python · RFC 9562</div>
+          <h3>fastuuid7</h3>
+          <p>A fork-safe, CSPRNG-backed UUIDv7 implementation with typed scalar and native batch APIs for Python 3.9–3.14.</p>
+          <a class="card-link" href="https://github.com/nekrasovp/uuidv7">Repository →</a>
+        </article>
+        <article class="card">
+          <div class="card-kicker">Prediction markets</div>
+          <h3>predxt</h3>
+          <p>Typed Python clients and infrastructure for building products across Polymarket, Kalshi, and Opinion market data.</p>
+          <a class="card-link" href="https://github.com/hzprotocol/predxt">Repository →</a>
+        </article>
+        <article class="card">
+          <div class="card-kicker">Authorization</div>
+          <h3>FastAPI + OPA on Kubernetes</h3>
+          <p>A production-oriented sidecar reference for fine-grained policy enforcement in API and microservice environments.</p>
+          <a class="card-link" href="https://github.com/nekrasovp/fastapi-with-opa-on-kubernetes">Repository →</a>
+        </article>
+        <article class="card">
+          <div class="card-kicker">Product starter</div>
+          <h3>Dash authentication stack</h3>
+          <p>A maintained Dash + Flask authentication starter with Nginx, Docker Compose, responsive UI, and secure password reset.</p>
+          <a class="card-link" href="https://github.com/nekrasovp/dash-auth-flask-nginx">Repository →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">The unusual advantage</p><h2>Engineering informed by operations.</h2></div>
+        <div class="prose">
+          <p>Before becoming a software engineer, I owned and operated businesses in logistics, supply, and trade — including complex deliveries to Russia's Far North.</p>
+          <p>That background changed how I see software. <strong>Architecture is an operating model.</strong> Reliability is a business property. Ownership, handoffs, lead time, and constraints matter as much in a codebase as they do in a supply chain.</p>
+          <p>I also hold an MBA in Logistics and Supply Chain Management from HSE University.</p>
+          <a class="button button-secondary" href="/about/">Read the full background</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Writing</p><h2>Notes from building and operating systems.</h2></div>
+        <p class="section-intro">Architecture, technical debt, platform engineering, AI-native delivery, product work, and the lessons that connect software to real-world operations.</p>
+      </div>
+      <div class="article-list">
+        <a class="article-item" href="/technical-debt-as-a-portfolio.html">
+          <span class="article-date">15 Jul 2026 · Series 1/3 · EN</span>
+          <div class="article-copy"><h3>Technical Debt as a Portfolio</h3><p>A practical operating model for risks, ownership, treatment, and recurring investment.</p></div>
+          <span class="article-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="article-item" href="/ai-native-sdlc-engineering-accountability.html">
+          <span class="article-date">15 Jul 2026 · Series 2/3 · EN</span>
+          <div class="article-copy"><h3>AI-Native SDLC Without Losing Accountability</h3><p>Bounded agent roles, explicit delivery contracts, review evidence, and human authority.</p></div>
+          <span class="article-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="article-item" href="/logistics-lessons-for-distributed-systems.html">
+          <span class="article-date">15 Jul 2026 · Series 3/3 · EN</span>
+          <div class="article-copy"><h3>What Logistics Taught Me About Distributed Systems</h3><p>Queues, handoffs, retries, buffers, observability, and recovery across real operating systems.</p></div>
+          <span class="article-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="actions"><a class="button button-secondary" href="/writing/">Writing and archive →</a></div>
+    </div>
+  </section>
+{% else %}
+  {{ super() }}
+{% endif %}
+{% endblock content %}
+{% block site_footer %}{% if site004_is_home %}{% include "site004/includes/footer.html" %}{% else %}{{ super() }}{% endif %}{% endblock site_footer %}

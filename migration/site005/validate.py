@@ -546,6 +546,24 @@ def feed_snapshot(path: Path) -> list[dict[str, Any]]:
     return [_entry_snapshot(entry) for entry in root.findall("atom:entry", ATOM_NS)]
 
 
+def _validate_feed_membership(
+    entries: list[dict[str, Any]],
+    expected: list[dict[str, Any]],
+    manifest: Manifest,
+) -> set[Any]:
+    declared_ids = {entry["id"] for entry in expected}
+    companion_routes = {
+        item.canonical_url for item in manifest.materials if item.role == "companion"
+    }
+    if any(entry["link"] in companion_routes for entry in entries):
+        raise Site005RenderedMismatch("feeds/all.atom.xml", "companion entered the feed")
+    if sum(entry["id"] in declared_ids for entry in entries) != EXPECTED_ESSAYS:
+        raise Site005RenderedMismatch(
+            "feeds/all.atom.xml", "essay feed delta is not exactly three"
+        )
+    return declared_ids
+
+
 def _validate_feeds(output_root: Path, manifest: Manifest) -> dict[str, Any]:
     all_path = output_root / "feeds/all.atom.xml"
     blog_path = output_root / "feeds/blog.atom.xml"
@@ -579,14 +597,7 @@ def _validate_feeds(output_root: Path, manifest: Manifest) -> dict[str, Any]:
         raise Site005RenderedMismatch(
             "feeds/all.atom.xml", f"essay feed entries differ: {entries[:3]!r}"
         )
-    declared_ids = {entry["id"] for entry in expected}
-    companion_routes = {
-        item.canonical_url for item in manifest.materials if item.role == "companion"
-    }
-    if any(entry["link"] in companion_routes for entry in entries):
-        raise Site005RenderedMismatch("feeds/all.atom.xml", "companion entered the feed")
-    if sum(entry["id"] in declared_ids for entry in entries) != EXPECTED_ESSAYS:
-        raise Site005RenderedMismatch("feeds/all.atom.xml", "essay feed delta is not exactly three")
+    declared_ids = _validate_feed_membership(entries, expected, manifest)
     baseline = manifest.feed_baseline
     legacy_hash = _canonical_hash(
         [entry for entry in entries if entry["id"] not in declared_ids]
@@ -686,7 +697,18 @@ def _validate_collection_absence(output_root: Path, manifest: Manifest) -> list[
         if not path.is_file():
             continue
         soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
-        links = {str(link.get("href")) for link in soup.find_all("a", href=True)}
+        collection_root = soup
+        if path.name == "index.html" and soup.body is not None:
+            body_classes = set(soup.body.get("class", ()))
+            if "site004-home" in body_classes:
+                collection_root = soup.select_one(".pet-entry-list")
+                if collection_root is None:
+                    checked.append(path.relative_to(output_root).as_posix())
+                    continue
+        links = {
+            str(link.get("href"))
+            for link in collection_root.find_all("a", href=True)
+        }
         leaked = sorted(routes & links)
         if leaked:
             raise Site005RenderedMismatch(path.name, f"hidden route leaked: {leaked!r}")

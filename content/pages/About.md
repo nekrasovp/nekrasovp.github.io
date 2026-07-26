@@ -1,10 +1,81 @@
 Title: About
+Description: The path from logistics operator to Tech Lead, backend/platform engineer, and product builder.
+Lang: en
+URL: about/
+Save_as: about/index.html
+Template: site004_page
+Site004_kind: about
+Site004_document_title: About — Pavel Nekrasov
+Site004_og_type: profile
+Site004_og_title: About Pavel Nekrasov
+Site004_og_description: Engineering leadership grounded in hands-on code, business ownership, logistics, and real operating constraints.
+Site004_social_image_alt: Pavel Nekrasov — Tech Lead and Backend/Platform Engineer
 
+<section class="page-hero container">
+  <p class="eyebrow">About</p>
+  <h1>I learned systems through operations before I learned them through code.</h1>
+  <p class="lede">Today I am a Tech Lead and staff-level backend/platform engineer. Before that, I built and ran logistics, supply, and trade businesses where abstract mistakes turned into missed deliveries, idle equipment, and real financial loss.</p>
+</section>
 
-![Photo](../images/ava_1_147x150.jpg)
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">How I work</p><h2>Technical depth with operating context.</h2></div>
+      <div class="prose">
+        <p>I write code deliberately — typically 30–60% of my time even in leadership roles — because architecture improves when decisions stay connected to implementation, debugging, and developer experience.</p>
+        <p>I also own the mechanisms around the code: hiring, architecture review, technical-debt planning, code ownership, engineering standards, and the continuous improvement of Definition of Ready and Definition of Done.</p>
+        <p>My goal is not process for its own sake. It is a delivery system where requirements are clearer, onboarding is faster, releases are more stable, and teams can see the actual state of work.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-#### Nekrasov Pavel is a Moscow based data science consultant who empowers companies to extract value from their data.
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">Before software</p><h2>Logistics, trade, and difficult supply chains.</h2></div>
+      <div class="prose">
+        <p>I owned LastMileLogistic in Moscow and worked as an owner, business developer, and executive across logistics and trading companies. My scope included sales, IT systems, warehouse operations, finance, service delivery, and small cross-functional teams.</p>
+        <p>Projects included northern deliveries to Pevek for gold-mining operations, export and complex trade, and supplying services, spare parts, and assemblies for trucks and special equipment.</p>
+        <p>This experience is still present in my engineering work: bottlenecks propagate, queues hide failure, handoffs need explicit contracts, and a locally optimal decision can damage the entire system.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-#### He built numerous data applications to automate solutions to problems involving recommendations, logistics, finance.
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      <article class="card">
+        <div class="card-kicker">Education</div>
+        <h3>MBA — Logistics &amp; Supply Chain Management</h3>
+        <p>HSE University. The formal layer behind years of operational supply-chain and business experience.</p>
+      </article>
+      <article class="card">
+        <div class="card-kicker">Location</div>
+        <h3>Moscow · remote-friendly</h3>
+        <p>Based in Moscow, open to relocation, with extensive experience working and communicating in English.</p>
+      </article>
+      <article class="card">
+        <div class="card-kicker">Collaboration</div>
+        <h3>Platform, product, and technical leadership</h3>
+        <p>Most useful when the role combines architecture, product context, hands-on engineering, and organizational change.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-#### Pavel earned Specialist degree in Computer Science, from Moscow Polytech. Then he get Master of Business Administration in Supply Chain Management, from Higher School of Economics.
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">Contact</p><h2>Meaningful technical and product conversations are welcome.</h2></div>
+      <div>
+        <p class="section-intro">The fastest way to understand my current work is through GitHub. For a direct conversation, use Telegram, LinkedIn, or email.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://t.me/def12">Telegram</a>
+          <a class="button button-secondary" href="mailto:nekrasovp@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

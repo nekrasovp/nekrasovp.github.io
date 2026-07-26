@@ -54,6 +54,12 @@ REQUIRED_THEME_ASSETS = {
     "theme/css/scaffold.css",
     "theme/js/theme.js",
 }
+THEMELESS_REDIRECT_ROUTES = frozenset(
+    {
+        "pages/about.html",
+        "pages/services.html",
+    }
+)
 
 
 def _sha256(path: Path) -> str:
@@ -265,6 +271,27 @@ def _urls_for(
     return values
 
 
+def _validate_theme_shell(route: str, soup: BeautifulSoup) -> bool:
+    """Require the shared shell except for SITE-004's two minimal redirects."""
+
+    if route in THEMELESS_REDIRECT_ROUTES:
+        if (
+            soup.select_one("script[data-pet-theme-loader]")
+            or soup.select_one("body.pet-shell")
+            or soup.select_one('main#main-content[tabindex="-1"]')
+        ):
+            raise RuntimeError(f"{route} is not a minimal standalone redirect")
+        return False
+    if not soup.select_one("script[data-pet-theme-loader]"):
+        raise RuntimeError(f"{route} does not use the packaged theme loader")
+    body = soup.find("body")
+    if not body or "pet-shell" not in (body.get("class") or []):
+        raise RuntimeError(f"{route} does not use the packaged theme shell")
+    if len(soup.select('main#main-content[tabindex="-1"]')) != 1:
+        raise RuntimeError(f"{route} lost the one focusable main target")
+    return True
+
+
 def output_evidence(output_root: Path) -> dict[str, Any]:
     """Collect deterministic routes, metadata, assets, and inactive-theme proof."""
 
@@ -276,17 +303,13 @@ def output_evidence(output_root: Path) -> dict[str, Any]:
     content_media_urls: set[str] = set()
     external_runtime: set[str] = set()
     legacy_references: set[str] = set()
+    theme_shell_exemptions: list[str] = []
     for path in html_files:
         route = path.relative_to(output_root).as_posix()
         text = path.read_text(encoding="utf-8")
         soup = BeautifulSoup(text, "html.parser")
-        if not soup.select_one("script[data-pet-theme-loader]"):
-            raise RuntimeError(f"{route} does not use the packaged theme loader")
-        body = soup.find("body")
-        if not body or "pet-shell" not in (body.get("class") or []):
-            raise RuntimeError(f"{route} does not use the packaged theme shell")
-        if len(soup.select('main#main-content[tabindex="-1"]')) != 1:
-            raise RuntimeError(f"{route} lost the one focusable main target")
+        if not _validate_theme_shell(route, soup):
+            theme_shell_exemptions.append(route)
         html = soup.find("html")
         metadata.append(
             {
@@ -375,6 +398,9 @@ def output_evidence(output_root: Path) -> dict[str, Any]:
             "active_references": [],
             "copied_assets": [],
             "vendored_sources_preserved": True,
+        },
+        "site_owned_standalone_documents": {
+            "theme_shell_exemptions": theme_shell_exemptions,
         },
         "metadata": {
             "records": metadata,

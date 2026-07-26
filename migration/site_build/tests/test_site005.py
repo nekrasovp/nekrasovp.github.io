@@ -3,6 +3,8 @@ import json
 import sys
 from pathlib import Path
 
+import pytest
+
 REPO_ROOT = Path(__file__).resolve().parents[3]
 MANIFEST = REPO_ROOT / "migration/site005/materials.json"
 VALIDATOR = REPO_ROOT / "migration/site005/validate.py"
@@ -13,6 +15,9 @@ sys.modules[spec.name] = site005
 spec.loader.exec_module(site005)
 
 UndeclaredSite005Source = site005.UndeclaredSite005Source
+Site005RenderedMismatch = site005.Site005RenderedMismatch
+validate_collection_absence = site005._validate_collection_absence
+validate_feed_membership = site005._validate_feed_membership
 load_manifest = site005.load_manifest
 validate_inventory = site005.validate_inventory
 
@@ -66,3 +71,68 @@ def test_manifest_json_is_canonical() -> None:
     assert MANIFEST.read_text(encoding="utf-8") == json.dumps(
         parsed, ensure_ascii=False, indent=2, sort_keys=True
     ) + "\n"
+
+
+def test_site004_home_editorial_link_does_not_weaken_collection_guard(
+    tmp_path: Path,
+) -> None:
+    manifest = load_manifest(MANIFEST)
+    hidden_route = manifest.materials[0].route
+    (tmp_path / "index.html").write_text(
+        (
+            '<html><body class="site004-home">'
+            f'<main><a href="{hidden_route}">Selected essay</a></main>'
+            '<ol class="pet-entry-list"><li><a href="/legacy.html">Legacy</a></li></ol>'
+            "</body></html>"
+        ),
+        encoding="utf-8",
+    )
+
+    assert validate_collection_absence(tmp_path, manifest) == ["index.html"]
+
+    (tmp_path / "index.html").write_text(
+        (
+            '<html><body class="site004-home">'
+            '<main><a href="/legacy.html">Selected essay</a></main>'
+            f'<ol class="pet-entry-list"><li><a href="{hidden_route}">Leak</a></li></ol>'
+            "</body></html>"
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(Site005RenderedMismatch, match="hidden route leaked"):
+        validate_collection_absence(tmp_path, manifest)
+
+
+def test_non_home_collection_still_rejects_hidden_route(tmp_path: Path) -> None:
+    manifest = load_manifest(MANIFEST)
+    hidden_route = manifest.materials[0].route
+    (tmp_path / "archives.html").write_text(
+        f'<html><body><a href="{hidden_route}">Leak</a></body></html>',
+        encoding="utf-8",
+    )
+
+    with pytest.raises(Site005RenderedMismatch, match="hidden route leaked"):
+        validate_collection_absence(tmp_path, manifest)
+
+
+def test_feed_membership_still_rejects_companions_and_wrong_essay_delta() -> None:
+    manifest = load_manifest(MANIFEST)
+    expected = [
+        {"id": item.feed["id"], "link": item.canonical_url}
+        for item in manifest.materials
+        if item.feed is not None
+    ]
+    assert len(expected) == 3
+    assert validate_feed_membership(expected, expected, manifest) == {
+        item["id"] for item in expected
+    }
+
+    companion = next(item for item in manifest.materials if item.role == "companion")
+    leaked = [*expected, {"id": "companion", "link": companion.canonical_url}]
+    with pytest.raises(Site005RenderedMismatch, match="companion entered the feed"):
+        validate_feed_membership(leaked, expected, manifest)
+
+    with pytest.raises(
+        Site005RenderedMismatch, match="essay feed delta is not exactly three"
+    ):
+        validate_feed_membership(expected[:2], expected, manifest)

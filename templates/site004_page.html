@@ -1,0 +1,53 @@
+{% extends "!theme/page.html" %}
+{% set site004_kind = page.site004_kind %}
+{% set site004_description = page.description %}
+{% set site004_canonical = "https://nekrasovp.ru/" ~ page.url.lstrip("/") %}
+{% set site004_og_type = page.site004_og_type %}
+{% set site004_og_locale = page.site004_og_locale | default("") %}
+{% set site004_og_title = page.site004_og_title %}
+{% set site004_og_description = page.site004_og_description %}
+{% set site004_social_image_alt = page.site004_social_image_alt %}
+
+{% block title %}{{ page.site004_document_title | forceescape }}{% endblock title %}
+{% block body_class %}{{ super() }} site004-page site004-{{ site004_kind | forceescape }}{% endblock body_class %}
+{% block page_class %}{{ super() }} site004-main{% endblock page_class %}
+{% block head_meta %}{% include "site004/includes/head-meta.html" %}{% endblock head_meta %}
+{% block canonical %}
+  <link rel="canonical" href="{{ site004_canonical | forceescape }}">
+  {% include "site004/includes/hreflang.html" %}
+{% endblock canonical %}
+{% block structured_data %}
+  {% if site004_kind == "ru" %}
+    {% set site004_person = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Павел Некрасов",
+      "url": "https://nekrasovp.ru/ru/",
+      "jobTitle": "Tech Lead и Backend/Platform Engineer",
+      "knowsLanguage": ["ru", "en"],
+      "sameAs": [
+        "https://github.com/nekrasovp",
+        "https://www.linkedin.com/in/nekrasovp/",
+        "https://t.me/def12"
+      ],
+      "knowsAbout": [
+        "Python backend",
+        "Архитектура распределённых систем",
+        "Platform engineering",
+        "Техническое лидерство",
+        "SDLC",
+        "Логистика и управление цепями поставок"
+      ]
+    } %}
+    <script type="application/ld+json">{{ site004_person | tojson }}</script>
+  {% endif %}
+{% endblock structured_data %}
+{% block head_styles %}
+  {{ super() }}
+  {% include "site004/includes/styles.html" %}
+{% endblock head_styles %}
+{% block site_header %}{% include "site004/includes/header.html" %}{% endblock site_header %}
+{% block content_header %}{% endblock content_header %}
+{% block content %}{{ page.content }}{% endblock content %}
+{% block content_footer %}{% endblock content_footer %}
+{% block site_footer %}{% include "site004/includes/footer.html" %}{% endblock site_footer %}
