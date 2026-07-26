@@ -43,19 +43,38 @@ CANONICAL_DIFFERENCE = re.compile(
 )
 
 
-def _local_target(url: str) -> str | None:
+def _local_target(*, url: str, source: str) -> str | None:
     parsed = urlsplit(url)
     if parsed.scheme in {"data", "javascript", "mailto", "tel"}:
         return None
     if parsed.hostname and parsed.hostname != CANONICAL_HOST:
         return None
     path = unquote(parsed.path)
-    if not path or path == "/":
+
+    source_path = PurePosixPath(source)
+    parts = [] if parsed.hostname == CANONICAL_HOST or path.startswith("/") else [
+        *source_path.parent.parts
+    ]
+    if not path:
+        if parsed.hostname == CANONICAL_HOST:
+            return "index.html"
+        return source_path.as_posix()
+
+    for part in path.lstrip("/").split("/"):
+        if part in {"", "."}:
+            continue
+        if part == "..":
+            if not parts:
+                raise ValueError("target escapes artifact root")
+            parts.pop()
+            continue
+        parts.append(part)
+
+    if not parts:
         return "index.html"
-    target = PurePosixPath(path.removeprefix("/"))
-    if path.endswith("/"):
-        target /= "index.html"
-    return target.as_posix()
+    if path.endswith("/") or path.rsplit("/", 1)[-1] in {".", ".."}:
+        parts.append("index.html")
+    return PurePosixPath(*parts).as_posix()
 
 
 def _check_url(
@@ -75,7 +94,11 @@ def _check_url(
     }:
         return errors
     if check_target:
-        target = _local_target(url)
+        try:
+            target = _local_target(url=url, source=source)
+        except ValueError:
+            errors.append(f"internal link target escapes artifact root in {source}: {url}")
+            return errors
         if target is not None and not (output_root / target).exists():
             errors.append(f"missing internal link target in {source}: {url} -> {target}")
     return errors
