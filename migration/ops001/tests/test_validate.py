@@ -17,7 +17,7 @@ sys.path.insert(0, str(PARITY_ROOT / "scripts"))
 from baseline_common import ATOM_NS, load_json  # noqa: E402
 
 from migration.ops001.finalize import finalize  # noqa: E402
-from migration.ops001.validate import validate_artifact  # noqa: E402
+from migration.ops001.validate import _check_url, validate_artifact  # noqa: E402
 from migration.production_parity.tests.test_baseline_checker import (  # noqa: E402
     build_fixture,
 )
@@ -157,6 +157,61 @@ def test_missing_internal_asset_is_global_red(
     errors, _ = validate_artifact(output, baseline_root=baseline)
 
     assert "missing internal link target in index.html: /missing.css -> missing.css" in errors
+
+
+def test_nested_parent_relative_asset_resolves_from_source_directory(
+    tmp_path: Path,
+) -> None:
+    output = tmp_path / "site"
+    (output / "assets").mkdir(parents=True)
+    (output / "tag").mkdir()
+    (output / "assets/x").write_text("asset", encoding="utf-8")
+    (output / "tag/page.html").write_text("page", encoding="utf-8")
+
+    assert _check_url(
+        output_root=output,
+        source="tag/page.html",
+        url="../assets/x",
+        check_target=True,
+    ) == []
+    assert _check_url(
+        output_root=output,
+        source="tag/page.html",
+        url="",
+        check_target=True,
+    ) == []
+
+
+def test_nested_missing_asset_is_red_despite_root_shadow(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    (output / "tag").mkdir(parents=True)
+    (output / "image.png").write_text("root shadow", encoding="utf-8")
+
+    assert _check_url(
+        output_root=output,
+        source="tag/page.html",
+        url="image.png",
+        check_target=True,
+    ) == [
+        "missing internal link target in tag/page.html: "
+        "image.png -> tag/image.png"
+    ]
+
+
+def test_internal_asset_traversal_outside_artifact_is_red(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    (output / "tag").mkdir(parents=True)
+    (tmp_path / "outside.png").write_text("outside", encoding="utf-8")
+
+    assert _check_url(
+        output_root=output,
+        source="tag/page.html",
+        url="../../outside.png",
+        check_target=True,
+    ) == [
+        "internal link target escapes artifact root in tag/page.html: "
+        "../../outside.png"
+    ]
 
 
 def test_finalize_writes_exact_sitemap_robots_and_misc_feed(
