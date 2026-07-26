@@ -30,10 +30,6 @@ VIEWPORTS = {
 AXE_CONTENT_LEDGER = {
     "notebook:mobile:dark": {"incomplete": {"color-contrast": 3}, "violations": {}},
     "notebook:mobile:light": {"incomplete": {"color-contrast": 3}, "violations": {}},
-    "page:desktop:dark": {"incomplete": {}, "violations": {"heading-order": 1}},
-    "page:desktop:light": {"incomplete": {}, "violations": {"heading-order": 1}},
-    "page:mobile:dark": {"incomplete": {}, "violations": {"heading-order": 1}},
-    "page:mobile:light": {"incomplete": {}, "violations": {"heading-order": 1}},
     "wide_table:desktop:light": {
         "incomplete": {"color-contrast": 6},
         "violations": {},

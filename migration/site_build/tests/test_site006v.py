@@ -88,9 +88,8 @@ def test_site_owned_templates_extend_only_the_18_public_blocks() -> None:
     assert len(PUBLIC_BLOCKS) == 18
 
 
-def test_vendored_theme_is_preserved_but_not_active() -> None:
-    assert (REPO_ROOT / "theme/templates/base.html").is_file()
-    assert (REPO_ROOT / "theme/static/js/jquery.min.js").is_file()
+def test_vendored_theme_is_absent_and_not_active() -> None:
+    assert not (REPO_ROOT / "theme").exists()
     settings = "\n".join(
         (
             (REPO_ROOT / "pelicanconf.py").read_text(encoding="utf-8"),
@@ -110,6 +109,7 @@ def test_browser_matrix_keeps_the_wide_table_case_and_single_focus_label() -> No
 
     assert browser_validator.count("WIDE_TABLE_ROUTE") >= 6
     assert browser_validator.count("ariaLabel:") == 1
+    assert "heading-order" not in browser_validator
 
 
 def test_only_site004_redirects_are_exempt_from_the_theme_shell() -> None:
