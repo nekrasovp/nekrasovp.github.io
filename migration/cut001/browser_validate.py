@@ -21,7 +21,8 @@ sys.path.insert(0, str(REPO_ROOT))
 from migration.cut001.evidence import build_evidence_manifest  # noqa: E402
 
 THEME_COMMIT = "027a170ac6c8288347de5353569a089c526afae2"
-READER_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+ACCEPTED_READER_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+READER_RELEASE = "pelican-ipynb-reader==0.1.0"
 THEMELESS_REDIRECTS = {"pages/about.html", "pages/services.html"}
 VIEWPORTS = {
     "desktop": {"width": 1440, "height": 1000},
@@ -714,7 +715,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "expected": sorted(allowed_missing_same_origin_urls),
             "observed": sorted(observed_missing_same_origin),
         },
-        "reader_commit": READER_COMMIT,
+        "accepted_reader_commit": ACCEPTED_READER_COMMIT,
+        "reader_release": READER_RELEASE,
         "source_head": _git("rev-parse", "HEAD"),
         "source_status": _git(
             "status",

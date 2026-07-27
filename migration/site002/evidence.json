@@ -1,0 +1,85 @@
+{
+  "accepted_baseline": {
+    "cut001_head": "95c3f02ad6fc3589798ba73dc19e39045941235e",
+    "cut001_tree": "671f023ce65f661af807edccc6a754d66056ce82",
+    "normalized_publication_sha256": "03b7699bd9bd33387da84a570193d05ce4b4d66539f4e099b3ee67d37b5fa35a",
+    "site006v_assets_sha256": "aa9ad7fc73f4a9dcb2dc36e58cfc9111928b83f809c5343b5a2b89250819f5a2",
+    "site006v_metadata_sha256": "0cff63e5b1bf6e934385f7548994979b187995e3bf852899922f73d7862f165b",
+    "site006v_routes_sha256": "2de201aff53c41a6b55dc27b60c658d2e364216794a32ed08746dd41fa3d5f29",
+    "validation_pin": "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+  },
+  "artifact_comparison": {
+    "accepted_files": 176,
+    "classification": "rendered_equivalent",
+    "manual_visual_acceptance_required": false,
+    "normalized_byte_equal_files": 176,
+    "raw_byte_equal_files": 173,
+    "raw_differences": [
+      {
+        "classification": "known_generated_widget_uuid_only",
+        "path": "feeds/all.atom.xml"
+      },
+      {
+        "classification": "known_generated_widget_uuid_only",
+        "path": "feeds/blog.atom.xml"
+      },
+      {
+        "classification": "known_generated_widget_uuid_only",
+        "path": "stock-market-portfolio-optimisation.html"
+      }
+    ],
+    "released_files": 176,
+    "unexplained_differences": []
+  },
+  "branch_strategy": {
+    "base_branch": "agent/cut-001-production-preview",
+    "base_head": "95c3f02ad6fc3589798ba73dc19e39045941235e",
+    "head_branch": "agent/site-002-released-reader",
+    "kind": "stacked_draft",
+    "pr67_mutation": false,
+    "reason": "Keep the SITE-002 diff independent while preserving the accepted CUT-001 head byte-for-byte."
+  },
+  "contract": "nekrasovp-site002-released-reader-evidence.v1",
+  "date": "2026-07-27",
+  "local_acceptance": {
+    "focused_red": {
+      "failures": 3,
+      "proved": [
+        "old VCS validation pin remained",
+        "released distribution identity was absent from CI",
+        "inactive archived reader remained"
+      ]
+    },
+    "post_removal_tests": {
+      "passed": 76
+    },
+    "pre_removal_cumulative": {
+      "articles": 46,
+      "markdown": 35,
+      "negative_gates": 10,
+      "notebooks": 11,
+      "two_clean_builds": true
+    },
+    "released_artifact_sha256": "ca1a43f616f273b9f42026e3eb9fab08af805ccc6be90deb641f722f168195cf",
+    "released_normalized_publication_sha256": "a6c151bb33abe1f255c46036e94a33577f1bc295b5fa42df15468fdfe532a111",
+    "report_difference_classification": "Only dependency identity, repository head, and the publication-evidence hash changed; the latter binds the released source commit. All rendered contract fields are equal."
+  },
+  "release": {
+    "canonical_import": "pelican.plugins.ipynb_reader",
+    "distribution": "pelican-ipynb-reader",
+    "github_release": "https://github.com/nekrasovp/pelican-jupyter/releases/tag/v0.1.0",
+    "provenance_repository": "https://github.com/nekrasovp/pelican-jupyter",
+    "pypi": "https://pypi.org/project/pelican-ipynb-reader/0.1.0/",
+    "sdist": {
+      "filename": "pelican_ipynb_reader-0.1.0.tar.gz",
+      "sha256": "c456eb564973d7241eb5ea01aed19662f20fc18c7bef0380d81a5d1b8fc87fa4"
+    },
+    "source_commit": "01b298d1a6b714755d7d9170538e4e7994038b8b",
+    "version": "0.1.0",
+    "wheel": {
+      "filename": "pelican_ipynb_reader-0.1.0-py3-none-any.whl",
+      "sha256": "ec5212c0f5c414743032c3b2880904af898e726e5cb5ab314345634c8bb68153"
+    },
+    "yanked": false
+  }
+}

@@ -80,7 +80,7 @@ the child command's non-zero status.
 | `i18n_subsites` | Retained; not replaced or removed | Loaded from the existing vendored `plugins/` tree in both clean Markdown builds. The theme still contains translation templates and catalogs. |
 | `related_posts` | Retained; not replaced or removed | Loaded in both clean Markdown builds; the current theme still renders `includes/related-posts.html`. |
 | `tag_cloud` | Retained; not replaced or removed | Loaded in both clean Markdown builds; the current sidebar still renders the tag cloud. |
-| `pelican.plugins.ipynb_reader` | Active immutable SITE-002V validation dependency | Production-intent configuration resolves the exact fork commit from `uv.lock`. The former `ipynb.markup` source is outside active `PLUGIN_PATHS` under `migration/site002v/archive/` and is retained only as an inactive comparison archive until SITE-002. |
+| `pelican.plugins.ipynb_reader` | Active immutable SITE-002 release dependency | Production-intent configuration resolves `pelican-ipynb-reader==0.1.0` and its exact wheel/sdist hashes from `uv.lock`. The former `ipynb.markup` archive was removed after released-artifact parity passed. |
 
 SITE-001 performed no plugin migration. SITE-002V is the later, separately
 reviewed migration recorded by the current tree.

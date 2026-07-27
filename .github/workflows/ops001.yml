@@ -50,7 +50,7 @@ jobs:
 
           for name in (
               "pelican-engineering-theme",
-              "pelican-jupyter",
+              "pelican-ipynb-reader",
               "pelican",
               "nbconvert",
               "nbformat",

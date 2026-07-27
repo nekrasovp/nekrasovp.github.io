@@ -1,4 +1,4 @@
-"""Run the complete immutable-reader SITE-002V acceptance gate."""
+"""Run the complete released-reader SITE-002/SITE-002V acceptance gate."""
 
 from __future__ import annotations
 
@@ -32,9 +32,17 @@ BASELINE_METADATA = REPO_ROOT / "migration/production_parity/baseline/metadata.j
 REPRESENTATIVE_NOTEBOOK = REPO_ROOT / "migration/site002v/fixtures/representative-outputs.ipynb"
 REPRESENTATIVE_METADATA = REPO_ROOT / "migration/site002v/fixtures/representative-outputs.nbdata"
 SITE_BASE_COMMIT = "cac7d59b7a691ebdedea17f5978ce24693830bf8"
-PLUGIN_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
-PLUGIN_REPOSITORY = "https://github.com/nekrasovp/pelican-jupyter.git"
-PLUGIN_REQUIREMENT = f"pelican-jupyter @ git+{PLUGIN_REPOSITORY}@{PLUGIN_COMMIT}"
+VALIDATION_PIN_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+READER_DISTRIBUTION = "pelican-ipynb-reader"
+READER_VERSION = "0.1.0"
+READER_REQUIREMENT = f"{READER_DISTRIBUTION}=={READER_VERSION}"
+READER_REPOSITORY = "https://github.com/nekrasovp/pelican-jupyter"
+READER_RELEASE_URL = f"{READER_REPOSITORY}/releases/tag/v{READER_VERSION}"
+READER_SOURCE_COMMIT = "01b298d1a6b714755d7d9170538e4e7994038b8b"
+READER_WHEEL_FILENAME = "pelican_ipynb_reader-0.1.0-py3-none-any.whl"
+READER_WHEEL_SHA256 = "ec5212c0f5c414743032c3b2880904af898e726e5cb5ab314345634c8bb68153"
+READER_SDIST_FILENAME = "pelican_ipynb_reader-0.1.0.tar.gz"
+READER_SDIST_SHA256 = "c456eb564973d7241eb5ea01aed19662f20fc18c7bef0380d81a5d1b8fc87fa4"
 EXPECTED_ARTICLES = 46
 EXPECTED_MARKDOWN = 35
 EXPECTED_NOTEBOOKS = 11
@@ -168,24 +176,57 @@ def _validate_manifests() -> list[dict[str, str]]:
     return notebooks
 
 
-def _lock_source() -> str:
+def _lock_release() -> dict[str, Any]:
     lock = tomllib.loads((REPO_ROOT / "uv.lock").read_text(encoding="utf-8"))
-    matches = [package for package in lock["package"] if package["name"] == "pelican-jupyter"]
+    matches = [
+        package for package in lock["package"] if package["name"] == READER_DISTRIBUTION
+    ]
     if len(matches) != 1:
-        raise RuntimeError("uv.lock must contain exactly one pelican-jupyter package")
-    source = matches[0].get("source", {}).get("git")
-    if not isinstance(source, str):
-        raise RuntimeError("pelican-jupyter lock source is not Git")
-    if f"rev={PLUGIN_COMMIT}" not in source or not source.endswith(f"#{PLUGIN_COMMIT}"):
-        raise RuntimeError("pelican-jupyter lock source does not resolve the exact commit")
-    return source
+        raise RuntimeError(f"uv.lock must contain exactly one {READER_DISTRIBUTION} package")
+    package = matches[0]
+    if package.get("version") != READER_VERSION:
+        raise RuntimeError("released reader lock version drift")
+    if package.get("source") != {"registry": "https://pypi.org/simple"}:
+        raise RuntimeError("released reader lock source is not public PyPI")
+    sdist = package.get("sdist", {})
+    wheels = package.get("wheels", [])
+    if (
+        not str(sdist.get("url", "")).endswith(f"/{READER_SDIST_FILENAME}")
+        or sdist.get("hash") != f"sha256:{READER_SDIST_SHA256}"
+    ):
+        raise RuntimeError("released reader sdist identity or hash drift")
+    if len(wheels) != 1 or (
+        not str(wheels[0].get("url", "")).endswith(f"/{READER_WHEEL_FILENAME}")
+        or wheels[0].get("hash") != f"sha256:{READER_WHEEL_SHA256}"
+    ):
+        raise RuntimeError("released reader wheel identity or hash drift")
+    return {
+        "index": package["source"]["registry"],
+        "sdist": {
+            "filename": READER_SDIST_FILENAME,
+            "sha256": READER_SDIST_SHA256,
+            "url": sdist["url"],
+        },
+        "version": package["version"],
+        "wheel": {
+            "filename": READER_WHEEL_FILENAME,
+            "sha256": READER_WHEEL_SHA256,
+            "url": wheels[0]["url"],
+        },
+    }
 
 
-def _verify_dependency_input() -> str:
+def _verify_dependency_input() -> dict[str, Any]:
     project = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     dependencies = project["project"]["dependencies"]
-    if dependencies.count(PLUGIN_REQUIREMENT) != 1:
-        raise RuntimeError("pyproject.toml does not contain the one exact plugin requirement")
+    if dependencies.count(READER_REQUIREMENT) != 1:
+        raise RuntimeError("pyproject.toml does not contain the one exact reader release")
+    if any(
+        "pelican-jupyter" in dependency
+        or dependency.startswith(f"{READER_DISTRIBUTION} @")
+        for dependency in dependencies
+    ):
+        raise RuntimeError("pyproject.toml retains a VCS/candidate reader source")
     config = (REPO_ROOT / "pelicanconf.py").read_text(encoding="utf-8")
     if "pelican.plugins.ipynb_reader" not in config or "ipynb.markup" in config:
         raise RuntimeError(
@@ -193,7 +234,7 @@ def _verify_dependency_input() -> str:
         )
     if (REPO_ROOT / "plugins/ipynb").exists():
         raise RuntimeError("the vendored reader remains under the active plugins root")
-    return _lock_source()
+    return _lock_release()
 
 
 def _create_locked_environment(work_root: Path, python: str) -> Path:
@@ -206,7 +247,14 @@ def _create_locked_environment(work_root: Path, python: str) -> Path:
         cwd=work_root,
     )
     _require_success(created, "external virtual environment creation")
-    environment = {**os.environ, "VIRTUAL_ENV": str(environment_root)}
+    environment = {
+        **os.environ,
+        "PYTHONNOUSERSITE": "1",
+        "UV_DEFAULT_INDEX": "https://pypi.org/simple",
+        "UV_NO_CACHE": "1",
+        "VIRTUAL_ENV": str(environment_root),
+    }
+    environment.pop("PYTHONPATH", None)
     synced = _run(
         [uv, "sync", "--project", str(REPO_ROOT), "--locked", "--all-groups", "--active"],
         cwd=work_root,
@@ -216,6 +264,12 @@ def _create_locked_environment(work_root: Path, python: str) -> Path:
     executable = environment_root / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     if not executable.is_file():
         raise RuntimeError("external locked Python executable was not created")
+    checked = _run(
+        [uv, "pip", "check", "--python", str(executable)],
+        cwd=work_root,
+        environment=environment,
+    )
+    _require_success(checked, "external locked environment package check")
     return executable
 
 
@@ -226,11 +280,11 @@ import json
 from pathlib import Path
 import pelican.plugins.ipynb_reader as reader
 
-distribution = metadata.distribution("pelican-jupyter")
-direct_url = json.loads(distribution.read_text("direct_url.json"))
+distribution = metadata.distribution("pelican-ipynb-reader")
 print(json.dumps({
-    "direct_url": direct_url,
+    "direct_url": distribution.read_text("direct_url.json"),
     "module_file": str(Path(reader.__file__).resolve()),
+    "project_urls": distribution.metadata.get_all("Project-URL") or [],
     "version": distribution.version,
 }, sort_keys=True))
 '''
@@ -240,24 +294,23 @@ print(json.dumps({
     module_path = Path(payload["module_file"])
     if module_path.is_relative_to(REPO_ROOT.resolve()):
         raise RuntimeError(f"reader imported from the site checkout: {module_path}")
-    direct_url = payload["direct_url"]
-    vcs = direct_url.get("vcs_info", {})
-    if vcs.get("vcs") != "git" or vcs.get("commit_id") != PLUGIN_COMMIT:
-        raise RuntimeError(f"installed reader commit provenance is invalid: {direct_url!r}")
-    if vcs.get("requested_revision") != PLUGIN_COMMIT:
-        raise RuntimeError(f"installed reader requested revision is not exact: {direct_url!r}")
-    if direct_url.get("url", "").removeprefix("git+") != PLUGIN_REPOSITORY:
-        raise RuntimeError(f"installed reader repository is invalid: {direct_url!r}")
+    if payload["version"] != READER_VERSION:
+        raise RuntimeError(f"installed reader version drift: {payload['version']!r}")
+    if payload["direct_url"] is not None:
+        raise RuntimeError("installed reader came from a direct URL instead of public PyPI")
+    if not any(READER_REPOSITORY in item for item in payload["project_urls"]):
+        raise RuntimeError("installed reader metadata does not identify the provenance repository")
     marker = "/site-packages/"
     normalized = module_path.as_posix()
     if marker not in normalized:
         raise RuntimeError(f"reader did not import from site-packages: {module_path}")
     return {
-        "commit_id": vcs["commit_id"],
+        "distribution": READER_DISTRIBUTION,
         "import_path": f"site-packages/{normalized.split(marker, 1)[1]}",
         "outside_source_checkouts": True,
-        "repository": direct_url["url"].removeprefix("git+"),
-        "requested_revision": vcs["requested_revision"],
+        "pip_check": "passed",
+        "public_index": "https://pypi.org/simple",
+        "repository": READER_REPOSITORY,
         "version": payload["version"],
     }
 
@@ -451,7 +504,7 @@ def _gate_command(
         "--output-root",
         str(output_root),
         "--external-commit",
-        PLUGIN_COMMIT,
+        READER_SOURCE_COMMIT,
         "--expected-articles",
         str(EXPECTED_ARTICLES),
         "--expected-notebooks",
@@ -832,7 +885,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     site005_inventory = site005_validation.validate_inventory()
     baseline_overlay = work_root / "site003-baseline-overlay.json"
     overlay_evidence = _write_site003_baseline_overlay(baseline_overlay)
-    lock_source = _verify_dependency_input()
+    lock_release = _verify_dependency_input()
     theme_input = site006v_validation.verify_dependency_input()
     status_before = _git_status()
     sources_before = _source_hashes()
@@ -947,10 +1000,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "contract": "nekrasovp-site002v-site003-site004-site005-site006v-validation.v5",
         "counts": publication["counts"],
         "dependency": {
-            "direct_requirement": PLUGIN_REQUIREMENT,
+            "direct_requirement": READER_REQUIREMENT,
+            "distribution": READER_DISTRIBUTION,
             "installed": provenance,
-            "lock_source": lock_source,
-            "plugin_commit": PLUGIN_COMMIT,
+            "lock": lock_release,
+            "release_url": READER_RELEASE_URL,
+            "replaced_validation_pin": VALIDATION_PIN_COMMIT,
+            "source_commit": READER_SOURCE_COMMIT,
+            "version": READER_VERSION,
         },
         "determinism": {
             "normalized_asset_evidence_identical": True,

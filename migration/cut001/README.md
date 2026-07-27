@@ -9,7 +9,12 @@ Locked identities:
 
 - site base tree: `0cc99d983dc302d08c7330b0451a82d61aa72541`
 - theme: `pelican-engineering-theme@027a170ac6c8288347de5353569a089c526afae2`
-- notebook reader: `pelican-jupyter@137e1eb0ea620f1b15fff0ba81725eea23de1b7a`
+- accepted preview notebook reader:
+  `pelican-jupyter@137e1eb0ea620f1b15fff0ba81725eea23de1b7a`
+
+SITE-002 is a stacked successor to this accepted preview. It changes only the
+reader dependency input and consumes `pelican-ipynb-reader==0.1.0`; the
+rendered output must remain equivalent to this exact accepted baseline.
 
 The raw preview directory SHA-256 is an immutable identifier for one exact
 build and is recorded in its OPS/comparison report. It is not a cross-build
