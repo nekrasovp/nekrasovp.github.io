@@ -30,7 +30,11 @@ package = false
 
 [tool.pytest.ini_options]
 addopts = "-ra"
-testpaths = ["migration/site_build/tests"]
+testpaths = [
+    "migration/site_build/tests",
+    "migration/production_parity/tests",
+    "migration/ops001/tests",
+]
 
 [tool.ruff]
 target-version = "py312"

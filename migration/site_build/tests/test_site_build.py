@@ -11,7 +11,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SITE_SCRIPT = REPO_ROOT / "migration/site_build/site.py"
 SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
-SITE002V_WORKFLOW = REPO_ROOT / ".github/workflows/site002v.yml"
+OPS001_WORKFLOW = REPO_ROOT / ".github/workflows/ops001.yml"
 EXPECTED_NOTEBOOKS = 11
 PLUGIN_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
 SITE_BASE_COMMIT = "cac7d59b7a691ebdedea17f5978ce24693830bf8"
@@ -97,14 +97,14 @@ def test_lock_resolves_exact_reader_commit() -> None:
 
 
 def test_ci_keeps_history_required_by_permanent_site_base_gate() -> None:
-    workflow = SITE002V_WORKFLOW.read_text(encoding="utf-8")
+    workflow = OPS001_WORKFLOW.read_text(encoding="utf-8")
     checkout = re.search(
         r"uses: actions/checkout@[0-9a-f]{40}\n(?P<with>(?:\s{8,}.+\n)+)",
         workflow,
     )
     assert checkout
     checkout_config = checkout.group("with")
-    assert "ref: ${{ github.event.pull_request.head.sha || github.sha }}" in checkout_config
+    assert "ref: ${{ env.EXPECTED_HEAD }}" in checkout_config
     assert re.search(r"^\s+fetch-depth: 0$", checkout_config, flags=re.MULTILINE)
 
     validator = SITE002V_VALIDATOR.read_text(encoding="utf-8")

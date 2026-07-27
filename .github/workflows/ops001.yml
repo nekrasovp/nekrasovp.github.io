@@ -1,0 +1,143 @@
+name: OPS-001 validated site artifact
+
+"on":
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ops001-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+  validate:
+    name: Build and validate the exact site artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    outputs:
+      validated_commit: ${{ steps.contract.outputs.validated_commit }}
+      validated_artifact: ${{ steps.contract.outputs.validated_artifact }}
+      artifact_sha256: ${{ steps.contract.outputs.artifact_sha256 }}
+    steps:
+      - name: Check out the exact site head
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.EXPECTED_HEAD }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+
+      - name: Install the locked-environment tool
+        run: python -m pip install --disable-pip-version-check uv==0.11.28
+
+      - name: Resolve and report the exact committed lock
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          uv sync --locked --all-groups
+          uv run --locked --all-groups python - <<'PY'
+          from importlib.metadata import version
+
+          for name in (
+              "pelican-engineering-theme",
+              "pelican-jupyter",
+              "pelican",
+              "nbconvert",
+              "nbformat",
+              "jinja2",
+          ):
+              print(f"{name}=={version(name)}")
+          PY
+
+      - name: Run two clean builds and cumulative migration gates
+        run: |
+          ./scripts/site validate \
+            --work-root "$RUNNER_TEMP/site002v" \
+            --report-out "$RUNNER_TEMP/cumulative-validation.json"
+
+      - name: Build and validate the review and Pages artifact
+        run: |
+          ./scripts/site build --output "$RUNNER_TEMP/ops001-site"
+          uv run --locked --all-groups python migration/ops001/validate.py \
+            "$RUNNER_TEMP/ops001-site" \
+            --accepted-migration-contracts \
+            --report-out "$RUNNER_TEMP/ops001-validation.json"
+
+      - name: Run regressions, scoped lint, and repository hygiene
+        run: |
+          ./scripts/site test
+          uv run --locked --all-groups ruff check \
+            migration/site_build migration/ops001 migration/site002v/validate.py \
+            migration/site003 migration/site004 migration/site005 migration/site006v \
+            plugins/site005_materials.py plugins/site_metadata.py
+          git diff --check
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
+          github_token_prefix='github''_pat_'
+          oauth_token_prefix='gho''_'
+          if git grep -nE \
+            "${github_token_prefix}|${oauth_token_prefix}[A-Za-z0-9]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY"; then
+            echo "credential-like material found in the repository" >&2
+            exit 1
+          fi
+
+      - name: Freeze the validated artifact contract
+        id: contract
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          artifact_sha256="$(jq -r '.evidence.artifact_sha256' \
+            "$RUNNER_TEMP/ops001-validation.json")"
+          test "${#artifact_sha256}" -eq 64
+          echo "validated_commit=$EXPECTED_HEAD" >> "$GITHUB_OUTPUT"
+          echo "validated_artifact=github-pages" >> "$GITHUB_OUTPUT"
+          echo "artifact_sha256=$artifact_sha256" >> "$GITHUB_OUTPUT"
+          printf 'validated_commit=%s\nartifact_sha256=%s\n' \
+            "$EXPECTED_HEAD" "$artifact_sha256"
+
+      - name: Upload the exact artifact for PR review
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ops001-review-${{ env.EXPECTED_HEAD }}
+          path: ${{ runner.temp }}/ops001-site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 14
+
+      - name: Upload the exact validated Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/ops001-site
+          retention-days: 1
+
+  deploy:
+    name: Deploy validated artifact after CUT-002 enablement
+    needs:
+      - validate
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/master' &&
+      vars.CUT_002_PAGES_DEPLOY_ENABLED == 'true' &&
+      needs.validate.outputs.validated_commit == github.sha &&
+      needs.validate.outputs.validated_artifact == 'github-pages'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+      commit_sha: ${{ needs.validate.outputs.validated_commit }}
+    steps:
+      - name: Deploy the exact validated Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
