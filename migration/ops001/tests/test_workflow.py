@@ -66,12 +66,24 @@ def test_validate_job_has_one_locked_build_and_gate_path() -> None:
     assert "./scripts/site validate" in joined_runs
     assert "./scripts/site build --output \"$RUNNER_TEMP/ops001-site\"" in joined_runs
     assert "migration/ops001/validate.py" in joined_runs
+    assert "migration/cut001/validate.py" in joined_runs
+    assert "migration/cut001/browser_validate.py" in joined_runs
+    assert "5c24ba21ec8b442e4b5280a47c85fab61165f8ce" in joined_runs
+    assert "027a170ac6c8288347de5353569a089c526afae2" in joined_runs
     assert "./scripts/site test" in joined_runs
     assert "uv sync --locked --all-groups" in joined_runs
     assert "pelican-engineering-theme" in joined_runs
     assert "pelican-jupyter" in joined_runs
     assert steps["Check out the exact site head"]["with"]["fetch-depth"] == 0
     assert steps["Check out the exact site head"]["with"]["persist-credentials"] is False
+    evidence_upload = steps["Upload the CUT-001 evidence package"]["with"]
+    assert evidence_upload == {
+        "name": "cut001-evidence-${{ env.EXPECTED_HEAD }}",
+        "path": "${{ runner.temp }}/cut001-evidence",
+        "if-no-files-found": "error",
+        "include-hidden-files": True,
+        "retention-days": 14,
+    }
 
 
 def test_exact_artifact_handoff_and_official_actions_are_sha_pinned() -> None:

@@ -73,11 +73,54 @@ jobs:
             --accepted-migration-contracts \
             --report-out "$RUNNER_TEMP/ops001-validation.json"
 
+      - name: Materialize the exact CUT-001 production reference
+        run: |
+          production_commit='5c24ba21ec8b442e4b5280a47c85fab61165f8ce'
+          git fetch --no-tags origin gh-pages
+          test "$(git rev-parse FETCH_HEAD)" = "$production_commit"
+          git worktree add --detach \
+            "$RUNNER_TEMP/cut001-production" "$production_commit"
+          test "$(git -C "$RUNNER_TEMP/cut001-production" rev-parse HEAD)" = \
+            "$production_commit"
+
+      - name: Run the CUT-001 machine comparison
+        run: |
+          uv run --locked --all-groups python migration/cut001/validate.py \
+            --output-root "$RUNNER_TEMP/ops001-site" \
+            --production-root "$RUNNER_TEMP/cut001-production" \
+            --cumulative-report "$RUNNER_TEMP/cumulative-validation.json" \
+            --evidence-root "$RUNNER_TEMP/cut001-evidence"
+
+      - name: Install the exact CUT-001 browser runtime
+        run: |
+          theme_commit='027a170ac6c8288347de5353569a089c526afae2'
+          theme_dir="$RUNNER_TEMP/cut001-theme"
+          git clone --filter=blob:none --no-checkout \
+            https://github.com/nekrasovp/pelican-engineering-theme.git \
+            "$theme_dir"
+          git -C "$theme_dir" fetch --no-tags origin "$theme_commit"
+          git -C "$theme_dir" checkout --detach FETCH_HEAD
+          test "$(git -C "$theme_dir" rev-parse HEAD)" = "$theme_commit"
+          uv sync --project "$theme_dir" --locked --all-groups
+          npm ci --prefix "$theme_dir" --ignore-scripts
+          "$theme_dir/.venv/bin/python" -m playwright install --with-deps chromium
+
+      - name: Run the CUT-001 browser accessibility and visual matrix
+        run: |
+          theme_dir="$RUNNER_TEMP/cut001-theme"
+          "$theme_dir/.venv/bin/python" migration/cut001/browser_validate.py \
+            --output-root "$RUNNER_TEMP/ops001-site" \
+            --production-root "$RUNNER_TEMP/cut001-production" \
+            --artifact-root "$RUNNER_TEMP/cut001-evidence" \
+            --axe-script "$theme_dir/node_modules/axe-core/axe.min.js" \
+            --comparison-report "$RUNNER_TEMP/cut001-evidence/comparison.json"
+
       - name: Run regressions, scoped lint, and repository hygiene
         run: |
           ./scripts/site test
           uv run --locked --all-groups ruff check \
-            migration/site_build migration/ops001 migration/site002v/validate.py \
+            migration/site_build migration/ops001 migration/cut001 \
+            migration/site002v/validate.py \
             migration/site003 migration/site004 migration/site005 migration/site006v \
             plugins/site005_materials.py plugins/site_metadata.py
           git diff --check
@@ -108,6 +151,15 @@ jobs:
         with:
           name: ops001-review-${{ env.EXPECTED_HEAD }}
           path: ${{ runner.temp }}/ops001-site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 14
+
+      - name: Upload the CUT-001 evidence package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cut001-evidence-${{ env.EXPECTED_HEAD }}
+          path: ${{ runner.temp }}/cut001-evidence
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 14
