@@ -73,7 +73,8 @@ def test_validate_job_has_one_locked_build_and_gate_path() -> None:
     assert "./scripts/site test" in joined_runs
     assert "uv sync --locked --all-groups" in joined_runs
     assert "pelican-engineering-theme" in joined_runs
-    assert "pelican-jupyter" in joined_runs
+    assert "pelican-ipynb-reader" in joined_runs
+    assert "pelican-jupyter" not in joined_runs
     assert steps["Check out the exact site head"]["with"]["fetch-depth"] == 0
     assert steps["Check out the exact site head"]["with"]["persist-credentials"] is False
     evidence_upload = steps["Upload the CUT-001 evidence package"]["with"]

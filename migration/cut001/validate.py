@@ -37,19 +37,27 @@ from migration.ops001.validate import validate_artifact  # noqa: E402
 
 BASE_COMMIT = "306028c8ab31a21a1297746b4176916315ba6a23"
 BASE_TREE = "0cc99d983dc302d08c7330b0451a82d61aa72541"
+ACCEPTED_PREVIEW_COMMIT = "95c3f02ad6fc3589798ba73dc19e39045941235e"
+ACCEPTED_PREVIEW_TREE = "671f023ce65f661af807edccc6a754d66056ce82"
 PRODUCTION_COMMIT = "5c24ba21ec8b442e4b5280a47c85fab61165f8ce"
 THEME_COMMIT = "027a170ac6c8288347de5353569a089c526afae2"
-READER_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+READER_DISTRIBUTION = "pelican-ipynb-reader"
+READER_VERSION = "0.1.0"
+READER_SOURCE_COMMIT = "01b298d1a6b714755d7d9170538e4e7994038b8b"
+READER_WHEEL_SHA256 = "ec5212c0f5c414743032c3b2880904af898e726e5cb5ab314345634c8bb68153"
+READER_SDIST_SHA256 = "c456eb564973d7241eb5ea01aed19662f20fc18c7bef0380d81a5d1b8fc87fa4"
 CANONICAL_HOST = "nekrasovp.ru"
 THEMELESS_REDIRECTS = {"pages/about.html", "pages/services.html"}
 BUILD_INPUT_PATHS = (
     "content",
     "pelicanconf.py",
     "plugins",
+    "pyproject.toml",
     "publishconf.py",
     "templates",
     "uv.lock",
 )
+SITE002_BUILD_INPUT_CHANGES = {"pyproject.toml", "uv.lock"}
 HTML_ASSET_ATTRIBUTES = (
     ("img", "src"),
     ("script", "src"),
@@ -686,14 +694,20 @@ def _verify_source_and_dependencies(
     source_tree = _git("rev-parse", "HEAD^{tree}")
     if _git("rev-parse", f"{BASE_COMMIT}^{{tree}}") != BASE_TREE:
         raise Cut001ValidationError("CUT-001 base tree no longer matches its contract")
+    if (
+        _git("rev-parse", f"{ACCEPTED_PREVIEW_COMMIT}^{{tree}}")
+        != ACCEPTED_PREVIEW_TREE
+    ):
+        raise Cut001ValidationError("accepted CUT-001 preview tree no longer matches its contract")
     ancestor = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", BASE_COMMIT, source_commit],
+        ["git", "merge-base", "--is-ancestor", ACCEPTED_PREVIEW_COMMIT, source_commit],
         cwd=REPO_ROOT,
         check=False,
     )
     if ancestor.returncode:
         raise Cut001ValidationError(
-            f"CUT-001 source {source_commit} is not based on {BASE_COMMIT}"
+            f"SITE-002 source {source_commit} is not based on accepted preview "
+            f"{ACCEPTED_PREVIEW_COMMIT}"
         )
     production_head = _git("-C", str(production_root), "rev-parse", "HEAD")
     if production_head != PRODUCTION_COMMIT:
@@ -704,14 +718,15 @@ def _verify_source_and_dependencies(
     changed_build_inputs = _git(
         "diff",
         "--name-only",
-        BASE_COMMIT,
+        ACCEPTED_PREVIEW_COMMIT,
         source_commit,
         "--",
         *BUILD_INPUT_PATHS,
     ).splitlines()
-    if changed_build_inputs:
+    if set(changed_build_inputs) != SITE002_BUILD_INPUT_CHANGES:
         raise Cut001ValidationError(
-            f"CUT-001 changed build inputs from exact master: {changed_build_inputs!r}"
+            "SITE-002 build-input delta from the accepted preview is not exactly "
+            f"{sorted(SITE002_BUILD_INPUT_CHANGES)!r}: {changed_build_inputs!r}"
         )
 
     cumulative = load_json(cumulative_report)
@@ -721,14 +736,23 @@ def _verify_source_and_dependencies(
         )
     dependency = cumulative.get("dependency", {})
     theme = cumulative.get("site006v", {}).get("candidate", {})
-    if dependency.get("plugin_commit") != READER_COMMIT:
-        raise Cut001ValidationError("cumulative reader identity drift")
+    lock = dependency.get("lock", {})
+    if (
+        dependency.get("distribution") != READER_DISTRIBUTION
+        or dependency.get("version") != READER_VERSION
+        or dependency.get("source_commit") != READER_SOURCE_COMMIT
+        or lock.get("wheel", {}).get("sha256") != READER_WHEEL_SHA256
+        or lock.get("sdist", {}).get("sha256") != READER_SDIST_SHA256
+    ):
+        raise Cut001ValidationError("cumulative released-reader identity drift")
     if theme.get("theme_commit") != THEME_COMMIT:
         raise Cut001ValidationError("cumulative theme identity drift")
     return {
         "base_commit": BASE_COMMIT,
         "base_tree": BASE_TREE,
-        "build_input_diff_from_base": [],
+        "accepted_preview_commit": ACCEPTED_PREVIEW_COMMIT,
+        "accepted_preview_tree": ACCEPTED_PREVIEW_TREE,
+        "build_input_diff_from_accepted_preview": changed_build_inputs,
         "production_commit": production_head,
         "reader": dependency,
         "source_commit": source_commit,

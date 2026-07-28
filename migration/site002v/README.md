@@ -1,9 +1,10 @@
-# Immutable notebook-reader validation (SITE-002V)
+# Released notebook-reader validation (SITE-002V preserved by SITE-002)
 
-SITE-002V replaces the active vendored notebook reader with the exact fork
-commit `137e1eb0ea620f1b15fff0ba81725eea23de1b7a`. The canonical dependency is a
-full-SHA Git URL in `pyproject.toml` and `uv.lock`; it is a validation pin, not a
-published package or final distribution-name decision.
+SITE-002V originally replaced the active vendored notebook reader with exact
+fork commit `137e1eb0ea620f1b15fff0ba81725eea23de1b7a`. SITE-002 preserves this
+complete validation contract while replacing that temporary source with the
+public `pelican-ipynb-reader==0.1.0` release and its exact wheel/sdist hashes in
+`uv.lock`.
 
 ## Canonical validation
 
@@ -19,7 +20,7 @@ uv run --locked --all-groups ruff check \
 ```
 
 `validate` creates a separate locked environment under a temporary work root,
-proves the installed reader and PEP 610 provenance from that environment, then
+proves the installed public-PyPI reader identity from that environment, then
 runs two clean production-intent Pelican builds. It requires exactly 35
 Markdown and 11 notebook articles, all 11 notebook routes in `notebooks.tsv`,
 the classic `cell`/`input_area` class contract, representative committed output
@@ -77,9 +78,8 @@ type outside the two accepted alt categories.
 Accessibility remediation and human original-zoom review belong to later
 theme/accessibility work. No warning outside this exact ledger is accepted.
 
-The former vendored reader is preserved only under
-`migration/site002v/archive/legacy-ipynb-reader/`; it is outside active
-`PLUGIN_PATHS` and must not be restored on validation failure.
+After released-artifact parity passed, SITE-002 removed the inactive archived
+reader. It must not be restored on validation failure.
 
 ## Pre-cutover parity boundary
 

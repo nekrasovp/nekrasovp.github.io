@@ -440,7 +440,7 @@ dependencies = [
     { name = "nbconvert" },
     { name = "pelican" },
     { name = "pelican-engineering-theme" },
-    { name = "pelican-jupyter" },
+    { name = "pelican-ipynb-reader" },
     { name = "pillow" },
     { name = "six" },
 ]
@@ -462,7 +462,7 @@ requires-dist = [
     { name = "nbconvert", specifier = ">=7.16,<8" },
     { name = "pelican", specifier = ">=4.11,<5" },
     { name = "pelican-engineering-theme", git = "https://github.com/nekrasovp/pelican-engineering-theme.git?rev=027a170ac6c8288347de5353569a089c526afae2" },
-    { name = "pelican-jupyter", git = "https://github.com/nekrasovp/pelican-jupyter.git?rev=137e1eb0ea620f1b15fff0ba81725eea23de1b7a" },
+    { name = "pelican-ipynb-reader", specifier = "==0.1.0" },
     { name = "pillow", specifier = ">=11,<13" },
     { name = "six", specifier = ">=1.17,<2" },
 ]
@@ -543,15 +543,19 @@ dependencies = [
 ]
 
 [[package]]
-name = "pelican-jupyter"
-version = "0.10.2.dev16+g137e1eb0e"
-source = { git = "https://github.com/nekrasovp/pelican-jupyter.git?rev=137e1eb0ea620f1b15fff0ba81725eea23de1b7a#137e1eb0ea620f1b15fff0ba81725eea23de1b7a" }
+name = "pelican-ipynb-reader"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
     { name = "markdown" },
     { name = "nbconvert" },
     { name = "nbformat" },
     { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c0/37/294359d3c0fe3ff21cdf2e4d1e4aaa3ab2b5252219fca9509828779542a6/pelican_ipynb_reader-0.1.0.tar.gz", hash = "sha256:c456eb564973d7241eb5ea01aed19662f20fc18c7bef0380d81a5d1b8fc87fa4", size = 72610, upload-time = "2026-07-27T15:04:17.379Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ab/af/0bb3079f723667870ea397c50760d73061fbd5db1b7d06d0f4b4402f2cef/pelican_ipynb_reader-0.1.0-py3-none-any.whl", hash = "sha256:ec5212c0f5c414743032c3b2880904af898e726e5cb5ab314345634c8bb68153", size = 27743, upload-time = "2026-07-27T15:04:16.084Z" },
 ]
 
 [[package]]

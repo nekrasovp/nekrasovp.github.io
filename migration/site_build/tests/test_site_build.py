@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import importlib.util
+import json
 import re
 import subprocess
 import sys
@@ -13,7 +14,10 @@ SITE_SCRIPT = REPO_ROOT / "migration/site_build/site.py"
 SITE002V_VALIDATOR = REPO_ROOT / "migration/site002v/validate.py"
 OPS001_WORKFLOW = REPO_ROOT / ".github/workflows/ops001.yml"
 EXPECTED_NOTEBOOKS = 11
-PLUGIN_COMMIT = "137e1eb0ea620f1b15fff0ba81725eea23de1b7a"
+READER_DISTRIBUTION = "pelican-ipynb-reader"
+READER_VERSION = "0.1.0"
+READER_WHEEL_SHA256 = "ec5212c0f5c414743032c3b2880904af898e726e5cb5ab314345634c8bb68153"
+READER_SDIST_SHA256 = "c456eb564973d7241eb5ea01aed19662f20fc18c7bef0380d81a5d1b8fc87fa4"
 SITE_BASE_COMMIT = "cac7d59b7a691ebdedea17f5978ce24693830bf8"
 
 
@@ -80,20 +84,26 @@ def test_notebook_manifest_has_exact_source_metadata_route_pairs() -> None:
         assert row["route"].startswith("/") and row["route"].endswith(".html")
 
 
-def test_lock_resolves_exact_reader_commit() -> None:
+def test_lock_resolves_exact_public_reader_release() -> None:
     project = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    expected = (
-        "pelican-jupyter @ git+https://github.com/nekrasovp/"
-        f"pelican-jupyter.git@{PLUGIN_COMMIT}"
-    )
+    expected = f"{READER_DISTRIBUTION}=={READER_VERSION}"
     assert project["project"]["dependencies"].count(expected) == 1
 
-    lock = tomllib.loads((REPO_ROOT / "uv.lock").read_text(encoding="utf-8"))
-    packages = [package for package in lock["package"] if package["name"] == "pelican-jupyter"]
+    lock_text = (REPO_ROOT / "uv.lock").read_text(encoding="utf-8")
+    lock = tomllib.loads(lock_text)
+    packages = [
+        package for package in lock["package"] if package["name"] == READER_DISTRIBUTION
+    ]
     assert len(packages) == 1
-    source = packages[0]["source"]["git"]
-    assert f"rev={PLUGIN_COMMIT}" in source
-    assert source.endswith(f"#{PLUGIN_COMMIT}")
+    package = packages[0]
+    assert package["version"] == READER_VERSION
+    assert package["source"] == {"registry": "https://pypi.org/simple"}
+    assert package["sdist"]["hash"] == f"sha256:{READER_SDIST_SHA256}"
+    assert [wheel["hash"] for wheel in package["wheels"]] == [
+        f"sha256:{READER_WHEEL_SHA256}"
+    ]
+    assert "pelican-jupyter" not in lock_text
+    assert "git+https://github.com/nekrasovp/pelican-jupyter" not in lock_text
 
 
 def test_ci_keeps_history_required_by_permanent_site_base_gate() -> None:
@@ -150,13 +160,28 @@ def test_template_failure_is_nonzero(tmp_path: Path) -> None:
     assert "Could not find the theme" in result.stdout
 
 
-def test_legacy_reader_is_only_an_inactive_archive() -> None:
+def test_legacy_reader_archive_is_removed_after_released_artifact_parity() -> None:
     archive = REPO_ROOT / "migration/site002v/archive/legacy-ipynb-reader"
-    assert (archive / "ARCHIVE_STATUS.md").is_file()
-    assert (archive / "markup.py").is_file()
+    assert not archive.exists()
     active_plugins = (REPO_ROOT / "pelicanconf.py").read_text(encoding="utf-8")
     markdown_plugins = (REPO_ROOT / "migration/site_build/markdownconf.py").read_text(
         encoding="utf-8"
     )
     assert "legacy-ipynb-reader" not in active_plugins
     assert "legacy-ipynb-reader" not in markdown_plugins
+
+
+def test_site002_evidence_binds_the_stacked_release_and_equivalence() -> None:
+    path = REPO_ROOT / "migration/site002/evidence.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert path.read_text(encoding="utf-8") == json.dumps(
+        payload, ensure_ascii=False, indent=2, sort_keys=True
+    ) + "\n"
+    assert payload["branch_strategy"]["base_head"] == (
+        "95c3f02ad6fc3589798ba73dc19e39045941235e"
+    )
+    assert payload["release"]["version"] == READER_VERSION
+    assert payload["release"]["wheel"]["sha256"] == READER_WHEEL_SHA256
+    assert payload["release"]["sdist"]["sha256"] == READER_SDIST_SHA256
+    assert payload["artifact_comparison"]["classification"] == "rendered_equivalent"
+    assert payload["artifact_comparison"]["unexplained_differences"] == []

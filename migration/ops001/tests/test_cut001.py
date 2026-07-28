@@ -11,6 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO_ROOT))
 
 from migration.cut001.validate import (  # noqa: E402
+    ACCEPTED_PREVIEW_COMMIT,
     Cut001ValidationError,
     compare_feeds,
     compare_routes,
@@ -19,6 +20,10 @@ from migration.cut001.validate import (  # noqa: E402
 )
 
 ATOM = "{http://www.w3.org/2005/Atom}"
+
+
+def test_site002_is_stacked_on_the_exact_accepted_preview() -> None:
+    assert ACCEPTED_PREVIEW_COMMIT == "95c3f02ad6fc3589798ba73dc19e39045941235e"
 
 
 def _page(*, toggle: bool = True, jsonld: object | None = None) -> str:
