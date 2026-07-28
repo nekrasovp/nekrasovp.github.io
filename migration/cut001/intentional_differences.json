@@ -1,0 +1,22 @@
+{
+  "added_feeds": {
+    "/feeds/misc.atom.xml": "SITE-005 adds the deterministic three-entry materials feed."
+  },
+  "added_routes": {},
+  "canonical_or_hreflang": {
+    "count": 89,
+    "reason": "Accepted migration output adds deterministic canonicals to taxonomy/archive pages and correct pagination canonicals; the same production metadata delta is already fail-closed by the OPS-001 reviewed-difference fingerprint.",
+    "sha256": "c7a6f993d107161ea3162f4dfdfc79194aaaab534631aebbd976a72199638e23"
+  },
+  "contract": "nekrasovp-cut001-intentional-differences.v1",
+  "missing_routes": {},
+  "new_broken_assets": {},
+  "new_broken_links": {},
+  "production_commit": "5c24ba21ec8b442e4b5280a47c85fab61165f8ce",
+  "production_runtime_external": {
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML": "Legacy production notebooks inject MathJax 2.7.1 from cdnjs; CUT-001 blocks it and the immutable reader preview has no equivalent external runtime dependency.",
+    "https://fonts.googleapis.com/css?family=Lato:400,700,400italic": "The legacy production theme requests its Lato stylesheet at runtime; CUT-001 blocks it and the preview has no equivalent external runtime dependency.",
+    "https://nekrasovp.disqus.com/count.js": "The legacy production theme injects the Disqus counter; CUT-001 blocks it and the preview has no equivalent external runtime dependency.",
+    "https://nekrasovp.disqus.com/embed.js": "The legacy production article template injects the Disqus embed; CUT-001 blocks it and the preview has no equivalent external runtime dependency."
+  }
+}
